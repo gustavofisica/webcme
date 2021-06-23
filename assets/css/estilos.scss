@@ -1,4 +1,21 @@
- // Compass
- @import "compass/css3";
- @import "compass/utilities";
- @import "compass/reset-legacy";
+//Compass
+@import "compass/css3";
+@import "compass/utilities";
+@import "compass/reset-legacy";
+
+
+//Mixins e Variáveis do Sass
+@import 'helpers/mixins';
+@import 'helpers/variaveis';
+
+//Estilos da Página
+@import 'layout/footer';
+@import 'layout/formularios';
+@import 'layout/header';
+@import 'layout/imagens';
+@import 'layout/padrao';
+@import 'layout/slides';
+@import 'layout/tabelas';
+@import 'layout/textos';
+
+
