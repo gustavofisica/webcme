@@ -1,0 +1,12 @@
+.acessibilidade {
+
+    @include all-icones-traducao-sprites;
+
+    .icones-traducao-france,
+    .icones-traducao-spain,
+    .icones-traducao-united-states-of-america {
+        width: 16px;
+        height: 16px;
+    }
+
+}

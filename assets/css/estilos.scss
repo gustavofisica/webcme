@@ -3,6 +3,9 @@
 @import "compass/utilities";
 @import "compass/reset-legacy";
 
+// Sprites dos ícones de tradução
+$icones-traducao-spacing: 2px;
+@import "icones-traducao/*.png";
 
 //Mixins e Variáveis do Sass
 @import 'helpers/mixins';
@@ -17,5 +20,4 @@
 @import 'layout/slides';
 @import 'layout/tabelas';
 @import 'layout/textos';
-
 

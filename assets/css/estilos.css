@@ -50,9 +50,30 @@ a img {
   border: none;
 }
 
+.icones-traducao-sprite, .acessibilidade .icones-traducao-france, .acessibilidade .icones-traducao-spain, .acessibilidade .icones-traducao-united-states-of-america {
+  background-image: url('/assets/img/icones-traducao-s1cbaf960c3.png');
+  background-repeat: no-repeat;
+}
+
 /******Estilo da Barra Brasil******/
 #footer-brasil {
   background: none repeat scroll 0% 0% #0042b1;
   padding: 1em 0px;
   max-width: 100%;
+}
+
+.acessibilidade .icones-traducao-france {
+  background-position: 0 0;
+}
+.acessibilidade .icones-traducao-spain {
+  background-position: 0 -18px;
+}
+.acessibilidade .icones-traducao-united-states-of-america {
+  background-position: 0 -36px;
+}
+.acessibilidade .icones-traducao-france,
+.acessibilidade .icones-traducao-spain,
+.acessibilidade .icones-traducao-united-states-of-america {
+  width: 16px;
+  height: 16px;
 }
