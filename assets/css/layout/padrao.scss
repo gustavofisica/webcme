@@ -1,0 +1,14 @@
+body{
+    background: lightgray;
+}
+
+a {
+	color: black;
+	cursor: pointer;
+	text-decoration: none;
+
+	&:hover {
+		color: #4B4B4B;
+	}
+
+}
