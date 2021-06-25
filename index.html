@@ -35,7 +35,7 @@
         <!--Barra de Acessibilidade-->
         <div class="acessibilidade" id="acessebilidade">
             <!--Lista de Atalhos da Página-->
-            <ul class="acessibilidade__atalhos" id="acessibilidade-atalhos">
+            <ul class="acessibilidade__atalhos">
                 <!--Atalho do Conteúdo Principal da Página-->
                 <li><a accesskey="1" title="Ir para o conteúdo" href="#main">Ir para o conteúdo<span>1</span></a>
                 </li>
@@ -47,7 +47,7 @@
                 <li><a accesskey="4" title="Ir para o rodapé" href="#footer">Ir para o rodapé<span>4</span></a></li>
             </ul>
             <!--Lista de Acessibilidade-->
-            <ul class="acessibilidade__links" id="acessibilidade-links">
+            <ul class="acessibilidade__links">
                 <!--Informações de Acessibilidade-->
                 <li><a accesskey="5" href="acessibilidade.html" title="Acessibilidade">Acessibilidade<span>5</span></a>
                 </li>
@@ -59,7 +59,7 @@
                         do Site<span>7</span></a></li>
             </ul>
             <!--Lista de Tradução-->
-            <ul class="acessibilidade__traducao" id="acessibilidade-traducao">
+            <ul class="acessibilidade__traducao">
                 <!--Link para Tradução da Página em Inglês-->
                 <li><a href="" title="CME em Inglês">
                         <div class="icones-traducao-united-states-of-america" alt="English"></div>
@@ -74,6 +74,44 @@
                     </a></li>
             </ul>
         </div>
+        <!--Cabeçalho-->
+        <div class="cabecalho">
+            <!--Logo do Centro de Microscopia Eletrônica-->
+            <img class="cabecalho__logo" id="logo" src="assets/img/logo.svg"
+                alt="Logo do Centro de Microscopia Eletrônica da Universidade Federal do Paraná.">
+            <!--Menu UFPR-->
+            <nav class="cabecalho__menu--ufpr">
+                <!--Lista do Menu da UFPR-->
+                <ul>
+                    <!--Link do Portal da UFPR-->
+                    <li><a href="http://www.ufpr.br/portalufpr" aria-current="page">Portal UFPR</a></li>
+                    <!--Link do Portal do Setor de Ciências Biológicas da UFPR-->
+                    <li><a href="http://www.bio.ufpr.br/portal/" aria-current="page">Ciências Biológicas</a></li>
+                    <!--Link da Intranet da UFPR-->
+                    <li><a href="https://intranet.ufpr.br/">Intranet</a></li>
+                    <!--Link do Office 365 para UFPR-->
+                    <li><a href="http://www.office.com">Office 365</a></li>
+                    <!--Link do Sistema de Comunicação da UFPR-->
+                    <li><a
+                            href="https://www.ufpr.br/portalufpr/saci-sistema-de-apoio-a-comunicacao-integrada/">Comunicação</a>
+                    </li>
+                </ul>
+            </nav>
+            <!--Título e Formulário de Pesquisa no Site-->
+            <div class="cabecalho__titulo">
+                <!--Título do Departamento-->
+                <h1>Centro de Microscopia Eletrônica</h1>
+                <!--Início do Formulário de Pesquisa do Site-->
+                <form action="http://www.bio.ufpr.br/portal" id="searchform" method="get">
+                    <!--Título do Ítem do Formulário-->
+                    <label for="search">Pesquisar</label>
+                    <!--Campo de Digitação para Pesquisa-->
+                    <input type="search" id="search" name="search" placeholder="Pesquisar...">
+                    <!--Botão de Pesquisar-->
+                    <button type="submit" id="barra-pesquisa-botao"></button>
+                </form>
+            </div>
+        </div>
     </header>
     <main>
 
@@ -84,6 +122,8 @@
     </footer>
     <!--Código JavaScript dos Elementos da Barra Brasil-->
     <script type="text/javascript" defer="defer" src="http://barra.brasil.gov.br/barra.js"></script>
+    <!--Funções de Estilos da Página-->
+    <script type="text/javascript" src="assets/js/estilo.js"></script>
 </body>
 
 </html>

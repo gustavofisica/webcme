@@ -85,7 +85,6 @@ header {
   grid-column-gap: 1rem;
   grid-template-areas: "atalhos" "links" "traducao";
   grid-template-columns: 7fr 5fr 1fr;
-  grid-template-rows: auto;
 }
 .acessibilidade .icones-traducao-france {
   background-position: 0 0;
@@ -114,13 +113,13 @@ header {
 .acessibilidade__atalhos li {
   margin: 0.3rem;
 }
-@media only screen and (max-width: 959px) {
+@media only screen and (max-width: 960px) {
   .acessibilidade__atalhos {
     grid-column: 1/3;
     grid-row: 1/1;
   }
 }
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 495px) {
   .acessibilidade__atalhos {
     display: none;
   }
@@ -137,13 +136,13 @@ header {
 .acessibilidade__links li {
   margin: 0.3rem;
 }
-@media only screen and (max-width: 959px) {
+@media only screen and (max-width: 960px) {
   .acessibilidade__links {
     grid-column: 1/4;
     grid-row: 2/2;
   }
 }
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 495px) {
   .acessibilidade__links {
     grid-column: 1/4;
     grid-row: 1/1;
@@ -161,7 +160,7 @@ header {
 .acessibilidade__traducao li {
   margin: 0.3rem;
 }
-@media only screen and (max-width: 959px) {
+@media only screen and (max-width: 960px) {
   .acessibilidade__traducao {
     -webkit-align-items: center;
     align-items: center;
@@ -169,7 +168,7 @@ header {
     flex-direction: column;
   }
 }
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 495px) {
   .acessibilidade__traducao {
     -webkit-flex-direction: row;
     flex-direction: row;
@@ -185,10 +184,162 @@ header {
   opacity: 0.7;
   padding: 0 0.3em;
 }
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 495px) {
   .acessibilidade span {
     display: none;
   }
+}
+
+.cabecalho {
+  grid-area: cabecalho;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: grid;
+  grid-template-areas: "logo" "menu-ufpr" "barra-titulo";
+  grid-template-columns: 1fr 1fr;
+}
+.cabecalho__logo {
+  background-color: rgba(255, 255, 255, 0.8);
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  grid-area: logo;
+  grid-column: 1/1;
+  grid-row: 1/1;
+  height: 6rem;
+  margin: 1rem;
+  padding: 1rem;
+}
+@media only screen and (max-width: 960px) {
+  .cabecalho__logo {
+    grid-column: 1/3;
+    grid-row: 2/2;
+    justify-self: center;
+  }
+}
+@media only screen and (max-width: 495px) {
+  .cabecalho__logo {
+    align-self: center;
+    grid-column: 1/1;
+    grid-row: 1/1;
+    height: 3.5em;
+  }
+}
+.cabecalho__menu--ufpr {
+  grid-area: menu-ufpr;
+  grid-column: 2/3;
+  grid-row: 1/1;
+  justify-self: end;
+  margin: 1rem;
+}
+@media only screen and (max-width: 960px) {
+  .cabecalho__menu--ufpr {
+    grid-column: 1/3;
+    grid-row: 1/1;
+    justify-self: center;
+  }
+}
+@media only screen and (max-width: 495px) {
+  .cabecalho__menu--ufpr {
+    grid-column: 2/3;
+    grid-row: 1/1;
+  }
+}
+.cabecalho__menu--ufpr ul {
+  display: -webkit-flex;
+  display: flex;
+}
+@media only screen and (max-width: 495px) {
+  .cabecalho__menu--ufpr ul {
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 495px) {
+  .cabecalho__menu--ufpr ul li {
+    width: 100%;
+    margin-top: 0.7rem;
+  }
+}
+.cabecalho__menu--ufpr ul li a {
+  background: #467F8C;
+  margin: 0 1px 0 0;
+  padding: 4px;
+}
+.cabecalho__menu--ufpr ul li a:hover {
+  background: rgba(70, 127, 140, 0.8);
+  color: #6FB7BF;
+}
+.cabecalho__titulo {
+  -webkit-align-items: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.8);
+  display: -webkit-flex;
+  display: flex;
+  grid-area: barra-titulo;
+  grid-column: 1/3;
+  grid-row: 2/3;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  margin: 1rem 0;
+  padding: 0.5rem;
+}
+@media only screen and (max-width: 960px) {
+  .cabecalho__titulo {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    grid-row: 3/3;
+  }
+}
+.cabecalho__titulo h1 {
+  color: #FFFFFF;
+  font-size: 2.4rem;
+  text-shadow: rgba(0, 0, 0, 0.3) 1px 1px 0, rgba(0, 0, 0, 0.3) 2px 2px 0, rgba(0, 0, 0, 0.3) 3px 3px 0;
+}
+@media only screen and (max-width: 960px) {
+  .cabecalho__titulo h1 {
+    font-size: 2rem;
+  }
+}
+@media only screen and (max-width: 495px) {
+  .cabecalho__titulo h1 {
+    font-size: 1.5rem;
+  }
+}
+.cabecalho__titulo #searchform {
+  display: block;
+  position: relative;
+  top: 2px;
+}
+@media only screen and (max-width: 960px) {
+  .cabecalho__titulo #searchform {
+    margin-top: 1rem;
+  }
+}
+.cabecalho__titulo #searchform input {
+  border: none;
+  border-radius: 2px;
+  height: 25px;
+  padding: 15px;
+  width: 250px;
+}
+.cabecalho__titulo #searchform #barra-pesquisa-botao {
+  background: url("../img/Icone-Pesquisa.png") center no-repeat;
+  background-size: 20px;
+  border: none;
+  cursor: pointer;
+  height: 20px;
+  position: relative;
+  right: 30px;
+  top: 5px;
+  width: 20px;
+}
+.cabecalho__titulo #searchform label {
+  display: none;
+}
+
+main {
+  height: 100vh;
 }
 
 body {
