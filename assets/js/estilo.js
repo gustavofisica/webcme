@@ -15,3 +15,21 @@ var images = [
 var bg = images[Math.floor(Math.random() * images.length)];
 
 backgroundImage.style.backgroundImage = "url(" + bg + ")";
+
+//Função do Menu Responsivo
+var menuTogle = document.querySelector('.menu-toggle');
+var bar = document.querySelector('.menu-toggle i');
+var menuUl = document.querySelector('.menu ul');
+
+menuTogle.addEventListener("click", (e) => {
+
+    if (menuUl.classList == "") {
+        menuUl.classList.toggle("on");
+        bar.classList.remove("fa-bars");
+        bar.classList.add("fa-times");
+    } else {
+        menuUl.classList.toggle("on");
+        bar.classList.remove("fa-times");
+        bar.classList.add("fa-bars");
+    }
+});

@@ -267,7 +267,7 @@ header {
 }
 .cabecalho__titulo h1 {
   color: #FFFFFF;
-  font-size: 4.5vw;
+  font-size: 4vw;
   grid-area: titulo;
   margin-left: 1rem;
   text-shadow: rgba(0, 0, 0, 0.3) 1px 1px 0, rgba(0, 0, 0, 0.3) 2px 2px 0, rgba(0, 0, 0, 0.3) 3px 3px 0;
@@ -308,8 +308,193 @@ header {
   display: none;
 }
 
+/******Menu Principal******/
+.menu {
+  background-color: #467F8C;
+  display: grid;
+  padding: 0 1rem;
+  place-items: center;
+  top: 0;
+}
+@media only screen and (max-width: 495px) {
+  .menu {
+    padding: 0;
+    place-items: end center;
+    width: 100%;
+  }
+}
+.menu > ul {
+  display: grid;
+  grid-auto-flow: column;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+@media only screen and (max-width: 495px) {
+  .menu > ul {
+    display: none;
+    grid-auto-flow: row;
+    width: 100%;
+  }
+}
+.menu > ul > li {
+  margin: 0 1rem;
+  padding: 0;
+}
+@media only screen and (max-width: 495px) {
+  .menu > ul > li {
+    border-bottom: 1px solid #6FB7BF;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+  }
+}
+.menu > ul > li a {
+  color: #000000;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  text-decoration: none;
+  text-align: center;
+  font-size: 1.125rem;
+}
+.menu > ul > li a:focus {
+  outline: none;
+}
+.menu > ul > li > a {
+  border-top: 3px solid transparent;
+  padding: 0.58rem 0.5rem;
+  transition: 280ms all 120ms ease-out;
+}
+@media only screen and (max-width: 495px) {
+  .menu > ul > li > a {
+    border-top: 0;
+  }
+}
+.menu > ul > li > a:hover, .menu > ul > li > a:focus {
+  border-top-color: #6FB7BF;
+  color: #6FB7BF;
+}
+.menu .dropdown {
+  position: relative;
+}
+.menu .dropdown .dropdown-title {
+  -webkit-align-items: center;
+  align-items: center;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+}
+.menu .dropdown .dropdown-title:after {
+  content: "";
+  border: 0.35rem solid transparent;
+  border-top-color: rgba(255, 255, 255, 0.8);
+  margin-left: 0.50em;
+  transform: translateY(50%);
+}
+.menu .dropdown .dropdown-menu {
+  background-color: #FFFFFF;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.25) 0 0.15em 0.25em;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0 0.15em 0.25em;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 0.15em 0.25em;
+  left: 50%;
+  min-width: 30ch;
+  padding: 0.5em 0;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+  opacity: 0.3;
+  position: absolute;
+  top: calc(100% - 0.25rem);
+  transform: rotateX(-90deg) translateX(-50%);
+  transform-origin: top center;
+  transition: 280ms all 120ms ease-out;
+  visibility: hidden;
+}
+.menu .dropdown .dropdown-menu a {
+  color: #467F8C;
+  display: block;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  padding: 0.5em;
+  transition: 280ms all 120ms ease-out;
+}
+.menu .dropdown .dropdown-menu a:hover {
+  background-color: rgba(111, 183, 191, 0.15);
+}
+.menu .dropdown .dropdown-menu a:focus {
+  background-color: rgba(111, 183, 191, 0.25);
+  outline: none;
+}
+.menu .dropdown:after {
+  border: 0.5rem solid transparent;
+  border-bottom-color: #FFFFFF;
+  content: "";
+  left: 50%;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  position: absolute;
+  top: calc(100% - 1.25rem);
+  transform: translateX(-50%);
+  transition: 280ms all 120ms ease-out;
+  will-change: opacity;
+}
+@media only screen and (max-width: 495px) {
+  .menu .dropdown:after {
+    top: 34px;
+  }
+}
+.menu .dropdown:hover .dropdown-title, .menu .dropdown:focus-within .dropdown-title {
+  border-top-color: #6FB7BF;
+}
+.menu .dropdown:hover .dropdown-menu, .menu .dropdown:focus-within .dropdown-menu {
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+  transform: rotateX(0) translateX(-50%);
+  visibility: visible;
+}
+@media only screen and (max-width: 495px) {
+  .menu .dropdown:hover .dropdown-menu, .menu .dropdown:focus-within .dropdown-menu {
+    margin-bottom: 20px;
+    position: relative;
+    top: 10px;
+  }
+}
+.menu .dropdown:hover .dropdown-menu a, .menu .dropdown:focus-within .dropdown-menu a {
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+}
+.menu .dropdown:hover:after, .menu .dropdown:focus-within:after {
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+}
+.menu .menu-toggle {
+  background-color: #467F8C;
+  display: none;
+  color: #FFFFFF;
+  cursor: pointer;
+  float: right;
+  font-size: 24px;
+  line-height: 50px;
+}
+.menu .menu-toggle i {
+  margin-left: 20px;
+}
+@media only screen and (max-width: 495px) {
+  .menu .menu-toggle {
+    display: block;
+    width: 100%;
+  }
+}
+.menu .on {
+  display: grid !important;
+}
+
 main {
-  height: 50vh;
+  height: 100vh;
 }
 
 body {

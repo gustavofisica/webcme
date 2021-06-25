@@ -205,11 +205,11 @@ header {
             grid-template-rows: 1fr 1fr;
         }
 
-        
+
 
         h1 {
             color: $cor-branca;
-            font-size: 4.5vw;
+            font-size: 4vw;
             grid-area: titulo;
             margin-left: 1rem;
             @include text-shadow(rgba($cor-preta, 0.3) 1px 1px 0, rgba($cor-preta, 0.3) 2px 2px 0, rgba($cor-preta, 0.3) 3px 3px 0);
@@ -256,6 +256,194 @@ header {
     }
 }
 
+/******Menu Principal******/
+.menu {
+    background-color: $cor-padrao;
+    display: grid;
+    padding: 0 1rem;
+    place-items: center;
+    top: 0;
+
+    @media only screen and (max-width: 495px) {
+        padding: 0;
+        place-items: end center;
+        width: 100%;
+    }
+
+    >ul {
+        display: grid;
+        grid-auto-flow: column;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        @media only screen and (max-width: 495px) {
+            display: none;
+            grid-auto-flow: row;
+            width: 100%;
+        }
+
+        >li {
+            margin: 0 1rem;
+            padding: 0;
+
+            @media only screen and (max-width: 495px) {
+                border-bottom: 1px solid $cor-padrao-auxiliar;
+                margin: 0;
+                padding: 0;
+                text-align: center;
+                width: 100%;
+            }
+
+            a {
+                color: $cor-preta;
+                @include inline-block;
+                text-decoration: none;
+                text-align: center;
+                font-size: 1.125rem;
+
+                &:focus {
+                    outline: none;
+                }
+            }
+
+            >a {
+                border-top: 3px solid transparent;
+                padding: 0.58rem 0.5rem;
+                transition: $transition;
+
+                @media only screen and (max-width: 495px) {
+                    border-top: 0;
+                }
+
+                &:hover,
+                &:focus {
+                    border-top-color: $cor-padrao-auxiliar;
+                    color: $cor-padrao-auxiliar;
+                }
+            }
+        }
+    }
+
+    .dropdown {
+        position: relative;
+
+        .dropdown-title {
+            @include align-items(center);
+            @include display-flex(inline-flex);
+
+            &:after {
+                content: "";
+                border: 0.35rem solid transparent;
+                border-top-color: rgba($cor-branca, 0.8);
+                margin-left: 0.50em;
+                transform: translateY(50%);
+            }
+        }
+
+        .dropdown-menu {
+            background-color: $cor-branca;
+            @include border-radius(4px);
+            @include box-shadow(rgba($cor-preta, 0.25) 0 0.15em 0.25em);
+            left: 50%;
+            min-width: 30ch;
+            padding: 0.5em 0;
+            @include opacity(0.3);
+            position: absolute;
+            top: calc(100% - 0.25rem);
+            transform: rotateX(-90deg) translateX(-50%);
+            transform-origin: top center;
+            transition: $transition;
+            visibility: hidden;
+
+            a {
+                color: $cor-padrao;
+                display: block;
+                @include opacity(0);
+                padding: 0.5em;
+                transition: $transition;
+
+                &:hover {
+                    background-color: rgba($cor-padrao-auxiliar, 0.15);
+                }
+
+                &:focus {
+                    background-color: rgba($cor-padrao-auxiliar, 0.25);
+                    outline: none;
+                }
+            }
+        }
+
+        &:after {
+            border: 0.5rem solid transparent;
+            border-bottom-color: $cor-branca;
+            content: "";
+            left: 50%;
+            @include opacity(0);
+            position: absolute;
+            top: calc(100% - 1.25rem);
+            transform: translateX(-50%);
+            transition: $transition;
+            will-change: opacity;
+
+            @media only screen and (max-width: 495px) {
+                top: 34px;
+            }
+        }
+
+        &:hover,
+        &:focus-within {
+            .dropdown-title {
+                border-top-color: $cor-padrao-auxiliar;
+            }
+
+            .dropdown-menu {
+                @include opacity(1);
+                transform: rotateX(0) translateX(-50%);
+                visibility: visible;
+
+                @media only screen and (max-width: 495px) {
+                    margin-bottom: 20px;
+                    position: relative;
+                    top: 10px;
+                }
+
+                a {
+                    @include opacity(1);
+                }
+            }
+
+            &:after {
+                @include opacity(1);
+            }
+        }
+    }
+
+    .menu-toggle {
+        background-color: $cor-padrao;
+        display: none;
+        color: $cor-branca;
+        cursor: pointer;
+        float: right;
+        font-size: 24px;
+        line-height: 50px;
+
+        i {
+            margin-left: 20px;
+        }
+
+        @media only screen and (max-width: 495px) {
+            display: block;
+            width: 100%;
+
+        }
+    }
+
+    .on {
+        display: grid !important;
+    }
+}
+
 main {
-    height: 50vh;
+    height: 100vh;
 }
