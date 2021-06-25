@@ -147,9 +147,8 @@ header {
 
         @media only screen and (max-width: 495px) {
             align-self: center;
-            grid-column: 1/1;
-            grid-row: 1/1;
-            height: 3.5em;
+            grid-row: 2/2;
+            height: 5rem;
         }
 
     }
@@ -168,7 +167,6 @@ header {
         }
 
         @media only screen and (max-width: 495px) {
-            grid-column: 2/3;
             grid-row: 1/1;
         }
 
@@ -227,7 +225,7 @@ header {
             }
 
             @media only screen and (max-width: 495px) {
-                font-size: 1.5rem;
+                font-size: 1.4rem;
             }
 
         }
