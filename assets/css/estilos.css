@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -55,6 +56,162 @@ a img {
   background-repeat: no-repeat;
 }
 
+.icones-redes-sociais-sprite, .rodape__social__icones__redes .icones-redes-sociais-RSS, .rodape__social__icones__redes .icones-redes-sociais-facebook, .rodape__social__icones__redes .icones-redes-sociais-flickr, .rodape__social__icones__redes .icones-redes-sociais-instagram, .rodape__social__icones__redes .icones-redes-sociais-twitter, .rodape__social__icones__redes .icones-redes-sociais-youtube {
+  background-image: url('/assets/img/icones-redes-sociais-s2fe976924e.png');
+  background-repeat: no-repeat;
+}
+
+footer {
+  display: grid;
+  grid-template-areas: "links-ufpr" "rodape";
+  grid-template-columns: auto;
+  grid-template-rows: auto auto;
+  margin: 0 auto;
+  max-width: 75rem;
+}
+
+/******Rodapé de Links UFPR******/
+.rodape {
+  background: url("/assets/img/rodape_ufpr.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  grid-area: links-ufpr;
+  height: 550px;
+}
+.rodape__links {
+  margin: 20px auto;
+  width: 20%;
+}
+.rodape__links__lista {
+  margin-top: 10px;
+}
+.rodape__links__lista li {
+  margin: 10px 0 0 5px;
+}
+.rodape__links__lista li:before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  vertical-align: middle;
+  margin-right: 10px;
+  width: 0;
+  height: 0;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-left: 4px solid black;
+}
+
+.rodape__social {
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzQ2N2Y4YyIvPjxzdG9wIG9mZnNldD0iOTAlIiBzdG9wLWNvbG9yPSIjMDA0MmIxIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #467f8c), color-stop(90%, #0042b1));
+  background-image: -moz-linear-gradient(#467f8c, #0042b1 90%);
+  background-image: -webkit-linear-gradient(#467f8c, #0042b1 90%);
+  background-image: linear-gradient(#467f8c, #0042b1 90%);
+  display: grid;
+  grid-area: rodape;
+  grid-template-areas: "icones descricao" "copyright copyright";
+  grid-template-columns: 3fr 7fr;
+  grid-template-rows: 3fr 1fr;
+  padding: 1rem;
+}
+.rodape__social__icones {
+  display: grid;
+  grid-area: icones;
+  grid-template-areas: "titulo" "icones";
+  grid-template-columns: auto;
+  grid-template-rows: 1fr 7fr;
+  justify-items: center;
+}
+.rodape__social__icones h3 {
+  align-self: start;
+  color: #FFFFFF;
+  font-size: 1.5em;
+  font-weight: bold;
+  grid-area: titulo;
+}
+.rodape__social__icones__redes {
+  display: grid;
+  grid-area: icones;
+  grid-auto-flow: column;
+  grid-gap: 0.66rem;
+}
+.rodape__social__icones__redes .icones-redes-sociais-RSS {
+  background-position: 0 0;
+}
+.rodape__social__icones__redes .icones-redes-sociais-facebook {
+  background-position: 0 -50px;
+}
+.rodape__social__icones__redes .icones-redes-sociais-flickr {
+  background-position: 0 -100px;
+}
+.rodape__social__icones__redes .icones-redes-sociais-instagram {
+  background-position: 0 -150px;
+}
+.rodape__social__icones__redes .icones-redes-sociais-twitter {
+  background-position: 0 -200px;
+}
+.rodape__social__icones__redes .icones-redes-sociais-youtube {
+  background-position: 0 -250px;
+}
+.rodape__social__icones__redes .icones-redes-sociais-facebook,
+.rodape__social__icones__redes .icones-redes-sociais-twitter,
+.rodape__social__icones__redes .icones-redes-sociais-flickr,
+.rodape__social__icones__redes .icones-redes-sociais-RSS,
+.rodape__social__icones__redes .icones-redes-sociais-youtube,
+.rodape__social__icones__redes .icones-redes-sociais-instagram {
+  width: 48px;
+  height: 48px;
+  filter: drop-shadow(5px 5px 5px #000000);
+  -moz-filter: drop-shadow(5px 5px 5px #000000);
+  -webkit-filter: drop-shadow(5px 5px 5px #000000);
+}
+.rodape__social__descricao {
+  align-self: center;
+  grid-area: descricao;
+  text-align: right;
+}
+.rodape__social__descricao p {
+  color: #FFFFFF;
+  margin-bottom: 5px;
+}
+.rodape__social__descricao p:first-child {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+.rodape__social__descricao p:nth-child(2) {
+  font-weight: bold;
+  font-size: 1.4em;
+}
+.rodape__social__descricao p:nth-child(3) {
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+.rodape__social__descricao img {
+  max-width: 170px;
+  margin-top: 20px;
+}
+.rodape__social__copyright {
+  align-self: end;
+  grid-area: copyright;
+  text-align: center;
+}
+.rodape__social__copyright p {
+  color: #FFFFFF;
+  margin-bottom: 5px;
+}
+
 /******Estilo da Barra Brasil******/
 #footer-brasil {
   background: none repeat scroll 0% 0% #0042b1;
@@ -64,18 +221,20 @@ a img {
 
 header {
   display: grid;
-  grid-template-areas: "barra-brasil" "barra-acessibilidade" "cabecalho" "menu";
+  grid-template-areas: "barra-brasil" "barra-acessibilidade" "cabecalho" "menu-cme";
   grid-template-columns: auto;
-  grid-template-rows: 1fr 1fr 7fr 1fr;
+  grid-template-rows: 1fr 1fr 7fr auto;
   height: 320px;
   margin: 0 auto;
   max-width: 75rem;
 }
 
+/******Barra Brasil******/
 #barra-brasil {
   grid-area: barra-brasil;
 }
 
+/******Barra de Acessibilidade******/
 .acessibilidade {
   -webkit-align-items: center;
   align-items: center;
@@ -87,6 +246,9 @@ header {
   grid-template-areas: "atalhos links traducao";
   grid-template-columns: 6fr 6fr 1fr;
   grid-template-rows: auto;
+  /******Links de Atalhos******/
+  /******Links de Acessibilidade******/
+  /******Bandeiras de tradução******/
 }
 @media only screen and (max-width: 960px) {
   .acessibilidade {
@@ -180,15 +342,19 @@ header {
   }
 }
 
+/******Cabeçalho******/
 .cabecalho {
-  grid-area: cabecalho;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   display: grid;
+  grid-area: cabecalho;
   grid-template-areas: "logo menu-ufpr" "barra-titulo barra-titulo";
   grid-template-columns: 1fr 2fr;
   grid-template-rows: 2fr 1fr;
+  /******Logo CME******/
+  /******Menu UFPR******/
+  /******Faixa com título e pesquisa******/
 }
 @media only screen and (max-width: 960px) {
   .cabecalho {
@@ -257,6 +423,8 @@ header {
   grid-template-columns: 1fr 280px;
   grid-template-rows: auto;
   margin: 1rem 0;
+  /******Título do Site******/
+  /******Formulário de Pesquisa******/
 }
 @media only screen and (max-width: 960px) {
   .cabecalho__titulo {
@@ -267,15 +435,21 @@ header {
 }
 .cabecalho__titulo h1 {
   color: #FFFFFF;
-  font-size: 4vw;
+  font-size: 3.4vw;
   grid-area: titulo;
   margin-left: 1rem;
   text-shadow: rgba(0, 0, 0, 0.3) 1px 1px 0, rgba(0, 0, 0, 0.3) 2px 2px 0, rgba(0, 0, 0, 0.3) 3px 3px 0;
 }
 @media only screen and (max-width: 960px) {
   .cabecalho__titulo h1 {
+    font-size: 5.5vw;
     margin-left: 0;
     justify-self: center;
+  }
+}
+@media only screen and (max-width: 495px) {
+  .cabecalho__titulo h1 {
+    font-size: 6.5vw;
   }
 }
 .cabecalho__titulo #searchform {
@@ -312,6 +486,7 @@ header {
 .menu {
   background-color: #467F8C;
   display: grid;
+  grid-area: menu-cme;
   padding: 0 1rem;
   place-items: center;
   top: 0;
@@ -493,10 +668,6 @@ header {
   display: grid !important;
 }
 
-main {
-  height: 100vh;
-}
-
 body {
   background: lightgray;
 }
@@ -508,4 +679,11 @@ a {
 }
 a:hover {
   color: #4B4B4B;
+}
+
+h5 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+  border-bottom: black solid 1px;
 }

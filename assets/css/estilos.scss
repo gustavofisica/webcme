@@ -7,6 +7,10 @@
 $icones-traducao-spacing: 2px;
 @import "icones-traducao/*.png";
 
+// Sprites dos ícones de redes sociais UFPR
+$icones-redes-sociais-spacing: 2px;
+@import "icones-redes-sociais/*.png";
+
 //Mixins e Variáveis do Sass
 @import 'helpers/mixins';
 @import 'helpers/variaveis';

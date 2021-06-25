@@ -1,3 +1,156 @@
+footer {
+	display: grid;
+	grid-template-areas:
+		"links-ufpr"
+		"rodape";
+	grid-template-columns: auto;
+	grid-template-rows: auto auto;
+	margin: 0 auto;
+	max-width: 75rem;
+}
+
+/******Rodapé de Links UFPR******/
+.rodape {
+	background: url("/assets/img/rodape_ufpr.png");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	@include display-flex;
+	@include flex-direction(column);
+	@include flex-wrap(wrap);
+	grid-area: links-ufpr;
+	height: 550px;
+
+	&__links {
+		margin: 20px auto;
+		width: 20%;
+
+		&__lista {
+			margin-top: 10px;
+
+			li {
+				margin: 10px 0 0 5px;
+
+				&:before {
+					content: "";
+					@include inline-block;
+					vertical-align: middle;
+					margin-right: 10px;
+					width: 0;
+					height: 0;
+					border-top: 4px solid transparent;
+					border-bottom: 4px solid transparent;
+					border-left: 4px solid black;
+				}
+			}
+		}
+	}
+}
+
+.rodape__social {
+	@include background-image(linear-gradient($cor-padrao, #0042b1 90%));
+	display: grid;
+	grid-area: rodape;
+	grid-template-areas:
+		"icones descricao"
+		"copyright copyright";
+	grid-template-columns: 3fr 7fr;
+	grid-template-rows: 3fr 1fr;
+	padding: 1rem;
+
+	&__icones {
+		display: grid;
+		grid-area: icones;
+		grid-template-areas:
+			"titulo"
+			"icones";
+		grid-template-columns: auto;
+		grid-template-rows: 1fr 7fr;
+		justify-items: center;
+		
+
+		h3 {
+			align-self: start;
+			color: $cor-branca; 
+			font-size: 1.5em;
+			font-weight: bold;
+			grid-area: titulo;
+		}
+
+		&__redes {
+			display: grid;
+			grid-area: icones;
+			grid-auto-flow: column;
+			grid-gap: 0.66rem;
+
+			@include all-icones-redes-sociais-sprites;
+
+			.icones-redes-sociais-facebook,
+			.icones-redes-sociais-twitter,
+			.icones-redes-sociais-flickr,
+			.icones-redes-sociais-RSS,
+			.icones-redes-sociais-youtube,
+			.icones-redes-sociais-instagram {
+				width: 48px;
+				height: 48px;
+				filter: drop-shadow(5px 5px 5px #000000);
+				-moz-filter: drop-shadow(5px 5px 5px #000000);
+				-webkit-filter: drop-shadow(5px 5px 5px #000000);
+			}
+		}
+
+
+	}
+
+	&__descricao {
+		align-self: center;
+		grid-area: descricao;
+		text-align: right;
+
+		p {
+			color: $cor-branca;
+			margin-bottom: 5px;
+	
+			&:first-child {
+				font-weight: bold;
+				font-size: 1.5em;
+			}
+	
+			&:nth-child(2) {
+				font-weight: bold;
+				font-size: 1.4em;
+			}
+	
+			&:nth-child(3) {
+				font-weight: bold;
+				font-size: 1.2em;
+				margin-bottom: 20px;
+			}
+		}
+
+		img {
+			max-width: 170px;
+			margin-top: 20px;
+		}
+	}
+
+	&__copyright {
+		align-self: end;
+		grid-area: copyright;
+		text-align: center;
+
+		p {
+			color: $cor-branca;
+			margin-bottom: 5px;
+		}
+	}
+}
+
+
+
+
+
+
 /******Estilo da Barra Brasil******/
 #footer-brasil {
 	background: none repeat scroll 0% 0% #0042b1;
