@@ -140,9 +140,7 @@ footer {
 
 	}
 
-
-
-
+	/******Rodapé de Redes Sociais e Descrição do Departamento******/
 	&__social {
 		@include background-image(linear-gradient($cor-padrao, #0042b1 90%));
 		display: grid;
