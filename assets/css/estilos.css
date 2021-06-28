@@ -63,39 +63,102 @@ a img {
 
 footer {
   display: grid;
+  grid-area: footer;
   grid-template-areas: "links-ufpr" "rodape";
-  grid-template-columns: auto;
-  grid-template-rows: auto auto;
+  grid-template-columns: 75rem;
+  grid-template-rows: 1fr 1fr;
   margin: 0 auto;
-  max-width: 75rem;
 }
 
-/******Rodapé de Links UFPR******/
 .rodape {
+  /******Rodapé de Links UFPR******/
+}
+.rodape__links {
   background: url("/assets/img/rodape_ufpr.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex-wrap: wrap;
-  flex-wrap: wrap;
+  display: grid;
   grid-area: links-ufpr;
-  height: 550px;
+  grid-gap: 1rem;
+  grid-template-areas: "apoio servicos ufpr setores" "comissoes sitios reitorias setores" "orgaos sitios reitorias setores";
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  padding: 1rem;
 }
-.rodape__links {
-  margin: 20px auto;
-  width: 20%;
+@media only screen and (max-width: 960px) {
+  .rodape__links {
+    grid-template-areas: "apoio servicos" "reitorias orgaos" "comissoes sitios" "ufpr setores";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto auto;
+  }
 }
-.rodape__links__lista {
-  margin-top: 10px;
+@media only screen and (max-width: 495px) {
+  .rodape__links {
+    grid-template-areas: "apoio" "servicos" "reitorias" "orgaos" "comissoes" "sitios" "ufpr" "setores";
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto auto auto auto auto auto;
+  }
 }
-.rodape__links__lista li {
+.rodape__links__divisao--servicos {
+  grid-area: servicos;
+}
+.rodape__links__divisao--apoio {
+  grid-area: apoio;
+}
+.rodape__links__divisao--comissoes {
+  grid-area: comissoes;
+}
+.rodape__links__divisao--orgaos {
+  grid-area: orgaos;
+}
+.rodape__links__divisao--sitios {
+  grid-area: sitios;
+}
+.rodape__links__divisao--reitorias {
+  grid-area: reitorias;
+}
+.rodape__links__divisao--ufpr {
+  grid-area: ufpr;
+}
+.rodape__links__divisao--setores {
+  grid-area: setores;
+}
+.rodape__links__divisao__titulo {
+  text-align: start;
+}
+@media only screen and (max-width: 960px) {
+  .rodape__links__divisao__titulo {
+    text-align: center;
+  }
+  .rodape__links__divisao__titulo:hover {
+    cursor: pointer;
+  }
+  .rodape__links__divisao__titulo:after {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    *vertical-align: auto;
+    *zoom: 1;
+    *display: inline;
+    vertical-align: middle;
+    margin-left: 10px;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #000000;
+  }
+}
+@media only screen and (max-width: 960px) {
+  .rodape__links__divisao__lista {
+    display: none;
+  }
+}
+.rodape__links__divisao__lista li {
   margin: 10px 0 0 5px;
 }
-.rodape__links__lista li:before {
+.rodape__links__divisao__lista li:before {
   content: "";
   display: inline-block;
   vertical-align: middle;
@@ -110,7 +173,6 @@ footer {
   border-bottom: 4px solid transparent;
   border-left: 4px solid black;
 }
-
 .rodape__social {
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzQ2N2Y4YyIvPjxzdG9wIG9mZnNldD0iOTAlIiBzdG9wLWNvbG9yPSIjMDA0MmIxIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
   background-size: 100%;
@@ -125,6 +187,13 @@ footer {
   grid-template-rows: 3fr 1fr;
   padding: 1rem;
 }
+@media only screen and (max-width: 960px) {
+  .rodape__social {
+    grid-template-areas: "descricao" "icones" "copyright";
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto;
+  }
+}
 .rodape__social__icones {
   display: grid;
   grid-area: icones;
@@ -132,6 +201,14 @@ footer {
   grid-template-columns: auto;
   grid-template-rows: 1fr 7fr;
   justify-items: center;
+}
+@media only screen and (max-width: 960px) {
+  .rodape__social__icones {
+    align-items: center;
+    grid-gap: 1rem;
+    grid-template-rows: auto auto;
+    margin: 1rem 0 1rem 0;
+  }
 }
 .rodape__social__icones h3 {
   align-self: start;
@@ -177,9 +254,13 @@ footer {
   -webkit-filter: drop-shadow(5px 5px 5px #000000);
 }
 .rodape__social__descricao {
-  align-self: center;
   grid-area: descricao;
   text-align: right;
+}
+@media only screen and (max-width: 960px) {
+  .rodape__social__descricao {
+    text-align: center;
+  }
 }
 .rodape__social__descricao p {
   color: #FFFFFF;
@@ -221,12 +302,12 @@ footer {
 
 header {
   display: grid;
+  grid-area: header;
   grid-template-areas: "barra-brasil" "barra-acessibilidade" "cabecalho" "menu-cme";
-  grid-template-columns: auto;
+  grid-template-columns: 75rem;
   grid-template-rows: 1fr 1fr 7fr auto;
   height: 320px;
   margin: 0 auto;
-  max-width: 75rem;
 }
 
 /******Barra Brasil******/
@@ -668,8 +749,22 @@ header {
   display: grid !important;
 }
 
+main {
+  display: grid;
+  grid-area: main;
+  grid-template-areas: "links-ufpr" "rodape";
+  grid-template-columns: 75rem;
+  grid-template-rows: 1fr 1fr;
+  margin: 0 auto;
+  height: 100vh;
+}
+
 body {
   background: lightgray;
+  display: grid;
+  grid-template-areas: "header" "main" "footer";
+  grid-template-columns: auto;
+  grid-template-rows: auto auto auto;
 }
 
 a {

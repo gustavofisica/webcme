@@ -33,3 +33,19 @@ menuTogle.addEventListener("click", (e) => {
         bar.classList.add("fa-bars");
     }
 });
+
+//Função de Menu Rodapé
+var titulo= document.querySelectorAll('.rodape__links__divisao__titulo');
+var lista = document.querySelectorAll('.rodape__links__divisao__lista');
+
+for (let i = 0; i < titulo.length; i++) {
+    titulo[i].addEventListener("click", (e)=>{
+        if (lista[i].style.display != "block") {
+            lista[i].style.display = "block";
+        } else{
+            lista[i].style.display = "none";
+        }
+        
+    })
+    
+}
