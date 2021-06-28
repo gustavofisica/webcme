@@ -18,7 +18,7 @@ main {
 			"portifolio portifolio"
 			"contato localizacao";
 		grid-template-columns: 1fr 1fr;
-		grid-template-rows: auto auto auto auto auto auto;	
+		grid-template-rows: auto auto auto auto auto auto;
 	}
 
 	&__atalhos {
@@ -61,7 +61,7 @@ main {
 	&__video {
 		grid-area: video;
 
-		iframe{
+		iframe {
 			height: 300px;
 			width: 100%;
 		}
@@ -81,6 +81,15 @@ main {
 
 	&__estatisticas {
 		grid-area: estatisticas;
+
+		#grafico-escondido {
+			display: none;
+		}
+
+		#grafico {
+			height: 500px;
+			width: 90%;
+		}
 	}
 
 	&__portifolio {

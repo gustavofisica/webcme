@@ -813,6 +813,13 @@ main {
 .conteudo__estatisticas {
   grid-area: estatisticas;
 }
+.conteudo__estatisticas #grafico-escondido {
+  display: none;
+}
+.conteudo__estatisticas #grafico {
+  height: 500px;
+  width: 90%;
+}
 .conteudo__portifolio {
   grid-area: portifolio;
 }
