@@ -61,6 +61,34 @@ a img {
   background-repeat: no-repeat;
 }
 
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  color: #FFFFFF;
+  font-weight: bold;
+  font-size: 18px;
+  -moz-transition-duration: 0.6s;
+  -o-transition-duration: 0.6s;
+  -webkit-transition-duration: 0.6s;
+  transition-duration: 0.6s;
+  -moz-transition-timing-function: ease;
+  -o-transition-timing-function: ease;
+  -webkit-transition-timing-function: ease;
+  transition-timing-function: ease;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  user-select: none;
+  padding: 16px;
+  margin-top: -16px;
+}
+.prev:hover, .next:hover {
+  background-color: rgba(111, 183, 191, 0.8);
+  color: #467F8C;
+}
+
 footer {
   display: grid;
   grid-area: footer;
@@ -755,8 +783,8 @@ main {
   background-color: #FFFFFF;
   grid-area: main;
   margin: 0 auto;
-  width: 73rem;
-  padding: 5rem 1rem;
+  width: 75rem;
+  padding: 7rem 0 5rem 0;
 }
 
 .conteudo--index {
@@ -796,32 +824,39 @@ main {
 }
 .conteudo__video {
   grid-area: video;
+  padding-left: 1rem;
 }
 .conteudo__video iframe {
-  height: 300px;
+  height: 100%;
   width: 100%;
 }
 .conteudo__apresentacao {
   grid-area: apresentacao;
+  padding-right: 1rem;
 }
 .conteudo__destaques {
   grid-area: destaques;
+  padding-left: 1rem;
 }
 .conteudo__noticias {
   grid-area: noticias;
+  padding-right: 1rem;
 }
 .conteudo__estatisticas {
   grid-area: estatisticas;
+  padding: 0 1rem;
+  text-align: center;
 }
 .conteudo__estatisticas #grafico-escondido {
   display: none;
 }
-.conteudo__estatisticas #grafico {
-  height: 500px;
-  width: 90%;
-}
 .conteudo__portifolio {
   grid-area: portifolio;
+  background-color: #467F8C;
+}
+.conteudo__portifolio__slideshow {
+  position: relative;
+  margin: auto;
 }
 .conteudo__contato {
   grid-area: contato;
@@ -852,4 +887,69 @@ h5 {
   font-weight: bold;
   margin-bottom: 5px;
   border-bottom: black solid 1px;
+}
+
+.mySlides {
+  display: none;
+}
+
+.prev {
+  left: -60px;
+}
+
+.next {
+  right: -60px;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #FFFFFF;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  display: inline-block;
+  -moz-transition-property: background-color;
+  -o-transition-property: background-color;
+  -webkit-transition-property: background-color;
+  transition-property: background-color;
+  -moz-transition-duration: 0.6s;
+  -o-transition-duration: 0.6s;
+  -webkit-transition-duration: 0.6s;
+  transition-duration: 0.6s;
+  -moz-transition-timing-function: ease;
+  -o-transition-timing-function: ease;
+  -webkit-transition-timing-function: ease;
+  transition-timing-function: ease;
+}
+
+.active,
+.dot:hover {
+  background-color: #6FB7BF;
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
 }
