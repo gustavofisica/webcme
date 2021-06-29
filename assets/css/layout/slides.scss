@@ -1,34 +1,91 @@
 .conteudo__portifolio__slideshow {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-areas:
+        "prev slide next";
+    grid-template-columns: 1fr 25fr 1fr;
+    grid-template-rows: auto;
     position: relative;
     margin: auto;
+
+    &__slide {
+        align-items: center;
+        display: grid;
+        grid-area: slide;
+        grid-gap: 1rem;
+        grid-template-areas:
+            "imagem aquisicao"
+            "imagem pessoas";
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+
+        &__imagem {
+            border: solid $cor-branca 6px;
+            border-bottom: solid $cor-branca 50px;
+            filter: drop-shadow(1px 1px 1px $cor-preta);
+            -moz-filter: drop-shadow(1px 1px 1px $cor-preta);
+            -webkit-filter: drop-shadow(1px 1px 1px $cor-preta);
+            justify-self: center;
+            grid-area: imagem;
+            width: 95%;
+
+            &__titulo {
+                color: $cor-preta;
+                font-weight: bold;
+                font-size: 2em;
+                grid-area: imagem;
+                justify-self: center;
+                position: relative;
+                top: 195px;
+                width: 95%;
+            }
+        }
+
+        &__aquisicao {
+            grid-area: aquisicao;
+        }
+
+        &__pessoas {
+            grid-area: pessoas;
+            display: grid;
+            grid-gap: 1rem;
+            grid-template-columns: auto 1fr;
+            grid-template-rows: auto auto;
+        }
+
+        h4 {
+            text-align: left;
+        }
+        p{
+            margin-bottom: 1rem;
+        }
+    }
 }
 
-.conteudo__portifolio__slideshow__slide {
-    display: none;
-}
 
 .prev {
     @extend %ponteiro;
-    left: -60px;
+    grid-area: prev;
+    justify-self: start;
 }
 
 .next {
-    right: -60px;
     @extend %ponteiro;
-
+    grid-area: next;
+    justify-self: end;
 }
 
 .dot {
-    cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
     background-color: $cor-branca;
     @include border-radius(50%);
+    cursor: pointer;
     display: inline-block;
+    height: 1rem;
+    margin: 1rem 0.5rem;
     @include transition-property(background-color);
     @include transition-duration(0.6s);
     @include transition-timing-function(ease);
+    width: 1rem;
 }
 
 .active,

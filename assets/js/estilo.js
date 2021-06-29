@@ -81,7 +81,7 @@ if (portifolio != null) {
         for (i = 0; i < dots.length; i++) {
             dots[i].className = dots[i].className.replace(" active", "");
         }
-        slides[slideIndex - 1].style.display = "block";
+        slides[slideIndex - 1].style.display = "grid";
         dots[slideIndex - 1].className += " active";
     }
 }

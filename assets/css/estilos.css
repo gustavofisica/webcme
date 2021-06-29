@@ -294,6 +294,7 @@ footer {
 .rodape__social__descricao p {
   color: #FFFFFF;
   margin-bottom: 5px;
+  text-align: right;
 }
 .rodape__social__descricao p:first-child {
   font-weight: bold;
@@ -319,7 +320,7 @@ footer {
 }
 .rodape__social__copyright p {
   color: #FFFFFF;
-  margin-bottom: 5px;
+  text-align: center;
 }
 
 /******Estilo da Barra Brasil******/
@@ -779,12 +780,28 @@ header {
   display: grid !important;
 }
 
+.imagem__atalho {
+  width: 10rem;
+  transition: 0.5s;
+}
+.imagem__atalho:hover {
+  border-radius: 0;
+  transform: scale(1.1);
+}
+.imagem__perfil {
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  height: 120px;
+  width: 120px;
+}
+
 main {
   background-color: #FFFFFF;
   grid-area: main;
   margin: 0 auto;
   width: 75rem;
-  padding: 7rem 0 5rem 0;
+  padding: 5rem 0;
 }
 
 .conteudo--index {
@@ -802,7 +819,7 @@ main {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
   text-align: center;
-  width: 80%;
+  width: 70%;
   margin: 0 auto;
 }
 .conteudo__atalhos__botao--sistema {
@@ -813,14 +830,6 @@ main {
 }
 .conteudo__atalhos__botao--normas {
   grid-area: normas;
-}
-.conteudo__atalhos__botao__imagem {
-  width: 10rem;
-  transition: 0.5s;
-}
-.conteudo__atalhos__botao__imagem:hover {
-  border-radius: 0;
-  transform: scale(1.1);
 }
 .conteudo__video {
   grid-area: video;
@@ -840,7 +849,26 @@ main {
 }
 .conteudo__noticias {
   grid-area: noticias;
+}
+.conteudo__noticias article {
+  display: grid;
+  grid-template-areas: "titulo data" "noticia noticia";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  margin-top: 1rem;
   padding-right: 1rem;
+}
+.conteudo__noticias article h3 {
+  grid-area: titulo;
+  justify-self: start;
+}
+.conteudo__noticias article h4 {
+  color: darkgray;
+  grid-area: data;
+  justify-self: end;
+}
+.conteudo__noticias article p {
+  grid-area: noticia;
 }
 .conteudo__estatisticas {
   grid-area: estatisticas;
@@ -856,6 +884,7 @@ main {
 .conteudo__portifolio {
   grid-area: portifolio;
   background-color: #467F8C;
+  padding: 1rem 0;
 }
 .conteudo__contato {
   grid-area: contato;
@@ -889,32 +918,79 @@ h5 {
 }
 
 .conteudo__portifolio__slideshow {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-areas: "prev slide next";
+  grid-template-columns: 1fr 25fr 1fr;
+  grid-template-rows: auto;
   position: relative;
   margin: auto;
 }
-
 .conteudo__portifolio__slideshow__slide {
-  display: none;
+  align-items: center;
+  display: grid;
+  grid-area: slide;
+  grid-gap: 1rem;
+  grid-template-areas: "imagem aquisicao" "imagem pessoas";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+}
+.conteudo__portifolio__slideshow__slide__imagem {
+  border: solid #FFFFFF 6px;
+  border-bottom: solid #FFFFFF 50px;
+  filter: drop-shadow(1px 1px 1px #000000);
+  -moz-filter: drop-shadow(1px 1px 1px #000000);
+  -webkit-filter: drop-shadow(1px 1px 1px #000000);
+  justify-self: center;
+  grid-area: imagem;
+  width: 95%;
+}
+.conteudo__portifolio__slideshow__slide__imagem__titulo {
+  color: #000000;
+  font-weight: bold;
+  font-size: 2em;
+  grid-area: imagem;
+  justify-self: center;
+  position: relative;
+  top: 195px;
+  width: 95%;
+}
+.conteudo__portifolio__slideshow__slide__aquisicao {
+  grid-area: aquisicao;
+}
+.conteudo__portifolio__slideshow__slide__pessoas {
+  grid-area: pessoas;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+}
+.conteudo__portifolio__slideshow__slide h4 {
+  text-align: left;
+}
+.conteudo__portifolio__slideshow__slide p {
+  margin-bottom: 1rem;
 }
 
 .prev {
-  left: -60px;
+  grid-area: prev;
+  justify-self: start;
 }
 
 .next {
-  right: -60px;
+  grid-area: next;
+  justify-self: end;
 }
 
 .dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
   background-color: #FFFFFF;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
+  cursor: pointer;
   display: inline-block;
+  height: 1rem;
+  margin: 1rem 0.5rem;
   -moz-transition-property: background-color;
   -o-transition-property: background-color;
   -webkit-transition-property: background-color;
@@ -927,6 +1003,7 @@ h5 {
   -o-transition-timing-function: ease;
   -webkit-transition-timing-function: ease;
   transition-timing-function: ease;
+  width: 1rem;
 }
 
 .active,
@@ -956,4 +1033,29 @@ h5 {
   to {
     opacity: 1;
   }
+}
+h2 {
+  font-size: 1.6em;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.3em;
+  font-weight: bold;
+  margin-bottom: 0.8rem;
+  text-align: center;
+}
+
+h4 {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 0.8rem;
+  text-align: center;
+}
+
+p {
+  text-align: justify;
+  line-height: 1.3em;
 }
