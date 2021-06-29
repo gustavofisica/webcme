@@ -9,7 +9,7 @@ main {
 .conteudo {
 	&--index {
 		display: grid;
-		grid-gap: 1rem;
+		grid-gap: 3rem 1rem;
 		grid-template-areas:
 			"atalhos atalhos"
 			"video apresentacao"
@@ -92,17 +92,14 @@ main {
 			display: none;
 		}
 
-		#grafico {}
+		#grafico {
+			height: 30rem;
+		}
 	}
 
 	&__portifolio {
 		grid-area: portifolio;
 		background-color: $cor-padrao;
-
-		&__slideshow {
-			position: relative;
-			margin: auto;
-		}
 	}
 
 	&__contato {

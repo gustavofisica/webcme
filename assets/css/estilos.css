@@ -789,7 +789,7 @@ main {
 
 .conteudo--index {
   display: grid;
-  grid-gap: 1rem;
+  grid-gap: 3rem 1rem;
   grid-template-areas: "atalhos atalhos" "video apresentacao" "destaques noticias" "estatisticas estatisticas" "portifolio portifolio" "contato localizacao";
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto auto auto auto auto;
@@ -850,13 +850,12 @@ main {
 .conteudo__estatisticas #grafico-escondido {
   display: none;
 }
+.conteudo__estatisticas #grafico {
+  height: 30rem;
+}
 .conteudo__portifolio {
   grid-area: portifolio;
   background-color: #467F8C;
-}
-.conteudo__portifolio__slideshow {
-  position: relative;
-  margin: auto;
 }
 .conteudo__contato {
   grid-area: contato;
@@ -889,7 +888,12 @@ h5 {
   border-bottom: black solid 1px;
 }
 
-.mySlides {
+.conteudo__portifolio__slideshow {
+  position: relative;
+  margin: auto;
+}
+
+.conteudo__portifolio__slideshow__slide {
   display: none;
 }
 
