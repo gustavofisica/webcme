@@ -3,7 +3,7 @@ main {
 	grid-area: main;
 	margin: 0 auto;
 	width: 75rem;
-	padding: 7rem 0 5rem 0;
+	padding: 5rem 0;
 }
 
 .conteudo {
@@ -30,7 +30,7 @@ main {
 		grid-template-columns: 1fr 1fr 1fr;
 		grid-template-rows: auto;
 		text-align: center;
-		width: 80%;
+		width: 70%;
 		margin: 0 auto;
 
 		&__botao {
@@ -44,16 +44,6 @@ main {
 
 			&--normas {
 				grid-area: normas;
-			}
-
-			&__imagem {
-				width: 10rem;
-				transition: 0.5s;
-
-				&:hover {
-					border-radius: 0;
-					transform: scale(1.1);
-				}
 			}
 		}
 	}
@@ -80,7 +70,32 @@ main {
 
 	&__noticias {
 		grid-area: noticias;
-		padding-right: 1rem;
+
+		article {
+			display: grid;
+			grid-template-areas:
+				"titulo data"
+				"noticia noticia";
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: auto auto;
+			margin-top: 1rem;
+			padding-right: 1rem;
+
+			h3 {
+				grid-area: titulo;
+				justify-self: start;
+			}
+
+			h4 {
+				color: darkgray;
+				grid-area: data;
+				justify-self: end;
+			}
+
+			p {
+				grid-area: noticia;
+			}
+		}
 	}
 
 	&__estatisticas {
@@ -100,6 +115,7 @@ main {
 	&__portifolio {
 		grid-area: portifolio;
 		background-color: $cor-padrao;
+		padding: 1rem 0;
 	}
 
 	&__contato {
