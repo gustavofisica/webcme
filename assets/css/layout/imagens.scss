@@ -1,0 +1,18 @@
+.imagem {
+    &__atalho {
+        width: 10rem;
+        transition: 0.5s;
+
+        &:hover {
+            border-radius: 0;
+            transform: scale(1.1);
+        }
+    }
+    
+    &__perfil {
+        @include border-radius(4px);
+        height: 120px;
+        width: 120px;
+    }
+
+}

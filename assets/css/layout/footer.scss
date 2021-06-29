@@ -224,6 +224,7 @@ footer {
 			p {
 				color: $cor-branca;
 				margin-bottom: 5px;
+				text-align: right;
 
 				&:first-child {
 					font-weight: bold;
@@ -255,7 +256,7 @@ footer {
 
 			p {
 				color: $cor-branca;
-				margin-bottom: 5px;
+				text-align: center;
 			}
 		}
 	}
