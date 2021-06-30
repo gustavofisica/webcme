@@ -256,4 +256,33 @@ main {
 		}
 	}
 
+	&--pessoas {
+		display: grid;
+		grid-auto-flow: row;
+		grid-gap: 1rem;
+		width: 100%;
+	}
+
+	&__grupo{
+		display: grid;
+		grid-auto-flow: column;
+		grid-gap: 1rem;
+		padding: 0 4rem;
+
+		&__pessoa{
+			display: grid;
+			grid-auto-flow: column;
+			grid-gap: 1rem;
+			grid-template-columns: auto 1fr;
+
+			&__descricao{
+				h4{
+					text-align: left;
+				}
+			}
+		}
+	}
+
+
+
 }

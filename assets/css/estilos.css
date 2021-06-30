@@ -1050,6 +1050,27 @@ main {
   font-size: 1.2rem;
   margin: 2rem 4rem;
 }
+.conteudo--pessoas {
+  display: grid;
+  grid-auto-flow: row;
+  grid-gap: 1rem;
+  width: 100%;
+}
+.conteudo__grupo {
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 1rem;
+  padding: 0 4rem;
+}
+.conteudo__grupo__pessoa {
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 1rem;
+  grid-template-columns: auto 1fr;
+}
+.conteudo__grupo__pessoa__descricao h4 {
+  text-align: left;
+}
 
 body {
   background: lightgray;
