@@ -4,6 +4,14 @@ main {
 	margin: 0 auto;
 	width: 75rem;
 	padding: 5rem 0;
+
+	@media only screen and (max-width: 960px) {
+		padding-top: 250px;
+	}
+
+	@media only screen and (max-width: 495px) {
+		padding-top: 350px;
+	}
 }
 
 .conteudo {
@@ -19,6 +27,21 @@ main {
 			"contato localizacao";
 		grid-template-columns: 1fr 1fr;
 		grid-template-rows: auto auto auto auto auto auto;
+
+		@media only screen and (max-width: 495px) {
+			grid-template-areas:
+				"atalhos"
+				"video"
+				"apresentacao"
+				"destaques"
+				"noticias"
+				"estatisticas"
+				"portifolio"
+				"contato"
+				"localizacao";
+			grid-template-columns: auto;
+			grid-template-rows: auto auto auto auto auto auto auto auto auto;
+		}
 	}
 
 	&__atalhos {
@@ -52,20 +75,36 @@ main {
 		grid-area: video;
 		padding-left: 1rem;
 
+		@media only screen and (max-width: 495px) {
+			padding-right: 1rem;
+		}
+
 		iframe {
 			height: 100%;
 			width: 100%;
+
+			@media only screen and (max-width: 495px) {
+				height: 40rem;
+			}
 		}
 	}
 
 	&__apresentacao {
 		grid-area: apresentacao;
 		padding-right: 1rem;
+
+		@media only screen and (max-width: 495px) {
+			padding-left: 1rem;
+		}
 	}
 
 	&__destaques {
 		grid-area: destaques;
 		padding-left: 1rem;
+
+		@media only screen and (max-width: 495px) {
+			padding-right: 1rem;
+		}
 	}
 
 	&__noticias {
@@ -115,7 +154,7 @@ main {
 	&__portifolio {
 		grid-area: portifolio;
 		background-color: $cor-padrao;
-		padding: 1rem 0;
+		padding: 1rem;
 	}
 
 	&__contato {
@@ -132,6 +171,10 @@ main {
 		grid-template-columns: 1fr;
 		grid-template-rows: auto auto auto;
 		padding-right: 1rem;
+
+		@media only screen and (max-width: 495px) {
+			padding-left: 1rem;
+		}
 
 		h2{
 			grid-area: titulo;

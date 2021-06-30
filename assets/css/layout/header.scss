@@ -223,13 +223,13 @@ header {
             @include text-shadow(rgba($cor-preta, 0.3) 1px 1px 0, rgba($cor-preta, 0.3) 2px 2px 0, rgba($cor-preta, 0.3) 3px 3px 0);
 
             @media only screen and (max-width: 960px) {
-                font-size: 5.5vw;
+                font-size: 7vw;
                 margin-left: 0;
                 justify-self: center;
             }
 
             @media only screen and (max-width: 495px) {
-                font-size: 6.5vw;
+                font-size: 15vw;
             }
 
         }

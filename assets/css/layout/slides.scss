@@ -19,6 +19,15 @@
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto auto;
 
+        @media only screen and (max-width: 960px) {
+            grid-template-areas:
+                "imagem"
+                "aquisicao"
+                "pessoas";
+            grid-template-columns: auto;
+            grid-template-rows: auto auto auto;
+        }
+
         &__imagem {
             border: solid $cor-branca 6px;
             border-bottom: solid $cor-branca 50px;
@@ -56,7 +65,8 @@
         h4 {
             text-align: left;
         }
-        p{
+
+        p {
             margin-bottom: 1rem;
         }
     }
