@@ -35,19 +35,19 @@ menuTogle.addEventListener("click", (e) => {
 });
 
 //Função de Menu Rodapé
-var titulo= document.querySelectorAll('.rodape__links__divisao__titulo');
+var titulo = document.querySelectorAll('.rodape__links__divisao__titulo');
 var lista = document.querySelectorAll('.rodape__links__divisao__lista');
 
 for (let i = 0; i < titulo.length; i++) {
-    titulo[i].addEventListener("click", (e)=>{
+    titulo[i].addEventListener("click", (e) => {
         if (lista[i].style.display != "block") {
             lista[i].style.display = "block";
-        } else{
+        } else {
             lista[i].style.display = "none";
         }
-        
+
     })
-    
+
 }
 
 //Função do Slider
@@ -85,3 +85,35 @@ if (portifolio != null) {
         dots[slideIndex - 1].className += " active";
     }
 }
+
+
+var body = document.querySelector('body');
+var header = document.querySelector('header');
+var main = document.querySelector('main');
+var footer = document.querySelector('footer');
+var altoContraste = document.querySelector('#alto-contraste');
+
+function trocaContraste() {
+
+    if (body.classList.contains("contraste")) {
+
+        body.classList.remove("contraste");
+        header.classList.remove("contraste");
+        main.classList.remove("contraste");
+        footer.classList.remove("contraste");
+
+    } else {
+
+        var retorno = confirm("Ei, espera um momento.\nA função que você acaba de habilitar ativa o Alto Contraste da página que pode ser desconfortável para pessoas autistas.\nNossa preocupação é oferecer a melhor experiência ao usuário.\nPortanto se você for autista ou estiver acompanhando uma pessoa autista, pode cancelar essa ação.\nMas se for uma pessoa de baixa visão, essa função foi pensada em você! Nessa caso, basta clicar em Ok.");
+
+        if (retorno == true) {
+
+            body.classList.add("contraste");
+            header.classList.add("contraste");
+            main.classList.add("contraste");
+            footer.classList.add("contraste");
+        }
+    }
+}
+
+altoContraste.addEventListener('click', trocaContraste);

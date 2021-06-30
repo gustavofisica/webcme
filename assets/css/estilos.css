@@ -1014,11 +1014,82 @@ a:hover {
   color: #4B4B4B;
 }
 
-h5 {
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-bottom: 5px;
-  border-bottom: black solid 1px;
+/******Estilo de Acessibilidade do Alto Contraste******/
+.contraste {
+  background-color: black;
+}
+.contraste nav,
+.contraste div,
+.contraste li,
+.contraste ol,
+.contraste header,
+.contraste footer,
+.contraste section,
+.contraste main,
+.contraste aside,
+.contraste article {
+  background: black;
+  color: white !important;
+}
+.contraste h1,
+.contraste h2,
+.contraste h4,
+.contraste h5,
+.contraste h6,
+.contraste p,
+.contraste label,
+.contraste strong,
+.contraste em,
+.contraste cite,
+.contraste q,
+.contraste i,
+.contraste b,
+.contraste u,
+.contraste span {
+  color: white !important;
+}
+.contraste a {
+  color: yellow !important;
+}
+.contraste button,
+.contraste input[type=button],
+.contraste input[type=reset],
+.contraste input[type=submit] {
+  background: black;
+  color: yellow !important;
+  border: none !important;
+}
+.contraste input[type=text],
+.contraste input[type=password],
+.contraste input[type=url],
+.contraste input[type=search],
+.contraste input[type=email],
+.contraste input[type=tel],
+.contraste input[type=date],
+.contraste input[type=month],
+.contraste input[type=week],
+.contraste input[type=datetime],
+.contraste input[type=datetime-local],
+.contraste textarea,
+.contraste input[type=number] {
+  background: black !important;
+  border: 1px solid white !important;
+  color: white !important;
+}
+.contraste #icones-redes-sociais,
+.contraste #icones-traducao,
+.contraste #grafico,
+.contraste img {
+  filter: grayscale(100%);
+}
+.contraste #barra-pesquisa-botao {
+  filter: invert(100%);
+}
+.contraste .cabecalho__menu--ufpr ul li a {
+  background-color: black !important;
+}
+.contraste .cabecalho {
+  background-image: none !important;
 }
 
 .conteudo__portifolio__slideshow {
@@ -1164,6 +1235,13 @@ h4 {
   font-weight: bold;
   margin-bottom: 0.8rem;
   text-align: center;
+}
+
+h5 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+  border-bottom: black solid 1px;
 }
 
 p {
