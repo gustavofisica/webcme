@@ -996,6 +996,38 @@ main {
 .conteudo__localizacao__endereco p {
   text-align: center;
 }
+.conteudo--texto {
+  display: grid;
+  grid-template-areas: "titulo" "texto";
+  grid-template-columns: auto;
+  grid-template-rows: auto auto;
+}
+.conteudo--texto h2 {
+  grid-area: titulo;
+}
+.conteudo--texto section {
+  grid-area: texto;
+  padding: 0 4rem;
+}
+.conteudo--texto p {
+  font-size: 1.2em;
+  line-height: 1.6em;
+}
+.conteudo--texto li {
+  font-size: 1.2em;
+  list-style: disc;
+  list-style-position: inside;
+  margin-bottom: 1rem;
+}
+.conteudo--texto li a {
+  color: #2199e8;
+}
+.conteudo__caixa {
+  background-color: lightgrey;
+  border: 1px solid grey;
+  padding: 1rem;
+  margin: 1rem;
+}
 
 body {
   background: lightgray;
@@ -1248,4 +1280,8 @@ p {
   font-size: 1.1em;
   line-height: 1.3em;
   text-align: justify;
+}
+
+strong {
+  font-weight: bold;
 }
