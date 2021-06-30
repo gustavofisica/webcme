@@ -938,7 +938,26 @@ main {
   grid-area: contato;
 }
 .conteudo__localizacao {
+  display: grid;
   grid-area: localizacao;
+  grid-template-areas: "titulo" "mapa" "detalhes";
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto;
+  padding-right: 1rem;
+}
+.conteudo__localizacao h2 {
+  grid-area: titulo;
+}
+.conteudo__localizacao iframe {
+  grid-area: mapa;
+  height: 30rem;
+  width: 100%;
+}
+.conteudo__localizacao__endereco {
+  grid-area: detalhes;
+}
+.conteudo__localizacao__endereco p {
+  text-align: center;
 }
 
 body {
