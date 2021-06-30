@@ -330,6 +330,54 @@ footer {
   max-width: 100%;
 }
 
+.formulario--simples {
+  display: grid;
+  grid-auto-flow: row;
+  margin: 1rem;
+}
+.formulario--simples label,
+.formulario--simples legend {
+  font-size: 1.4em;
+}
+.formulario--simples input,
+.formulario--simples textarea {
+  border: 1px solid #000000;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  height: 3rem;
+  margin: 1rem 0;
+  width: 100%;
+}
+.formulario--simples textarea {
+  height: 200px;
+}
+.formulario--simples button {
+  background: #467F8C;
+  border: none;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #FFFFFF;
+  font-size: 1.4em;
+  font-weight: bold;
+  margin: 1rem 0;
+  padding: 1rem 0;
+  transition: 1s all;
+  width: 100%;
+}
+.formulario--simples button:hover {
+  background: #6FB7BF;
+  transform: scale(1.02);
+}
+.formulario--simples .erro {
+  border: 2px solid red;
+}
+.formulario--simples .valido {
+  border: 2px solid green;
+}
+
 header {
   display: grid;
   grid-area: header;

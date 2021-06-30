@@ -1,0 +1,55 @@
+.formulario {
+
+    &--simples {
+        display: grid;
+        grid-auto-flow: row;
+        margin: 1rem;
+
+        label,
+        legend {
+            font-size: 1.4em;
+        }
+
+        input,
+        textarea {
+            border: 1px solid $cor-preta;
+            @include border-radius(4px);
+            height: 3rem;
+            margin: 1rem 0;
+            width: 100%;
+
+        }
+
+        textarea {
+            height: 200px;
+        }
+
+        button {
+            background: $cor-padrao;
+            border: none;
+            @include border-radius(4px);
+            cursor: pointer;
+            color: $cor-branca;
+            font-size: 1.4em;
+            font-weight: bold;
+            margin: 1rem 0;
+            padding: 1rem 0;
+            transition: 1s all;
+            width: 100%;
+
+            &:hover {
+                background: $cor-padrao-auxiliar;
+                transform: scale(1.02);
+            }
+
+        }
+
+        .erro {
+            border: 2px solid red;
+        }
+
+        .valido {
+            border: 2px solid green;
+        }
+    }
+}
