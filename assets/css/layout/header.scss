@@ -275,11 +275,12 @@ header {
     background-color: $cor-padrao;
     display: grid;
     grid-area: menu-cme;
+    max-width: 75rem;
     padding: 0 1rem;
     place-items: center;
     top: 0;
 
-    @media only screen and (max-width: 495px) {
+    @media only screen and (max-width: 960px) {
         padding: 0;
         place-items: end center;
         width: 100%;
@@ -292,7 +293,7 @@ header {
         margin: 0;
         padding: 0;
 
-        @media only screen and (max-width: 495px) {
+        @media only screen and (max-width: 960px) {
             display: none;
             grid-auto-flow: row;
             width: 100%;
@@ -302,7 +303,7 @@ header {
             margin: 0 1rem;
             padding: 0;
 
-            @media only screen and (max-width: 495px) {
+            @media only screen and (max-width: 960px) {
                 border-bottom: 1px solid $cor-padrao-auxiliar;
                 margin: 0;
                 padding: 0;
@@ -327,7 +328,7 @@ header {
                 padding: 0.58rem 0.5rem;
                 transition: $transition;
 
-                @media only screen and (max-width: 495px) {
+                @media only screen and (max-width: 960px) {
                     border-top: 0;
                 }
 
@@ -401,7 +402,7 @@ header {
             transition: $transition;
             will-change: opacity;
 
-            @media only screen and (max-width: 495px) {
+            @media only screen and (max-width: 960px) {
                 top: 34px;
             }
         }
@@ -417,7 +418,7 @@ header {
                 transform: rotateX(0) translateX(-50%);
                 visibility: visible;
 
-                @media only screen and (max-width: 495px) {
+                @media only screen and (max-width: 960px) {
                     margin-bottom: 20px;
                     position: relative;
                     top: 10px;
@@ -447,7 +448,7 @@ header {
             margin-left: 20px;
         }
 
-        @media only screen and (max-width: 495px) {
+        @media only screen and (max-width: 960px) {
             display: block;
             width: 100%;
 
