@@ -6,9 +6,9 @@ header {
         "barra-acessibilidade"
         "cabecalho"
         "menu-cme";
-    grid-template-columns: 75rem;
+    grid-template-columns: minmax(3rem, 75rem);
     grid-template-rows: 1fr 1fr 7fr auto;
-    height: 320px;
+    height: auto;
     margin: 0 auto;
     z-index: 1;
 }
@@ -201,7 +201,7 @@ header {
         height: auto;
         grid-area: barra-titulo;
         grid-template-areas:
-            "titulo pesquisa";
+            "titulo pesquisa";  
         grid-template-columns: 1fr 280px;
         grid-template-rows: auto;
         margin: 1rem 0;

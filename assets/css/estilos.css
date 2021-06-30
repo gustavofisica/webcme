@@ -93,7 +93,7 @@ footer {
   display: grid;
   grid-area: footer;
   grid-template-areas: "links-ufpr" "rodape";
-  grid-template-columns: 75rem;
+  grid-template-columns: minmax(3rem, 75rem);
   grid-template-rows: 1fr 1fr;
   margin: 0 auto;
 }
@@ -387,9 +387,9 @@ header {
   display: grid;
   grid-area: header;
   grid-template-areas: "barra-brasil" "barra-acessibilidade" "cabecalho" "menu-cme";
-  grid-template-columns: 75rem;
+  grid-template-columns: minmax(3rem, 75rem);
   grid-template-rows: 1fr 1fr 7fr auto;
-  height: 320px;
+  height: auto;
   margin: 0 auto;
   z-index: 1;
 }
@@ -853,18 +853,8 @@ main {
   background-color: #FFFFFF;
   grid-area: main;
   margin: 0 auto;
-  width: 75rem;
   padding: 5rem 0;
-}
-@media only screen and (max-width: 960px) {
-  main {
-    padding-top: 250px;
-  }
-}
-@media only screen and (max-width: 495px) {
-  main {
-    padding-top: 350px;
-  }
+  max-width: 75rem;
 }
 
 .conteudo--index {

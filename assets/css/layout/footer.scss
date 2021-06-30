@@ -4,7 +4,7 @@ footer {
 	grid-template-areas:
 		"links-ufpr"
 		"rodape";
-	grid-template-columns: 75rem;
+	grid-template-columns: minmax(3rem, 75rem); 
 	grid-template-rows: 1fr 1fr;
 	margin: 0 auto;
 }
