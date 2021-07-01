@@ -265,7 +265,7 @@ main {
 
 	&__grupo{
 		display: grid;
-		grid-auto-flow: column;
+		grid-template-columns: repeat(2, 1fr);
 		grid-gap: 1rem;
 		padding: 0 4rem;
 
