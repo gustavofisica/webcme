@@ -849,6 +849,14 @@ header {
   height: 120px;
   width: 120px;
 }
+.imagem__logo {
+  padding: 1rem;
+  width: 70vw;
+}
+
+.escuro {
+  background-color: black;
+}
 
 main {
   background-color: #FFFFFF;
@@ -1079,6 +1087,11 @@ main {
 }
 .conteudo__grupo__pessoa__descricao h4 {
   text-align: left;
+}
+.conteudo__logo {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
 body {
