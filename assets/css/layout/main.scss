@@ -300,6 +300,10 @@ main {
 			grid-gap: 1rem;
 			grid-template-columns: auto 1fr;
 
+			p{
+				margin-bottom: 1rem;
+			}
+
 			&__descricao {
 				h4 {
 					text-align: left;

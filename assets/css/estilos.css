@@ -1144,6 +1144,9 @@ main {
   grid-gap: 1rem;
   grid-template-columns: auto 1fr;
 }
+.conteudo__grupo__pessoa p {
+  margin-bottom: 1rem;
+}
 .conteudo__grupo__pessoa__descricao h4 {
   text-align: left;
 }
