@@ -1059,7 +1059,7 @@ main {
 .conteudo__grupo {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 1rem;
+  grid-gap: 2rem 1rem;
   padding: 0 4rem;
 }
 .conteudo__grupo__pessoa {
