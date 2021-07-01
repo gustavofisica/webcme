@@ -213,6 +213,19 @@ main {
 		}
 
 		li {
+			line-height: 1.6em;
+		}
+
+		ul,
+		ol {
+			padding-left: 3rem;
+		}
+
+		.recuo {
+			padding-left: 5rem;
+		}
+
+		li {
 			font-size: 1.2em;
 			list-style: disc;
 			list-style-position: inside;
@@ -223,11 +236,11 @@ main {
 			}
 		}
 
-		img{
+		img {
 			margin: 1rem 0;
 		}
 
-		.legenda{
+		.legenda {
 			font-size: 0.9em;
 			line-height: 1em;
 		}
@@ -274,27 +287,27 @@ main {
 		width: 100%;
 	}
 
-	&__grupo{
+	&__grupo {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		grid-gap: 2rem 1rem;
 		padding: 0 4rem;
 
-		&__pessoa{
+		&__pessoa {
 			display: grid;
 			grid-auto-flow: column;
 			grid-gap: 1rem;
 			grid-template-columns: auto 1fr;
 
-			&__descricao{
-				h4{
+			&__descricao {
+				h4 {
 					text-align: left;
 				}
 			}
 		}
 	}
 
-	&__logo{
+	&__logo {
 		align-items: center;
 		display: flex;
 		flex-direction: column;

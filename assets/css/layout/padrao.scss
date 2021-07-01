@@ -24,6 +24,7 @@ a {
 .contraste {
 
 	background-color: black;
+
 	nav,
 	div,
 	li,
@@ -102,8 +103,14 @@ a {
 		background-color: black !important;
 	}
 
-	.cabecalho{
+	.cabecalho {
 		background-image: none !important;
+	}
+
+	th,
+	td, tr {
+		background-color: black !important;
+		border-top: solid 1px $cor-branca;
 	}
 
 }
