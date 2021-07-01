@@ -335,17 +335,15 @@ footer {
   max-width: 100%;
 }
 
-.formulario--simples {
-  display: grid;
-  grid-auto-flow: row;
-  margin: 1rem;
+form {
+  font-size: 1.2em;
 }
-.formulario--simples label,
-.formulario--simples legend {
+form label,
+form legend {
   font-size: 1.4em;
 }
-.formulario--simples input,
-.formulario--simples textarea {
+form input,
+form textarea {
   border: 1px solid #000000;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
@@ -353,11 +351,12 @@ footer {
   height: 3rem;
   margin: 1rem 0;
   width: 100%;
+  font-size: medium;
 }
-.formulario--simples textarea {
+form textarea {
   height: 200px;
 }
-.formulario--simples button {
+form button {
   background: #467F8C;
   border: none;
   -moz-border-radius: 4px;
@@ -372,15 +371,93 @@ footer {
   transition: 1s all;
   width: 100%;
 }
-.formulario--simples button:hover {
+form button:hover {
   background: #6FB7BF;
   transform: scale(1.02);
 }
-.formulario--simples .erro {
-  border: 2px solid red;
+
+.formulario--simples {
+  display: grid;
+  grid-auto-flow: row;
+  margin: 1rem auto;
 }
-.formulario--simples .valido {
-  border: 2px solid green;
+.formulario--login {
+  align-items: center;
+  border: solid 1px #6FB7BF;
+  display: grid;
+  grid-template-areas: "email" "input-email" "senha" "input-senha" "botao";
+  grid-template-columns: auto;
+  grid-template-rows: auto auto auto auto auto;
+  margin: 1rem auto;
+  padding: 2rem;
+  width: 40vw;
+}
+.formulario--login input {
+  padding-left: 3.5rem;
+  width: calc(100% - 3.5rem);
+}
+.formulario--login i {
+  font-size: 2em;
+  padding-left: 0.5rem;
+  width: fit-content;
+}
+.formulario__email {
+  grid-area: email;
+}
+.formulario__email__input {
+  grid-area: input-email;
+}
+.formulario__email__icone {
+  grid-area: input-email;
+}
+.formulario__senha {
+  grid-area: senha;
+}
+.formulario__senha__input {
+  grid-area: input-senha;
+}
+.formulario__senha__icone {
+  grid-area: input-senha;
+}
+.formulario__botao {
+  grid-area: botao;
+}
+
+/******Formulário de Pesquisa******/
+#searchform {
+  align-items: center;
+  grid-area: pesquisa;
+  display: grid;
+  grid-template: "input";
+}
+@media only screen and (max-width: 960px) {
+  #searchform {
+    justify-self: center;
+    margin: 0.5rem;
+  }
+}
+#searchform input {
+  border: none;
+  border-radius: 4px;
+  grid-area: input;
+  justify-self: center;
+  margin: 0;
+  padding: 15px;
+  width: 250px;
+}
+#searchform button {
+  background-color: transparent;
+  color: #000000;
+  font-size: 1.3em;
+  grid-area: input;
+  height: fit-content;
+  justify-self: end;
+  margin: 0;
+  padding-right: 1.5rem;
+  width: fit-content;
+}
+#searchform label {
+  display: none;
 }
 
 header {
@@ -411,6 +488,7 @@ header {
   grid-template-areas: "atalhos links traducao";
   grid-template-columns: 6fr 6fr 1fr;
   grid-template-rows: auto;
+  padding: 0 0.5rem;
   /******Links de Atalhos******/
   /******Links de Acessibilidade******/
   /******Bandeiras de tradução******/
@@ -589,7 +667,6 @@ header {
   grid-template-rows: auto;
   margin: 1rem 0;
   /******Título do Site******/
-  /******Formulário de Pesquisa******/
 }
 @media only screen and (max-width: 960px) {
   .cabecalho__titulo {
@@ -616,35 +693,6 @@ header {
   .cabecalho__titulo h1 {
     font-size: 15vw;
   }
-}
-.cabecalho__titulo #searchform {
-  grid-area: pesquisa;
-}
-@media only screen and (max-width: 960px) {
-  .cabecalho__titulo #searchform {
-    justify-self: center;
-    margin: 0.5rem;
-  }
-}
-.cabecalho__titulo #searchform input {
-  border: none;
-  border-radius: 4px;
-  padding: 15px;
-  width: 250px;
-}
-.cabecalho__titulo #searchform #barra-pesquisa-botao {
-  background: url("../img/Icone-Pesquisa.png") center no-repeat;
-  background-size: 20px;
-  border: none;
-  cursor: pointer;
-  height: 20px;
-  position: relative;
-  right: 30px;
-  top: 5px;
-  width: 20px;
-}
-.cabecalho__titulo #searchform label {
-  display: none;
 }
 
 /******Menu Principal******/
@@ -977,6 +1025,7 @@ main {
 }
 .conteudo__contato {
   grid-area: contato;
+  padding-left: 1rem;
 }
 .conteudo__localizacao {
   display: grid;
@@ -1102,6 +1151,19 @@ main {
   align-items: center;
   display: flex;
   flex-direction: column;
+}
+.conteudo--formulario {
+  display: grid;
+  grid-template-areas: "titulo" "formulario";
+  grid-template-columns: auto;
+  grid-template-rows: auto auto;
+  width: 100%;
+}
+.conteudo--formulario h2 {
+  grid-area: titulo;
+}
+.conteudo--formulario form {
+  grid-area: fomrulario;
 }
 
 body {
