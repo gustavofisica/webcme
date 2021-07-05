@@ -901,6 +901,26 @@ header {
   padding: 1rem;
   width: 70vw;
 }
+.imagem__equipamento {
+  width: 100%;
+}
+.imagem__galeria {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+.imagem__galeria:hover {
+  transform: scale(1.1);
+}
+.imagem__modal {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.25s ease-out;
+  max-width: 80vw;
+}
 
 .escuro {
   background-color: black;
@@ -1168,6 +1188,88 @@ main {
 .conteudo--formulario form {
   grid-area: fomrulario;
 }
+.conteudo--imagens {
+  display: grid;
+  grid-auto-flow: row;
+  grid-gap: 1rem;
+  width: 100%;
+}
+.conteudo__equipamento {
+  align-items: center;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-areas: "titulo titulo" "equipamento descricao" "equipamento galeria";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  margin: 1rem;
+}
+@media only screen and (max-width: 960px) {
+  .conteudo__equipamento {
+    grid-template-areas: "titulo" "equipamento" "descricao" "galeria";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+  }
+}
+.conteudo__equipamento__titulo {
+  grid-area: titulo;
+}
+.conteudo__equipamento__foto {
+  grid-area: equipamento;
+}
+.conteudo__equipamento__descricao {
+  grid-area: descricao;
+}
+.conteudo__equipamento__galeria {
+  grid-area: galeria;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
+  min-height: 25%;
+  grid-gap: 1rem;
+}
+.conteudo__equipamento__galeria__foto {
+  overflow: hidden;
+}
+.conteudo__equipamento__modal {
+  display: grid;
+  grid-template-areas: "descricao botao" "imagem imagem";
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto 1fr;
+  background: rgba(0, 0, 0, 0.8);
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  transition: 0.25s ease-out;
+  width: 100%;
+}
+.conteudo__equipamento__modal i {
+  align-self: center;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-size: 2em;
+  grid-area: botao;
+  justify-self: center;
+  margin: 1rem;
+}
+.conteudo__equipamento__modal img {
+  grid-area: imagem;
+  position: absolute;
+}
+.conteudo__equipamento__modal figcaption {
+  align-self: center;
+  color: #FFFFFF;
+  font-size: 1.5em;
+  grid-area: descricao;
+  justify-self: center;
+}
+
+.abrir {
+  opacity: 1;
+  pointer-events: all;
+  z-index: 2;
+}
 
 body {
   background: lightgray;
@@ -1184,6 +1286,10 @@ a {
 }
 a:hover {
   color: #4B4B4B;
+}
+
+figure {
+  margin: 0;
 }
 
 /******Estilo de Acessibilidade do Alto Contraste******/
