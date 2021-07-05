@@ -364,7 +364,7 @@ form button {
   border-radius: 4px;
   cursor: pointer;
   color: #FFFFFF;
-  font-size: 1.4em;
+  font-size: 1.2em;
   font-weight: bold;
   margin: 1rem 0;
   padding: 1rem 0;
@@ -391,6 +391,16 @@ form button:hover {
   margin: 1rem auto;
   padding: 2rem;
   width: 40vw;
+}
+@media only screen and (max-width: 960px) {
+  .formulario--login {
+    width: 60vw;
+  }
+}
+@media only screen and (max-width: 495px) {
+  .formulario--login {
+    width: 75vw;
+  }
 }
 .formulario--login input {
   padding-left: 3.5rem;
