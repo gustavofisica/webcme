@@ -899,7 +899,7 @@ header {
 }
 .imagem__logo {
   padding: 1rem;
-  width: 70vw;
+  width: 100%;
 }
 .imagem__equipamento {
   width: 100%;
