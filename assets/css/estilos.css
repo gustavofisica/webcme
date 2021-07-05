@@ -468,7 +468,6 @@ header {
   grid-template-rows: 32px 1fr 7fr auto;
   height: auto;
   margin: 0 auto;
-  z-index: 1;
 }
 
 /******Barra Brasil******/
@@ -945,7 +944,7 @@ main {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto auto auto auto auto;
 }
-@media only screen and (max-width: 495px) {
+@media only screen and (max-width: 960px) {
   .conteudo--index {
     grid-template-areas: "atalhos" "video" "apresentacao" "destaques" "noticias" "estatisticas" "portifolio" "contato" "localizacao";
     grid-template-columns: auto;
@@ -963,6 +962,13 @@ main {
   width: 70%;
   margin: 0 auto;
 }
+@media only screen and (max-width: 960px) {
+  .conteudo__atalhos {
+    grid-template-areas: "sistema" "servicos" "normas";
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto;
+  }
+}
 .conteudo__atalhos__botao--sistema {
   grid-area: sistema;
 }
@@ -976,7 +982,7 @@ main {
   grid-area: video;
   padding-left: 1rem;
 }
-@media only screen and (max-width: 495px) {
+@media only screen and (max-width: 960px) {
   .conteudo__video {
     padding-right: 1rem;
   }
@@ -985,16 +991,16 @@ main {
   height: 100%;
   width: 100%;
 }
-@media only screen and (max-width: 495px) {
+@media only screen and (max-width: 960px) {
   .conteudo__video iframe {
-    height: 40rem;
+    height: 30rem;
   }
 }
 .conteudo__apresentacao {
   grid-area: apresentacao;
   padding-right: 1rem;
 }
-@media only screen and (max-width: 495px) {
+@media only screen and (max-width: 960px) {
   .conteudo__apresentacao {
     padding-left: 1rem;
   }
@@ -1003,7 +1009,7 @@ main {
   grid-area: destaques;
   padding-left: 1rem;
 }
-@media only screen and (max-width: 495px) {
+@media only screen and (max-width: 960px) {
   .conteudo__destaques {
     padding-right: 1rem;
   }
@@ -1018,6 +1024,11 @@ main {
   grid-template-rows: auto auto;
   margin-top: 1rem;
   padding-right: 1rem;
+}
+@media only screen and (max-width: 960px) {
+  .conteudo__noticias article {
+    padding-left: 1rem;
+  }
 }
 .conteudo__noticias article h3 {
   grid-area: titulo;
@@ -1051,6 +1062,11 @@ main {
   grid-area: contato;
   padding-left: 1rem;
 }
+@media only screen and (max-width: 960px) {
+  .conteudo__contato {
+    padding-right: 1rem;
+  }
+}
 .conteudo__localizacao {
   display: grid;
   grid-area: localizacao;
@@ -1059,7 +1075,7 @@ main {
   grid-template-rows: auto auto auto;
   padding-right: 1rem;
 }
-@media only screen and (max-width: 495px) {
+@media only screen and (max-width: 960px) {
   .conteudo__localizacao {
     padding-left: 1rem;
   }

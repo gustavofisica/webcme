@@ -20,7 +20,7 @@ main {
 		grid-template-columns: 1fr 1fr;
 		grid-template-rows: auto auto auto auto auto auto;
 
-		@media only screen and (max-width: 495px) {
+		@media only screen and (max-width: 960px) {
 			grid-template-areas:
 				"atalhos"
 				"video"
@@ -48,6 +48,15 @@ main {
 		width: 70%;
 		margin: 0 auto;
 
+		@media only screen and (max-width: 960px) {
+			grid-template-areas:
+				"sistema"
+				"servicos"
+				"normas";
+			grid-template-columns: auto;
+			grid-template-rows: auto auto auto;
+		}
+
 		&__botao {
 			&--sistema {
 				grid-area: sistema;
@@ -67,7 +76,7 @@ main {
 		grid-area: video;
 		padding-left: 1rem;
 
-		@media only screen and (max-width: 495px) {
+		@media only screen and (max-width: 960px) {
 			padding-right: 1rem;
 		}
 
@@ -75,8 +84,8 @@ main {
 			height: 100%;
 			width: 100%;
 
-			@media only screen and (max-width: 495px) {
-				height: 40rem;
+			@media only screen and (max-width: 960px) {
+				height: 30rem;
 			}
 		}
 	}
@@ -85,7 +94,7 @@ main {
 		grid-area: apresentacao;
 		padding-right: 1rem;
 
-		@media only screen and (max-width: 495px) {
+		@media only screen and (max-width: 960px) {
 			padding-left: 1rem;
 		}
 	}
@@ -94,7 +103,7 @@ main {
 		grid-area: destaques;
 		padding-left: 1rem;
 
-		@media only screen and (max-width: 495px) {
+		@media only screen and (max-width: 960px) {
 			padding-right: 1rem;
 		}
 	}
@@ -111,6 +120,10 @@ main {
 			grid-template-rows: auto auto;
 			margin-top: 1rem;
 			padding-right: 1rem;
+
+			@media only screen and (max-width: 960px) {
+				padding-left: 1rem;
+			}
 
 			h3 {
 				grid-area: titulo;
@@ -152,6 +165,10 @@ main {
 	&__contato {
 		grid-area: contato;
 		padding-left: 1rem;
+
+		@media only screen and (max-width: 960px) {
+			padding-right: 1rem;
+		}
 	}
 
 	&__localizacao {
@@ -165,7 +182,7 @@ main {
 		grid-template-rows: auto auto auto;
 		padding-right: 1rem;
 
-		@media only screen and (max-width: 495px) {
+		@media only screen and (max-width: 960px) {
 			padding-left: 1rem;
 		}
 
