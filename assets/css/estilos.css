@@ -904,6 +904,10 @@ header {
 .imagem__portifolio {
   width: 100%;
 }
+.imagem__historico {
+  max-width: 50rem;
+  width: 89vw;
+}
 .imagem__equipamento {
   width: 1fr;
 }
@@ -1107,7 +1111,7 @@ main {
 }
 .conteudo--texto section {
   grid-area: texto;
-  padding: 0 4rem;
+  padding: 0 4vw;
 }
 .conteudo--texto p {
   font-size: 1.2em;
