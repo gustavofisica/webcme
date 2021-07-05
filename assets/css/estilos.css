@@ -901,8 +901,11 @@ header {
   padding: 1rem;
   width: 100%;
 }
-.imagem__equipamento {
+.imagem__portifolio {
   width: 100%;
+}
+.imagem__equipamento {
+  width: 1fr;
 }
 .imagem__galeria {
   width: 100%;
@@ -1402,24 +1405,29 @@ figure {
   }
 }
 .conteudo__portifolio__slideshow__slide__imagem {
+  display: grid;
+  grid-area: imagem;
+  grid-template-areas: "foto";
+}
+.conteudo__portifolio__slideshow__slide__imagem__foto {
   border: solid #FFFFFF 6px;
   border-bottom: solid #FFFFFF 50px;
   filter: drop-shadow(1px 1px 1px #000000);
+  grid-area: foto;
   -moz-filter: drop-shadow(1px 1px 1px #000000);
   -webkit-filter: drop-shadow(1px 1px 1px #000000);
   justify-self: center;
-  grid-area: imagem;
-  width: 95%;
+  width: 97%;
 }
 .conteudo__portifolio__slideshow__slide__imagem__titulo {
+  align-self: end;
   color: #000000;
-  font-weight: bold;
   font-size: 2em;
-  grid-area: imagem;
+  font-weight: bold;
+  grid-area: foto;
   justify-self: center;
-  position: relative;
-  top: 195px;
-  width: 95%;
+  margin-bottom: 0.5rem;
+  z-index: 1;
 }
 .conteudo__portifolio__slideshow__slide__aquisicao {
   grid-area: aquisicao;

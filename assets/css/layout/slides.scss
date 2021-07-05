@@ -29,24 +29,31 @@
         }
 
         &__imagem {
-            border: solid $cor-branca 6px;
-            border-bottom: solid $cor-branca 50px;
-            filter: drop-shadow(1px 1px 1px $cor-preta);
-            -moz-filter: drop-shadow(1px 1px 1px $cor-preta);
-            -webkit-filter: drop-shadow(1px 1px 1px $cor-preta);
-            justify-self: center;
+            display: grid;
             grid-area: imagem;
-            width: 95%;
+            grid-template-areas: 
+                "foto";
 
-            &__titulo {
-                color: $cor-preta;
-                font-weight: bold;
-                font-size: 2em;
-                grid-area: imagem;
+            &__foto {
+                border: solid $cor-branca 6px;
+                border-bottom: solid $cor-branca 50px;
+                filter: drop-shadow(1px 1px 1px $cor-preta);
+                grid-area: foto;
+                -moz-filter: drop-shadow(1px 1px 1px $cor-preta);
+                -webkit-filter: drop-shadow(1px 1px 1px $cor-preta);
                 justify-self: center;
-                position: relative;
-                top: 195px;
-                width: 95%;
+                width: 97%;
+            }
+
+            &__titulo{
+                align-self: end;
+                color: $cor-preta;
+                font-size: 2em;
+                font-weight: bold;
+                grid-area: foto;
+                justify-self: center;
+                margin-bottom: 0.5rem;
+                z-index: 1;
             }
         }
 
