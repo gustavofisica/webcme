@@ -920,6 +920,7 @@ header {
   transform: translate(-50%, -50%);
   transition: all 0.25s ease-out;
   max-width: 80vw;
+  max-height: 100%;
 }
 
 .escuro {
