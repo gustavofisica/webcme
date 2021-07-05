@@ -311,11 +311,20 @@ main {
 		grid-gap: 2rem 1rem;
 		padding: 0 4rem;
 
+		@media only screen and (max-width: 960px) {
+			grid-template-columns: repeat(1, 1fr);
+		}
+
 		&__pessoa {
 			display: grid;
 			grid-auto-flow: column;
 			grid-gap: 1rem;
 			grid-template-columns: auto 1fr;
+
+			@media only screen and (max-width: 495px) {
+				grid-auto-flow: row;
+				grid-template-columns: auto;
+			}
 
 			p {
 				margin-bottom: 1rem;
