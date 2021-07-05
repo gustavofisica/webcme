@@ -919,7 +919,7 @@ header {
   width: 89vw;
 }
 .imagem__equipamento {
-  width: 1fr;
+  width: 100%;
 }
 .imagem__galeria {
   width: 100%;
@@ -1271,6 +1271,11 @@ main {
   grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
   min-height: 25%;
   grid-gap: 1rem;
+}
+@media only screen and (max-width: 495px) {
+  .conteudo__equipamento__galeria {
+    grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
+  }
 }
 .conteudo__equipamento__galeria__foto {
   overflow: hidden;
