@@ -904,8 +904,8 @@ header {
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   border-radius: 4px;
-  height: 120px;
-  width: 120px;
+  max-height: 120px;
+  max-width: 120px;
 }
 .imagem__logo {
   padding: 1rem;
@@ -1307,6 +1307,7 @@ main {
 .conteudo__equipamento__modal img {
   grid-area: imagem;
   position: absolute;
+  padding-right: 4rem;
 }
 .conteudo__equipamento__modal figcaption {
   align-self: center;
@@ -1315,11 +1316,128 @@ main {
   grid-area: descricao;
   justify-self: center;
 }
+.conteudo__galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15%, 1fr));
+  min-height: 15%;
+  grid-gap: 1rem;
+  padding: 0 1rem;
+}
+.conteudo__galeria__foto {
+  overflow: hidden;
+}
+.conteudo__galeria__modal {
+  background: rgba(0, 0, 0, 0.8);
+  display: grid;
+  grid-template-rows: 3rem auto;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  transition: 0.25s ease-out;
+  width: 100%;
+  z-index: 10;
+}
+.conteudo__galeria__modal i {
+  align-self: start;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-size: 2em;
+  justify-self: end;
+  margin: 1rem 1rem 0 0;
+}
+.conteudo__galeria__modal__contexto {
+  align-self: center;
+  background-color: #467F8C;
+  border: solid #FFFFFF 6px;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-areas: "imagem aquisicao" "imagem pessoas";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  justify-self: center;
+  margin: 1rem;
+  padding: 1rem;
+  max-width: 70rem;
+}
+@media only screen and (max-width: 960px) {
+  .conteudo__galeria__modal__contexto {
+    grid-template-areas: "imagem" "aquisicao" "pessoas";
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto;
+  }
+}
+.conteudo__galeria__modal__contexto__imagem {
+  align-self: center;
+  display: grid;
+  grid-area: imagem;
+  grid-template-areas: "foto";
+}
+.conteudo__galeria__modal__contexto__imagem__foto {
+  border: solid #FFFFFF 6px;
+  border-bottom: solid #FFFFFF 50px;
+  filter: drop-shadow(1px 1px 1px #000000);
+  grid-area: foto;
+  -moz-filter: drop-shadow(1px 1px 1px #000000);
+  -webkit-filter: drop-shadow(1px 1px 1px #000000);
+  justify-self: center;
+  width: 97%;
+}
+@media only screen and (max-width: 960px) {
+  .conteudo__galeria__modal__contexto__imagem__foto {
+    width: 50vw;
+  }
+}
+.conteudo__galeria__modal__contexto__imagem__titulo {
+  align-self: end;
+  color: #000000;
+  font-size: 2em;
+  font-weight: bold;
+  grid-area: foto;
+  justify-self: center;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  z-index: 1;
+}
+@media only screen and (max-width: 960px) {
+  .conteudo__galeria__modal__contexto__imagem__titulo {
+    font-size: 2.4vw;
+  }
+}
+.conteudo__galeria__modal__contexto__aquisicao {
+  grid-area: aquisicao;
+}
+.conteudo__galeria__modal__contexto__pessoas {
+  grid-area: pessoas;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+}
+@media only screen and (max-width: 960px) {
+  .conteudo__galeria__modal__contexto__pessoas img {
+    height: 10vw;
+    width: 10vw;
+  }
+}
+.conteudo__galeria__modal__contexto h4 {
+  text-align: left;
+}
+.conteudo__galeria__modal__contexto p {
+  margin-bottom: 1rem;
+}
+@media only screen and (max-width: 960px) {
+  .conteudo__galeria__modal__contexto p {
+    margin-bottom: 0.3rem;
+  }
+}
 
 .abrir {
   opacity: 1;
   pointer-events: all;
-  z-index: 2;
+  z-index: 10;
 }
 
 body {
@@ -1469,12 +1587,17 @@ figure {
 .conteudo__portifolio__slideshow__slide__imagem__titulo {
   align-self: end;
   color: #000000;
-  font-size: 2em;
+  font-size: 1.9em;
   font-weight: bold;
   grid-area: foto;
   justify-self: center;
   margin-bottom: 0.5rem;
   z-index: 1;
+}
+@media only screen and (max-width: 960px) {
+  .conteudo__portifolio__slideshow__slide__imagem__titulo {
+    font-size: 5vw;
+  }
 }
 .conteudo__portifolio__slideshow__slide__aquisicao {
   grid-area: aquisicao;

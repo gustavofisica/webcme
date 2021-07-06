@@ -118,37 +118,90 @@ function trocaContraste() {
 altoContraste.addEventListener('click', trocaContraste);
 
 //Função da galeria de imagens
-let modal = document.querySelector('.conteudo__equipamento__modal');
-let btnFechar = document.querySelector('.conteudo__equipamento__modal i');
-let imagem = document.querySelectorAll('.conteudo__equipamento__galeria__foto img');
-let imagemModal = document.querySelector('.conteudo__equipamento__modal__imagem');
+let modal;
+let btnFechar;
+let imagem;
+let imagemModal;
 let textoModal = document.querySelector('.conteudo__equipamento__modal__descricao');
 
-imagem.forEach(imagem => {
-    imagem.addEventListener('click', () => {
-        modal.classList.add('abrir');
-        let srcModal = imagem.getAttribute("data-original");
-        imagemModal.src = srcModal;
-        let altTexto = imagem.alt;
-        textoModal.textContent = altTexto;
+let equipamentos = document.querySelector('.conteudo__equipamento');
+let galeria = document.querySelector('.conteudo__galeria');
+
+let imagemModalGaleria = document.querySelector('.conteudo__galeria__modal__contexto__imagem__foto');
+let textoAmostraModal = document.querySelector('.conteudo__galeria__modal__contexto__imagem__titulo');
+let textoEquipamentoModal = document.querySelector('#modal-galeria-equipamento');
+let textoDescricaoModal = document.querySelector('#modal-galeria-descricao');
+let pesquisadorDescricaoModal = document.querySelector('#modal-galeria-solicitante');
+let pesquisadorImagemModal = document.querySelector('#modal-galeria-solicitante-imagem');
+let departamentoDescricaoModal = document.querySelector('#modal-galeria-departamento');
+let tecnicoDescricaoModal = document.querySelector('#modal-galeria-tecnico');
+let tecnicoImagemModal = document.querySelector('#modal-galeria-tecnico-imagem');
+let cargoTecnicoDescricaoModal = document.querySelector('#modal-galeria-cargo');
+
+if (equipamentos != null) {
+    modal  = document.querySelector('.conteudo__equipamento__modal');
+    imagem = document.querySelectorAll('.conteudo__equipamento__galeria__foto img');
+    btnFechar = document.querySelector('.conteudo__equipamento__modal i');
+    imagemModal = document.querySelector('.conteudo__equipamento__modal__imagem');
+
+    imagem.forEach(imagem => {
+        imagem.addEventListener('click', () => {
+            modal.classList.add('abrir');
+            let srcModal = imagem.getAttribute("data-original");
+            imagemModal.src = srcModal;
+            let altTexto = imagem.alt;
+            textoModal.textContent = altTexto;
+        });
     });
-});
+
+} else if (galeria) {
+    modal  = document.querySelector('.conteudo__galeria__modal');
+    imagem = document.querySelectorAll('.conteudo__galeria__foto img');
+    btnFechar = document.querySelector('.conteudo__galeria__modal i');
+
+    imagem.forEach(imagem => {
+        imagem.addEventListener('click', () => {
+            modal.classList.add('abrir');
+            let srcModal = imagem.getAttribute("data-original");
+            let amostraModal = imagem.getAttribute("data-amostra");
+            let equipamentoModal = imagem.getAttribute("data-equipamento");
+            let descricaoModal = imagem.getAttribute("data-descricao");
+            let pesquisadorModal = imagem.getAttribute("data-pesquisador");
+            let pesquisadorSrcModal = imagem.getAttribute("data-pesquisadorImagem");
+            let departamentoModal = imagem.getAttribute("data-departamento");
+            let tecnicoModal = imagem.getAttribute("data-tecnico");
+            let tecnicoSrcModal = imagem.getAttribute("data-tecnicoImagem");
+            let cargoModal = imagem.getAttribute("data-cargo");
+            imagemModalGaleria.src = srcModal;
+            textoAmostraModal.textContent = amostraModal;
+            textoEquipamentoModal.textContent = equipamentoModal;
+            textoDescricaoModal.textContent = descricaoModal;
+            pesquisadorDescricaoModal.textContent = pesquisadorModal;
+            pesquisadorImagemModal.src = pesquisadorSrcModal;
+            departamentoDescricaoModal.textContent = departamentoModal;
+            tecnicoDescricaoModal.textContent = tecnicoModal;
+            tecnicoImagemModal.src = tecnicoSrcModal;
+            cargoTecnicoDescricaoModal.textContent = cargoModal;
+        });
+    });
+}
+
 
 if (modal != null) {
     modal.addEventListener('click', fecharModal);
     btnFechar.addEventListener('click', removeAbrirModal);
+
+    document.addEventListener('keydown', (e) => {
+        if (e.keyCode == 27) {
+            if (modal != null) {
+                removeAbrirModal();
+            }
+        }
+    });
 }
 
-document.addEventListener('keydown', (e) => {
-    if (e.keyCode == 27) {
-        if (modal != null) {
-            removeAbrirModal();
-        }
-    }
-});
-
 function fecharModal(e) {
-    if (e.target.classList.contains('conteudo__equipamento__modal')) {
+    if (e.target.classList.contains('conteudo__equipamento__modal') || e.target.classList.contains('conteudo__galeria__modal')) {
         removeAbrirModal();
     }
 }

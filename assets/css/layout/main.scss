@@ -410,9 +410,9 @@ main {
 			min-height: 25%;
 			grid-gap: 1rem;
 
-            @media only screen and (max-width: 495px) {
-                grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
-            }
+			@media only screen and (max-width: 495px) {
+				grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
+			}
 
 			&__foto {
 				overflow: hidden;
@@ -449,6 +449,7 @@ main {
 			img {
 				grid-area: imagem;
 				position: absolute;
+				padding-right: 4rem;
 			}
 
 			figcaption {
@@ -461,10 +462,141 @@ main {
 		}
 
 	}
+
+	&__galeria {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(15%, 1fr));
+		min-height: 15%;
+		grid-gap: 1rem;
+		padding: 0 1rem;
+
+		&__foto {
+			overflow: hidden;
+		}
+
+		&__modal {
+			background: rgba(0, 0, 0, 0.8);
+			display: grid;
+			grid-template-rows: 3rem auto;
+			height: 100%;
+			left: 0;
+			opacity: 0;
+			pointer-events: none;
+			position: fixed;
+			top: 0;
+			transition: 0.25s ease-out;
+			width: 100%;
+			z-index: 10;
+
+			i {
+				align-self: start;
+				color: $cor-branca;
+				cursor: pointer;
+				font-size: 2em;
+				justify-self: end;
+				margin: 1rem 1rem 0 0;
+			}
+
+			&__contexto {
+				align-self: center;
+				background-color: $cor-padrao;
+				border: solid $cor-branca 6px;
+				display: grid;
+				grid-gap: 1rem;
+				grid-template-areas:
+					"imagem aquisicao"
+					"imagem pessoas";
+				grid-template-columns: 1fr 1fr;
+				grid-template-rows: auto auto;
+				justify-self: center;
+				margin: 1rem;
+				padding: 1rem;
+				max-width: 70rem;
+
+				@media only screen and (max-width: 960px) {
+					grid-template-areas:
+						"imagem"
+						"aquisicao"
+						"pessoas";
+					grid-template-columns: auto;
+					grid-template-rows: auto auto auto;
+				}
+
+				&__imagem {
+					align-self: center;
+					display: grid;
+					grid-area: imagem;
+					grid-template-areas:
+						"foto";
+
+					&__foto {
+						border: solid $cor-branca 6px;
+						border-bottom: solid $cor-branca 50px;
+						filter: drop-shadow(1px 1px 1px $cor-preta);
+						grid-area: foto;
+						-moz-filter: drop-shadow(1px 1px 1px $cor-preta);
+						-webkit-filter: drop-shadow(1px 1px 1px $cor-preta);
+						justify-self: center;
+						width: 97%;
+
+						@media only screen and (max-width: 960px) {
+							width: 50vw;
+						}
+					}
+
+					&__titulo {
+						align-self: end;
+						color: $cor-preta;
+						font-size: 2em;
+						font-weight: bold;
+						grid-area: foto;
+						justify-self: center;
+						margin-bottom: 0.5rem;
+						text-align: center;
+						z-index: 1;
+
+						@media only screen and (max-width: 960px) {
+							font-size: 2.4vw;
+						}
+					}
+				}
+
+				&__aquisicao {
+					grid-area: aquisicao;
+				}
+
+				&__pessoas {
+					grid-area: pessoas;
+					display: grid;
+					grid-gap: 1rem;
+					grid-template-columns: auto 1fr;
+					grid-template-rows: auto auto;
+
+					img{
+						@media only screen and (max-width: 960px) {
+							height: 10vw;
+							width: 10vw;
+						}
+					}
+				}
+
+				h4 {
+					text-align: left;
+				}
+
+				p {
+					margin-bottom: 1rem;
+					@media only screen and (max-width: 960px) {
+						margin-bottom: 0.3rem;
+					}
+				}
+			}
+		}
+	}
 }
 
 .abrir {
 	opacity: 1;
 	pointer-events: all;
-	z-index: 2;
+	z-index: 10;
 }

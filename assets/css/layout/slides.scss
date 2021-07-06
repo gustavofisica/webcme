@@ -48,12 +48,16 @@
             &__titulo{
                 align-self: end;
                 color: $cor-preta;
-                font-size: 2em;
+                font-size: 1.9em;
                 font-weight: bold;
                 grid-area: foto;
                 justify-self: center;
                 margin-bottom: 0.5rem;
                 z-index: 1;
+
+                @media only screen and (max-width: 960px) {
+                    font-size: 5vw;
+                }
             }
         }
 
