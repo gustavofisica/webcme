@@ -33,12 +33,12 @@ menuTogle.addEventListener("click", (e) => {
     }
 });
 
-//Função de Menu Rodapé
+//Funções de Menu Rodapé
 var titulo = document.querySelectorAll('.rodape__links__divisao__titulo');
 var lista = document.querySelectorAll('.rodape__links__divisao__lista');
 
 for (let i = 0; i < titulo.length; i++) {
-    titulo[i].addEventListener("click", (e) => {
+    titulo[i].addEventListener("click", () => {
         if (lista[i].style.display != "block") {
             lista[i].style.display = "block";
         } else {
@@ -49,7 +49,7 @@ for (let i = 0; i < titulo.length; i++) {
 
 }
 
-//Função do Slider
+//Funções do Slider
 
 var portifolio = document.querySelector('.conteudo__portifolio');
 if (portifolio != null) {
@@ -117,7 +117,7 @@ function trocaContraste() {
 
 altoContraste.addEventListener('click', trocaContraste);
 
-//Função da galeria de imagens
+//Funções da galeria de imagens
 let modal;
 let btnFechar;
 let imagem;
@@ -139,7 +139,7 @@ let tecnicoImagemModal = document.querySelector('#modal-galeria-tecnico-imagem')
 let cargoTecnicoDescricaoModal = document.querySelector('#modal-galeria-cargo');
 
 if (equipamentos != null) {
-    modal  = document.querySelector('.conteudo__equipamento__modal');
+    modal = document.querySelector('.conteudo__equipamento__modal');
     imagem = document.querySelectorAll('.conteudo__equipamento__galeria__foto img');
     btnFechar = document.querySelector('.conteudo__equipamento__modal i');
     imagemModal = document.querySelector('.conteudo__equipamento__modal__imagem');
@@ -155,7 +155,7 @@ if (equipamentos != null) {
     });
 
 } else if (galeria) {
-    modal  = document.querySelector('.conteudo__galeria__modal');
+    modal = document.querySelector('.conteudo__galeria__modal');
     imagem = document.querySelectorAll('.conteudo__galeria__foto img');
     btnFechar = document.querySelector('.conteudo__galeria__modal i');
 
@@ -209,3 +209,30 @@ function fecharModal(e) {
 function removeAbrirModal() {
     modal.classList.remove('abrir');
 }
+
+// Funnções de estatíticas
+
+function selecionaValor() {
+    let seletor = document.querySelector('.conteudo__estatisticas__formulario__selecao');
+    let opcao = seletor.value;
+    let sections = ['porEquipamentos', 'porDepartamentos', 'tabelaDeValores'];
+
+    sections.forEach(section => {
+        if (section != opcao) {
+            let sectionOcultada = document.querySelector('#' + section)
+            sectionOcultada.style.display = "none"
+        } else{
+            let sectionMostrada = document.querySelector('#' + section)
+            sectionMostrada.style.display = "grid"
+        }
+    });
+}
+
+function selecionaAno(){
+    let seletor = document.querySelector('.conteudo__estatisticas__equipamentos__equipamento__informacoes__ano');
+    let opcao = seletor.value;
+    console.log(opcao)
+}
+
+
+

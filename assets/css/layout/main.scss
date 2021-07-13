@@ -142,7 +142,7 @@ main {
 		}
 	}
 
-	&__estatisticas {
+	&__estatistica {
 		grid-area: estatisticas;
 		padding: 0 1rem;
 		text-align: center;
@@ -572,7 +572,7 @@ main {
 					grid-template-columns: auto 1fr;
 					grid-template-rows: auto auto;
 
-					img{
+					img {
 						@media only screen and (max-width: 960px) {
 							height: 10vw;
 							width: 10vw;
@@ -586,11 +586,201 @@ main {
 
 				p {
 					margin-bottom: 1rem;
+
 					@media only screen and (max-width: 960px) {
 						margin-bottom: 0.3rem;
 					}
 				}
 			}
+		}
+	}
+
+	&--estatisticas {
+		display: grid;
+		grid-auto-flow: row;
+		grid-gap: 1rem;
+		width: 100%;
+	}
+
+	&__estatisticas {
+		padding: 0 1rem;
+
+		&__formulario {
+			display: grid;
+			justify-self: center;
+			padding: 0 1rem;
+			border-bottom: solid 1px lightgray;
+
+			select {
+				justify-self: end;
+				padding: 0 1rem;
+				width: 13rem;
+			}
+		}
+
+		&__equipamentos {
+			&__equipamento {
+				display: grid;
+				grid-gap: 1rem;
+				grid-template-areas:
+					"titulo titulo"
+					"foto informacoes"
+					"foto grafico";
+				grid-template-columns: 1fr 1fr;
+				grid-template-rows: auto auto auto;
+				padding: 1rem;
+
+				@media only screen and (max-width: 960px) {
+					grid-template-areas:
+						"titulo"
+						"foto"
+						"informacoes"
+						"grafico";
+					grid-template-columns: auto;
+					grid-template-rows: auto auto auto auto;
+				}
+
+				&__titulo {
+					grid-area: titulo;
+				}
+
+				&__foto {
+					grid-area: foto;
+				}
+
+				&__informacoes {
+					display: grid;
+					grid-area: informacoes;
+					grid-gap: 0 1rem;
+					grid-template-columns: auto 1fr;
+
+					@media only screen and (max-width: 960px) {
+						grid-gap: 0.5rem;
+						grid-template-columns: auto;
+					}
+
+					h4 {
+						text-align: left !important;
+
+						@media only screen and (max-width: 960px) {
+							text-align: center !important;
+							margin-bottom: 0;
+						}
+					}
+
+					p {
+						@media only screen and (max-width: 960px) {
+							text-align: center;
+						}
+					}
+
+					select{
+						height: auto;
+						padding-left: 0.5rem;
+						width: 5rem;
+
+						@media only screen and (max-width: 960px) {
+							justify-self: center;
+							width: 5rem;
+						}
+					}
+
+				}
+
+				&__grafico {
+					grid-area: grafico;
+
+					&__opcoes {
+						display: grid;
+						grid-gap: 1rem;
+						grid-template-columns: 1fr 1fr;
+
+						button {
+							font-size: 1em;
+							margin: 0;
+							padding: 0.5rem 0;
+						}
+					}
+				}
+			}
+		}
+
+		&__departamentos {
+			display: none;
+			padding: 1rem;
+
+			&__departamento {
+				display: grid;
+				grid-gap: 1rem;
+				grid-template-areas:
+					"titulo informacoes"
+					"titulo grafico";
+
+				grid-template-columns: 5rem auto;
+				grid-template-rows: auto auto;
+				margin-top: 1rem;
+
+				&__titulo {
+					align-self: center;
+					justify-self: center;
+					display: grid;
+					grid-area: titulo;
+					writing-mode: vertical-lr;
+					text-orientation: upright;
+					background-color: $cor-secundaria-auxiliar;
+					padding: 0 1rem;
+					height: 100%;
+					color: $cor-branca;
+				}
+
+				&__informacoes {
+					display: grid;
+					grid-area: informacoes;
+					grid-gap: 0 1rem;
+					grid-template-columns: auto 1fr;
+
+					@media only screen and (max-width: 960px) {
+						grid-gap: 0.5rem;
+						grid-template-columns: auto;
+					}
+
+					h4 {
+						text-align: left !important;
+
+						@media only screen and (max-width: 960px) {
+							text-align: center !important;
+							margin-bottom: 0;
+						}
+					}
+
+					p {
+						@media only screen and (max-width: 960px) {
+							text-align: center;
+						}
+					}
+				}
+
+				&__grafico {
+					grid-area: grafico;
+
+					&__opcoes {
+						display: grid;
+						grid-gap: 1rem;
+						grid-template-columns: 1fr 1fr;
+
+						button {
+							font-size: 1em;
+							margin: 0;
+							padding: 0.5rem 0;
+						}
+					}
+				}
+			}
+		}
+
+		&__tabela {
+			display: none;
+			padding: 1rem;
 		}
 	}
 }

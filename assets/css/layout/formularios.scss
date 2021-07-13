@@ -7,7 +7,8 @@ form {
     }
 
     input,
-    textarea {
+    textarea,
+    select {
         border: 1px solid $cor-preta;
         @include border-radius(4px);
         height: 3rem;
@@ -79,7 +80,7 @@ form {
             width: calc(100% - 3.5rem);
         }
 
-        i{
+        i {
             font-size: 2em;
             padding-left: 0.5rem;
             width: fit-content;
@@ -120,7 +121,7 @@ form {
     align-items: center;
     grid-area: pesquisa;
     display: grid;
-    grid-template: 
+    grid-template:
         "input";
 
     @media only screen and (max-width: 960px) {
@@ -138,7 +139,7 @@ form {
         width: 250px;
     }
 
-    button{
+    button {
         background-color: transparent;
         color: $cor-preta;
         font-size: 1.3em;
