@@ -1058,6 +1058,56 @@ main {
 .conteudo__noticias article p {
   grid-area: noticia;
 }
+.conteudo__noticias__contexto {
+  display: grid;
+  grid-template-areas: "artigo categorias" "navegacao categorias";
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+}
+.conteudo__noticias__contexto article {
+  display: grid;
+  grid-area: artigo;
+  grid-template-areas: "titulo data" "noticia noticia";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  margin-top: 1rem;
+  padding: 0 1rem;
+}
+.conteudo__noticias__contexto article h3 {
+  grid-area: titulo;
+  justify-self: start;
+}
+.conteudo__noticias__contexto article h4 {
+  color: darkgray;
+  grid-area: data;
+  justify-self: end;
+}
+.conteudo__noticias__contexto__texto {
+  grid-area: noticia;
+}
+.conteudo__noticias__contexto__categorias {
+  border-left: 1px solid #000000;
+  grid-area: categorias;
+  padding-left: 1rem;
+}
+.conteudo__noticias__contexto__navegacao {
+  display: flex;
+  grid-area: navegacao;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+.conteudo__noticias__contexto__navegacao a {
+  align-self: flex-end;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.conteudo__noticias__contexto__navegacao a span, .conteudo__noticias__contexto__navegacao a i {
+  align-self: center;
+  font-size: 1.2em;
+  margin: 0 0.25rem;
+}
 .conteudo__estatistica {
   grid-area: estatisticas;
   padding: 0 1rem;
@@ -1892,4 +1942,9 @@ p {
 
 strong {
   font-weight: bold;
+}
+
+#leia-mais {
+  color: #8EA638;
+  text-decoration: underline;
 }
