@@ -172,7 +172,7 @@ main {
 				}
 			}
 
-			&__texto {
+			&__texto{
 				grid-area: noticia;
 			}
 
@@ -195,8 +195,7 @@ main {
 					flex-direction: row;
 					justify-content: space-between;
 
-					span,
-					i {
+					span, i{
 						align-self: center;
 						font-size: 1.2em;
 						margin: 0 0.25rem;
@@ -408,39 +407,22 @@ main {
 		flex-direction: column;
 	}
 
-	&--formularios {
-		align-items: end;
+	&--formulario {
 		display: grid;
-		grid-gap: 1rem;
 		grid-template-areas:
-			"logo-sistema"
 			"titulo"
-			"subtitulo"
-			"conteudo";
+			"formulario";
+		grid-template-columns: auto;
+		grid-template-rows: auto auto;
 		width: 100%;
-
-		img {
-			grid-area: logo-sistema;
-			justify-self: center;
-		}
 
 		h2 {
 			grid-area: titulo;
 		}
 
-		h3{
-			grid-area: subtitulo;
+		form {
+			grid-area: fomrulario;
 		}
-
-		section {
-			grid-area: conteudo;
-			padding: 0 4rem;
-
-			p {
-				margin: 1rem 0;
-			}
-		}
-
 	}
 
 	&--imagens {
