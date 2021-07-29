@@ -336,11 +336,11 @@ footer {
 }
 
 form {
-  font-size: 1.2em;
+  font-size: 1.1em;
 }
 form label,
 form legend {
-  font-size: 1.4em;
+  font-size: 1.2em;
 }
 form input,
 form textarea,
@@ -349,10 +349,14 @@ form select {
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   border-radius: 4px;
+  font-size: medium;
   height: 3rem;
   margin: 1rem 0;
+  padding: 0 0.5rem;
+  width: calc(100% - 1.05rem);
+}
+form select {
   width: 100%;
-  font-size: medium;
 }
 form textarea {
   height: 200px;
@@ -412,29 +416,526 @@ form button:hover {
   padding-left: 0.5rem;
   width: fit-content;
 }
-.formulario__email {
+.formulario--login a {
+  color: #768C45;
+  text-decoration: underline;
+}
+.formulario--login .formulario__nome {
+  grid-area: nome;
+}
+.formulario--login .formulario__nome__input {
+  grid-area: input-nome;
+}
+.formulario--login .formulario__nome__icone {
+  grid-area: input-nome;
+}
+.formulario--login .formulario__email {
   grid-area: email;
 }
-.formulario__email__input {
+.formulario--login .formulario__email__input {
   grid-area: input-email;
 }
-.formulario__email__icone {
+.formulario--login .formulario__email__icone {
   grid-area: input-email;
 }
-.formulario__senha {
+.formulario--login .formulario__senha {
   grid-area: senha;
 }
-.formulario__senha__input {
+.formulario--login .formulario__senha__input {
   grid-area: input-senha;
 }
-.formulario__senha__icone {
+.formulario--login .formulario__senha__icone {
   grid-area: input-senha;
+}
+.formulario--login .formulario__senha__icone__revela {
+  grid-area: input-senha;
+  justify-self: end;
+}
+.formulario--login .formulario__botao {
+  grid-area: botao;
+}
+.formulario--cadastro {
+  align-items: center;
+  border: solid 1px #6FB7BF;
+  display: grid;
+  grid-template-areas: "nome" "input-nome" "botao";
+  grid-template-columns: auto;
+  grid-template-rows: auto auto auto;
+  margin: 1rem auto;
+  padding: 2rem;
+  width: 40vw;
+}
+@media only screen and (max-width: 960px) {
+  .formulario--cadastro {
+    width: 60vw;
+  }
+}
+@media only screen and (max-width: 495px) {
+  .formulario--cadastro {
+    width: 75vw;
+  }
+}
+.formulario--cadastro input {
+  padding-left: 3.5rem;
+  width: calc(100% - 3.5rem);
+}
+.formulario--cadastro i {
+  font-size: 2em;
+  padding-left: 0.5rem;
+  width: fit-content;
+}
+.formulario--cadastro .formulario__nome {
+  grid-area: nome;
+}
+.formulario--cadastro .formulario__nome__input {
+  grid-area: input-nome;
+}
+.formulario--cadastro .formulario__nome__icone {
+  grid-area: input-nome;
+}
+.formulario--cadastro-docente {
+  display: grid;
+  grid-template-areas: "foto foto" "nome sobrenome" "ramal celular" "email lattes" "instituicao departamentos" "discentes discentes" "senha senha-confirmacao" "sugestao sugestao" "aceites botao";
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+}
+@media only screen and (max-width: 960px) {
+  .formulario--cadastro-docente {
+    grid-template-areas: "foto" "nome" "sobrenome" "ramal" "celular" "email" "lattes" "instituicao" "departamentos" "discentes" "senha" "senha-confirmacao" "sugestao" "aceites" "botao";
+    grid-template-columns: auto;
+  }
+}
+.formulario--cadastro-docente .formulario__foto {
+  align-items: center;
+  display: grid;
+  grid-area: foto;
+  grid-gap: 1rem;
+  grid-template-areas: "preview upload";
+  grid-template-columns: auto 1fr;
+}
+@media only screen and (max-width: 960px) {
+  .formulario--cadastro-docente .formulario__foto {
+    grid-template-areas: "preview" "upload";
+    grid-template-columns: auto;
+  }
+}
+.formulario--cadastro-docente .formulario__foto__upload {
+  grid-area: upload;
+}
+.formulario--cadastro-docente .formulario__foto__upload input {
+  border: none;
+}
+.formulario--cadastro-docente .formulario__foto__preview {
+  grid-area: preview;
+  justify-self: start;
+}
+@media only screen and (max-width: 960px) {
+  .formulario--cadastro-docente .formulario__foto__preview {
+    justify-self: center;
+  }
+}
+.formulario--cadastro-docente .formulario__nome {
+  grid-area: nome;
+}
+.formulario--cadastro-docente .formulario__sobrenome {
+  grid-area: sobrenome;
+}
+.formulario--cadastro-docente .formulario__ramal {
+  grid-area: ramal;
+}
+.formulario--cadastro-docente .formulario__celular {
+  grid-area: celular;
+}
+.formulario--cadastro-docente .formulario__email {
+  grid-area: email;
+}
+.formulario--cadastro-docente .formulario__lattes {
+  grid-area: lattes;
+}
+.formulario--cadastro-docente .formulario__instituicao {
+  grid-area: instituicao;
+}
+.formulario--cadastro-docente .formulario__departamentos {
+  grid-area: departamentos;
+}
+.formulario--cadastro-docente .formulario__departamentos h3 {
+  text-align: left;
+}
+.formulario--cadastro-docente .formulario__departamentos__departamento {
+  align-items: center;
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 1rem;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto;
+}
+.formulario--cadastro-docente .formulario__departamentos__departamento__input {
+  height: 1.5rem;
+  margin: 0.5rem;
+  width: 1.5rem;
+}
+.formulario--cadastro-docente .formulario__departamentos__controle {
+  text-align: right;
+}
+.formulario--cadastro-docente .formulario__discentes {
+  grid-area: discentes;
+}
+.formulario--cadastro-docente .formulario__discentes__discente {
+  border: solid 1px #6FB7BF;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-areas: "remove remove" "nome email" "vinculo inicio" "departamento departamento";
+  grid-template-columns: 1fr 1fr;
+  margin-top: 1rem;
+  padding: 1rem;
+}
+@media only screen and (max-width: 960px) {
+  .formulario--cadastro-docente .formulario__discentes__discente {
+    grid-template-areas: "remove" "nome" "email" "vinculo" "inicio" "departamento";
+    grid-template-columns: auto;
+  }
+}
+.formulario--cadastro-docente .formulario__discentes__discente__remove {
+  color: red;
+  cursor: pointer;
+  grid-area: remove;
+  justify-self: end;
+}
+.formulario--cadastro-docente .formulario__discentes__discente__nome {
+  grid-area: nome;
+}
+.formulario--cadastro-docente .formulario__discentes__discente__email {
+  grid-area: email;
+}
+.formulario--cadastro-docente .formulario__discentes__discente__vinculo {
+  grid-area: vinculo;
+}
+.formulario--cadastro-docente .formulario__discentes__discente__inicio {
+  grid-area: inicio;
+}
+.formulario--cadastro-docente .formulario__discentes__controle {
+  text-align: right;
+}
+.formulario--cadastro-docente .formulario__senha {
+  display: grid;
+  grid-template-areas: "label" "input";
+  grid-area: senha;
+}
+.formulario--cadastro-docente .formulario__senha label {
+  grid-area: label;
+}
+.formulario--cadastro-docente .formulario__senha input {
+  align-self: center;
+  grid-area: input;
+}
+.formulario--cadastro-docente .formulario__senha i {
+  align-self: center;
+  cursor: pointer;
+  font-size: 1.5em;
+  grid-area: input;
+  justify-self: end;
+  margin-right: 0.5rem;
+}
+.formulario--cadastro-docente .formulario__senha__confirmacao {
+  display: grid;
+  grid-template-areas: "label" "input";
+  grid-area: senha-confirmacao;
+}
+.formulario--cadastro-docente .formulario__senha__confirmacao label {
+  grid-area: label;
+}
+.formulario--cadastro-docente .formulario__senha__confirmacao input {
+  align-self: center;
+  grid-area: input;
+}
+.formulario--cadastro-docente .formulario__senha__confirmacao i {
+  align-self: center;
+  cursor: pointer;
+  font-size: 1.5em;
+  grid-area: input;
+  justify-self: end;
+  margin-right: 0.5rem;
+}
+.formulario--cadastro-docente .formulario #sugestao {
+  grid-area: sugestao;
+  justify-self: end;
+}
+.formulario--cadastro-docente .formulario__aceitacao {
+  align-items: center;
+  display: grid;
+  grid-area: aceites;
+  grid-auto-flow: column;
+  grid-gap: 1rem;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto;
+}
+.formulario--cadastro-docente .formulario__aceitacao__input {
+  height: 1.5rem;
+  margin: 0.5rem;
+  width: 1.5rem;
+}
+.formulario--cadastro-docente .formulario__aceitacao a {
+  color: #8EA638;
+}
+.formulario--cadastro-docente .formulario__botao {
+  grid-area: botao;
+}
+.formulario--cadastro-discente {
+  display: grid;
+  grid-template-areas: "foto foto" "nome sobrenome" "email celular" "orientador orientador" "setor departamento" "vinculo inicio" "senha senha-confirmacao" "sugestao sugestao" "aceites botao";
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+}
+@media only screen and (max-width: 960px) {
+  .formulario--cadastro-discente {
+    grid-template-areas: "foto" "nome" "sobrenome" "email" "celular" "orientador" "orientador" "setor" "departamento" "vinculo" "inicio" "senha" "senha-confirmacao" "sugestao" "aceites" "botao";
+    grid-template-columns: auto;
+  }
+}
+.formulario--cadastro-discente .formulario__foto {
+  align-items: center;
+  display: grid;
+  grid-area: foto;
+  grid-gap: 1rem;
+  grid-template-areas: "preview upload";
+  grid-template-columns: auto 1fr;
+}
+@media only screen and (max-width: 960px) {
+  .formulario--cadastro-discente .formulario__foto {
+    grid-template-areas: "preview" "upload";
+    grid-template-columns: auto;
+  }
+}
+.formulario--cadastro-discente .formulario__foto__upload {
+  grid-area: upload;
+}
+.formulario--cadastro-discente .formulario__foto__upload input {
+  border: none;
+}
+.formulario--cadastro-discente .formulario__foto__preview {
+  grid-area: preview;
+  justify-self: start;
+}
+@media only screen and (max-width: 960px) {
+  .formulario--cadastro-discente .formulario__foto__preview {
+    justify-self: center;
+  }
+}
+.formulario--cadastro-discente .formulario__nome {
+  grid-area: nome;
+}
+.formulario--cadastro-discente .formulario__sobrenome {
+  grid-area: sobrenome;
+}
+.formulario--cadastro-discente .formulario__email {
+  grid-area: email;
+}
+.formulario--cadastro-discente .formulario__celular {
+  grid-area: celular;
+}
+.formulario--cadastro-discente .formulario__orientador {
+  grid-area: orientador;
+}
+.formulario--cadastro-discente .formulario__orientador__descricao {
+  border: solid 1px #6FB7BF;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-areas: "orientador-nome orientador-email";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  margin-top: 1rem;
+  padding: 1rem;
+}
+.formulario--cadastro-discente .formulario__orientador__descricao__nome {
+  grid-area: orientador-nome;
+}
+.formulario--cadastro-discente .formulario__orientador__descricao__email {
+  grid-area: orientador-email;
+}
+.formulario--cadastro-discente .formulario__setor {
+  grid-area: setor;
+}
+.formulario--cadastro-discente .formulario__departamento {
+  grid-area: departamento;
+}
+.formulario--cadastro-discente .formulario__vinculo {
+  grid-area: vinculo;
+}
+.formulario--cadastro-discente .formulario__inicio {
+  grid-area: inicio;
+}
+.formulario--cadastro-externos {
+  display: grid;
+  grid-template-areas: "tipo tipo" "instituicao instituicao" "titulo-responsavel titulo-responsavel" "foto foto" "nome sobrenome" "email celular" "senha senha-confirmacao" "sugestao sugestao" "aceites botao";
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+}
+.formulario--cadastro-externos .formulario__tipo {
+  display: grid;
+  grid-area: tipo;
+  grid-auto-flow: row;
+}
+.formulario--cadastro-externos .formulario__tipo__escolha {
+  align-items: center;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: auto 1fr auto 1fr;
+}
+.formulario--cadastro-externos .formulario__tipo__escolha input {
+  height: 1.05rem;
+  margin: 0.5rem;
+  width: 1.5rem;
+}
+.formulario--cadastro-externos .formulario__instituicao {
+  border: solid 1px #6FB7BF;
+  display: grid;
+  grid-area: instituicao;
+  grid-gap: 1rem;
+  grid-template-areas: "titulo titulo" "razao cnpj" "cep uf" "cidade bairro" "rua numero" "complemento telefone";
+  padding: 1rem;
+}
+.formulario--cadastro-externos .formulario__instituicao__titulo {
+  grid-area: titulo;
+}
+.formulario--cadastro-externos .formulario__instituicao__razao {
+  grid-area: razao;
+}
+.formulario--cadastro-externos .formulario__instituicao__cnpj {
+  grid-area: cnpj;
+}
+.formulario--cadastro-externos .formulario__instituicao__cep {
+  grid-area: cep;
+}
+.formulario--cadastro-externos .formulario__instituicao__rua {
+  grid-area: rua;
+}
+.formulario--cadastro-externos .formulario__instituicao__bairro {
+  grid-area: bairro;
+}
+.formulario--cadastro-externos .formulario__instituicao__cidade {
+  grid-area: cidade;
+}
+.formulario--cadastro-externos .formulario__instituicao__uf {
+  grid-area: uf;
+}
+.formulario--cadastro-externos .formulario__instituicao__numero {
+  grid-area: numero;
+}
+.formulario--cadastro-externos .formulario__instituicao__complemento {
+  grid-area: complemento;
+}
+.formulario--cadastro-externos .formulario__instituicao__telefone {
+  grid-area: telefone;
+}
+.formulario--cadastro-externos .formulario__titulo--responsavel {
+  grid-area: titulo-responsavel;
+}
+.formulario--cadastro-externos .formulario__foto {
+  align-items: center;
+  display: grid;
+  grid-area: foto;
+  grid-gap: 1rem;
+  grid-template-areas: "preview upload";
+  grid-template-columns: auto 1fr;
+}
+@media only screen and (max-width: 960px) {
+  .formulario--cadastro-externos .formulario__foto {
+    grid-template-areas: "preview" "upload";
+    grid-template-columns: auto;
+  }
+}
+.formulario--cadastro-externos .formulario__foto__upload {
+  grid-area: upload;
+}
+.formulario--cadastro-externos .formulario__foto__upload input {
+  border: none;
+}
+.formulario--cadastro-externos .formulario__foto__preview {
+  grid-area: preview;
+  justify-self: start;
+}
+@media only screen and (max-width: 960px) {
+  .formulario--cadastro-externos .formulario__foto__preview {
+    justify-self: center;
+  }
+}
+.formulario--cadastro-externos .formulario__reponsavel__nome {
+  grid-area: nome;
+}
+.formulario--cadastro-externos .formulario__reponsavel__sobrenome {
+  grid-area: sobrenome;
+}
+.formulario--cadastro-externos .formulario__reponsavel__email {
+  grid-area: email;
+}
+.formulario--cadastro-externos .formulario__reponsavel__celular {
+  grid-area: celular;
+}
+.formulario__senha {
+  display: grid;
+  grid-template-areas: "label" "input";
+  grid-area: senha;
+}
+.formulario__senha label {
+  grid-area: label;
+}
+.formulario__senha input {
+  align-self: center;
+  grid-area: input;
+}
+.formulario__senha i {
+  align-self: center;
+  cursor: pointer;
+  font-size: 1.5em;
+  grid-area: input;
+  justify-self: end;
+  margin-right: 0.5rem;
+}
+.formulario__senha__confirmacao {
+  display: grid;
+  grid-template-areas: "label" "input";
+  grid-area: senha-confirmacao;
+}
+.formulario__senha__confirmacao label {
+  grid-area: label;
+}
+.formulario__senha__confirmacao input {
+  align-self: center;
+  grid-area: input;
+}
+.formulario__senha__confirmacao i {
+  align-self: center;
+  cursor: pointer;
+  font-size: 1.5em;
+  grid-area: input;
+  justify-self: end;
+  margin-right: 0.5rem;
+}
+.formulario #sugestao {
+  grid-area: sugestao;
+  justify-self: end;
+}
+.formulario__aceitacao {
+  align-items: center;
+  display: grid;
+  grid-area: aceites;
+  grid-auto-flow: column;
+  grid-gap: 1rem;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto;
+}
+.formulario__aceitacao__input {
+  height: 1.5rem;
+  margin: 0.5rem;
+  width: 1.5rem;
+}
+.formulario__aceitacao a {
+  color: #8EA638;
 }
 .formulario__botao {
   grid-area: botao;
 }
 
-/******Formulário de Pesquisa******/
 #searchform {
   align-items: center;
   grid-area: pesquisa;
@@ -469,6 +970,14 @@ form button:hover {
 }
 #searchform label {
   display: none;
+}
+
+#sugestao {
+  color: red;
+  font-size: 1em;
+}
+#sugestao i {
+  font-size: 1em;
 }
 
 header {
@@ -1103,7 +1612,8 @@ main {
   flex-direction: row;
   justify-content: space-between;
 }
-.conteudo__noticias__contexto__navegacao a span, .conteudo__noticias__contexto__navegacao a i {
+.conteudo__noticias__contexto__navegacao a span,
+.conteudo__noticias__contexto__navegacao a i {
   align-self: center;
   font-size: 1.2em;
   margin: 0 0.25rem;
@@ -1272,18 +1782,29 @@ main {
   display: flex;
   flex-direction: column;
 }
-.conteudo--formulario {
+.conteudo--formularios {
+  align-items: end;
   display: grid;
-  grid-template-areas: "titulo" "formulario";
-  grid-template-columns: auto;
-  grid-template-rows: auto auto;
+  grid-gap: 1rem;
+  grid-template-areas: "logo-sistema" "titulo" "subtitulo" "conteudo";
   width: 100%;
 }
-.conteudo--formulario h2 {
+.conteudo--formularios img {
+  grid-area: logo-sistema;
+  justify-self: center;
+}
+.conteudo--formularios h2 {
   grid-area: titulo;
 }
-.conteudo--formulario form {
-  grid-area: fomrulario;
+.conteudo--formularios h3 {
+  grid-area: subtitulo;
+}
+.conteudo--formularios section {
+  grid-area: conteudo;
+  padding: 0 4rem;
+}
+.conteudo--formularios section p {
+  margin: 1rem 0;
 }
 .conteudo--imagens {
   display: grid;
@@ -1939,6 +2460,9 @@ p {
   line-height: 1.3em;
   text-align: justify;
 }
+p a {
+  color: #768C45;
+}
 
 strong {
   font-weight: bold;
@@ -1947,4 +2471,16 @@ strong {
 #leia-mais {
   color: #8EA638;
   text-decoration: underline;
+}
+
+.fa-plus {
+  color: #8EA638;
+  cursor: pointer;
+  margin: 0.5rem;
+}
+
+.fa-minus {
+  color: red;
+  cursor: pointer;
+  margin: 0.5rem;
 }

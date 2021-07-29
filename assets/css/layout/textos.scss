@@ -31,6 +31,10 @@ p{
     font-size: 1.1em;
     line-height: 1.3em;
     text-align: justify;
+
+    a{
+        color: $cor-secundaria;
+    }
 }
 
 strong{
@@ -40,4 +44,16 @@ strong{
 #leia-mais{
     color: $cor-secundaria-auxiliar;
     text-decoration: underline;
+}
+
+.fa-plus{
+    color:$cor-secundaria-auxiliar;
+    cursor: pointer;
+    margin: 0.5rem;
+}
+
+.fa-minus{
+    color:red;
+    cursor: pointer;
+    margin: 0.5rem;
 }

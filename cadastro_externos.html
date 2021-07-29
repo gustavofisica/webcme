@@ -189,24 +189,140 @@
         <a name="conteudo-principal" id="conteudo-principal"></a>
     </header>
     <main class="conteudo--formularios">
-        <img class="conteudo__sistema__logo imagem__atalho" id="Icone-Sistema-CME" src="assets/img/Icone-Sistema-CME.svg" alt="Formulários">
+        <img class="conteudo__sistema__logo imagem__atalho" id="Icone-Sistema-CME"
+            src="assets/img/Icone-Sistema-CME.svg" alt="Formulários">
         <h2>Sistema de Gerenciamento</h2>
-        <h3>Cadastro</h3>
-        <section>            
-            <p><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Nosso sistema faz consulta no <a
-                    href="https://www.prppg.ufpr.br/siga/" target="_blank" rel="noopener noreferrer">SIGA</a> para
-                verificar seus possíveis vínculos com a <a href="https://www.ufpr.br/portalufpr/" target="_blank"
-                    rel="noopener noreferrer">UFPR</a>. Isso é determinante para estabelecer descontos de cobranças dos
-                serviços prestados pelo CME, descriminados na <a href="servicos_precos.html">Tabela de Serviços e
-                    Preços</a>.</p>
-            <p><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Caso você não tenha esse vínculo, <a href="cadastro_externos.html">clique aqui</a> para realizar cadastro de usuários externos.</p>
-            <form class="formulario--cadastro" action="" method="POST">
-                <label class="formulario__nome" for="nome"><b>Nome Completo</b></label>
-                <input class="formulario__nome__input" type="text" name="nome" id="nome" required
-                    placeholder="Digite seu nome completo">
-                <i class="fa fa-user formulario__nome__icone"></i>
-                <span id="sugestao"><i class="fa fa-times-circle" aria-hidden="true"></i> Não foi possível encontrar seu vínculo</span>
-                <button class="formulario__botao" type="submit">Próximo passo</button>
+        <h3>Cadastro de Externos</h3>
+        <section>
+            <form class="formulario--cadastro-externos" action="" method="POST">
+                <fieldset class="formulario__tipo">
+                    <h4 class="formulario__tipo__titulo">Tipo de instituição</h4>
+                    <div class="formulario__tipo__escolha">
+                        <input class="formulario__tipo__escolha__input--publico" type="radio" name="tipo-instituicao"
+                            id="publicos" value="publicos" required>
+                        <label class="formulario__tipo__escolha__label--publico" for="publicos">Universidade Pública ou
+                            Órgão Público</label>
+                        <input class="formulario__tipo__escolha__input--privado" type="radio" name="tipo-instituicao"
+                            id="privados" value="privados" required>
+                        <label class="formulario__tipo__escolha__label--privado" for="privados">Instituição
+                            Privada</label>
+                    </div>
+                </fieldset>
+                <div class="formulario__instituicao">
+                    <h4 class="formulario__instituicao__titulo">Dados da Instituição</h4>
+                    <fieldset class="formulario__instituicao__razao">
+                        <label class="formulario__instituicao__razao__label" for="razao"><b>Razão Social</b></label>
+                        <input class="formulario__instituicao__razao__input" type="text" name="razao" id="razao" required
+                            placeholder="Digite a razão social da instuição" value="">
+                    </fieldset>
+                    <fieldset class="formulario__instituicao__cnpj">
+                        <label class="formulario__instituicao__cnpj__label" for="cnpj"><b>CNPJ</b></label>
+                        <input class="formulario__instituicao__cnpj__input" type="text" name="cnpj" id="cnpj" required
+                            placeholder="Digite o cnpj da instuição" value="">
+                    </fieldset>
+                    <fieldset class="formulario__instituicao__cep">
+                        <label class="formulario__instituicao__cep__label" for="cep"><b>CEP</b></label>
+                        <input class="formulario__instituicao__cep__input" type="text" name="cep" id="cep" required
+                            placeholder="Digite o cep da instuição" value="" onblur="pesquisacep(this.value);">
+                    </fieldset>
+                    <fieldset class="formulario__instituicao__rua">
+                        <label class="formulario__instituicao__rua__label" for="rua"><b>Rua</b></label>
+                        <input class="formulario__instituicao__rua__input" type="text" name="rua" id="rua" required
+                            placeholder="Digite o rua da instuição" value="">
+                    </fieldset>
+                    <fieldset class="formulario__instituicao__bairro">
+                        <label class="formulario__instituicao__bairro__label" for="bairro"><b>Bairro</b></label>
+                        <input class="formulario__instituicao__bairro__input" type="text" name="bairro" id="bairro"
+                            required placeholder="Digite o bairro da instuição" value="">
+                    </fieldset>
+                    <fieldset class="formulario__instituicao__cidade">
+                        <label class="formulario__instituicao__cidade__label" for="cidade"><b>Cidade</b></label>
+                        <input class="formulario__instituicao__cidade__input" type="text" name="cidade" id="cidade"
+                            required placeholder="Digite o cidade da instuição" value="">
+                    </fieldset>
+                    <fieldset class="formulario__instituicao__uf">
+                        <label class="formulario__instituicao__uf__label" for="uf"><b>UF</b></label>
+                        <input class="formulario__instituicao__uf__input" type="text" name="uf" id="uf" required
+                            placeholder="Digite o uf da instuição" value="">
+                    </fieldset>
+                    <fieldset class="formulario__instituicao__numero">
+                        <label class="formulario__instituicao__numero__label" for="numero"><b>Número</b></label>
+                        <input class="formulario__instituicao__numero__input" type="number" name="numero" id="numero"
+                            required placeholder="Digite o numero da instuição" value="">
+                    </fieldset>
+                    <fieldset class="formulario__instituicao__complemento">
+                        <label class="formulario__instituicao__complemento__label"
+                            for="complemento"><b>Complemento</b></label>
+                        <input class="formulario__instituicao__complemento__input" type="text" name="complemento"
+                            id="complemento" placeholder="Digite o complemento da instuição" value="">
+                    </fieldset>
+                    <fieldset class="formulario__instituicao__telefone">
+                        <label class="formulario__instituicao__telefone__label" for="telefone"><b>Telefone</b></label>
+                        <input class="formulario__instituicao__telefone__input" type="tel" name="telefone" id="telefone"
+                            required placeholder="Digite o telefone da instuição no formato (xx) xxxxx-xxxx"
+                            pattern="\([0-9]{2}\) [0-9]{4,5}-[0-9]{4}" value="">
+                    </fieldset>
+                </div>
+                <h4 class="formulario__titulo--responsavel">Dados do Responsável</h4>
+                <fieldset class="formulario__responsavel__nome">
+                    <label class="formulario__responsavel__nome__label" for="nome"><b>Nome</b></label>
+                        <input class="formulario__responsavel__nome__input" type="text" name="nome" id="nome" required
+                            placeholder="Digite o seu nome" value="">
+                </fieldset>
+                <fieldset class="formulario__responsavel__sobrenome">
+                    <label class="formulario__responsavel__sobrenome__label" for="sobrenome"><b>Sobrenome</b></label>
+                        <input class="formulario__responsavel__sobrenome__input" type="text" name="sobrenome" id="sobrenome" required
+                            placeholder="Digite o seu sobrenome" value="">
+                </fieldset>
+                <fieldset class="formulario__responsavel__email">
+                    <label class="formulario__responsavel__email__label" for="email"><b>E-mail</b></label>
+                        <input class="formulario__responsavel__email__input" type="text" name="email" id="email" required
+                            placeholder="Digite o seu e-mail" value="">
+                </fieldset>
+                <fieldset class="formulario__responsavel__celular">
+                    <label class="formulario__responsavel__celular__label" for="celular"><b>Celular</b></label>
+                        <input class="formulario__responsavel__celular__input" type="text" name="celular" id="celular" required
+                            placeholder="Digite o seu e-mail" value="">
+                </fieldset>
+                <div class="formulario__foto">
+                    <div class="formulario__foto__upload">
+                        <label class="formulario__foto__upload__label" for="imagem_uploads">Escolha sua imagem de perfil
+                            no formato PNG, JPG ou JPEG </label>
+                        <input class="formulario__foto__upload__input" type="file" id="imagem_uploads"
+                            name="imagem_uploads" accept=".jpg, .jpeg, .png">
+                    </div>
+                    <div class="formulario__foto__preview">
+                        <img class="formulario__foto__preview__foto imagem__perfil"
+                            src="assets/img/fotos-perfil/Perfil_Desconhecido.jpg" alt="Imagem do Pesquisador">
+                    </div>
+                </div>
+                <div class="formulario__senha">
+                    <label class="formulario__senha__label" for="senha"><b>Senha</b></label>
+                    <input class="formulario__senha__input" type="password" name="senha" id="senha" required
+                        placeholder="Digite uma senha" value="">
+                    <i class="fa fa-eye" aria-hidden="true" id="icone-senha"
+                        onclick="revelarCodigo('senha', 'icone-senha');"></i>
+                </div>
+                <div class="formulario__senha__confirmacao">
+                    <label class="formulario__senha__confirmacao__label" for="confirma-senha"><b>Confirmação de
+                            Senha</b></label>
+                    <input class="formulario__senha__confirmacao__input" type="password" name="confirma-senha"
+                        id="confirma-senha" required placeholder="Confirme sua senha" value="">
+                    <i class="fa fa-eye" aria-hidden="true" id="icone-confirma-senha"
+                        onclick="revelarCodigo('confirma-senha', 'icone-confirma-senha');"></i>
+                </div>
+                <span id="sugestao"></span>
+                <fieldset class="formulario__aceitacao">
+                    <input class="formulario__aceitacao__input" type="checkbox" name="aceite-nomas" id="aceite-nomas"
+                        value="aceite-nomas">
+                    <label class="formulario__aceitacao__label" for="aceite-nomas">Declaro que conheço e concordo com
+                        as <a href="normas.html" target="_blank" rel="noopener noreferrer">normas</a> de uso do Sistema
+                        de
+                        Gerenciamento do CME</label>
+                </fieldset>
+                <fieldset class="formulario__botao">
+                    <button class="formulario__botao" type="submit">Cadastrar</button>
+                </fieldset>
             </form>
         </section>
         <!--Link de direcionamento da barra de acessibilidade para rodapé-->
