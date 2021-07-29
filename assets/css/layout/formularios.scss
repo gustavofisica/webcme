@@ -1,0 +1,157 @@
+form {
+    font-size: 1.2em;
+
+    label,
+    legend {
+        font-size: 1.4em;
+    }
+
+    input,
+    textarea,
+    select {
+        border: 1px solid $cor-preta;
+        @include border-radius(4px);
+        height: 3rem;
+        margin: 1rem 0;
+        width: 100%;
+        font-size: medium;
+
+    }
+
+    textarea {
+        height: 200px;
+    }
+
+    button {
+        background: $cor-padrao;
+        border: none;
+        @include border-radius(4px);
+        cursor: pointer;
+        color: $cor-branca;
+        font-size: 1.2em;
+        font-weight: bold;
+        margin: 1rem 0;
+        padding: 1rem 0;
+        transition: 1s all;
+        width: 100%;
+
+        &:hover {
+            background: $cor-padrao-auxiliar;
+            transform: scale(1.02);
+        }
+
+    }
+}
+
+.formulario {
+
+    &--simples {
+        display: grid;
+        grid-auto-flow: row;
+        margin: 1rem auto;
+    }
+
+    &--login {
+        align-items: center;
+        border: solid 1px $cor-padrao-auxiliar;
+        display: grid;
+        grid-template-areas:
+            "email"
+            "input-email"
+            "senha"
+            "input-senha"
+            "botao";
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto auto auto;
+        margin: 1rem auto;
+        padding: 2rem;
+        width: 40vw;
+
+        @media only screen and (max-width: 960px) {
+            width: 60vw;
+        }
+
+        @media only screen and (max-width: 495px) {
+            width: 75vw;
+        }
+
+        input {
+            padding-left: 3.5rem;
+            width: calc(100% - 3.5rem);
+        }
+
+        i {
+            font-size: 2em;
+            padding-left: 0.5rem;
+            width: fit-content;
+        }
+    }
+
+    &__email {
+        grid-area: email;
+
+        &__input {
+            grid-area: input-email;
+        }
+
+        &__icone {
+            grid-area: input-email;
+        }
+    }
+
+    &__senha {
+        grid-area: senha;
+
+        &__input {
+            grid-area: input-senha;
+        }
+
+        &__icone {
+            grid-area: input-senha;
+        }
+    }
+
+    &__botao {
+        grid-area: botao;
+    }
+}
+
+/******Formulário de Pesquisa******/
+#searchform {
+    align-items: center;
+    grid-area: pesquisa;
+    display: grid;
+    grid-template:
+        "input";
+
+    @media only screen and (max-width: 960px) {
+        justify-self: center;
+        margin: 0.5rem;
+    }
+
+    input {
+        border: none;
+        border-radius: 4px;
+        grid-area: input;
+        justify-self: center;
+        margin: 0;
+        padding: 15px;
+        width: 250px;
+    }
+
+    button {
+        background-color: transparent;
+        color: $cor-preta;
+        font-size: 1.3em;
+        grid-area: input;
+        height: fit-content;
+        justify-self: end;
+        margin: 0;
+        padding-right: 1.5rem;
+        width: fit-content;
+    }
+
+    label {
+        display: none;
+    }
+}

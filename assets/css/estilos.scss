@@ -12,8 +12,8 @@ $icones-redes-sociais-spacing: 2px;
 @import "icones-redes-sociais/*.png";
 
 //Mixins e Variáveis do Sass
-@import 'helpers/mixins';
 @import 'helpers/variaveis';
+@import 'helpers/mixins';
 
 //Estilos da Página
 @import 'layout/footer';

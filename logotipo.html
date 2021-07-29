@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!--Configuração de Codificação de Caracteres-->
+    <meta charset="utf-8">
+    <!--Configuração de Compatibilidade de Browsers-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--Configuração de Escalonamento para Device Mobile-->
+    <meta name="viewport" content="width=device-width">
+    <!--Configuração da Unidade Organizacional do CME da Barra Brasil-->
+    <meta property="creator.productor"
+        content="http://estruturaorganizacional.dados.gov.br/id/unidade-organizacional/241245">
+    <!--Estilos da página-->
+    <link href="assets/css/estilos.css" rel="stylesheet">
+    <!--Carregando as Bibliotecas do Google Charts-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <!--Incorporação da fonte awsome para ícones da página-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--Inclusão do ícone do CME na aba do Browser-->
+    <link rel="shortcut icon" href="assets/img/favicon.png">
+    <!--Título da Página na aba do Browser-->
+    <title>Centro de Microscopia Eletrônica</title>
+</head>
+
+<body>
+    <header>
+        <!--Incorporação da Barra Brasil de acordo com a documentação contida em https://barra.brasil.gov.br/-->
+        <div id="barra-brasil" style="background:#7F7F7F; height: 20px; padding:0 0 0 10px;display:block;">
+            <ul id="menu-barra-temp" style="list-style:none;">
+                <li
+                    style="display:inline; float:left;padding-right:10px; margin-right:10px; border-right:1px solid #EDEDED">
+                    <a href="http://brasil.gov.br"
+                        style="font-family:sans,sans-serif; text-decoration:none; color:white;">Portal do Governo
+                        Brasileiro</a>
+                </li>
+            </ul>
+        </div>
+        <!--Barra de Acessibilidade-->
+        <div class="acessibilidade" id="acessebilidade">
+            <!--Lista de Atalhos da Página-->
+            <ul class="acessibilidade__atalhos">
+                <!--Atalho do Conteúdo Principal da Página-->
+                <li><a accesskey="1" title="Ir para o conteúdo" href="#conteudo-principal">Ir para o
+                        conteúdo<span>1</span></a>
+                </li>
+                <!--Atalho do Menu da Página-->
+                <li><a accesskey="2" title="Ir para o menu" href="#nav">Ir para o menu<span>2</span></a></li>
+                <!--Atalho de Busca-->
+                <li><a accesskey="3" title="Ir para a busca" href="#search">Ir para a busca<span>3</span></a></li>
+                <!--Atalho do Rodapé-->
+                <li><a accesskey="4" title="Ir para o rodapé" href="#footer">Ir para o rodapé<span>4</span></a></li>
+            </ul>
+            <!--Lista de Acessibilidade-->
+            <ul class="acessibilidade__links">
+                <!--Informações de Acessibilidade-->
+                <li><a accesskey="5" href="acessibilidade.html" title="Acessibilidade">Acessibilidade<span>5</span></a>
+                </li>
+                <!--Ativação do Alto Contraste-->
+                <li><a accesskey="6" href="#" id="alto-contraste" title="Alto Contraste">Alto
+                        Contraste<span>6</span></a></li>
+                <!--Mapa de Acesso da Página-->
+                <li><a accesskey="7" href="mapa_site.html" title="Mapa do Site">Mapa
+                        do Site<span>7</span></a></li>
+            </ul>
+            <!--Lista de Tradução-->
+            <ul class="acessibilidade__traducao" id="icones-traducao">
+                <!--Link para Tradução da Página em Inglês-->
+                <li><a href="" title="CME em Inglês">
+                        <div class="icones-traducao-united-states-of-america" alt="English"></div>
+                    </a></li>
+                <!--Link para Tradução da Página em Espanhol-->
+                <li><a href="" title="CME em Espanhol">
+                        <div class="icones-traducao-spain" alt="Spanish"></div>
+                    </a></li>
+                <!--Link para Tradução da Página em Francês-->
+                <li><a href="" title="CME em Francês">
+                        <div class="icones-traducao-france" alt="French"></div>
+                    </a></li>
+            </ul>
+        </div>
+        <!--Cabeçalho-->
+        <div class="cabecalho">
+            <!--Logo do Centro de Microscopia Eletrônica-->
+            <img class="cabecalho__logo" id="logo" src="assets/img/logo.svg"
+                alt="Logo do Centro de Microscopia Eletrônica da Universidade Federal do Paraná.">
+            <!--Menu UFPR-->
+            <nav class="cabecalho__menu--ufpr">
+                <!--Lista do Menu da UFPR-->
+                <ul>
+                    <!--Link do Portal da UFPR-->
+                    <li><a target="_blank" href="http://www.ufpr.br/portalufpr" aria-current="page">Portal UFPR</a></li>
+                    <!--Link do Portal do Setor de Ciências Biológicas da UFPR-->
+                    <li><a target="_blank" href="http://www.bio.ufpr.br/portal/" aria-current="page">Ciências
+                            Biológicas</a></li>
+                    <!--Link da Intranet da UFPR-->
+                    <li><a target="_blank" href="https://intranet.ufpr.br/">Intranet</a></li>
+                    <!--Link do Office 365 para UFPR-->
+                    <li><a target="_blank" href="http://www.office.com">Office 365</a></li>
+                    <!--Link do Sistema de Comunicação da UFPR-->
+                    <li><a target="_blank"
+                            href="https://www.ufpr.br/portalufpr/saci-sistema-de-apoio-a-comunicacao-integrada/">Comunicação</a>
+                    </li>
+                </ul>
+            </nav>
+            <!--Título e Formulário de Pesquisa no Site-->
+            <div class="cabecalho__titulo">
+                <!--Título do Departamento-->
+                <h1>Centro de Microscopia Eletrônica</h1>
+                <!--Início do Formulário de Pesquisa do Site-->
+                <form action="" id="searchform" method="GET">
+                    <!--Título do Ítem do Formulário-->
+                    <label for="search">Pesquisar</label>
+                    <!--Campo de Digitação para Pesquisa-->
+                    <input type="search" id="search" name="search" placeholder="Pesquisar...">
+                    <!--Botão de Pesquisar-->
+                    <button class="fa fa-search" aria-hidden="true"></button>
+                </form>
+            </div>
+        </div>
+        <!--Menu de Navegação CME-->
+        <nav class="menu">
+            <!--Link de direcionamento da barra de acessibilidade para menu-->
+            <a name="nav" id="nav"></a>
+            <!--Divisão do Ícone do Menu Responsivo-->
+            <div class="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></div>
+            <!--Lista de Links do Menu de 1° Nível-->
+            <ul>
+                <!--Link para Página Incial-->
+                <li><a href="index.html">Página Inicial</a></li>
+                <!--Link para Páginas da Organização do Centro de Microscopia Eletrônica-->
+                <li class="dropdown"><a class="dropdown-title" href="#">CME</a>
+                    <!--Lista de Links do Menu de 2° Nível-->
+                    <ul class="dropdown-menu">
+                        <!--Link para Página da Chefia do Centro de Microscopia Eletrônica-->
+                        <li><a href="chefia.html">Chefia</a></li>
+                        <!--Link para Página do Corpo de Conselheiros do Centro de Microscopia Eletrônica-->
+                        <li><a href="conselho.html">Conselho</a></li>
+                        <!--Link para Página da Equipe Técnica do Centro de Microscopia Eletrônica-->
+                        <li><a href="equipe_tecnica.html">Equipe Técnica</a></li>
+                        <!--Link para Página do Regimento Interno do Centro de Microscopia Eletrônica-->
+                        <li><a href="regimento.html">Regimento</a></li>
+                        <!--Link para Página da Descrição do Funcionamento do Centro de Microscopia Eletrônica-->
+                        <li><a href="funcionamento.html">Funcionamento</a></li>
+                        <!--Link para Página da História do Centro de Microscopia Eletrônica-->
+                        <li><a href="historico.html">Histórico</a></li>
+                        <!--Link para Página de Descrição da Missão e Visão do Centro de Microscopia Eletrônica-->
+                        <li><a href="missao_visao.html">Missão e Visão</a></li>
+                        <!--Link para Página de Disponibilização do Logtipo do Centro de Microscopia Eletrônica-->
+                        <li><a href="logotipo.html">Logotipo</a></li>
+                        <!--Link para Página do Planejamento Estratégico do Centro de Microscopia Eletrônica-->
+                        <li><a href="planejamento_estrategico.html">Planejamento Estratégico</a></li>
+                    </ul>
+                </li>
+                <!--Link para Página de Trabalhos Desenvolvidos com Auxílio do Centro de Microscopia Eletrônica-->
+                <li><a href="producao_cientifica.html">Produção Científica</a></li>
+                <!--Link para Página de Orientações aos Usuários-->
+                <li class="dropdown"><a class="dropdown-title" href="#">Orientações aos
+                        Usuários</a>
+                    <!--Lista de Links do Menu de 2° Nível-->
+                    <ul class="dropdown-menu">
+                        <!--Link para Página de Normas para Usuários do Centro de Microscopia Eletrônica-->
+                        <li><a href="normas.html">Normas</a></li>
+                        <!--Link Alternativo para Página do Sistema Interno de Gerenciamento do Centro de Microscopia Eletrônica-->
+                        <li><a href="sistema_gerenciamento.html">Sistema de Gerenciamento</a></li>
+                        <!--Link para Página dos Equipamentos do Centro de Microscopia Eletrônica-->
+                        <li><a href="servicos_precos.html">Tabelas de Serviços e Preços</a></li>
+                        <!--Link para Página de Perguntas Frequêntes do Centro de Microscopia Eletrônica-->
+                        <li><a href="perguntas_frequentes.html">Perguntas Frequentes</a></li>
+                    </ul>
+                </li>
+                <!--Link para Página da Infraestrutura do Centro de Microscopia Eletrônica-->
+                <li class="dropdown"><a class="dropdown-title" href="#">Infraestrutura</a>
+                    <!--Lista de Links do Menu de 2° Nível-->
+                    <ul class="dropdown-menu">
+                        <!--Link para Página dos Equipamentos do Centro de Microscopia Eletrônica-->
+                        <li><a href="equipamentos.html">Equipamentos</a></li>
+                        <!--Link para Página dos Laboratórios do Centro de Microscopia Eletrônica-->
+                        <li><a href="laboratorios.html">Laboratórios</a></li>
+                    </ul>
+                </li>
+                <!--Link para Galeria de Imagens-->
+                <li><a href="galeria.html">Galeria</a></li>
+                <!--Link para Página dos Equipamentos do Centro de Microscopia Eletrônica-->
+                <li><a href="estatisticas.html">Estatísticas</a></li>
+            </ul>
+        </nav>
+        <!--Link de direcionamento da barra de acessibilidade para conteúdo-->
+        <a name="conteudo-principal" id="conteudo-principal"></a>
+    </header>
+    <main class="conteudo--texto">
+        <h2>Logotipo</h2>
+        <section>
+            <h3>Criado por: André Sionek</h3>
+            <div class="conteudo__logo">
+                <img class="imagem__logo " src="assets/img/logo.svg"
+                    alt="Logotipo do CME para aplicação em fundos claros">
+                <img class="imagem__logo escuro" src="assets/img/logo-contraste.svg">
+            </div>
+        </section>
+        <!--Link de direcionamento da barra de acessibilidade para rodapé-->
+        <a name="footer" id="footer"></a>
+    </main>
+    <footer>
+        <!--Rodapé de Links da UFPR-->
+        <section class="rodape__links">
+            <!--Primeiro Bloco de Links-->
+            <div class="rodape__links__divisao--servicos">
+                <!--Título da Sessão-->
+                <h5 class="rodape__links__divisao__titulo" id="links-servicos">Serviços</h5>
+                <!--Lista de Links-->
+                <ul class="rodape__links__divisao__lista">
+                    <!--Link do Agendamento do Anfiteatro 10-->
+                    <li><a href="http://www.bio.ufpr.br/portal/agendamento-anfiteatro-10/" target="_blank">Anfiteatro
+                            10</a></li>
+                    <!--Link do Multiconferência-->
+                    <li><a href="http://www.bio.ufpr.br/portal/mconf/" target="_blank">Mconf</a></li>
+                    <!--Link dos Concursos-->
+                    <li><a href="http://www.bio.ufpr.br/portal/concursos/" target="_blank">Concursos</a></li>
+                    <!--Link da Biblioteca Setorial da Biológicas-->
+                    <li><a href="http://www.portal.ufpr.br/bib_bl.html" target="_blank">Biblioteca do Setor</a></li>
+                    <!--Link do Centro de Tecnologias Avançadas em Fluorescência-->
+                    <li><a href="http://www.bio.ufpr.br/portal/ctaf/" target="_blank">CTAF</a></li>
+                    <!--Link da Lista de Ramais da Biológicas-->
+                    <li><a href="http://www.bio.ufpr.br/portal/lista-de-ramais/" target="_blank">Lista de Ramais</a>
+                    </li>
+                </ul>
+            </div>
+            <!--Segundo Bloco de Links-->
+            <div class="rodape__links__divisao--apoio">
+                <!--Título da Sessão-->
+                <h5 class="rodape__links__divisao__titulo" id="links-apoio">Serviços de Apoio</h5>
+                <!--Lista de Links-->
+                <ul class="rodape__links__divisao__lista">
+                    <!--Link da Administração Predial da Biológicas-->
+                    <li><a href="http://www.bio.ufpr.br/portal/admpredial/" target="_blank">Administração
+                            Predial</a></li>
+                    <!--Link do Almoxarifado e Patrimônio da Biológicas-->
+                    <li><a href="http://www.bio.ufpr.br/portal/almopatri/" target="_blank">Almoxarifado e
+                            Patrimônio</a></li>
+                    <!--Link do Departamento de Informática da Biológicas-->
+                    <li><a href="http://www.bio.ufpr.br/portal/infobio/" target="_blank">Informática</a></li>
+                    <!--Link do Departamento de Orçamento e Finanças Biológicas-->
+                    <li><a href="http://www.bio.ufpr.br/portal/orcamento-e-financas/" target="_blank">Orçamento e
+                            Finanças</a></li>
+                </ul>
+            </div>
+            <!--Terceiro Bloco de Links-->
+            <div class="rodape__links__divisao--comissoes">
+                <!--Título da Sessão-->
+                <h5 class="rodape__links__divisao__titulo" id="links-comissoes">Comissões e Comitês</h5>
+                <!--Lista de Links-->
+                <ul class="rodape__links__divisao__lista">
+                    <!--Link da Comissão de Ética no Uso de Animais-->
+                    <li><a href="http://www.bio.ufpr.br/portal/ceua/" target="_blank">Comissão de Ética no Uso de
+                            Animais</a></li>
+                    <!--Link da Comissão de Biossegurança da Biológicas-->
+                    <li><a href="http://www.bio.ufpr.br/portal/comissao-interna-de-bioseguranca/"
+                            target="_blank">Comissão Interna de Biossegurança</a></li>
+                    <!--Link do Comitê de Pesquisa da Biológicas-->
+                    <li><a href="http://www.bio.ufpr.br/portal/comite-setorial-de-pesquisa/" target="_blank">Comitê
+                            Setorial de Pesquisa</a></li>
+                </ul>
+            </div>
+            <!--Quarto Bloco de Links-->
+            <div class="rodape__links__divisao--orgaos">
+                <!--Título da Sessão-->
+                <h5 class="rodape__links__divisao__titulo" id="links-suplementares">Órgãos Suplementares</h5>
+                <!--Lista de Links-->
+                <ul class="rodape__links__divisao__lista">
+                    <!--Link da ASPEC-->
+                    <li><a target="_blank" href="http://www.bio.ufpr.br/portal/aspec/">ASPEC</a></li>
+                    <!--Link do Biotério-->
+                    <li><a target="_blank" href="http://www.bio.ufpr.br/portal/bioterio/">Biotério</a></li>
+                    <!--Link do Centro de Educação Física e Desportos-->
+                    <li><a target="_blank" href="http://www.bio.ufpr.br/portal/ced/">CED</a></li>
+                    <!--Link do Museu de Ciências Naturais-->
+                    <li><a target="_blank" href="http://www.bio.ufpr.br/portal/mcn/">Museu de Ciências Naturais</a>
+                    </li>
+                </ul>
+            </div>
+            <!--Quinto Bloco de Links-->
+            <div class="rodape__links__divisao--sitios">
+                <!--Título da Sessão-->
+                <h5 class="rodape__links__divisao__titulo" id="links-interesses">Sítios de Interesse</h5>
+                <!--Lista de Links-->
+                <ul class="rodape__links__divisao__lista">
+                    <!--Link do Ministério da Educação-->
+                    <li><a href="http://www.mec.gov.br/" target="_blank">Ministério da Educação</a></li>
+                    <!--Link do Ministério da Ciência, Tecnologia e Inovações-->
+                    <li><a href="https://www.gov.br/mcti/" target="_blank">Ministério da Ciência, Tecnologia e
+                            Inovações</a></li>
+                    <!--Link do Portal da Transparência-->
+                    <li><a href="http://transparencia.gov.br/" target="_blank">Portal da Transparência</a></li>
+                    <!--Link da CAPES-->
+                    <li><a href="http://www.capes.gov.br/" target="_blank">CAPES</a></li>
+                    <!--Link do CNPq-->
+                    <li><a href="http://www.cnpq.br/" target="_blank">CNPq</a></li>
+                    <!--Link da Fundação Araucária-->
+                    <li><a href="http://www.fappr.pr.gov.br/" target="_blank">Fundação Araucária</a></li>
+                    <!--Link da Fundação da UFPR-->
+                    <li><a href="http://www.funpar.ufpr.br/" target="_blank">FUNPAR</a></li>
+                </ul>
+            </div>
+            <!--Sexto Bloco de Links-->
+            <div class="rodape__links__divisao--reitorias">
+                <!--Título da Sessão-->
+                <h5 class="rodape__links__divisao__titulo" id="links-reitorias">Pró-Reitorias da UFPR</h5>
+                <!--Lista de Links-->
+                <ul class="rodape__links__divisao__lista">
+                    <!--Link da Pró-Reitoria de Administração da UFPR-->
+                    <li><a href="http://www.pra.ufpr.br/portal/" target="_blank">Pró-Reitoria de Administração</a>
+                    </li>
+                    <!--Link da Pró-Reitoria de Assuntos Estudantis-->
+                    <li><a href="http://www.prae.ufpr.br/prae/" target="_blank">Pró-Reitoria de Assuntos
+                            Estudantis</a></li>
+                    <!--Link da Pró-Reitoria de Extensão e Cultura-->
+                    <li><a href="http://www.proec.ufpr.br/" target="_blank">Pró-Reitoria de Extensão e Cultura</a>
+                    </li>
+                    <!--Link da Pró-Reitoria de Gestão de Pessoas-->
+                    <li><a href="http://www.progepe.ufpr.br/progepe/" target="_blank">Pró-Reitoria de Gestão de
+                            Pessoas</a></li>
+                    <!--Link da Pró-Reitoria de Graduação e Educação Profissional-->
+                    <li><a href="http://www.prograd.ufpr.br/portal/" target="_blank">Pró-Reitoria de Graduação e
+                            Educação Profissional</a></li>
+                    <!--Link da Pró-Reitoria de Pesquisa e Pós-Graduação-->
+                    <li><a href="http://www.prppg.ufpr.br/" target="_blank">Pró-Reitoria de Pesquisa e
+                            Pós-Graduação</a></li>
+                    <!--Link da Pró-Reitoria de Planejamento, Orçamento e Finanças-->
+                    <li><a href="http://www.proplan.ufpr.br/portal/" target="_blank">Pró-Reitoria de Planejamento,
+                            Orçamento e Finanças</a></li>
+                </ul>
+            </div>
+            <!--Sétimo Bloco de Links-->
+            <div class="rodape__links__divisao--ufpr">
+                <!--Título da Sessão-->
+                <h5 class="rodape__links__divisao__titulo" id="links-sitios-ufpr">Sítios da UFPR</h5>
+                <!--Lista de Links-->
+                <ul class="rodape__links__divisao__lista">
+                    <!--Link da Secretaria dos Órgãos Colegiados-->
+                    <li><a href="http://www.ufpr.br/soc" target="_blank">Secretaria dos Órgãos Colegiados</a></li>
+                    <!--Link do Sítio das Bibliotecas-->
+                    <li><a href="http://www.portal.ufpr.br/" target="_blank">Bibliotecas – SIBI</a></li>
+                    <!--Link da Comissão de Ética da UFPR-->
+                    <li><a href="http://www.eticapublica.ufpr.br/" target="_blank">Comissão de Ética</a></li>
+                    <!--Link do Hospital de Clínicas-->
+                    <li><a href="http://www.hc.ufpr.br/" target="_blank">Hospital de Clínicas</a></li>
+                    <!--Link da Editora da UFPR-->
+                    <li><a href="http://www.editora.ufpr.br/" target="_blank">Editora da UFPR</a></li>
+                    <!--Link do Sítio do Núcleo de Concursos-->
+                    <li><a href="http://www.nc.ufpr.br/" target="_blank">Vestibular / Núcleo de Concursos</a></li>
+                </ul>
+            </div>
+            <!--Oitavo Bloco de Links-->
+            <div class="rodape__links__divisao--setores">
+                <!--Título da Sessão-->
+                <h5 class="rodape__links__divisao__titulo" id="links-setores">Setores da UFPR</h5>
+                <!--Lista de Links-->
+                <ul class="rodape__links__divisao__lista">
+                    <!--Link do Setor de Artes, Comunicação e Design da UFPR-->
+                    <li><a href="http://www.sacod.ufpr.br" target="_blank">Setor de Artes, Comunicação e Design</a>
+                    </li>
+                    <!--Link do Setor de Ciências Agrárias da UFPR-->
+                    <li><a href="http://www.agrarias.ufpr.br" target="_blank">Setor de Ciências Agrárias</a></li>
+                    <!--Link do Setor de Ciências Biológicas da UFPR-->
+                    <li><a href="http://www.bio.ufpr.br" target="_blank">Setor de Ciências Biológicas</a></li>
+                    <!--Link do Setor de Ciêcnias da Saúde da UFPR-->
+                    <li><a href="http://www.saude.ufpr.br" target="_blank">Setor de Ciêcnias da Saúde</a></li>
+                    <!--Link do Setor de Ciências da Terra da UFPR-->
+                    <li><a href="http://www.terra.ufpr.br" target="_blank">Setor de Ciências da Terra</a></li>
+                    <!--Link do Setor de Ciêcnias Exatas da UFPR-->
+                    <li><a href="http://www.exatas.ufpr.br" target="_blank">Setor de Ciêcnias Exatas</a></li>
+                    <!--Link do Setor de Ciências Humanas da UFPR-->
+                    <li><a href="http://www.humanas.ufpr.br" target="_blank">Setor de Ciências Humanas</a></li>
+                    <!--Link do Setor de Ciências Jurídicas da UFPR-->
+                    <li><a href="http://www.juridicas.ufpr.br" target="_blank">Setor de Ciências Jurídicas</a></li>
+                    <!--Link do Setor de Ciências Sociais Aplicadas da UFPR-->
+                    <li><a href="http://www.sociais.ufpr.br" target="_blank">Setor de Ciências Sociais Aplicadas</a>
+                    </li>
+                    <!--Link do Setor de Educação da UFPR-->
+                    <li><a href="http://www.educacao.ufpr.br" target="_blank">Setor de Educação</a></li>
+                    <!--Link do Setor de Educação Profissional e Tecnológica da UFPR-->
+                    <li><a href="http://www.sept.ufpr.br" target="_blank">Setor de Educação Profissional e
+                            Tecnológica</a></li>
+                    <!--Link do Setor de Tecnologia da UFPR-->
+                    <li><a href="http://www.tecnologia.ufpr.br" target="_blank">Setor de Tecnologia</a></li>
+                    <!--Link do Setor Litoral da UFPR-->
+                    <li><a href="http://www.litoral.ufpr.br" target="_blank">Setor Litoral</a></li>
+                    <!--Link do Setor Palotina da UFPR-->
+                    <li><a href="http://www.campuspalotina.ufpr.br" target="_blank">Setor Palotina</a></li>
+                    <!--Link do Campus de Jandaia do Sul da UFPR-->
+                    <li><a target="_blank" href="http://www.jandaiadosul.ufpr.br">Campus de Jandaia do Sul</a></li>
+                </ul>
+            </div>
+        </section>
+        <!--Rodapé Social da UFPR-->
+        <section class="rodape__social">
+            <!--Ícones das Redes Sociais da UFPR-->
+            <div class="rodape__social__icones">
+                <!--Título da Divisão-->
+                <h3>Redes Sociais</h3>
+                <div id="icones-redes-sociais" class="rodape__social__icones__redes">
+                    <!--Ícone e Link da UFPR no Facebook-->
+                    <a href="https://www.facebook.com/UFPRoficial" target="_blank">
+                        <div class="icones-redes-sociais-facebook" title="UFPR no Facebook" alt="UFPR no Facebook">
+                        </div>
+                    </a>
+                    <!--Ícone e Link da UFPR no Twitter-->
+                    <a href="https://twitter.com/ufpr" target="_blank">
+                        <div class="icones-redes-sociais-twitter" title="UFPR no Twitter" alt="UFPR no Twitter">
+                        </div>
+                    </a>
+                    <!--Ícone e Link da UFPR no Flickr-->
+                    <a href="https://www.flickr.com/ufpr" target="_blank">
+                        <div class="icones-redes-sociais-flickr" title="UFPR no Flickr" alt="UFPR no Flickr"></div>
+                    </a>
+                    <!--Ícone e Link RSS UFPR-->
+                    <a href="https://www.ufpr.br/portalufpr/lista-de-feeds-da-ufpr" target="_blank">
+                        <div class="icones-redes-sociais-RSS" title="RSS UFPR" alt="RSS UFPR"></div>
+                    </a>
+                    <!--Ícone e Link da UFPR no Youtube-->
+                    <a href="https://www.youtube.com/user/TVUFPR" target="_blank">
+                        <div class="icones-redes-sociais-youtube" title="UFPR no Youtube" alt="UFPR no Youtube">
+                        </div>
+                    </a>
+                    <!--Ícone e Link da UFPR no Instagram-->
+                    <a href="https://www.instagram.com/ufpr_oficial" target="_blank">
+                        <div class="icones-redes-sociais-instagram" title="UFPR no Instagram" alt="UFPR no Instagram">
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!--Característica do Departamento-->
+            <div class="rodape__social__descricao">
+                <p>Universidade Federal do Paraná</p>
+                <p>Setor de Ciências Biológicas</p>
+                <p>Centro de Microscopia Eletrônica</p>
+                <p>Avenida Coronel Francisco H. dos Santos, 100</p>
+                <p>Caixa Postal: 19031 - Fone: (41) 3361-1799</p>
+                <p>Centro Politécnico - Jardim das Américas</p>
+                <p>CEP: 81531-980 - Curitiba (PR), Brasil</p>
+                <img src="http://www.bio.ufpr.br/portal/wp-content/themes/wpufpr_zurb6_biologia/images/logo_ufpr_branca.png"
+                    alt="Logo da UFPR" title="Logo da UFPR">
+            </div>
+            <!--Copyright-->
+            <div class="rodape__social__copyright">
+                <p>©<?php echo date("Y"); ?> - Universidade Federal do Paraná - Setor de Ciências Biológicas -
+                    Centro
+                    de Microscopia Eletrônica
+                </p>
+                <p>Desenvolvido por Luis Gustavo de Matos dos Santos e hospedado pela AGTIC - Agência de Tecnologia
+                    da Informação e Comunicação da UFPR</p>
+            </div>
+        </section>
+        <!--Incorporação do Rodapé da Barra Brasil-->
+        <div id="footer-brasil"></div>
+    </footer>
+    <!--Código JavaScript dos Elementos da Barra Brasil-->
+    <script type="text/javascript" defer="defer" src="http://barra.brasil.gov.br/barra.js"></script>
+    <!--Funções de Estilos da Página-->
+    <script type="text/javascript" src="assets/js/estilo.js"></script>
+</body>
+
+</html>
