@@ -1,0 +1,11 @@
+main{
+    display: grid;
+	grid-area: main;
+	grid-template-areas:
+		"links-ufpr"
+		"rodape";
+	grid-template-columns: 75rem;
+	grid-template-rows: 1fr 1fr;
+	margin: 0 auto;
+    height: 100vh;
+}
