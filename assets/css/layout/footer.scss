@@ -4,7 +4,7 @@ footer {
 	grid-template-areas:
 		"links-ufpr"
 		"rodape";
-	grid-template-columns: 75rem;
+	grid-template-columns: minmax(3rem, 75rem); 
 	grid-template-rows: 1fr 1fr;
 	margin: 0 auto;
 }
@@ -140,9 +140,7 @@ footer {
 
 	}
 
-
-
-
+	/******Rodapé de Redes Sociais e Descrição do Departamento******/
 	&__social {
 		@include background-image(linear-gradient($cor-padrao, #0042b1 90%));
 		display: grid;
@@ -179,8 +177,6 @@ footer {
 				grid-template-rows: auto auto;
 				margin: 1rem 0 1rem 0;
 			}
-
-
 
 			h3 {
 				align-self: start;
@@ -226,6 +222,11 @@ footer {
 			p {
 				color: $cor-branca;
 				margin-bottom: 5px;
+				text-align: right;
+
+				@media only screen and (max-width: 960px) {
+					text-align: center;
+				}
 
 				&:first-child {
 					font-weight: bold;
@@ -257,7 +258,7 @@ footer {
 
 			p {
 				color: $cor-branca;
-				margin-bottom: 5px;
+				text-align: center;
 			}
 		}
 	}

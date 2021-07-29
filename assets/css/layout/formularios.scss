@@ -1,0 +1,883 @@
+form {
+    font-size: 1.1em;
+
+    label,
+    legend {
+        font-size: 1.2em;
+    }
+
+    input,
+    textarea,
+    select {
+        border: 1px solid $cor-preta;
+        @include border-radius(4px);
+        font-size: medium;
+        height: 3rem;
+        margin: 1rem 0;
+        padding: 0 0.5rem;
+        width: calc(100% - 1.05rem);
+    }
+
+    select {
+        width: 100%;
+    }
+
+    textarea {
+        height: 200px;
+    }
+
+    button {
+        background: $cor-padrao;
+        border: none;
+        @include border-radius(4px);
+        cursor: pointer;
+        color: $cor-branca;
+        font-size: 1.2em;
+        font-weight: bold;
+        margin: 1rem 0;
+        padding: 1rem 0;
+        transition: 1s all;
+        width: 100%;
+
+        &:hover {
+            background: $cor-padrao-auxiliar;
+            transform: scale(1.02);
+        }
+
+    }
+}
+
+.formulario {
+
+    &--simples {
+        display: grid;
+        grid-auto-flow: row;
+        margin: 1rem auto;
+    }
+
+    &--login {
+        align-items: center;
+        border: solid 1px $cor-padrao-auxiliar;
+        display: grid;
+        grid-template-areas:
+            "email"
+            "input-email"
+            "senha"
+            "input-senha"
+            "botao";
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto auto auto;
+        margin: 1rem auto;
+        padding: 2rem;
+        width: 40vw;
+
+        @media only screen and (max-width: 960px) {
+            width: 60vw;
+        }
+
+        @media only screen and (max-width: 495px) {
+            width: 75vw;
+        }
+
+        input {
+            padding-left: 3.5rem;
+            width: calc(100% - 3.5rem);
+        }
+
+        i {
+            font-size: 2em;
+            padding-left: 0.5rem;
+            width: fit-content;
+        }
+
+        a{
+            color: $cor-secundaria;
+            text-decoration: underline;
+        }
+
+        .formulario{
+            &__nome {
+                grid-area: nome;
+        
+                &__input {
+                    grid-area: input-nome;
+                }
+        
+                &__icone {
+                    grid-area: input-nome;
+                }
+            }
+        
+            &__email {
+                grid-area: email;
+        
+                &__input {
+                    grid-area: input-email;
+                }
+        
+                &__icone {
+                    grid-area: input-email;
+                }
+            }
+        
+            &__senha {
+                grid-area: senha;
+        
+                &__input {
+                    grid-area: input-senha;
+                }
+        
+                &__icone {
+                    grid-area: input-senha;
+
+                    &__revela{
+                        grid-area: input-senha;
+                        justify-self: end;
+                    }
+                }
+            }
+        
+            &__botao {
+                grid-area: botao;
+            }
+        }
+    }
+
+    &--cadastro {
+        align-items: center;
+        border: solid 1px $cor-padrao-auxiliar;
+        display: grid;
+        grid-template-areas:
+            "nome"
+            "input-nome"
+            "botao";
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto;
+        margin: 1rem auto;
+        padding: 2rem;
+        width: 40vw;
+
+        @media only screen and (max-width: 960px) {
+            width: 60vw;
+        }
+
+        @media only screen and (max-width: 495px) {
+            width: 75vw;
+        }
+
+        input {
+            padding-left: 3.5rem;
+            width: calc(100% - 3.5rem);
+        }
+
+        i {
+            font-size: 2em;
+            padding-left: 0.5rem;
+            width: fit-content;
+        }
+
+        .formulario{
+            &__nome {
+                grid-area: nome;
+        
+                &__input {
+                    grid-area: input-nome;
+                }
+        
+                &__icone {
+                    grid-area: input-nome;
+                }
+            }
+        }
+    }
+
+    &--cadastro-docente {
+        display: grid;
+        grid-template-areas:
+            "foto foto"
+            "nome sobrenome"
+            "ramal celular"
+            "email lattes"
+            "instituicao departamentos"
+            "discentes discentes"
+            "senha senha-confirmacao"
+            "sugestao sugestao"
+            "aceites botao";
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1rem;
+
+        @media only screen and (max-width: 960px) {
+            grid-template-areas:
+                "foto"
+                "nome"
+                "sobrenome"
+                "ramal"
+                "celular"
+                "email"
+                "lattes"
+                "instituicao"
+                "departamentos"
+                "discentes"
+                "senha"
+                "senha-confirmacao"
+                "sugestao"
+                "aceites"
+                "botao";
+            grid-template-columns: auto;
+        }
+
+        .formulario {
+            &__foto {
+                align-items: center;
+                display: grid;
+                grid-area: foto;
+                grid-gap: 1rem;
+                grid-template-areas:
+                    "preview upload";
+                grid-template-columns: auto 1fr;
+
+                @media only screen and (max-width: 960px) {
+                    grid-template-areas:
+                        "preview"
+                        "upload";
+                    grid-template-columns: auto;
+                }
+
+                &__upload {
+                    grid-area: upload;
+
+                    input {
+                        border: none;
+                    }
+                }
+
+                &__preview {
+                    grid-area: preview;
+                    justify-self: start;
+
+                    @media only screen and (max-width: 960px) {
+                        justify-self: center;
+                    }
+                }
+
+            }
+
+            &__nome {
+                grid-area: nome;
+            }
+
+            &__sobrenome {
+                grid-area: sobrenome;
+            }
+
+            &__ramal {
+                grid-area: ramal;
+            }
+
+            &__celular {
+                grid-area: celular;
+            }
+
+            &__email {
+                grid-area: email;
+            }
+
+            &__lattes {
+                grid-area: lattes;
+            }
+
+            &__instituicao {
+                grid-area: instituicao;
+            }
+
+            &__departamentos {
+                grid-area: departamentos;
+
+                h3 {
+                    text-align: left;
+                }
+
+                &__departamento {
+                    align-items: center;
+                    display: grid;
+                    grid-auto-flow: column;
+                    grid-gap: 1rem;
+                    grid-template-columns: auto 1fr;
+                    grid-template-rows: auto;
+
+                    &__input {
+                        height: 1.5rem;
+                        margin: 0.5rem;
+                        width: 1.5rem;
+                    }
+                }
+
+                &__controle {
+                    text-align: right;
+                }
+            }
+
+            &__discentes {
+                grid-area: discentes;
+
+                &__discente {
+                    border: solid 1px $cor-padrao-auxiliar;
+                    display: grid;
+                    grid-gap: 1rem;
+                    grid-template-areas:
+                        "remove remove"
+                        "nome email"
+                        "vinculo inicio"
+                        "departamento departamento";
+                    grid-template-columns: 1fr 1fr;
+                    margin-top: 1rem;
+                    padding: 1rem;
+
+                    @media only screen and (max-width: 960px) {
+                        grid-template-areas:
+                            "remove"
+                            "nome"
+                            "email"
+                            "vinculo"
+                            "inicio"
+                            "departamento";
+                        grid-template-columns: auto;
+                    }
+
+                    &__remove {
+                        color: red;
+                        cursor: pointer;
+                        grid-area: remove;
+                        justify-self: end;
+                    }
+
+                    &__nome {
+                        grid-area: nome;
+                    }
+
+                    &__email {
+                        grid-area: email;
+                    }
+
+                    &__vinculo {
+                        grid-area: vinculo;
+                    }
+
+                    &__inicio {
+                        grid-area: inicio;
+                    }
+                }
+
+                &__controle {
+                    text-align: right;
+                }
+            }
+
+            &__senha {
+                display: grid;
+                grid-template-areas:
+                    "label"
+                    "input";
+                grid-area: senha;
+
+                label {
+                    grid-area: label;
+                }
+
+                input {
+                    align-self: center;
+                    grid-area: input;
+                }
+
+                i {
+                    align-self: center;
+                    cursor: pointer;
+                    font-size: 1.5em;
+                    grid-area: input;
+                    justify-self: end;
+                    margin-right: 0.5rem;
+                }
+
+                &__confirmacao {
+                    display: grid;
+                    grid-template-areas:
+                        "label"
+                        "input";
+                    grid-area: senha-confirmacao;
+
+                    label {
+                        grid-area: label;
+                    }
+
+                    input {
+                        align-self: center;
+                        grid-area: input;
+                    }
+
+                    i {
+                        align-self: center;
+                        cursor: pointer;
+                        font-size: 1.5em;
+                        grid-area: input;
+                        justify-self: end;
+                        margin-right: 0.5rem;
+                    }
+
+                }
+            }
+
+            #sugestao {
+                grid-area: sugestao;
+                justify-self: end;
+            }
+
+            &__aceitacao {
+                align-items: center;
+                display: grid;
+                grid-area: aceites;
+                grid-auto-flow: column;
+                grid-gap: 1rem;
+                grid-template-columns: auto 1fr;
+                grid-template-rows: auto;
+
+                &__input {
+                    height: 1.5rem;
+                    margin: 0.5rem;
+                    width: 1.5rem;
+                }
+
+                a {
+                    color: $cor-secundaria-auxiliar;
+                }
+            }
+
+            &__botao {
+                grid-area: botao;
+            }
+        }
+    }
+
+    &--cadastro-discente {
+        display: grid;
+        grid-template-areas:
+            "foto foto"
+            "nome sobrenome"
+            "email celular"
+            "orientador orientador"
+            "setor departamento"
+            "vinculo inicio"
+            "senha senha-confirmacao"
+            "sugestao sugestao"
+            "aceites botao";
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1rem;
+
+        @media only screen and (max-width: 960px) {
+            grid-template-areas:
+                "foto"
+                "nome"
+                "sobrenome"
+                "email"
+                "celular"
+                "orientador"
+                "orientador"
+                "setor"
+                "departamento"
+                "vinculo"
+                "inicio"
+                "senha"
+                "senha-confirmacao"
+                "sugestao"
+                "aceites"
+                "botao";
+
+            grid-template-columns: auto;
+        }
+
+        .formulario {
+
+            &__foto {
+                align-items: center;
+                display: grid;
+                grid-area: foto;
+                grid-gap: 1rem;
+                grid-template-areas:
+                    "preview upload";
+                grid-template-columns: auto 1fr;
+
+                @media only screen and (max-width: 960px) {
+                    grid-template-areas:
+                        "preview"
+                        "upload";
+                    grid-template-columns: auto;
+
+                }
+
+                &__upload {
+                    grid-area: upload;
+
+                    input {
+                        border: none;
+                    }
+                }
+
+                &__preview {
+                    grid-area: preview;
+                    justify-self: start;
+
+                    @media only screen and (max-width: 960px) {
+                        justify-self: center;
+
+                    }
+                }
+
+            }
+
+            &__nome {
+                grid-area: nome;
+            }
+
+            &__sobrenome {
+                grid-area: sobrenome;
+            }
+
+            &__email {
+                grid-area: email;
+            }
+
+            &__celular {
+                grid-area: celular;
+            }
+
+            &__orientador {
+                grid-area: orientador;
+
+                &__descricao {
+                    border: solid 1px $cor-padrao-auxiliar;
+                    display: grid;
+                    grid-gap: 1rem;
+                    grid-template-areas:
+                        "orientador-nome orientador-email";
+                    grid-template-columns: 1fr 1fr;
+                    grid-template-rows: auto;
+                    margin-top: 1rem;
+                    padding: 1rem;
+
+                    &__nome {
+                        grid-area: orientador-nome;
+                    }
+
+                    &__email {
+                        grid-area: orientador-email;
+                    }
+                }
+            }
+
+            &__setor {
+                grid-area: setor;
+            }
+
+            &__departamento {
+                grid-area: departamento;
+            }
+
+            &__vinculo {
+                grid-area: vinculo;
+            }
+
+            &__inicio {
+                grid-area: inicio;
+            }
+
+        }
+    }
+
+    &--cadastro-externos {
+        display: grid;
+        grid-template-areas:
+            "tipo tipo"
+            "instituicao instituicao"
+            "titulo-responsavel titulo-responsavel"
+            "foto foto"
+            "nome sobrenome"
+            "email celular"
+            "senha senha-confirmacao"
+            "sugestao sugestao"
+            "aceites botao";
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1rem;
+
+        .formulario {
+            &__tipo {
+                display: grid;
+                grid-area: tipo;
+                grid-auto-flow: row;
+
+                &__escolha {
+                    align-items: center;
+                    display: grid;
+                    grid-auto-flow: column;
+                    grid-template-columns: auto 1fr auto 1fr;
+
+                    input {
+                        height: 1.05rem;
+                        margin: 0.5rem;
+                        width: 1.5rem;
+                    }
+                }
+            }
+
+            &__instituicao {
+                border: solid 1px $cor-padrao-auxiliar;
+                display: grid;
+                grid-area: instituicao;
+                grid-gap: 1rem;
+                grid-template-areas:
+                    "titulo titulo"
+                    "razao cnpj"
+                    "cep uf"
+                    "cidade bairro"
+                    "rua numero"
+                    "complemento telefone";
+                padding: 1rem;
+
+                &__titulo {
+                    grid-area: titulo;
+                }
+
+                &__razao {
+                    grid-area: razao;
+                }
+
+                &__cnpj {
+                    grid-area: cnpj;
+                }
+
+                &__cep {
+                    grid-area: cep;
+                }
+
+                &__rua {
+                    grid-area: rua;
+                }
+
+                &__bairro {
+                    grid-area: bairro;
+                }
+
+                &__cidade {
+                    grid-area: cidade;
+                }
+
+                &__uf {
+                    grid-area: uf;
+                }
+
+                &__numero {
+                    grid-area: numero;
+                }
+
+                &__complemento {
+                    grid-area: complemento;
+                }
+
+                &__telefone {
+                    grid-area: telefone;
+                }
+            }
+
+            &__titulo {
+                &--responsavel {
+                    grid-area: titulo-responsavel;
+                }
+            }
+
+            &__foto {
+                align-items: center;
+                display: grid;
+                grid-area: foto;
+                grid-gap: 1rem;
+                grid-template-areas:
+                    "preview upload";
+                grid-template-columns: auto 1fr;
+
+                @media only screen and (max-width: 960px) {
+                    grid-template-areas:
+                        "preview"
+                        "upload";
+                    grid-template-columns: auto;
+                }
+
+                &__upload {
+                    grid-area: upload;
+
+                    input {
+                        border: none;
+                    }
+                }
+
+                &__preview {
+                    grid-area: preview;
+                    justify-self: start;
+
+                    @media only screen and (max-width: 960px) {
+                        justify-self: center;
+                    }
+                }
+
+            }
+
+            &__reponsavel {
+                &__nome {
+                    grid-area: nome;
+                }
+
+                &__sobrenome {
+                    grid-area: sobrenome;
+                }
+
+                &__email {
+                    grid-area: email;
+                }
+
+                &__celular {
+                    grid-area: celular;
+                }
+            }
+
+
+        }
+
+    }
+
+    &__senha {
+        display: grid;
+        grid-template-areas:
+            "label"
+            "input";
+        grid-area: senha;
+
+        label {
+            grid-area: label;
+        }
+
+        input {
+            align-self: center;
+            grid-area: input;
+        }
+
+        i {
+            align-self: center;
+            cursor: pointer;
+            font-size: 1.5em;
+            grid-area: input;
+            justify-self: end;
+            margin-right: 0.5rem;
+        }
+
+        &__confirmacao {
+            display: grid;
+            grid-template-areas:
+                "label"
+                "input";
+            grid-area: senha-confirmacao;
+
+            label {
+                grid-area: label;
+            }
+
+            input {
+                align-self: center;
+                grid-area: input;
+            }
+
+            i {
+                align-self: center;
+                cursor: pointer;
+                font-size: 1.5em;
+                grid-area: input;
+                justify-self: end;
+                margin-right: 0.5rem;
+            }
+
+        }
+    }
+
+    #sugestao {
+        grid-area: sugestao;
+        justify-self: end;
+    }
+
+    &__aceitacao {
+        align-items: center;
+        display: grid;
+        grid-area: aceites;
+        grid-auto-flow: column;
+        grid-gap: 1rem;
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto;
+
+        &__input {
+            height: 1.5rem;
+            margin: 0.5rem;
+            width: 1.5rem;
+        }
+
+        a {
+            color: $cor-secundaria-auxiliar;
+        }
+    }
+
+    &__botao {
+        grid-area: botao;
+    }
+
+}
+
+#searchform {
+    align-items: center;
+    grid-area: pesquisa;
+    display: grid;
+    grid-template:
+        "input";
+
+    @media only screen and (max-width: 960px) {
+        justify-self: center;
+        margin: 0.5rem;
+    }
+
+    input {
+        border: none;
+        border-radius: 4px;
+        grid-area: input;
+        justify-self: center;
+        margin: 0;
+        padding: 15px;
+        width: 250px;
+    }
+
+    button {
+        background-color: transparent;
+        color: $cor-preta;
+        font-size: 1.3em;
+        grid-area: input;
+        height: fit-content;
+        justify-self: end;
+        margin: 0;
+        padding-right: 1.5rem;
+        width: fit-content;
+    }
+
+    label {
+        display: none;
+    }
+}
+
+#sugestao {
+    color: red;
+    font-size: 1em;
+
+    i {
+        font-size: 1em;
+    }
+}
