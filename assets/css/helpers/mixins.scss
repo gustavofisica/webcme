@@ -1,0 +1,20 @@
+%ponteiro {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    color: $cor-branca;
+    font-weight: bold;
+    font-size: 18px;
+    @include transition-duration(0.6s);
+    @include transition-timing-function(ease);
+    @include border-radius(3px);
+    user-select: none;
+    padding: 16px;
+    margin-top: -16px;
+
+    &:hover {
+        background-color: rgba($cor-padrao-auxiliar, 0.8);
+        color: $cor-padrao;
+    }
+}

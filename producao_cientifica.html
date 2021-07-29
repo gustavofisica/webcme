@@ -1,0 +1,1583 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!--Configuração de Codificação de Caracteres-->
+    <meta charset="utf-8">
+    <!--Configuração de Compatibilidade de Browsers-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--Configuração de Escalonamento para Device Mobile-->
+    <meta name="viewport" content="width=device-width">
+    <!--Configuração da Unidade Organizacional do CME da Barra Brasil-->
+    <meta property="creator.productor"
+        content="http://estruturaorganizacional.dados.gov.br/id/unidade-organizacional/241245">
+    <!--Estilos da página-->
+    <link href="assets/css/estilos.css" rel="stylesheet">
+    <!--Carregando as Bibliotecas do Google Charts-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <!--Incorporação da fonte awsome para ícones da página-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--Inclusão do ícone do CME na aba do Browser-->
+    <link rel="shortcut icon" href="assets/img/favicon.png">
+    <!--Título da Página na aba do Browser-->
+    <title>Centro de Microscopia Eletrônica</title>
+</head>
+
+<body>
+    <header>
+        <!--Incorporação da Barra Brasil de acordo com a documentação contida em https://barra.brasil.gov.br/-->
+        <div id="barra-brasil" style="background:#7F7F7F; height: 20px; padding:0 0 0 10px;display:block;">
+            <ul id="menu-barra-temp" style="list-style:none;">
+                <li
+                    style="display:inline; float:left;padding-right:10px; margin-right:10px; border-right:1px solid #EDEDED">
+                    <a href="http://brasil.gov.br"
+                        style="font-family:sans,sans-serif; text-decoration:none; color:white;">Portal do Governo
+                        Brasileiro</a>
+                </li>
+            </ul>
+        </div>
+        <!--Barra de Acessibilidade-->
+        <div class="acessibilidade" id="acessebilidade">
+            <!--Lista de Atalhos da Página-->
+            <ul class="acessibilidade__atalhos">
+                <!--Atalho do Conteúdo Principal da Página-->
+                <li><a accesskey="1" title="Ir para o conteúdo" href="#conteudo-principal">Ir para o
+                        conteúdo<span>1</span></a>
+                </li>
+                <!--Atalho do Menu da Página-->
+                <li><a accesskey="2" title="Ir para o menu" href="#nav">Ir para o menu<span>2</span></a></li>
+                <!--Atalho de Busca-->
+                <li><a accesskey="3" title="Ir para a busca" href="#search">Ir para a busca<span>3</span></a></li>
+                <!--Atalho do Rodapé-->
+                <li><a accesskey="4" title="Ir para o rodapé" href="#footer">Ir para o rodapé<span>4</span></a></li>
+            </ul>
+            <!--Lista de Acessibilidade-->
+            <ul class="acessibilidade__links">
+                <!--Informações de Acessibilidade-->
+                <li><a accesskey="5" href="acessibilidade.html" title="Acessibilidade">Acessibilidade<span>5</span></a>
+                </li>
+                <!--Ativação do Alto Contraste-->
+                <li><a accesskey="6" href="#" id="alto-contraste" title="Alto Contraste">Alto
+                        Contraste<span>6</span></a></li>
+                <!--Mapa de Acesso da Página-->
+                <li><a accesskey="7" href="mapa_site.html" title="Mapa do Site">Mapa
+                        do Site<span>7</span></a></li>
+            </ul>
+            <!--Lista de Tradução-->
+            <ul class="acessibilidade__traducao" id="icones-traducao">
+                <!--Link para Tradução da Página em Inglês-->
+                <li><a href="" title="CME em Inglês">
+                        <div class="icones-traducao-united-states-of-america" alt="English"></div>
+                    </a></li>
+                <!--Link para Tradução da Página em Espanhol-->
+                <li><a href="" title="CME em Espanhol">
+                        <div class="icones-traducao-spain" alt="Spanish"></div>
+                    </a></li>
+                <!--Link para Tradução da Página em Francês-->
+                <li><a href="" title="CME em Francês">
+                        <div class="icones-traducao-france" alt="French"></div>
+                    </a></li>
+            </ul>
+        </div>
+        <!--Cabeçalho-->
+        <div class="cabecalho">
+            <!--Logo do Centro de Microscopia Eletrônica-->
+            <img class="cabecalho__logo" id="logo" src="assets/img/logo.svg"
+                alt="Logo do Centro de Microscopia Eletrônica da Universidade Federal do Paraná.">
+            <!--Menu UFPR-->
+            <nav class="cabecalho__menu--ufpr">
+                <!--Lista do Menu da UFPR-->
+                <ul>
+                    <!--Link do Portal da UFPR-->
+                    <li><a target="_blank" href="http://www.ufpr.br/portalufpr" aria-current="page">Portal UFPR</a></li>
+                    <!--Link do Portal do Setor de Ciências Biológicas da UFPR-->
+                    <li><a target="_blank" href="http://www.bio.ufpr.br/portal/" aria-current="page">Ciências
+                            Biológicas</a></li>
+                    <!--Link da Intranet da UFPR-->
+                    <li><a target="_blank" href="https://intranet.ufpr.br/">Intranet</a></li>
+                    <!--Link do Office 365 para UFPR-->
+                    <li><a target="_blank" href="http://www.office.com">Office 365</a></li>
+                    <!--Link do Sistema de Comunicação da UFPR-->
+                    <li><a target="_blank"
+                            href="https://www.ufpr.br/portalufpr/saci-sistema-de-apoio-a-comunicacao-integrada/">Comunicação</a>
+                    </li>
+                </ul>
+            </nav>
+            <!--Título e Formulário de Pesquisa no Site-->
+            <div class="cabecalho__titulo">
+                <!--Título do Departamento-->
+                <h1>Centro de Microscopia Eletrônica</h1>
+                <!--Início do Formulário de Pesquisa do Site-->
+                <form action="" id="searchform" method="GET">
+                    <!--Título do Ítem do Formulário-->
+                    <label for="search">Pesquisar</label>
+                    <!--Campo de Digitação para Pesquisa-->
+                    <input type="search" id="search" name="search" placeholder="Pesquisar...">
+                    <!--Botão de Pesquisar-->
+                    <button class="fa fa-search" aria-hidden="true"></button>
+                </form>
+            </div>
+        </div>
+        <!--Menu de Navegação CME-->
+        <nav class="menu">
+            <!--Link de direcionamento da barra de acessibilidade para menu-->
+            <a name="nav" id="nav"></a>
+            <!--Divisão do Ícone do Menu Responsivo-->
+            <div class="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></div>
+            <!--Lista de Links do Menu de 1° Nível-->
+            <ul>
+                <!--Link para Página Incial-->
+                <li><a href="index.html">Página Inicial</a></li>
+                <!--Link para Páginas da Organização do Centro de Microscopia Eletrônica-->
+                <li class="dropdown"><a class="dropdown-title" href="#">CME</a>
+                    <!--Lista de Links do Menu de 2° Nível-->
+                    <ul class="dropdown-menu">
+                        <!--Link para Página da Chefia do Centro de Microscopia Eletrônica-->
+                        <li><a href="chefia.html">Chefia</a></li>
+                        <!--Link para Página do Corpo de Conselheiros do Centro de Microscopia Eletrônica-->
+                        <li><a href="conselho.html">Conselho</a></li>
+                        <!--Link para Página da Equipe Técnica do Centro de Microscopia Eletrônica-->
+                        <li><a href="equipe_tecnica.html">Equipe Técnica</a></li>
+                        <!--Link para Página do Regimento Interno do Centro de Microscopia Eletrônica-->
+                        <li><a href="regimento.html">Regimento</a></li>
+                        <!--Link para Página da Descrição do Funcionamento do Centro de Microscopia Eletrônica-->
+                        <li><a href="funcionamento.html">Funcionamento</a></li>
+                        <!--Link para Página da História do Centro de Microscopia Eletrônica-->
+                        <li><a href="historico.html">Histórico</a></li>
+                        <!--Link para Página de Descrição da Missão e Visão do Centro de Microscopia Eletrônica-->
+                        <li><a href="missao_visao.html">Missão e Visão</a></li>
+                        <!--Link para Página de Disponibilização do Logtipo do Centro de Microscopia Eletrônica-->
+                        <li><a href="logotipo.html">Logotipo</a></li>
+                        <!--Link para Página do Planejamento Estratégico do Centro de Microscopia Eletrônica-->
+                        <li><a href="planejamento_estrategico.html">Planejamento Estratégico</a></li>
+                    </ul>
+                </li>
+                <!--Link para Página de Trabalhos Desenvolvidos com Auxílio do Centro de Microscopia Eletrônica-->
+                <li><a href="producao_cientifica.html">Produção Científica</a></li>
+                <!--Link para Página de Orientações aos Usuários-->
+                <li class="dropdown"><a class="dropdown-title" href="#">Orientações aos
+                        Usuários</a>
+                    <!--Lista de Links do Menu de 2° Nível-->
+                    <ul class="dropdown-menu">
+                        <!--Link para Página de Normas para Usuários do Centro de Microscopia Eletrônica-->
+                        <li><a href="normas.html">Normas</a></li>
+                        <!--Link Alternativo para Página do Sistema Interno de Gerenciamento do Centro de Microscopia Eletrônica-->
+                        <li><a href="sistema_gerenciamento.html">Sistema de Gerenciamento</a></li>
+                        <!--Link para Página dos Equipamentos do Centro de Microscopia Eletrônica-->
+                        <li><a href="servicos_precos.html">Tabelas de Serviços e Preços</a></li>
+                        <!--Link para Página de Perguntas Frequêntes do Centro de Microscopia Eletrônica-->
+                        <li><a href="perguntas_frequentes.html">Perguntas Frequentes</a></li>
+                    </ul>
+                </li>
+                <!--Link para Página da Infraestrutura do Centro de Microscopia Eletrônica-->
+                <li class="dropdown"><a class="dropdown-title" href="#">Infraestrutura</a>
+                    <!--Lista de Links do Menu de 2° Nível-->
+                    <ul class="dropdown-menu">
+                        <!--Link para Página dos Equipamentos do Centro de Microscopia Eletrônica-->
+                        <li><a href="equipamentos.html">Equipamentos</a></li>
+                        <!--Link para Página dos Laboratórios do Centro de Microscopia Eletrônica-->
+                        <li><a href="laboratorios.html">Laboratórios</a></li>
+                    </ul>
+                </li>
+                <!--Link para Galeria de Imagens-->
+                <li><a href="galeria.html">Galeria</a></li>
+                <!--Link para Página dos Equipamentos do Centro de Microscopia Eletrônica-->
+                <li><a href="estatisticas.html">Estatísticas</a></li>
+            </ul>
+        </nav>
+        <!--Link de direcionamento da barra de acessibilidade para conteúdo-->
+        <a name="conteudo-principal" id="conteudo-principal"></a>
+    </header>
+    <main class="conteudo--texto">
+        <h2>Produção Científica</h2>
+        <section>
+            <p>Trabalhos realizados com auxílio do Centro de Microscopia Eletrônica da Universidade Federal do Paraná.
+            </p>
+            <h3>2020</h3>
+            <ul>
+                <li>MAGRI, E. et al. Manganese hyperaccumulation capacity of Ilex paraguariensis A. St. Hil. and
+                    occurrence of interveinal chlorosis induced by transient toxicity. <strong>Ecotoxicology and
+                        Environmental Safety</strong>, v. 203, p. 111010, 15 out. 2020.</li>
+                <li>MARINHO, N. P. et al. Feasibility of ramie fibers as raw material for the isolation of
+                    nanofibrillated cellulose. <strong>Carbohydrate Polymers</strong>, v. 230, p. 115579, 15 fev.
+                    2020.</li>
+                <li>BAJA, F. et al. Infection of Beauveria bassiana and Cordyceps javanica on different immature
+                    stages of Duponchelia fovealis Zeller (Lepidoptera: Crambidae). <strong>Crop
+                        Protection</strong>, v. 138, p. 105347, 1 dez. 2020.</li>
+                <li>BOHN, A.; MATOS, F. B.; LABIAK, P. H. Taxonomy, distribution and conservation status of the fern
+                    genus Cyclodium (Dryopteridaceae). <strong>Willdenowia</strong>, v. 50, n. 2, p. 279, 25 jun.
+                    2020.</li>
+                <li>BONA, C. et al. Comparative vegetative anatomy of neotropical goodyerinae klotzsch (Orchidaceae
+                    juss.: Orchidoideae lindl.). <strong>Acta Botanica Brasilica</strong>, v. 34, n. 3, p. 530–539,
+                    1 jul. 2020.</li>
+                <li>DE CARVALHO, B. M.; VOLPEDO, A. V.; FÁVARO, L. F. Ontogenetic and sexual variation in the
+                    sagitta otolith of menticirrhus americanus (Teleostei; sciaenidae) (linnaeus, 1758) in a
+                    subtropical environment. <strong>Papeis Avulsos de Zoologia</strong>, v. 60, 2020.</li>
+                <li>FERNANDEZ-HILARIO, R.; GOLDENBERG, R.; MICHELANGELI, F. A. A new species of Meriania
+                    (Melastomataceae) with remarkably small flowers from northern Peru. <strong>Phytotaxa</strong>,
+                    v. 456, n. 1, p. 86–94, 19 ago. 2020.</li>
+                <li>FOGAÇA, J. M.; GOMES, L. R. P.; BARROS DE CARVALHO, C. J. <strong>Ultrastructural morphology and
+                        molecular analysis of a remarkable new species of Neodexiopsis (Muscidae, Diptera) from
+                        Southern BrazilZoologischer Anzeiger</strong>Elsevier GmbH, , 1 nov. 2020.</li>
+                <li>GOMES, L. R. P. et al. Stilbometopa podopostyla (Speiser) (Diptera: Hippoboscidae): first larva
+                    description, new record in Paraná state (Brazil) and new host record. <strong>Studies on
+                        Neotropical Fauna and Environment</strong>, 2020.</li>
+                <li>MAGRO, A. et al. A new species of nephus (Nephus) (coleoptera, coccinellidae) described from
+                    reunion island. <strong>ZooKeys</strong>, v. 2020, n. 962, p. 123–137, 2020.</li>
+                <li>MARTINS, A. L.; DOMAHOVSKI, A. C.; RENDÓN-MERA, D. I. Sexual association and cicadellid hosts of
+                    Dryinidae (Hymenoptera, Chrysidoidea): description of five new species from Brazil and a
+                    synopsis of the interaction with Gyponini (Hemiptera, Membracoidea). <strong>Insect Systematics
+                        &amp; Evolution</strong>, v. 1, n. aop, p. 1–34, 8 maio 2020.</li>
+                <li>PENDIUK GONÇALVES, J. et al. Beyond gold nanoparticles cytotoxicity: Potential to impair
+                    metastasis hallmarks. <strong>European Journal of Pharmaceutics and Biopharmaceutics</strong>,
+                    v. 157, p. 221–232, 1 dez. 2020.</li>
+                <li>PETKOWICZ, C. L. O.; WILLIAMS, P. A. Pectins from food waste: Characterization and functional
+                    properties of a pectin extracted from broccoli stalk. <strong>Food Hydrocolloids</strong>, v.
+                    107, p. 105930, 1 out. 2020.</li>
+                <li>PINTO, Â. P.; DE ARAUJO, B. R. A new damselfly of the genus Forcepsioneura from the Atlantic
+                    Forest of south-eastern Brazil (Odonata: Coenagrionidae). 1 jun. 2020.</li>
+                <li>SCHUCHOVSKI, C. et al. Morphological and anatomical insights into de novo shoot organogenesis of
+                    in vitro ‘Delite’ rabbiteye blueberries. <strong>Heliyon</strong>, v. 6, n. 11, 1 nov. 2020.
+                </li>
+                <li>TIBIRIÇÁ, C. E. J. DE A. et al. Diversity and Toxicity of the Genus Coolia Meunier in Brazil,
+                    and Detection of 44-methyl Gambierone in Coolia tropicalis. <strong>Toxins</strong>, v. 12, n.
+                    5, p. 327, 15 maio 2020.</li>
+                <li>ABRANTES LEAL, D.; WYPYCH, F.; BRUNO MARINO, C. E. Zinc-Layered Hydroxide Salt Intercalated with
+                    Molybdate Anions as a New Smart Nanocontainer for Active Corrosion Protection of Carbon Steel.
+                    <strong>ACS Applied Materials and Interfaces</strong>, v. 12, n. 17, p. 19823–19833, 29 abr.
+                    2020.</li>
+                <li>BOHONE, J. B. et al. Potentiality of epoxy-montmorillonite composite for stir-bar sorptive
+                    extraction for determination of atrazine. <strong>Brazilian Archives of Biology and
+                        Technology</strong>, v. 63, p. 2020, 2020.</li>
+                <li>DA CUNHA, A. B. M. et al. pH-sensitive microcapsules based on biopolymers for active corrosion
+                    protection of carbon steel at different pH. <strong>Surface and Coatings Technology</strong>, v.
+                    402, p. 126338, 25 nov. 2020.</li>
+                <li>DA SILVA, C. E. P. et al. Physical chemical study of zein and arabinogalactans or
+                    glucuronomannans polyelectrolyte complexes and their film-forming properties. <strong>Food
+                        Hydrocolloids</strong>, v. 100, p. 105394, 1 mar. 2020.</li>
+                <li>DO AMARAL, L. F. M.; DE FREITAS, R. A.; WYPYCH, F. K-shigaite-like layered double hydroxide
+                    particles as Pickering emulsifiers in oil/water emulsions. <strong>Applied Clay
+                        Science</strong>, v. 193, p. 105660, 1 ago. 2020.</li>
+                <li>EURÍDICE, W. A. et al. a-C:H films produced by PECVD technique onto substrate of Ti6Al4V alloy:
+                    Chemical and biological responses. <strong>Applied Surface Science</strong>, v. 503, p. 144084,
+                    15 fev. 2020.</li>
+                <li>GOMEZ, N. A. G. et al. Composites of polyethylene and layered cobalt hydroxide salts as
+                    potential ultraviolet radiation absorbers. <strong>Polymer Bulletin</strong>, v. 77, n. 1, p.
+                    255–273, 1 jan. 2020.</li>
+                <li>GÓMEZ, N. A. G. et al. Zn2Al Layered Double Hydroxides Intercalated with Nitrate and
+                    p-Aminobenzoate as Ultraviolet Protective Agents in Low-Density Polyethylene Nanocomposites and
+                    Natural Insulating Oils. <strong>Journal of the Brazilian Chemical Society</strong>, v. 31, n.
+                    5, p. 971–981, 1 maio 2020.</li>
+                <li>GOMEZ, N. A. G.; SOTILES, A. R.; WYPYCH, F. Layered double hydroxides with the composition
+                    [Mn6Al3(OH)18][(HPO42−)2A+].yH2O (A+ = Li, Na or K) obtained by topotactic exchange reactions.
+                    <strong>Applied Clay Science</strong>, v. 193, p. 105658, 1 ago. 2020.</li>
+                <li>GUBERT, G.; VARALDA, J.; MOSCA, D. H. Effect of wavelength and fluence in laser-induced iron
+                    nitride nanostructures. <strong>Journal of Alloys and Compounds</strong>, v. 856, p. 157392, 5
+                    mar. 2021.</li>
+                <li>GUTIÉRREZ-OJEDA, S. J. et al. Mn5Ge3 ultra-thin films on GaAs (111)B substrates: Influence of
+                    initial growth conditions. <strong>Superlattices and Microstructures</strong>, v. 148, p.
+                    106745, 1 dez. 2020.</li>
+                <li>HAZT, B. et al. Effect of pH and protein particle shape on the stability of
+                    amylopectin–xyloglucan water-in-water emulsions. <strong>Food Hydrocolloids</strong>, v. 104, p.
+                    105769, 1 jul. 2020.</li>
+                <li>HRYNIEWICZ, B. M.; BACH-TOLEDO, L.; VIDOTTI, M. Harnessing energy from micropollutants
+                    electrocatalysis in a high-performance supercapacitor based on PEDOT nanotubes. <strong>Applied
+                        Materials Today</strong>, v. 18, p. 100538, 1 mar. 2020.</li>
+                <li>JAERGER, S.; WYPYCH, F. Thermal and flammability properties influenced by Zn/Al, Co/Al, and
+                    Ni/Al layered double hydroxide in low‐density polyethylene nanocomposites. <strong>Journal of
+                        Applied Polymer Science</strong>, v. 137, n. 21, p. 48737, 5 jun. 2020.</li>
+                <li>JUNIOR, H. J. L. et al. Influence of Gamma Ray Irradiation on the Optical Properties of Calcite
+                    and Dolomite. <strong>Applied Spectroscopy</strong>, v. 74, n. 5, p. 507–514, 1 maio 2020.</li>
+                <li>LEAL, D. A. et al. Synthesis and characterization of gordaite, osakaite and simonkolleite by
+                    different methods: Comparison, phase interconversion, and potential corrosion protection
+                    applications. <strong>Journal of Solid State Chemistry</strong>, v. 291, p. 121595, 1 nov. 2020.
+                </li>
+                <li>LOUREÇO, L. T. et al. Study of the Influence of Temperature on the Optical and Structural
+                    Properties of Dolomite. <strong>Applied Spectroscopy</strong>, v. 74, n. 10, p. 1280–1286, 1
+                    out. 2020.</li>
+                <li>MISSINA, J. M. et al. Accessing decavanadate chemistry with tris(hydroxymethyl)aminomethane, and
+                    evaluation of methylene blue bleaching. <strong>Polyhedron</strong>, v. 180, p. 114414, 1 abr.
+                    2020.</li>
+                <li>PÉREZ MENDOZA, A. E. et al. Graphene Modified with Triruthenium Acetate Clusters as an Electrode
+                    for the Hybrid Energy Storage System. <strong>ACS Applied Nano Materials</strong>, v. 3, n. 7,
+                    p. 6757–6765, 24 jul. 2020.</li>
+                <li>RAMOS, M. K.; ZARBIN, A. J. G. Graphene/copper oxide nanoparticles thin films as precursor for
+                    graphene/copper hexacyanoferrate nanocomposites. <strong>Applied Surface Science</strong>, v.
+                    515, p. 146000, 15 jun. 2020.</li>
+                <li>SANTANA, F. S. et al. An Oxalate-Bridged Copper(II) Complex Combining Monodentate Benzoate,
+                    2,2′-bipyridine and Aqua Ligands: Synthesis, Crystal Structure and Investigation of Magnetic
+                    Properties. <strong>Molecules</strong>, v. 25, n. 8, p. 1898, 20 abr. 2020.</li>
+                <li>SCHMITZ, F. et al. Zein films with ZnO and ZnO:Mg quantum dots as functional nanofillers: New
+                    nanocomposites for food package with UV-blocker and antimicrobial properties. <strong>Polymer
+                        Testing</strong>, v. 91, p. 106709, 1 nov. 2020.</li>
+                <li>SOTILES, A. R.; GOMEZ, N. A. G.; WYPYCH, F. Thermogravimetric analysis of layered double
+                    hydroxides intercalated with sulfate and alkaline cations [M62+Al3(OH)18][A+(SO4)2] 12H2O (M2+=
+                    Mn, Mg, Zn; A+= Li, Na, K). <strong>Journal of Thermal Analysis and Calorimetry</strong>, v.
+                    140, n. 4, p. 1715–1723, 1 maio 2020.</li>
+                <li>SOTILES, A. R.; WYPYCH, F. First synthesis of a nanohybrid composed of a layered double
+                    hydroxide of Zn2Al intercalated with SO42−/Na+/Ag+ and decorated with Ago nanoparticles.
+                    <strong>Journal of Solid State Chemistry</strong>, v. 288, p. 121394, 1 ago. 2020a.</li>
+                <li>SOTILES, A. R.; WYPYCH, F. Synthesis and topotactic exchange reactions of new layered double
+                    hydroxides intercalated with ammonium/sulfate. <strong>Solid State Sciences</strong>, v. 106, p.
+                    106304, 1 ago. 2020b.</li>
+                <li>TEIXEIRA, N. A. et al. Application of a new adhesive elastomeric coating and
+                    hydrophilic-lipophilic-balanced sorbent for modified stir-bar sorptive extraction.
+                    <strong>Analytical Methods</strong>, v. 12, n. 48, p. 5815–5822, 28 dez. 2020.</li>
+                <li>WESTRUP, K. C. M. et al. Light-assisted cyclohexane oxidation catalysis by a manganese(III)
+                    porphyrin immobilized onto zinc hydroxide salt and zinc oxide obtained by zinc hydroxide salt
+                    hydrothermal decomposition. <strong>Applied Catalysis A: General</strong>, v. 602, 25 jul. 2020.
+                </li>
+                <li>D’ANGELO, R. W. O. et al. UPLC–QToF-MS Characterization of Blackberry Extracts of Cultivars
+                    ‘Tupy’, ‘Guarani’, and ‘Xavante’: Development of Extract-Loaded Niosomes. <strong>Revista
+                        Brasileira de Farmacognosia</strong>, v. 30, n. 4, p. 519–527, 1 ago. 2020.</li>
+                <li>FRAGA, M. C.; VEGA, C. S. Asterozoans from the Devonian of the Paraná Basin, South Brazil.
+                    <strong>Journal of South American Earth Sciences</strong>, v. 97, p. 102398, 1 jan. 2020.</li>
+                <li>ABRANTES LEAL, D.; WYPYCH, F.; BRUNO MARINO, C. E. Zinc-Layered Hydroxide Salt Intercalated with
+                    Molybdate Anions as a New Smart Nanocontainer for Active Corrosion Protection of Carbon Steel.
+                    <strong>ACS Applied Materials and Interfaces</strong>, v. 12, n. 17, p. 19823–19833, 29 abr.
+                    2020.</li>
+                <li>CALEGARI, F. et al. Benzotriazole encapsulation in spray-dried carboxymethylcellulose
+                    microspheres for active corrosion protection of carbon steel. <strong>Progress in Organic
+                        Coatings</strong>, v. 138, p. 105329, 1 jan. 2020.</li>
+                <li>CAVALI, M. et al. Effect of sequential acid-alkaline treatment on physical and chemical
+                    characteristics of lignin and cellulose from pine (Pinus spp.) residual sawdust.
+                    <strong>Bioresource Technology</strong>, v. 316, p. 123884, 1 nov. 2020.</li>
+                <li>DA CUNHA, A. B. M. et al. pH-sensitive microcapsules based on biopolymers for active corrosion
+                    protection of carbon steel at different pH. <strong>Surface and Coatings Technology</strong>, v.
+                    402, p. 126338, 25 nov. 2020.</li>
+                <li>DALPONTE DALLABONA, I. et al. Development of alginate beads with encapsulated jabuticaba peel
+                    and propolis extracts to achieve a new natural colorant antioxidant additive.
+                    <strong>International Journal of Biological Macromolecules</strong>, v. 163, p. 1421–1432, 15
+                    nov. 2020.</li>
+                <li>DE FRANÇA BETTENCOURT, G. M. et al. Green biosynthesis of single and bimetallic nanoparticles of
+                    iron and manganese using bacterial auxin complex to act as plant bio-fertilizer.
+                    <strong>Biocatalysis and Agricultural Biotechnology</strong>, v. 30, p. 101822, 1 nov. 2020.
+                </li>
+                <li>DE LIMA, G. G. et al. Effect of cellulose size-concentration on the structure of polyvinyl
+                    alcohol hydrogels. <strong>Carbohydrate Polymers</strong>, v. 245, p. 116612, 1 out. 2020.</li>
+                <li>FERNANDES, I. DE A. A. et al. Hybrid bacterial cellulose‐collagen membranes production in
+                    culture media enriched with antioxidant compounds from plant extracts. <strong>Polymer
+                        Engineering &amp; Science</strong>, v. 60, n. 11, p. 2814–2826, 2 nov. 2020.</li>
+                <li>HAMERSKI, F. et al. Esterification reaction kinetics of acetic acid and n‐pentanol catalyzed by
+                    sulfated
+                    zirconia. <strong>International Journal of Chemical Kinetics</strong>, v. 52, n. 8, p. 499–512, 5
+                    ago.
+                    2020.</li>
+                <li>LEAL, D. A. et al. Synthesis and characterization of gordaite, osakaite and simonkolleite by
+                    different
+                    methods: Comparison, phase interconversion, and potential corrosion protection applications.
+                    <strong>Journal of Solid State Chemistry</strong>, v. 291, p. 121595, 1 nov. 2020.</li>
+                <li>LIBARDI, N. et al. A non-waste strategy for enzymatic hydrolysis of cellulose recovered from
+                    domestic
+                    wastewater. <strong>Environmental Technology (United Kingdom)</strong>, 2020.</li>
+                <li>MACEDO BALDO, L. G.; LENZI, M. K.; EIRAS, D. Water vapor permeation and morphology of polysulfone
+                    membranes prepared by phase inversion. <strong>Polimeros</strong>, v. 30, n. 3, 2020.</li>
+                <li>MARINHO, N. P. et al. Feasibility of ramie fibers as raw material for the isolation of
+                    nanofibrillated
+                    cellulose. <strong>Carbohydrate Polymers</strong>, v. 230, p. 115579, 15 fev. 2020.</li>
+                <li>PEREIRA, B. L. et al. Oxide coating containing apatite formed on Ti-25Nb-25Ta alloy treated by
+                    Two-Step
+                    Plasma Electrolytic Oxidation. <strong>Surface and Coatings Technology</strong>, v. 382, p. 125224,
+                    25
+                    jan. 2020.</li>
+                <li>SANTOS, L. L.; CARDOSO, R. P.; BRUNATTO, S. F. Behavior of the reversed austenite in CA-6NM
+                    martensitic
+                    stainless steel under cavitation. <strong>Wear</strong>, v. 454–455, p. 203322, 15 ago. 2020a.</li>
+                <li>SANTOS, L. L.; CARDOSO, R. P.; BRUNATTO, S. F. Direct correlation between martensitic transformation
+                    and
+                    incubation-acceleration transition in solution-treated AISI 304 austenitic stainless steel
+                    cavitation.
+                    <strong>Wear</strong>, v. 462–463, p. 203522, 15 dez. 2020b.</li>
+                <li>VALLADARES-DIESTRA, K. K. et al. Imidazole green solvent pre-treatment as a strategy for
+                    second-generation bioethanol production from sugarcane bagasse. <strong>Chemical Engineering
+                        Journal</strong>, p. 127708, 13 nov. 2020.</li>
+            </ul>
+            <h3>2019</h3>
+            <ul>
+                <li>CARNEIRO, M. E. et al. Characterization of cellulose and cellulose nitrate nanofilms.
+                    <strong>Floresta</strong>, v. 49, n. 2, p. 219–226, 29 mar. 2019.</li>
+                <li>LENGOWSKI, E. C. et al. Nanocellulose in the paper making. In: <strong>Sustainable Polymer
+                        Composites and Nanocomposites</strong>. [s.l.] Springer International Publishing, 2019. p.
+                    1027–1066.</li>
+                <li>LOPES DA SILVA, E. et al. NANOFIBRILLATED CELLULOSE, THE SMALL PROMISING FIBER: CHARACTERISTICS
+                    AND POTENTIALITIES. [s.d.].</li>
+                <li>VIANA, L. C. et al. Nanostructured films produced from the bleached Pinus sp. kraft pulp.
+                    <strong>Floresta e Ambiente</strong>, v. 26, n. 4, 2019.</li>
+                <li>AFFE, H. M. DE J. et al. Nitzschia martiana (C.A. Agardh) Van Heurck (Bacillariophyceae):
+                    distribution modelling and new records along the Brazilian coast. <strong>Diatom
+                        Research</strong>, v. 34, n. 1, p. 23–31, 2 jan. 2019.</li>
+                <li>ALMEIDA, A. B. R. DE; SMIDT, E. DE C.; AMANO, E. Evolution of anatomical characters in
+                    Acianthera section Pleurobotryae (Orchidaceae: Pleurothallidinae). <strong>PLOS ONE</strong>, v.
+                    14, n. 3, p. e0212677, 13 mar. 2019.</li>
+                <li>ANDREAZZA, A. P. et al. Genome Analysis of Entomopathogenic Bacillus sp. ABP14 Isolated from a
+                    Lignocellulosic Compost. <strong>Genome Biology and Evolution</strong>, v. 11, n. 6, p.
+                    1658–1662, 1 jun. 2019.</li>
+                <li>BOHN, A.; MATOS, F. B.; LABIAK, P. H. Taxonomic novelties in cyclodium (Dryopteridaceae) and a
+                    key to the species with free veins. <strong>Plant Ecology and Evolution</strong>, v. 152, n. 3,
+                    p. 521–530, 1 nov. 2019.</li>
+                <li>BOIA-FERREIRA, M. et al. TCTP from Loxosceles Intermedia (Brown Spider) Venom Contributes to the
+                    Allergic and Inflammatory Response of Cutaneous Loxoscelism. <strong>Cells</strong>, v. 8, n.
+                    12, p. 1489, 22 nov. 2019.</li>
+                <li>CARVALHO, B. M. et al. First record of anomalous otoliths of <em>Menticirrhus americanus</em> in
+                    the South Atlantic. <strong>Journal of Applied Ichthyology</strong>, v. 35, n. 6, p. 1286–1291,
+                    8 dez. 2019.</li>
+                <li>CHAABAN, A. et al. Insecticide activity of Curcuma longa (leaves) essential oil and its major
+                    compound α-phellandrene against Lucilia cuprina larvae (Diptera: Calliphoridae): Histological
+                    and ultrastructural biomarkers assessment. <strong>Pesticide Biochemistry and
+                        Physiology</strong>, v. 153, p. 17–27, 1 jan. 2019a.</li>
+                <li>CHAABAN, A. et al. Essential oil from Curcuma longa leaves: Can an overlooked by-product from
+                    turmeric industry be effective for myiasis control? <strong>Industrial Crops and
+                        Products</strong>, v. 132, p. 352–364, 1 jun. 2019b.</li>
+                <li>DA SILVA-LEHMKUHL, A. M. et al. On luticola mann (Bacillariophyceae) in Southeastern Brazil:
+                    Taxonomy, ecology and description of two new species. <strong>Phytotaxa</strong>, v. 402, n. 4,
+                    p. 165–186, 2 maio 2019.</li>
+                <li>DE AZEVEDO PASQUALINI, A. P. et al. In vitro culture and diversity of endophytic fungi in
+                    bambusa oldhamii. <strong>Pesquisa Agropecuaria Tropical</strong>, v. 49, 6 fev. 2019.</li>
+                <li>DE CARVALHO, B. M. et al. Otolith shape index: Is it a tool for trophic ecology studies?
+                    <strong>Journal of the Marine Biological Association of the United Kingdom</strong>, v. 99, n.
+                    7, p. 1675–1682, 1 nov. 2019.</li>
+                <li>FARIA, L. ; FREHSE, F. A. ; OCCHI, T. V. T. ; CARVALHO, BARBARA ; PUPO, D. V. ; DISARO, S. T. ;
+                    VITULE, J. R. S. . Occurrence of non-native species in a subtropical coastal river, in Southern
+                    Brazil. ACTA LIMNOLOGICA BRASILIENSIA (ONLINE), 2020.</li>
+                <li>FAVRETTO, G. et al. <strong>Endothelial microparticles in uremia: Biomarkers and potential
+                        therapeutic targetsToxins</strong>MDPI AG, , 1 maio 2019. Disponível em:
+                    &lt;https://pubmed.ncbi.nlm.nih.gov/31086003/&gt;. Acesso em: 30 mar. 2021</li>
+                <li>KULIKOVSKIY, M. et al. Description of a new diatom genus <em>Dorofeyukea</em> gen. nov. with
+                    remarks on phylogeny of the family Stauroneidaceae. <strong>Journal of Phycology</strong>, v.
+                    55, n. 1, p. 173–185, 1 fev. 2019.</li>
+                <li>LEHMKUHL, E. A. et al. Two new species of Nitzschia (Bacillariaceae, Bacillariophyta) from
+                    tropical reservoirs of southeastern Brazil. <strong>Phytotaxa</strong>, v. 399, n. 1, p. 83–99,
+                    25 mar. 2019.</li>
+                <li>MOREIRA-GONZÁLEZ, A. R. et al. Variations in morphology, growth, and toxicity among strains of
+                    the Prorocentrum lima species complex isolated from Cuba and Brazil. <strong>Journal of Applied
+                        Phycology</strong>, v. 31, n. 1, p. 519–532, 1 fev. 2019a.</li>
+                <li>MOREIRA-GONZÁLEZ, A. R. et al. Morphology, growth, toxin production, and toxicity of cultured
+                    marine benthic dinoflagellates from Brazil and Cuba. <strong>Journal of Applied
+                        Phycology</strong>, v. 31, n. 6, p. 3699–3719, 1 dez. 2019b.</li>
+                <li>OLIVEIRA, A. M.; FEITOSA, R. M. Taxonomic revision of the genus Probolomyrmex Mayr, 1901
+                    (Hymenoptera: Formicidae: Proceratiinae) for the Neotropical Region. <strong>Zootaxa</strong>,
+                    v. 4614, n. 1, p. 61–94, 7 jun. 2019.</li>
+                <li>PENA, L. C. et al. Muscodor brasiliensis sp. nov. produces volatile organic compounds with
+                    activity against Penicillium digitatum. <strong>Microbiological Research</strong>, v. 221, p.
+                    28–35, 1 abr. 2019.</li>
+                <li>RUWER, D. T.; LUDWIG, T. A. V.; RODRIGUES, L. Two new diatom species (Bacillariophyceae) from
+                    Brazilian floodplain: Actinella hermes-moreirae sp. nov. and gomphonema mutunensis sp. nov.
+                    <strong>Phytotaxa</strong>, v. 395, n. 2, p. 71–80, 7 mar. 2019.</li>
+                <li>SEPÚLVEDA, T. A. et al. The Neriidae (Diptera) of southeast Asia: A taxonomic revision of the
+                    genus Telostylus. <strong>European Journal of Entomology</strong>, v. 116, p. 281–301, 2019.
+                </li>
+                <li>TERUYA, R. E. et al. Zirconia activation by ultraviolet irradiation and O2 plasma to obtain
+                    hydrophilic surface for implantology. <strong>Materials Research Express</strong>, v. 6, n. 8,
+                    p. 085414, 12 jun. 2019.</li>
+                <li>TIBIRIÇÁ, C. et al. Ostreopsis cf. ovata Bloom in Currais, Brazil: Phylogeny, Toxin Profile and
+                    Contamination of Mussels and Marine Plastic Litter. <strong>Toxins</strong>, v. 11, n. 8, p.
+                    446, 27 jul. 2019.</li>
+                <li>TULESKI, T. R. et al. Cellulose production increases sorghum colonization and the pathogenic
+                    potential of Herbaspirillum rubrisubalbicans M1. <strong>Scientific Reports</strong>, v. 9, n.
+                    1, p. 1–10, 1 dez. 2019.</li>
+                <li>BORGES, R. et al. Potential sustainable slow-release fertilizers obtained by mechanochemical
+                    activation of MgAl and MgFe layered double hydroxides and K 2 HPO 4.
+                    <strong>Nanomaterials</strong>, v. 9, n. 2, 1 fev. 2019.</li>
+                <li>DA ROCHA, M. G. et al. Comparison between catalytic activities of two zinc layered hydroxide
+                    salts in brilliant green organic dye bleaching. <strong>Journal of Colloid and Interface
+                        Science</strong>, v. 541, p. 425–433, 1 abr. 2019.</li>
+                <li>DAS NEVES, M. F. F. et al. Enhancement of conductivity and transmittance of graphene
+                    oxide/PEDOT:PSS electrodes and the evaluation of charge transfer dynamics. <strong>Journal of
+                        Applied Physics</strong>, v. 126, n. 21, p. 215107, 7 dez. 2019.</li>
+                <li>DE ARAUJO ANDREOTTI, I. A. et al. Disposable and flexible electrochemical sensor made by
+                    recyclable material and low cost conductive ink. <strong>Journal of Electroanalytical
+                        Chemistry</strong>, v. 840, p. 109–116, 1 maio 2019.</li>
+                <li>DE BARROS, H. R. et al. Physicochemical Study of the Interaction between Gold Nanoparticles and
+                    Lipase from Candida sp. (CALB): Insights into the Nano-Bio Interface. <strong>Article J. Braz.
+                        Chem. Soc</strong>, v. 30, n. 10, 2231.</li>
+                <li>GEVAERD, A. et al. Graphene Quantum Dots Modified Screen‐printed Electrodes as Electroanalytical
+                    Sensing Platform for Diethylstilbestrol. <strong>Electroanalysis</strong>, v. 31, n. 5, p.
+                    838–843, 6 maio 2019.</li>
+                <li>GOMEZ, N. A. G.; WYPYCH, F. Nanocomposites of polyethylene and ternary (Mg + Zn/Al) layered
+                    double hydroxide modified with an organic UV absorber. <strong>Journal of Polymer
+                        Research</strong>, v. 26, n. 8, p. 1–10, 1 ago. 2019.</li>
+                <li>GREGÓRIO, T. et al. Promoting a Significant Increase in the Photoluminescence Quantum Yield of
+                    Terbium(III) Complexes by Ligand Modification. <strong>Inorganic Chemistry</strong>, v. 58, n.
+                    18, p. 12099–12111, 16 set. 2019.</li>
+                <li>GUBERT, G. et al. Single-step formation of Cr 2 N nanoparticles by pulsed laser irradiation.
+                    <strong>Journal of Applied Physics</strong>, v. 125, n. 2, p. 024301, 14 jan. 2019.</li>
+                <li>HOFF, A. et al. Ga x Se 10-x based solar cells: Some alternatives for the improvement in their
+                    performance parameters. <strong>Solar Energy Materials and Solar Cells</strong>, v. 193, p.
+                    141–148, 1 maio 2019.</li>
+                <li>HRYNIEWICZ, B. M. et al. Influence of the pH on the electrochemical synthesis of polypyrrole
+                    nanotubes and the supercapacitive performance evaluation. <strong>Electrochimica Acta</strong>,
+                    v. 293, p. 447–457, 10 jan. 2019a.</li>
+                <li>HRYNIEWICZ, B. M. et al. Impedimetric studies about the degradation of polypyrrole nanotubes
+                    during galvanostatic charge and discharge cycles. <strong>Journal of Electroanalytical
+                        Chemistry</strong>, v. 855, p. 113636, 15 dez. 2019b.</li>
+                <li>HRYNIEWICZ, B. M.; VIDOTTI, M. PEDOT Nanotubes Electrochemically Synthesized on Flexible
+                    Substrates: Enhancement of Supercapacitive and Electrocatalytic Properties. <strong>ACS Applied
+                        Nano Materials</strong>, v. 1, n. 8, p. 3913–3924, 24 ago. 2018.</li>
+                <li>INAGAKI, C. S. et al. Facile synthesis and dopamine sensing application of three component
+                    nanocomposite thin films based on polythiophene, gold nanoparticles and carbon nanotubes.
+                    <strong>Journal of Electroanalytical Chemistry</strong>, v. 840, p. 208–217, 1 maio 2019.</li>
+                <li>JAERGER, S. et al. Rheological properties of low-density polyethylene filled with hydrophobic
+                    Co(Ni)-Al layered double hydroxides. <strong>Polimeros</strong>, v. 29, n. 1, 2019.</li>
+                <li>KALINKE, C. et al. Green method for glucose determination using microfluidic device with a
+                    non-enzymatic sensor based on nickel oxyhydroxide supported at activated biochar.
+                    <strong>Talanta</strong>, v. 200, p. 518–525, 1 ago. 2019.</li>
+                <li>MACHADO, J. P. E.; DE FREITAS, R. A.; WYPYCH, F. <strong>Layered clay minerals, synthetic
+                        layered double hydroxides and hydroxide salts applied as pickering emulsifiersApplied Clay
+                        Science</strong>Elsevier Ltd, , 1 mar. 2019.</li>
+                <li>OLIVEIRA, M. C. et al. Nonenzymatic sensor for determination of glucose in blood plasma based on
+                    nickel oxyhydroxide in a microfluidic system of cotton thread. <strong>Journal of
+                        Electroanalytical Chemistry</strong>, v. 840, p. 153–159, 1 maio 2019.</li>
+                <li>PAPI, M. A. P.; BERGAMINI, M. F.; MARCOLINO-JUNIOR, L. H. Electrochemical behavior of a
+                    cation-exchange resin modified with copper ions on non-enzymatic glucose determination.
+                    <strong>Journal of Electroanalytical Chemistry</strong>, v. 835, p. 248–253, 15 fev. 2019.</li>
+                <li>PINTO-COELHO, C. V. et al. Hydrothermal dolomitization and porosity development: An example from
+                    Precambrian dolomitic rocks of Água Clara Formation, Ribeira Belt, southern Brazil.
+                    <strong>Journal of South American Earth Sciences</strong>, v. 94, p. 102193, 1 out. 2019.</li>
+                <li>SAKAKIBARA, C. N. et al. Salt-induced thermal gelation of xyloglucan in aqueous media.
+                    <strong>Carbohydrate Polymers</strong>, v. 223, p. 115083, 1 nov. 2019.</li>
+                <li>SANTOS, L. R. L.; MARINO, C. E. B.; RIEGEL-VIDOTTI, I. C. Silica/chitosan hybrid particles for
+                    smart release of the corrosion inhibitor benzotriazole. <strong>European Polymer
+                        Journal</strong>, v. 115, p. 86–98, 1 jun. 2019.</li>
+                <li>SILVA DIAS, G. et al. Immobilization of Pseudomonas cepacia lipase on layered double hydroxide
+                    of Zn/Al-Cl for kinetic resolution of rac-1-phenylethanol. <strong>Enzyme and Microbial
+                        Technology</strong>, v. 130, p. 109365, 1 nov. 2019.</li>
+                <li>SILVEIRA, L. L. et al. Influence of Particle Size Distribution on the Morphology and Cavitation
+                    Resistance of High-Velocity Oxygen Fuel Coatings. <strong>Journal of Thermal Spray
+                        Technology</strong>, v. 27, n. 4, p. 695–709, 1 abr. 2018.</li>
+                <li>SOARES, A. L. et al. Adsorption of catechol onto PEDOT films doped with gold nanoparticles:
+                    Electrochemical and spectroscopic studies. <strong>Electrochimica Acta</strong>, v. 322, p.
+                    134773, 1 nov. 2019.</li>
+                <li>SOTILES, A. R. et al. Layered double hydroxides with the composition Mn/Al-SO4-A (A = Li, Na, K;
+                    Mn:Al ca. 1:1) as Cation Exchangers. <strong>Journal of the Brazilian Chemical Society</strong>,
+                    v. 30, n. 9, p. 1807–1813, 2019a.</li>
+                <li>SOTILES, A. R. et al. Cation Exchange Reactions in Layered Double Hydroxides Intercalated with
+                    Sulfate and Alkaline Cations (A(H2O)6)[M2+6Al3(OH)18(SO4)2]·6H2O (M2+ = Mn, Mg, Zn; A+ = Li, Na,
+                    K). <strong>Journal of the American Chemical Society</strong>, v. 141, n. 1, p. 531–540, 9 jan.
+                    2019b.</li>
+                <li>SOTILES, A. R. et al. Synthesis, characterization, thermal behavior and exchange reactions of
+                    new phases of layered double hydroxides with the chemical composition
+                    [M+26Al3(OH)18(SO4)2].(A(H2O)6).6H2O (M+2 = Co, Ni; A = Li+, Na+, K+). <strong>Applied Clay
+                        Science</strong>, v. 181, p. 105217, 15 nov. 2019c.</li>
+                <li>SOTILES, A. R.; WYPYCH, F. Converting Mn/Al layered double hydroxide anion exchangers into
+                    cation exchangers by topotactic reactions using alkali metal sulfate solutions. <strong>Chemical
+                        Communications</strong>, v. 55, n. 54, p. 7824–7827, 2 jul. 2019.</li>
+                <li>TOPPEL, A.; DUARTE, C. DE A.; MAMO, M. A. Organic WORM memory with carbon nanoparticle/epoxy
+                    active layer. <strong>Applied Physics A: Materials Science and Processing</strong>, v. 125, n.
+                    1, p. 1–8, 1 jan. 2019.</li>
+                <li>JAERGER, S. et al. Rheological properties of low-density polyethylene filled with hydrophobic
+                    Co(Ni)-Al layered double hydroxides. <strong>Polimeros</strong>, v. 29, n. 1, 2019.</li>
+                <li>MILCENT, C. P. F. et al. Morphologic, Structural, and Chemical Properties of Pulp Stones in
+                    Extracted Human Teeth. <strong>Journal of Endodontics</strong>, v. 45, n. 12, p. 1504–1512, 1
+                    dez. 2019.</li>
+                <li>CARVALHO, B. M. et al. First record of anomalous otoliths of <em>Menticirrhus americanus</em> in
+                    the South Atlantic. <strong>Journal of Applied Ichthyology</strong>, v. 35, n. 6, p. 1286–1291,
+                    8 dez. 2019.</li>
+                <li>PINTO-COELHO, C. V. et al. Hydrothermal dolomitization and porosity development: An example from
+                    Precambrian dolomitic rocks of Água Clara Formation, Ribeira Belt, southern Brazil.
+                    <strong>Journal of South American Earth Sciences</strong>, v. 94, p. 102193, 1 out. 2019.</li>
+                <li>BADKE, L. B. et al. Synthesis and characterization of microalgae fatty acids or Aloe vera oil
+                    microcapsules. <strong>Polimeros</strong>, v. 29, n. 3, 2019.</li>
+                <li>CADEMARTORI, P. H. G. DE et al. Alumina nanoparticles as formaldehyde scavenger for
+                    urea-formaldehyde resin: Rheological and in-situ cure performance. <strong>Composites Part B:
+                        Engineering</strong>, v. 176, p. 107281, 1 nov. 2019.</li>
+                <li>CAMPIONI, T. S. et al. Sequential chemical and enzymatic pretreatment of palm empty fruit
+                    bunches for <em>Candida pelliculosa</em> bioethanol production. <strong>Biotechnology and
+                        Applied Biochemistry</strong>, v. 67, n. 5, p. 723–731, 25 set. 2020.</li>
+                <li>CAPRARO, A. P. B. et al. Influence of the cement type and water/cement ratio in concretes
+                    exposed in sewage treatment plants. <strong>Construction and Building Materials</strong>, v.
+                    229, p. 116842, 30 dez. 2019.</li>
+                <li>CAPRARO, A. P. B.; MEDEIROS, M.H.F. Relação entre a Reação Sulfática Interna (RSI) por
+                    contaminação do agregado com minerais sulfetados e a corrosão de armaduras. In: CONPAT, 2019,
+                    Chiapas. CONPAT 2019, 2019. v. 2. p. 1-10.</li>
+                <li>CARPINÉ, D. et al. Valorization of <em>Euterpe edulis</em> Mart. agroindustrial residues (pomace
+                    and seeds) as sources of unconventional starch and bioactive compounds. <strong>Journal of Food
+                        Science</strong>, v. 85, n. 1, p. 96–104, 24 jan. 2020.</li>
+                <li>DA, F. et al. Cavitation erosion resistance enhancement of martensitic stainless steel via
+                    low-temperature plasma carburizing. <strong>Wear</strong>, v. 428–429, p. 162–166, 15 jun. 2019.
+                </li>
+                <li>DA SILVA, L. J.; SCHEUER, C. J.; D’OLIVEIRA, A. S. C. M. Effect of microstructure on wear
+                    performance of NiCrSiBC coatings. <strong>Wear</strong>, v. 428–429, p. 387–394, 15 jun. 2019.
+                </li>
+                <li>DALPONTE, I. et al. Formulation and optimization of a novel TiO2/calcium alginate floating
+                    photocatalyst. <strong>International Journal of Biological Macromolecules</strong>, v. 137, p.
+                    992–1001, 15 set. 2019.</li>
+                <li>GODINHO, J. P.; FARIAS DE MEDEIROS, M. H. <strong>BIODETERIORAÇÃO DO CONCRETO ARMADO EXPOSTO À
+                        AGRESSIVIDADE AMBIENTAL DO REATOR UASB DE UMA ESTAÇÃO DE TRATAMENTO DE ESGOTO
+                        SANITÁRIORevista Técnico-Científica</strong>. [s.l: s.n.]. Disponível em:
+                    &lt;http://creaprw16.crea-pr.org.br/revista/sistema/index.php/revista/article/view/628&gt;.
+                    Acesso em: 31 mar. 2021.</li>
+                <li>LIBARDI, N. et al. Definition of Liquid and Powder Cellulase Formulations Using Domestic
+                    Wastewater in Bubble Column Reactor. <strong>Applied Biochemistry and Biotechnology</strong>, v.
+                    190, n. 1, p. 113–128, 1 jan. 2020.</li>
+                <li>LUZ, A. R. et al. Tribo-mechanical properties and cellular viability of electrochemically
+                    treated Ti-10Nb and Ti-20Nb alloys. <strong>Journal of Alloys and Compounds</strong>, v. 779, p.
+                    129–139, 30 mar. 2019.</li>
+                <li>OLIVEIRA, A. L. M. S. et al. <em>Saccharomyces cerevisiae</em> biosorbed with grape pomace
+                    flavonoids: adsorption studies and <em>in vitro</em> simulated gastrointestinal digestion.
+                    <strong>International Journal of Food Science &amp; Technology</strong>, v. 54, n. 4, p.
+                    1413–1422, 7 abr. 2019.</li>
+                <li>PAREDES, R. S. C. et al. Optimization of arc-sprayed iron-based tungsten carbide hard coatings
+                    on harvester blades. <strong>Journal of the Brazilian Society of Mechanical Sciences and
+                        Engineering</strong>, v. 41, n. 5, p. 1–9, 1 maio 2019.</li>
+                <li>PEDRO, A. C. et al. <sup>1</sup> H NMR and Raman spectroscopy of oils and extracts obtained from
+                    organic and conventional goji berries: yield, fatty acids, carotenoids and biological
+                    activities. <strong>International Journal of Food Science &amp; Technology</strong>, v. 54, n.
+                    1, p. 282–290, 1 jan. 2019a.</li>
+                <li>PEDRO, A. C. et al. Qualitative and nutritional comparison of goji berry fruits produced in
+                    organic and conventional systems. <strong>Scientia Horticulturae</strong>, v. 257, p. 108660, 17
+                    nov. 2019b.</li>
+                <li>PEREIRA, J.; HENRIQUE FARIAS DE, M. Degradação do concreto armado por ácido sulfúrico biogênico
+                    do reator RALF de uma Estação de Tratamento de Esgoto (ETE). p. 261–270, 2019.</li>
+                <li>SIEPMANN, F. B. et al. Brazilian sourdough: microbiological, structural, and technological
+                    evolution. <strong>European Food Research and Technology</strong>, v. 245, n. 8, p. 1583–1594, 1
+                    ago. 2019.</li>
+                <li>ZANETTE, C. M. et al. Microalgae mixotrophic cultivation for β-galactosidase production.
+                    <strong>Journal of Applied Phycology</strong>, v. 31, n. 3, p. 1597–1606, 15 jun. 2019.</li>
+            </ul>
+            <h3>2018</h3>
+            <ul>
+                <li>NECKEL, I. T. et al. Pronounced pre-martensitic anomaly in the magnetization on Ni2MnGa thin
+                    films. <strong>Materials Research Express</strong>, v. 5, n. 5, p. 056406, 1 maio 2018.</li>
+                <li>F. M. SAMPAIO, N. et al. Evaluation of Polyvinyl Alcohol/Pectin-Based Hydrogel Disks as
+                    Extraction Phase for Determination of Steroidal Hormones in Aqueous Samples by GC-MS/MS.
+                    <strong>Molecules</strong>, v. 24, n. 1, p. 40, 22 dez. 2018.</li>
+                <li>AGUSTINI, D. et al. Microfluidic thread based electroanalytical system for green chromatographic
+                    separations. <strong>Lab on a Chip</strong>, v. 18, n. 4, p. 670–678, 21 fev. 2018.</li>
+                <li>ALBACH, B. et al. Thermal, mechanical, and water vapor barrier behavior of polypropylene
+                    composite containing modified kaolinite. <strong>Journal of Applied Polymer Science</strong>, v.
+                    135, n. 5, p. 45785, 5 fev. 2018.</li>
+                <li>ANGULO, R. J. et al. Quaternary sealevel changes and coastal evolution of the Island of
+                    Trindade, Brazil. <strong>Journal of South American Earth Sciences</strong>, v. 84, p. 208–222,
+                    1 jul. 2018.</li>
+                <li>BARBIERI, S. F. et al. Pulp and Jam of Gabiroba (Campomanesia xanthocarpa Berg):
+                    Characterization and Rheological Properties. <strong>Food Chemistry</strong>, v. 263, p.
+                    292–299, 15 out. 2018.</li>
+                <li>BATISTA, A. H. et al. Identification of heavy metals in crystals of sand and silt fractions of
+                    soils by scanning electron microscopy (SEM EDS/WD-EPMA). <strong>Revista Brasileira de Ciencia
+                        do Solo</strong>, v. 42, 1 jan. 2018a.</li>
+                <li>BATISTA, E. M. C. C. et al. Effect of surface and porosity of biochar on water holding capacity
+                    aiming indirectly at preservation of the Amazon biome. <strong>Scientific Reports</strong>, v.
+                    8, n. 1, 1 dez. 2018b.</li>
+                <li>BEZERRA, A. G. et al. Plasmonics and SERS activity of post-transition metal nanoparticles.
+                    <strong>Journal of Nanoparticle Research</strong>, v. 20, n. 5, p. 1–13, 1 maio 2018.</li>
+                <li>BORGES, R. et al. Mechanochemical conversion of chrysotile/K2HPO4 mixtures into potential
+                    sustainable and environmentally friendly slow-release fertilizers. <strong>Journal of
+                        Environmental Management</strong>, v. 206, p. 962–970, 15 jan. 2018.</li>
+                <li>BREDA, B. S. ; SAROT, J. R. ; SCHULZ JUNIOR, O. V. ; Pupo, Yasmine Mendes . Sedação consciente
+                    para tratamento odontológico de paciente com transtorno do espectro autista. <strong>Revista da
+                        APCD</strong>, v. 72, p. 104-8, 2018.</li>
+                <li>CADEMARTORI, P. H. G. DE; SCHREINER, W. H.; MAGALHÃES, W. L. E. Facile one-step fabrication of
+                    highly hydrophobic medium density fiberboard (MDF) surfaces via spray coating. <strong>Progress
+                        in Organic Coatings</strong>, v. 125, p. 153–159, 1 dez. 2018.</li>
+                <li>CAETANO, F. R. et al. Combination of electrochemical biosensor and textile threads: A
+                    microfluidic device for phenol determination in tap water. <strong>Biosensors and
+                        Bioelectronics</strong>, v. 99, p. 382–388, 15 jan. 2018.</li>
+                <li>CARDOZO, E. P. et al. Assessment of the effect of different forms of Inconel 625 alloy feedstock
+                    in Plasma Transferred Arc (PTA) additive manufacturing. <strong>International Journal of
+                        Advanced Manufacturing Technology</strong>, v. 98, n. 5–8, p. 1695–1705, 1 set. 2018.</li>
+                <li>CHAABAN, A. et al. Cuticular damage of Lucilia cuprina larvae exposed to Curcuma longa leaves
+                    essential oil and its major compound α-phellandrene. <strong>Data in Brief</strong>, v. 21, p.
+                    1776–1778, 1 dez. 2018.</li>
+                <li>CORDOBA, L. DO P. et al. Brazilian green banana: A thermal, structural and rheological
+                    investigation of resistant starch from different cultivars. <strong>Journal of Thermal Analysis
+                        and Calorimetry</strong>, v. 134, n. 3, p. 2065–2073, 1 dez. 2018.</li>
+                <li>CRISTINA POTULSKI, D. et al. Scientia Forestalis Nanocelulose aplicada como reforço para papel
+                    reciclado Nanocellulose as a reinforcement for recycled paper. v. 46, p. 495–505, 2018.</li>
+                <li>CRUZ, M. C. R.; PERUSSELLO, C. A.; MASSON, M. L. Microencapsulated ascorbic acid: Development,
+                    characterization, and release profile in simulated gastrointestinal fluids. <strong>Journal of
+                        Food Process Engineering</strong>, v. 41, n. 8, p. e12922, 30 dez. 2018.</li>
+                <li>DE ANDRADE, C. Y. T. et al. Physicochemical and immunological characterization of
+                    chitosan-coated bacteriophage nanoparticles for in vivo mycotoxin modeling. <strong>Carbohydrate
+                        Polymers</strong>, v. 185, p. 63–72, 1 abr. 2018.</li>
+                <li>DE CADEMARTORI, P. H. G. et al. The Use of Low-pressure Plasma on Enhancing the Attachment of
+                    Al2O3 Nanoparticles to Wood–Plastic Composites. <strong>Journal of Wood Chemistry and
+                        Technology</strong>, v. 38, n. 2, p. 71–83, 4 mar. 2018.</li>
+                <li>DE NORONHA, B. V. et al. Cellulose membrane modified with polypyrrole as an extraction device
+                    for the determination of emerging contaminants in river water with gas chromatography-mass
+                    spectrometry. <strong>Journal of Separation Science</strong>, v. 41, n. 13, p. 2790–2798, 1 jul.
+                    2018.</li>
+                <li>DE OLIVEIRA, V. M.; JACOBSEN, D. E.; LANA, P. <strong>Four new species of Paranaitis Southern,
+                        1914 (Phyllodocidae, Annelida) from southern and southeastern BrazilZootaxa</strong>Magnolia
+                    Press, , 9 jul. 2018. Disponível em: &lt;https://www.biotaxa.org/Zootaxa/article/view/39874&gt;.
+                    Acesso em: 12 nov. 2020</li>
+                <li>DE SOUZA GOMES, D. et al. Thermal, pasting properties and morphological characterization of pea
+                    starch (Pisum sativum L.), rice starch (Oryza sativa) and arracacha starch (Arracacia
+                    xanthorrhiza) blends, established by simplex-centroid design. <strong>Thermochimica
+                        Acta</strong>, v. 662, p. 90–99, 10 abr. 2018.</li>
+                <li>DE SOUZA NEVES ELLENDERSEN, L. et al. Biopolymer foam for remediation of aquatic environments
+                    contaminated with particulates and heavy metals. <strong>Journal of Environmental Chemical
+                        Engineering</strong>, v. 6, n. 5, p. 6131–6138, 1 out. 2018.</li>
+                <li>DOS SANTOS-DURNDELL, V. C. et al. Magnetically recyclable nanocatalysts based on magnetite: An
+                    environmentally friendly and recyclable catalyst for esterification reactions. <strong>Biofuel
+                        Research Journal</strong>, v. 5, n. 2, p. 806–812, 1 mar. 2018.</li>
+                <li>FOGAÇA, J. M.; DE CARVALHO, C. J. B. Neotropical lispe (Diptera: Muscidae): Notes,
+                    redescriptions and key to species. <strong>Journal of Natural History</strong>, v. 52, n. 33–34,
+                    p. 2147–2184, 10 set. 2018.</li>
+                <li>FONTE, A. P. N. DA; CARNEIRO, M. E.; MUNIZ, G. I. DE B. The penetration and wettability of
+                    varnish in Cryptomeria japonica. <strong>FLORESTA</strong>, v. 49, n. 1, p. 117, 17 dez. 2018.
+                </li>
+                <li>G., G. et al. BIOSORPTION EVALUATION OF SYNTHETIC DYE FROM FOOD INDUSTRY WASTEWATER ONTO
+                    SILKWORM COCOONS : PRELIMINARY STUDIES DUSI. 2018.</li>
+                <li>GONÇALVES, C. L. et al. Síntese e caracterização de catalisadores SnO2.Nb suportado em argila
+                    maranhense. <strong>Revista Materia</strong>, v. 23, n. 1, 2018.</li>
+                <li>GRAF, K. et al. Effect of dilution on the microstructure and properties of CoCrMoSi alloy
+                    coatings processed on high-carbon substrate. <strong>Materials Research</strong>, v. 22, n. 1,
+                    p. 20180502, 2018.</li>
+                <li>HORNUNG, P. S. et al. Natural bioactive starch film from Amazon turmeric (Curcuma longa L.).
+                    <strong>Polymer Bulletin</strong>, v. 75, n. 10, p. 4735–4752, 1 out. 2018a.</li>
+                <li>HORNUNG, P. S. et al. Brazilian Amazon white yam (Dioscorea sp.) starch: Impact on functional
+                    properties due to chemical and physical modifications processes. <strong>Journal of Thermal
+                        Analysis and Calorimetry</strong>, v. 134, n. 3, p. 2075–2088, 1 dez. 2018b.</li>
+                <li>HRYNIEWICZ, B. M.; VIDOTTI, M. PEDOT Nanotubes Electrochemically Synthesized on Flexible
+                    Substrates: Enhancement of Supercapacitive and Electrocatalytic Properties. <strong>ACS Applied
+                        Nano Materials</strong>, v. 1, n. 8, p. 3913–3924, 24 ago. 2018.</li>
+                <li>HRYNIEWICZ, B. M.; WINNISCHOFER, H.; VIDOTTI, M. Interfacial characterization and
+                    supercapacitive behavior of PEDOT nanotubes modified electrodes. <strong>Journal of
+                        Electroanalytical Chemistry</strong>, v. 823, p. 573–579, 15 ago. 2018.</li>
+                <li>INAGAKI, C. S.; OLIVEIRA, M. M.; ZARBIN, A. J. G. Direct and one-step synthesis of
+                    polythiophene/gold nanoparticles thin films through liquid/liquid interfacial polymerization.
+                    <strong>Journal of Colloid and Interface Science</strong>, v. 516, p. 498–510, 15 abr. 2018.
+                </li>
+                <li>KARP, J. R.; HAMERSKI, F.; SILVA, V. R. Supported silk fibroin/poly(vinyl alcohol) membrane
+                    blends: Structure, properties, and ethanol dehydration by pervaporation. <strong>Polymer
+                        Engineering &amp; Science</strong>, v. 58, n. 10, p. 1879–1887, 1 out. 2018.</li>
+                <li>LABIAK, P. H.; MICKEL, J. T.; MATOS, F. B. <em>Anemia paripinnata</em> (Anemiaceae), a New
+                    Species from Central Brazil. <strong>American Fern Journal</strong>, v. 108, n. 1, p. 1–6, 1
+                    mar. 2018.</li>
+                <li>LATTKE, J. E.; SILVA, T. S. R. DA; DELSINNE, T. Taxonomy and Natural History of Strumigenys
+                    thaxteri Wheeler and Strumigenys reticeps (Kempf) (Hymenoptera: Formicidae).
+                    <strong>Zootaxa</strong>, v. 4438, n. 1, p. 137, 20 jun. 2018.</li>
+                <li>LAURINDO, C. A. H. et al. Mechanical and Tribological Properties of Ca/P-Doped Titanium Dioxide
+                    Layer Produced by Plasma Electrolytic Oxidation: Effects of Applied Voltage and Heat Treatment.
+                    <strong>Tribology Transactions</strong>, v. 61, n. 4, p. 733–741, 4 jul. 2018.</li>
+                <li>LEAL, D. A. et al. Smart coating based on double stimuli-responsive microcapsules containing
+                    linseed oil and benzotriazole for active corrosion protection. <strong>Corrosion
+                        Science</strong>, v. 130, p. 56–63, 1 jan. 2018.</li>
+                <li>LENGOWSKI, E. C. et al. MORPHOLOGICAL, PHYSICAL AND THERMAL CHARACTERIZATION OF MICROFIBRILLATED
+                    CELLULOSE. <strong>Revista Árvore</strong>, v. 42, n. 1, p. 420113, 13 ago. 2018.</li>
+                <li>LOPES, L. C. et al. Facile room temperature synthesis of large graphene sheets from simple
+                    molecules. <strong>Chemical Science</strong>, v. 9, n. 37, p. 7297–7303, 26 set. 2018a.</li>
+                <li>LOPES, M. S. et al. HIDRÓLISE ÁCIDA PARA PRODUÇÃO DE NANO LIGNINA EM PÓ ACID HYDROLYSIS FOR
+                    PRODUCTION OF NANO LIGNIN POWDER. <strong>BIOFIX Scientific Journal</strong>, v. 3, n. 1, p.
+                    41–47, 15 dez. 2018b.</li>
+                <li>LORENZEN, A. L. et al. Influence of cationic and anionic micelles in the (sono)chemical
+                    synthesis of stable Ni(OH) 2 nanoparticles: “In situ” zeta-potential measurements and
+                    electrochemical properties. <strong>Applied Surface Science</strong>, v. 455, p. 357–366, 15
+                    out. 2018.</li>
+                <li>LUCENA, D. A. A.; MELO, G. A. R. Chrysidid wasps (Hymenoptera: Chrysididae) from Cretaceous
+                    Burmese amber: Phylogenetic affinities and classification. <strong>Cretaceous Research</strong>,
+                    v. 89, p. 279–291, 1 set. 2018.</li>
+                <li>LUZ, A. R. et al. Characterization of the morphology, structure and wettability of phase
+                    dependent lamellar and nanotube oxides on anodized Ti-10Nb alloy. <strong>Applied Surface
+                        Science</strong>, v. 448, p. 30–40, 1 ago. 2018a.</li>
+                <li>LUZ, A. R. et al. Tribological properties of nanotubes grown on Ti-35Nb alloy by anodization.
+                    <strong>Thin Solid Films</strong>, v. 660, p. 529–537, 30 ago. 2018b.</li>
+                <li>LUZZI, L. I. T. ; LIMA, A. A. S. ; TRAMONTINA, V.A. ; PAPALEXIOU, V. ; LUCZSYZYN, S. M. ; KIM,
+                    S.H. ; BERNARDON, P. ; MARTINEZ, A. ; FREITAS, G. B. . Use of fibrinolisin / deoxyribonuclease
+                    and bysmutal subgalate in wound palatine mucosa repair. Histological study in rats.
+                    <strong>Paripex - Indian Journal Of Research,</strong> v. 7, p. 505-509, 2018.</li>
+                <li>MACIEL, R. A. P. et al. Uremia impacts ve-cadherin and zo-1 expression in human endothelial
+                    cell-to-cell junctions. <strong>Toxins</strong>, v. 10, n. 10, p. 1–22, 7 out. 2018.</li>
+                <li>MALUCELLI, L. C. et al. Grinding severity influences the viscosity of cellulose nanofiber (CNF)
+                    suspensions and mechanical properties of nanopaper. <strong>Cellulose</strong>, v. 25, n. 11, p.
+                    6581–6589, 1 nov. 2018.</li>
+                <li>MANTOVANI, K. M. et al. Oxidation catalyst obtained by the immobilization of layered double
+                    hydroxide/Mn(III) porphyrin on monodispersed silica spheres. <strong>Dalton
+                        Transactions</strong>, v. 47, n. 9, p. 3068–3073, 27 fev. 2018.</li>
+                <li>MARQUARDT, G. C. et al. Diatom assemblages (Bacillariophyta) in six tropical reservoirs from
+                    southeast brazil: Species composition and spatial and temporal variation patterns. <strong>Acta
+                        Limnologica Brasiliensia</strong>, v. 30, p. 201, 2018.</li>
+                <li>MARTINS, A. L. <strong>A new species of Esagonatopus Olmi (Hymenoptera, Dryinidae) from Central
+                        BrazilZootaxa</strong>Magnolia Press, , 15 fev. 2018. Disponível em:
+                    &lt;https://www.biotaxa.org/Zootaxa/article/view/36748&gt;. Acesso em: 18 nov. 2020</li>
+                <li>MATTIODA, F.; JORGE, L. M. DE M.; JORGE, R. M. M. Evaluation of water diffusivity in wheat
+                    hydration ( <em>Triticum</em> spp): Isothermal and periodic operation. <strong>Journal of Food
+                        Process Engineering</strong>, v. 41, n. 4, p. e12683, 1 jun. 2018.</li>
+                <li>MATTOS, B. D. et al. Controlled biocide release from hierarchically-structured biogenic silica:
+                    surface chemistry to tune release rate and responsiveness. <strong>Scientific Reports</strong>,
+                    v. 8, n. 1, 1 dez. 2018.</li>
+                <li>MEDEIROS, G. et al. Gomphonema Ehrenberg (Bacillariophyceae, Gomphonemataceae) of the São
+                    Francisco Falso River, Paraná, Brazil. <strong>Biota Neotropica</strong>, v. 18, n. 3, p.
+                    20170495, 11 jun. 2018.</li>
+                <li>MELO, G. A. R.; ROSA, B. B. New genus of fossil apoid wasps (Hymenoptera, Apoidea) from the
+                    Cretaceous amber of Myanmar. <strong>Revista Brasileira de Entomologia</strong>, v. 62, n. 4, p.
+                    319–323, 1 out. 2018.</li>
+                <li>MISSINA, J. M. et al. Effects of Decavanadate Salts with Organic and Inorganic Cations on
+                    Escherichia coli, Giardia intestinalis, and Vero Cells. <strong>Inorganic Chemistry</strong>, v.
+                    57, n. 19, p. 11930–11941, 1 out. 2018.</li>
+                <li>MISSIO, A. L. et al. Nanocellulose-tannin films: From trees to sustainable active packaging.
+                    <strong>Journal of Cleaner Production</strong>, v. 184, p. 143–151, 20 maio 2018.</li>
+                <li>MOGHARBEL, B. F. et al. Fluorescence properties of curcumin-loaded nanoparticles for cell
+                    tracking. <strong>International Journal of Nanomedicine</strong>, v. 13, p. 5823–5836, 2018.
+                </li>
+                <li>MONTEIRO, J. F. H. L. et al. Conductivity in (Ag,Mg)-doped delafossite oxide CuCrO2.
+                    <strong>Ceramics International</strong>, v. 44, n. 12, p. 14101–14107, 15 ago. 2018.</li>
+                <li>NAWAZ, A. et al. Experimental and modeling study of low-voltage field-effect transistors
+                    fabricated with molecularly aligned copolymer floating films. <strong>Flexible and Printed
+                        Electronics</strong>, v. 3, n. 1, p. 015006, 30 mar. 2018.</li>
+                <li>NEVES, D. A. et al. ZNO nanoparticle fabrication starting from ultra-high (1:2) PVOH/ZnAc
+                    proportion electrospun nanowire mats. <strong>Brazilian Journal of Chemical
+                        Engineering</strong>, v. 35, n. 1, p. 181–187, 1 jan. 2018.</li>
+                <li>OLIVEIRA, L. J. et al. Physical–chemical characterization studies of ketoprofen for
+                    orodispersible tablets. <strong>Journal of Thermal Analysis and Calorimetry</strong>, v. 133, n.
+                    3, p. 1521–1533, 1 set. 2018a.</li>
+                <li>OLIVEIRA, P. R. et al. Copper hexacyanoferrate nanoparticles supported on biochar for
+                    amperometric determination of isoniazid. <strong>Electrochimica Acta</strong>, v. 285, p.
+                    373–380, 20 set. 2018b.</li>
+                <li>ORZARI, L. O. et al. Disposable electrode obtained by pencil drawing on corrugated fiberboard
+                    substrate. <strong>Sensors and Actuators, B: Chemical</strong>, v. 264, p. 20–26, 1 jul. 2018.
+                </li>
+                <li>OZAWA, P. M. M. et al. Extracellular vesicles from triple-negative breast cancer cells promote
+                    proliferation and drug resistance in non-tumorigenic breast cells. <strong>Breast Cancer
+                        Research and Treatment</strong>, v. 172, n. 3, p. 713–723, 1 dez. 2018.</li>
+                <li>PADILHA, J. H. D. et al. Leaf histology of greenhouse plants, in vitro cultured and somatic
+                    embryo-derived plants of Bactris gasipaes Kunth. <strong>Acta Scientiarum - Biological
+                        Sciences</strong>, v. 40, n. 1, 2018.</li>
+                <li>PAES, R. M. G. et al. Effect of Bead Overlapping on the Microstructure and Mechanical Properties
+                    of CoCrWC Alloy Coatings. <strong>Materials Research</strong>, v. 21, n. 6, p. 20180274, 17 set.
+                    2018.</li>
+                <li>PEREIRA, B. L. et al. Niobium treated by Plasma Electrolytic Oxidation with calcium and
+                    phosphorus electrolytes. <strong>Journal of the Mechanical Behavior of Biomedical
+                        Materials</strong>, v. 77, p. 347–352, 1 jan. 2018.</li>
+                <li>PEREIRA, H. C. B.; HENKE, S. L.; D’OLIVEIRA, A. S. C. M. IN625 multilayers characterization
+                    deposited by CMT. <strong>Soldagem e Inspecao</strong>, v. 23, n. 2, p. 235–246, 1 abr. 2018.
+                </li>
+                <li>PINTO, R. B.; PERALTA-ZAMORA, P.; WYPYCH, F. Fabrication of ZnO-Zn2TiO4 nanocomposite from zinc
+                    hydroxide nitrate and its photocatalytic efficiency. <strong>Journal of Photochemistry and
+                        Photobiology A: Chemistry</strong>, v. 353, p. 46–52, 15 fev. 2018.</li>
+                <li>POTULSKI, D. C. et al. INFLUÊNCIA DA ADIÇÃO DE CELULOSE NANOFIBRILADA (CNF) NAS PROPRIEDADES
+                    ÓPTICAS E FÍSICAS DO PAPEL. <strong>BIOFIX Scientific Journal</strong>, v. 3, n. 1, p. 122, 18
+                    mar. 2018a.</li>
+                <li>POTULSKI, D. C. et al. Nanocelulose aplicada como reforço para papel reciclado. <strong>Scientia
+                        Forestalis</strong>, v. 46, n. 119, 1 set. 2018b.</li>
+                <li>PUPO, Y. M. et al. Resinas compostas suprananométricas policromáticas proporcionando estética e
+                    função em dentes posteriores. <strong>Journal of Clinical Dentistry and Research</strong>, v.
+                    15, n. 2, p. 46–59, 2018.</li>
+                <li>SANTANA, M. S. et al. Diffuse sources of contamination in freshwater fish: Detecting effects
+                    through active biomonitoring and multi-biomarker approaches. <strong>Ecotoxicology and
+                        Environmental Safety</strong>, v. 149, p. 173–181, 1 mar. 2018.</li>
+                <li>SANTIS, P. M. ; CRUZ, A. T. ; HECK, ALEXANDRE ROBERTO ; ARAGAO, E. M. ; FARIA, MIA . Reabsorção
+                    dentária interna ?relato de casos. <strong>Revista Abo Nacional</strong>, v. 4, p. 27-32, 2018.
+                </li>
+                <li>SANTOS, M. C. et al. Nomenclatural notes in Anathallis microphyta (Pleurothallidinae,
+                    orchidaceae). <strong>Phytotaxa</strong>, v. 346, n. 1, p. 104–112, 29 mar. 2018.</li>
+                <li>SCHMIDT, A.; HUSMANN, S.; ZARBIN, A. J. G. Carbon nanotube thin films modified with a mixture of
+                    Prussian blue and ruthenium purple: combining materials and properties. <strong>Journal of Solid
+                        State Electrochemistry</strong>, v. 22, n. 7, p. 2003–2012, 1 jul. 2018.</li>
+                <li>SILVA, R. DA et al. Pickering emulsions formation using kaolinite and Brazil nut oil: particle
+                    hydrophobicity and oil self emulsion effect. <strong>Journal of Dispersion Science and
+                        Technology</strong>, v. 39, n. 6, p. 901–910, 3 jun. 2018.</li>
+                <li>SILVEIRA, L. L. et al. Influence of Particle Size Distribution on the Morphology and Cavitation
+                    Resistance of High-Velocity Oxygen Fuel Coatings. <strong>Journal of Thermal Spray
+                        Technology</strong>, v. 27, n. 4, p. 695–709, 1 abr. 2018.</li>
+                <li>TEIXEIRA, G. L. et al. Sapucaia nut (Lecythis pisonis Cambess.) flour as a new industrial
+                    ingredient: Physicochemical, thermal, and functional properties. <strong>Food Research
+                        International</strong>, v. 109, p. 572–582, 1 jul. 2018.</li>
+                <li>TOZZO, K. et al. Migration of Salmonella serotypes Heidelberg and Enteritidis in previously
+                    frozen chicken breast meat. <strong>Food Microbiology</strong>, v. 69, p. 204–211, 1 fev. 2018.
+                </li>
+                <li>TUSSET, E. A.; TREMARIN, P. I.; LUDWIG, T. A. V. Two new Stauroneis species (Bacillariophyta,
+                    stauroneidaceae) from midwestern karstic Brazilian formations. <strong>Phytotaxa</strong>, v.
+                    358, n. 3, p. 265–277, 6 jul. 2018.</li>
+                <li>UCOSKI, G. M. et al. Manganese porphyrins immobilized on magnetic SBA-15 mesoporous silica as
+                    selective and efficient catalysts for cyclic and linear alkane oxidation. <strong>Microporous
+                        and Mesoporous Materials</strong>, v. 265, p. 84–97, 15 jul. 2018.</li>
+                <li>VIANA, L. C. et al. Nanofibrillated cellulose as an additive for recycled paper.
+                    <strong>Cerne</strong>, v. 24, n. 2, p. 140–148, 1 abr. 2018.</li>
+                <li>WESTPHAL-FERREIRA, B. et al. Scanning electron microscopy of the eggs of <em>Coquillettidia
+                        shannoni</em> (Lane &amp;amp; Antunes, 1937) and <em>Phoniomyia quasilongirostris</em>
+                    (Theobald, 1907) (Diptera: Culicidae). <strong>Journal of Vector Ecology</strong>, v. 43, n. 1,
+                    p. 193–197, 1 jun. 2018.</li>
+                <li>WOJCIECHOWSKI, J. et al. Potential effects of mechanically removing macrophytes on the
+                    phytoplankton community of a subtropical reservoir. <strong>Acta Botanica Brasilica</strong>, v.
+                    32, n. 4, p. 588–594, 1 out. 2018.</li>
+                <li>WOUK DE MENEZES, L. C. et al. Nonradiative Energy Transfer between Porphyrin and Copolymer in
+                    Films Processed by Organic Solvent and Water-Dispersible Nanoparticles with Photovoltaic
+                    Applications. <strong>Journal of Physical Chemistry C</strong>, v. 122, n. 10, p. 5796–5804, 15
+                    mar. 2018a.</li>
+                <li>WOUK DE MENEZES, L. C. et al. Charge Transfer Dynamics and Device Performance of Environmentally
+                    Friendly Processed Nonfullerene Organic Solar Cells. <strong>ACS Applied Energy
+                        Materials</strong>, v. 1, n. 9, p. 4776–4785, 24 set. 2018b.</li>
+            </ul>
+            <h3>Outras Publicações</h3>
+            <ul>
+                <li>GALDINO, A.M.R. 2006. Descrição do Desenvolvimento Embrionário e Larval do Jundiá (Rhamdia
+                    quelen). 2006. Monografia. (Graduação em Ciências Biológicas) – Universidade Federal do Paraná.
+                    Orientador: Flavia Sant’Anna Rios.</li>
+                <li>SCHADECK, R. J. G. Aspectos ultraestruturais da germinação, localização da atividade da
+                    fosfatase ácida e avaliação estrutural da fração micosporina em conídios de Colletotrichum
+                    graminicola. Curitiba, 1999. Tese (Doutorado em Bioquímica) - Universidade Federal do Paraná.
+                </li>
+                <li>AKAISHI, F. M. Avaliação dos Efeitos Tóxicos do Esgoto Tratado e não-tratado em bivalve marinho
+                    Mytilus edulis. 2007. Tese (Doutorado em Biologia Celular e Molecular) – Universidade Federal do
+                    Paraná.</li>
+                <li>AKAISHI, F. M. Uso de Biomonitoramento e Bioensaios na Avaliação da Condição Ambiental da Baia
+                    de Pictou (Nova Scotia Canada) através de Biomarcadores de Contaminação Ambiental (Programa de
+                    Pos Graduação em Biologia Celular e Molecular). 2007. Tese (Doutorado em Biologia Celular e
+                    Molecular) – Universidade Federal do Paraná.</li>
+                <li>DOMINGOS, F.X.V. Biomarcadores de Contaminação Ambiental em Regiões Estuarinas Brasileiras e
+                    Cinética de Derivados de Petróleo em Peixe. Curitiba, 2006. Tese (Doutorado em Biologia Celular
+                    e Molecular) – Universidade Federal do Paraná.</li>
+                <li>Francisco Filipack Neto. Avaliação citotóxica em hepatócitos de Hoplias malabaricus expostos a
+                    misturas complexas de pesticidas, MeHg e DDT. 2007. Tese (Doutorado em Biologia Celular e
+                    Molecular) - Universidade Federal do Paraná.</li>
+                <li>FUKAMACHI, C. R.B. Fertilizantes de liberação de nitrogênio por nitração de turfa e xisto e por
+                    intercalação de uréia em argilominerais do grupo do caulim. Curitiba, 2007. Tese (Doutorado em
+                    Química) – Universidade Federal do Paraná.</li>
+                <li>MORAES, A. R. de. 2006. Estudo do crescimento e propriedades estruturais, químicas e magnéticas
+                    de heteroestruturas híbridas GaSe-Fe, ZnSe-Fe granulares e nAs/GaAs(111) vicinal, 2006. Tese
+                    (Doutorado em Física) – Universidade Federal do Paraná, Curitiba.</li>
+                <li>NETO, F.F. Avaliação citotóxica em hepatócitos de Hoplias malabaricus expostos a misturas
+                    complexas de pesticidas, MeHg e DDT. Curitiba, 2007. Tese (Doutorado em Biologia Celular e
+                    Molecular) – Universidade Federal do Paraná.</li>
+                <li>OLIVEIRA, M.M. Nanopartículas de prata e seus nanocompósitos com polianilina: síntese,
+                    caracterização e propriedades. 2005. 149 f. Tese (Doutorado em Química) – Universidade Federal
+                    do Paraná, Coordenação de Aperfeiçoamento de Pessoal de Nível Superior. Orientador: Aldo Jose
+                    Gorgatti Zarbin.</li>
+                <li>ORTOLANI-MACHADO, C. F. Caracterizaçao de melanocitos dermais em embriões da galinha Sedosa
+                    Japonesa e análise de etapas de sua diferenciação. 2006, Tese. 103 pg,Universidade Federal do
+                    Parana, Curitiba, 2006.</li>
+                <li>RAMOS, K.S. Revisão taxonômica e relações filogenéticas das espécies de Parapsaenythia Friese,
+                    1908 (Hymenoptera, Apidae s.l.,Protandrenini). Curitiba, 2006.Tese (Doutorado em Entomologia) –
+                    Universidade Federal do Paraná.</li>
+                <li>REBECCA, R. Metabolismo de aminoácidos no sarcoma de Walker e a relação com a caquexia.
+                    Curitiba, 2004. Tese (Doutorado em Ciências – Bioquímica) – Universidade Federal do Paraná.</li>
+                <li>SCHADECK, R. J. G. Aspectos ultraestruturais da germinação, localização da atividade da
+                    fosfatase ácida e avaliação estrutural da fração micosporina em conídios de Colletotrichum
+                    graminicola. Curitiba, 1999. Tese (Doutorado em Bioquímica) - Universidade Federal do Paraná.
+                </li>
+                <li>SCHNITZLER, M.C. Síntese e caracterização de nanotubos de carbono utilizando precursores
+                    organometálicos. Curitiba, 2007. Tese (Doutorado em Química) – Universidade Federal do Paraná.
+                </li>
+                <li>Silvia Regina Tozzato Prado. Efeitos Biológicos de Imidas Cíclicas. 2005. Tese (Doutorado em
+                    Ciências (Bioquímica)) – Universidade Federal do Paraná. Orientador: Maria Benigna Martinelli de
+                    Oliveira.</li>
+                <li>Tatiana Herrerias. Efeito de flavonóides sobre o metabolismo mitocondrial hepático, viabilidade
+                    celular e apoptose em células de melanoma. Início: 2005. Tese (Doutorado em Ciências
+                    (Bioquímica)) - Universidade Federal do Paraná.</li>
+                <li>AKAISHI,, Fabiola Mazzaro ; ST-JEAN, Sylvie D ; BISHAY, Farida ; CLARKE, John ; RABITTO, Inês S
+                    ; OLIVEIRA RIBEIRO, C. A. . Immunological responses, histopathological finding and disease
+                    resistance of blue mussels (Mytilus edulis) exposed to treated and untreated municipal
+                    wastewater. Aquatic Toxicology,v. 82, p. 1-14, 2007.</li>
+                <li>ALMEIDA FILHO, C.; ZARBIN, A.J.G. 2006. Hollow Porous Carbon Microspheres Obtained by the
+                    Pyrolysis of TiO2/poly(furfuryl alcohol) composite precursor. Carbon (New York), v. 44, p.
+                    2869-2876.</li>
+                <li>ALMEIDA FILHO, C.; ZARBIN, A.J.G. 2006. Porous Carbon Obtained by the Pyrolisis of
+                    TiO2/Poly(furfuryl alcohol) Nanocomposite: Praparation, Characterization and Utilization for
+                    Adsorption of Reactive Dyes from Aqueous Solution. Journal of the Brazilian Chemical Society, v.
+                    17, n. 6, p. 1151-1157.</li>
+                <li>ALVES COSTA, J. R. M.; MELA, M.; ASSIS, H. C. S.; PELLETIER, É.; RANDI, M. A. F.; OLIVEIRA
+                    RIBEIRO, C. A. Enzymatic inhibition and morphological changes in <i>Hoplias malabaricus</i> from
+                    dietary exposure to lead(II) or methylmercury. Ecotoxicology and Environmental Safety, vol. xx,
+                    p. xxx-xxx, 2006.</li>
+                <li>BARROSO, E. M. A.; COSTA, L. S.; MEDEIROS, V. P.; CORDEIRO, S. L.; COSTA, M. S. S. P.; FRANCO,
+                    C. R. C.; NADER, H. B.; LEITE, E. L.; ROCHA, H. A. O. A non-anticoagulant heterofucan has
+                    antithrombotic activity <i>in vivo</i>. Planta Med, vol. 74, p. 712-718, 2008.</li>
+                <li>BELLO, C. A.; HERMOGENES, A. L. N.; MAGALHÃES, A.; VEIGA, S. S.; GREMSKI, L. H.; RICHARDSON, M.;
+                    SANCHEZ, E. F. Isolation and biochemical characterization of a fibrinolytic proteinase from
+                    <i>Bothrops leucurus</i> (white-tailed jararaca) snake venom. Biochimie, vol. 88, p. 189-200,
+                    2006.</li>
+                <li>BOEGER, M.R.T &amp; Adis, J. 2007. Anatomia de cinco espécies de macrófitas aquáticas e sua
+                    importância para <i>Cornops aquaticum </i>(Orthoptera, Acrididae, Leptysminae). Amazoniana XIX
+                    (3/4): 199-208.</li>
+                <li>BONCI, D. M. O.; LIMA, S. M. A; CROTZNER, S. R.; OLIVEIRA RIBEIRO, C. A.; HAMASSAKI, D. E.;
+                    VENTURA, D. F. Losses of immunoreactive parvalbumin amacrine and immunoreactive αprotein kinase
+                    C bipolar cells caused by methylmercury chloride intoxication in the retina of the tropical fish
+                    <i>Hoplias malabaricus</i>. Brazilian Journal of Medical and Biological Research, vol. 39, p.
+                    405-410, 2006.</li>
+                <li>BUCHI, D. F. ; OLIVEIRA, C. C. ; GABARDO, J. ;LOPES, L. ; GODOY, L. M. F. ; Endosomal/lysosomal
+                    system and other cellular aspects of macrophage.Activation By Canova Medication. Micron
+                    (Oxford), v. 37, p. 277-287, 2006.</li>
+                <li>BUDEL, Jane Manfron, DUARTE, Márcia do Rocio, FARAGO, Paulo Vitor, TAKEDA, Inês Janete Mattozo.
+                    2006. Caracteres anatômicos de folha e caule de <i>Calea uniflora</i> Less., Asteraceae. Revista
+                    Brasileira de Farmacognosia, v.16, p.53 – 60.</li>
+                <li>BUDEL, Jane Manfron, FARAGO, Paulo Vitor, DUARTE, Márcia do Rocio, TAKEDA, Inês Janete Mattozo.
+                    2007. Morpho-anatomical study of the cladodes of <i>Homalocladium platycladum</i> (F.J. Muell.)
+                    L.H. Bailey (Polygonaceae). Revista Brasileira de Farmacognosia. v.17, p.39 – 43.</li>
+                <li>BUSSOLARO, D.; FILIPAK NETO, F.; GARGIONI, R.; FERNANDES, L. C.; RANDI, M. A. F.; PELLETIER, É.;
+                    OLIVEIRA RIBEIRO, C. A. The immune response of peritoneal macrophages due to exposure to
+                    inorganic lead in the house mouse <i>Mus musculus</i>. Toxicology in Vitro, vol. 22, p. 254-260,
+                    2008.</li>
+                <li>CAMARGO, Pedro Henrique Cury ; NUNES, Giovana Gioppo ; SÁ, Eduardo Lemos de; EVANS, David John;
+                    TREMILIOSI-FILHO, Germano; ZARBIN, Aldo José Gorgatti ; SOARES, J.F. . Sol-gel synthesis of
+                    iron-titanium oxides from a single-source precursor under inert atmosphere. Submetido para
+                    publicação no Journal of Colloid and Interface Science, out/2007.</li>
+                <li>CAVA, C.E.; POSSAGNO, R.; SCHNITZLER, M.C.; ROMAN, P. C.; OLIVEIRA, M.M.; LEPIENSKI, C.M.;
+                    ZARBIN, A.J.G.; ROMAN, L.S. 2007. Iron- and iron oxide-filled multi-walled carbon nanotubes:
+                    electrical properties and memory devices. Chemical Physics Letters, v. 444, p. 304-308.</li>
+                <li>CHAIM, O. M.; SADE, Y. B.; SILVEIRA, R. B.; TOMA. L.; KALAPOTHAKIS, E.; CHÁVEZ-OLÓRTEGUI, C.;
+                    MANGILI, O. C.; GREMSKI, W.; DIETRICH, C. P. von; NADER, H. B.; VEIGA, S. S. Brown spider
+                    dermonecrotic toxin directly induces nephrotoxicity. Toxicology and Applied Pharmacology, vol.
+                    211, p. 64-77, 2006.</li>
+                <li>COSTA, João Ricardo Maleres Alves ; MELA, Maritana ; ASSIS, Helena Cristina da Silva de ;
+                    PELLETIER, Emilien ; HANDI, Marco Antonio Ferreira ; OLIVEIRA RIBEIRO, C. A. . Enzymatic
+                    inhibition and morphological aspects as biomarker to dietary lead (II) and methylmercury
+                    exposure to neotropical fish Hoplias malabaricus. Ecotoxicology and Environmental Safety, San
+                    Diego, v. 67, p. 82-88, 2007.</li>
+                <li>COUTO, G.G.; Klein J.J.; SCHREINER, W.; MOSCA, D.H.; Oliveira, A.J.; ZARBIN, A. J.G. 2007.
+                    Nickel nanoparticles obtained by a modified polyol process: synthesis, characterization and
+                    magnetic properties. Journal of Colloid and Interface Science, v. 311, p. 461-468.</li>
+                <li>DUARTE, Márcia do Rocio, JURGENSEN, Ingrid. 2007. Diagnose morfoanatômica de folha e caule de
+                    Pyrostegia venusta (Ker Gawl.) Miers, Bignoniaceae. Acta Farmaceutica Bonaerense. , v.26, p.70 –
+                    75.</li>
+                <li>EMPINOTTI, Claudia Bonissoni, DUARTE, Márcia do Rocio. 2006. Caracteres anatômicos de
+                    arnica-do-campo: Chaptalia nutans. Acta Farm. Bonaerense, v.25, p.333 – 338.</li>
+                <li>FALCÃO FILHO, E.L.; ARAUJO, C.B.; GALEMBECK, A.; OLIVEIRA, M.M.; ZARBIN, A.J.G. 2005. Nonlinear
+                    susceptibility of colloids consisting of silver nanoparticles in carbon disulfide. Journal of
+                    the Optical Society of America. B, Optical physics, v. 22, n. 11, p. 2444-2449.</li>
+                <li>FARAGO, Paulo Vitor, BUDEL, Jane Manfron, DUARTE, Márcia do Rocio, JURGENSEN, Ingrid, TAKEDA,
+                    Inês Janete Mattozo. 2006. Anatomia da folha e do caule de Calea longifolia (Asteraceae). Acta
+                    Farm. Bonaerense. , v.25, p.512 – 517, 2006.</li>
+                <li>Fernandes, V.; Klein, J.J.; Mattoso, N.; Mosca, D.H.; Silveira, E.; Ribeiro, E.; Schreiner,
+                    W.H.; Varalda, J.; de Oliveira, A.J.A. 2007. Room temperature ferromagnetism in co-doped CeO2
+                    films on Si(001). Physical Review B, 75 (12): Art. No. 121304.</li>
+                <li>FFILIPAK NETO, F. ; ZANATA, S. M. ; RANDI, M. A. F. ; PELLETIER, E. ; OLIVEIRA RIBEIRO, C. A. .
+                    Hepatocytes Primary Culture from Neotropical Fish SpeciesHoplias malabaricus (Bloch, 1794).
+                    Journal of Fish Biology, Inglaterra, v. 69, p. 1-9, 2006.</li>
+                <li>FILIPAK NETO, F.; ZANATA, S. M.; SILVA de ASSIS, H. C.; BUSSOLARO, D.; FERRARO, M. V. M.; RANDI,
+                    M. A. F.; ALVES COSTA, J. R. M.; CESTARI, M. M.; ROCHE, H.; OLIVEIRA RIBEIRO, C. A. Use of
+                    hepatocytes from<i>Hoplias malabaricus</i> to characterize the toxicity of a complex mixture of
+                    lipophilic halogenated compounds. Toxicology in Vitro, vol. xxx, p. xxx-xxx, 2007.</li>
+                <li>FRANCO, A. P.; MERCÊ, A. L. R. Complexes of carboxymethylcellulose in water. 1: Cu<span
+                        style="color: #333333;">2+</span>, VO<span style="color: #333333;">2+</span> and Mo<span
+                        style="color: #333333;">6+</span>. Reactive &amp; Functional Polymers, v. 66, p. 667-681,
+                    2006.</li>
+                <li>FUKAMACHI C.R.B.; WYPYCH, F.; MANGRICH, A.S.. 2007. Use of Fe3+ ion probe to study the stability
+                    of urea-intercalated kaolinite by electron paramagnetic resonance. Journal of Colloid and
+                    Interface Science, v. 313, p. 537-541.</li>
+                <li>GARGIONI, R. ; FILIPAK NETO, F. ; BUCHI, D. F. ; HANDI, M. A. F. ; FRANCO, C. R. ; PELLETIER, E.
+                    ; CESTARI, M. M. ; BUSSOLARO, D. ; OLIVEIRA RIBEIRO, C. A. . Cell death and DNA damage in
+                    peritoneal macrophages of mice(Mus musculus) exposed to inorganic lead. Cell Biology
+                    International, Inglaterra, v. 30, p. 615-623, 2006.</li>
+                <li>HALMA, M.; BAIL, A.; WYPYCH, F.; NAKAGAKI, S. 2006. Catalytic activity of anionic(III)
+                    poprphyrins immobilized on grafted disordered silica obtained from acidic leached chrysotile.
+                    Journal of Chemical Catalysis. Estados Unidos, v. 243, n. 1, p. 44-51.</li>
+                <li>HALMA, M.; BAIL, A.; WYPYCH, F.; NAKAGAKI, S. 2006. Catalytic activity of anionic(III)
+                    poprphyrins immobilized on grafted disordered silica obtained from acidic leached chrysotile.
+                    Journal of Chemical Catalysis. Estados Unidos, v. 243, n. 1, p. 44-51.</li>
+                <li>KOEHLER, M.; CANESTRARO, C.D.; SCHNITZLER, M.C.; OLIVEIRA, M.M.; ZARBIN, A.J.G.; ROMAN, L.S.;
+                    LUZ, M.G.E. 2007. Evidence of fractal structure for charge transport in
+                    carbon-nanotube/conjugated-polymer composites. Europhysics Letters, v. 79, p. 47011.</li>
+                <li>LARROSA, Carina Rau Rivas, DUARTE, Márcia do Rocio. 2006. Anatomia foliar e caulinar de
+                    Forsteronia glabrescens, Apocynaceae. Acta Farm. Bonaerense, v.25, p.28 – 34, 2006.</li>
+                <li>LINZMEIER, A.M.; RIBEIRO-COSTA, C.S.; MOURA, L.A. 2007. First descriptions of immatures for
+                    Megistops (Boheman) (Coleoptera, Chrysomelidae, Galerucinae) in a new host-plant family, with
+                    notes on life history and redescription of M. vandepolli Duvivier. Zootaxa (Online), v. 1615, p.
+                    55-68, 2007.</li>
+                <li>Marcho, Paola and G. A. R. Melo. 2006. Revisão taxonômica das espécies brasileira de abelhas do
+                    gênero <i>Lestrimelitta</i>Friese (Hymenoptera, Apidae, Meliponina). In Revista Brasileira de
+                    Entomologia, no. 1, 50:6-30.</li>
+                <li>MAYER, J.L.S.; RIBAS, L.; BONA, C.; QUOIRIN, M.G.G. 2007. Anatomia comparada das folhas e raízes
+                    de Cymbidium Hort. (Orchidaceae) cultivadas ex vitro e in vitro. <strong>Acta Botânica
+                        Brasílica. v. 21</strong> (no prelo)</li>
+                <li>MENEZES, W.G.; CAMARGO, P.H.C.; OLIVEIRA, M.M.; EVANS, D.J.; SOARES, J.F.; ZARBIN, A.J.G. 2006.
+                    Sol-Gel Processing of a Bimetallic Alkoxide Precursor confined in a Porous Glass Matrix: a Route
+                    to Novel Glass/Metal Oxide Nanocomposites. Journal of Colloid and Interface Science, v. 299, p.
+                    291-296.</li>
+                <li>MENEZES, W.G.; CAMARGO, P.H.C.; OLIVEIRA, M.M.; EVANS, D.J.; SOARES, J.F.; ZARBIN, A.J.G. 2006.
+                    Sol-Gel Processing of a Bimetallic Alkoxide Precursor c onfined in a Porous Glass Matrix: a
+                    Route to Novel Glass/Metal Oxide Nanocomposites. Journal of Colloid and Interface Science, v.
+                    299, p. 291-296.</li>
+                <li>MIRANDA, A. L.; ROCHE, H.; RANDI, M. A. F.; MENEZES, M. L.; OLIVEIRA RIBEIRO, C. A.
+                    Bioaccumulation of chlorinated pesticides and PCBs in the tropical freshwater fish <i>Hoplias
+                        malabaricus</i>: Histopathological, physiological, and immunological findings. Environment
+                    International, vol. 34, p. 939-949, 2008.</li>
+                <li>MORAES, A.R. de.; Mosca, D.H.; Mattoso, N; Guimaraes, J.L.; Klein, J.J.; Schreiner, WH; de
+                    Souza, PEN; de Oliveira, AJA; de Vasconcellos, MAZ; Demaille, D; Eddrief, M; Etgens, VH Iron
+                    clustering in GaSe epilayers grown on GaAs(111)B. Journal of Physics-Condensed Matter, v. 18, n.
+                    4, p, 1165-1174, February, 2006.</li>
+                <li>NAKAGAKI, S.; CASTRO, K.A.D.F.; MACHADO, G.S.; HALMA, M.; DRECHSEL, S. M.; WYPYCH, F. 2006.
+                    Catalytic activity in oxidation reactions of anionic iron (III) porphyrins immobilized on raw
+                    and grafted chrysotile. Journal of the Brazilian Chemical Society, v. 17, p. 1672-1678.</li>
+                <li>NAKAGAKI, S.; MACHADO, G. S.; MARANGON, A.A. dos S.; MATTOSO, N.; WYPYCH, F. 2006.
+                    Immobilization of iron porphyrins in tubular Kaolinite obtained by an intercalation/delamination
+                    procedure. Journal of Catalysis, Estados Unidos, v. 246, n. 1, p. 110-117.</li>
+                <li>OLIVEIRA RIBEIRO, C. A. ; MELA, M. ; RANDI, M. A. F. ; VENTURA, D. F. ; CARVALHO, C. V. ;
+                    PELLETIER, E. Dietary and sub-chronic effects of methylmercury on neotropical fish Hoplias
+                    malabaricus. Ecotoxicology and Environmental Safety, v. 68, p. 426-435, 2007.</li>
+                <li>OLIVEIRA RIBEIRO, C. A.; FILIPAK NETO, F.; MELA, M.; SILVA, P. H.; RANDI, M. A. F.; RABITTO, I.
+                    S.; ALVES COSTA, J. R. M.; PELLETIER, É. Hematological findings in neotropical fish <i>Hoplias
+                        malabaricus</i> exposed to subchronic and dietary doses of methylmercury, inorganic lead,
+                    and tributyltin chloride. Environmental Research, vol. 101, p. 74-80, 2006.</li>
+                <li>OLIVEIRA RIBEIRO, C. A.; NATHALIE, M. D.; GONZALEZ, P.; YANNICK, D.; JEAN-PAUL, B.; BOUDOU, A.;
+                    MASSABUAU, J. C. Effects of dietary methylmercury on zebrafish skeletal muscle fibres.
+                    Environmental Toxicology and Pharmacology, vol. 25, p. 304-309, 2008.</li>
+                <li>OLIVEIRA, M.M.; CASTRO, E.G.; CANESTRARO, C.D.; ZANCHET, D.; UGARTE, D.; ROMAN, L.S.; ZARBIN,
+                    A.J.G. 2006. A simple two phase route to silver nanoparticles/polyaniline structures. Journal of
+                    Physical Chemistry B, USA, v. 110, n. 34, p. 17063-17069.</li>
+                <li>OLIVEIRA, M.M.; UGARTE, D.; ZANCHET, D.; ZARBIN, A.J.G. 2005. Influence of synthetic parameters
+                    on the size, structure and stability of dodecanethiol-stabilized silver nanoparticles. Journal
+                    of Colloid and Interface Science, v. 292, n. 2, p. 429-435.</li>
+                <li>PALUDO, K. S.; GREMSKI, L. H.; VEIGA, S. S.; CHAIM, O. M.; GREMSKI, W.; BUCHI, D. F.; NADER, H.
+                    B.; DIETRICH, C. P.; FRANCO, C. R. C. The effect Brown spider venom on endothelial cell
+                    morphology and adhesive structures. Toxicon, vol, 47, p. 844-853, 2006.</li>
+                <li>PRADO, S. R. T. ; C., V ; CAMPOS,F. ; CADENA, S. M. S. ; OLIVEIRA, M. B. M. . Effects of cyclic
+                    imides on B16-F10 melanoma cells. In: XXXIII Reunião Anual da SBBQ, 2004, Caxambú, MG. SBBQ 2004
+                    Programa e Resumos, 2004. v. 1. p. U-6.</li>
+                <li>RAMOS, K. S. ; MELO, G. A. R . Systematic revision of the bee genus Parapsaenythia Friese
+                    (Hymenoptera, Apidae s.l., Andreninae). In: VIII IBRA International Conference of Tropical Bees
+                    and VI Encontro sobre Abelhas, 2004, Ribeirão Preto, SP., 2004.</li>
+                <li>RAMOS, K. S. ; MELO, G.A.R. Relacionamento filogenético entre as espécies de abelhas do gênero
+                    Parapsaenythia Friese (Hymenoptera, Apidae s.l., Protandrenini). In: XXVI Congresso Brasileiro
+                    de Zoologia, 2006, Londrina PR, 2006. .</li>
+                <li>RIOS, E.C.; Rosario, A.V.; Mello, R.M.Q.; Micaroni, L. 2007. Poly(3-methylthiophene)/MnO<span
+                        style="color: #333333;">2</span> composite electrodes as electrochemical capacitors. Journal
+                    of Power Sources, 163 (2007) 1137.no prelo.</li>
+                <li>ROZEN, Jerome G.; MELO, G. A. R.; AGUIAR, Antonio José Camillo; SANTOS, Isabel Alves dos.
+                    Nesties biologies na immature stages of the tapinotaspidine bee genera <i>Monoeca</i> and
+                    <i>Lanthanomelissa </i>and of their osirine cleptoparasites<i>Protosiris </i>and <i>Parepeolus
+                    </i>(Hymenoptera: Apidae: Apinae). American Museum novitiates, v.3501, p. 1-60, 2006.</li>
+                <li>SANTINI, O; de Moraes, AR; Mosca, DH; de Souza, PEN; de Oliveira, AJA; Marangoni, R; Wypych, F.
+                    2005. Structural and magnetic properties of Fe and Co nanoparticles embedded in powdered Al2O3.
+                    Journal Of Colloid And Interface Science, 289 (1): 63-70 SEP 1</li>
+                <li>SANTOS, V. ; OLIVEIRA, M. B. M. ; ROCHA, M. E. M. ; CARNIERI, E. G. S. ; NOLETO, G. R. ; CADENA,
+                    S. M. S. C. ; FRANCO, C.R.C ; TRINDADE, E. S. ; DI MASCIO, P ; MARTINEZ, G. R. . EFFECT OF
+                    SINGLET OXYGEN ON DNA DAMAGE AND MORPHOLOGY OF MELANOMA CELLS. In: XXXVI Reunião Anual da SBBq e
+                    10th IUBMB Conference., 2007, Salvador. Livro de Programa e resumo da XXXVI Reunião Anual da
+                    SBBq e 10th IUBMB Conference., 2007.</li>
+                <li>SCHADECK, R. J. G. ; RANDI, M. A. F. ; BUCHI, D.F. ; LEITE, B. . Vacuolar system of ungerminated
+                    Colletotrichumgraminicola conidia: convergence of autophagic and endocytic pathways. Fems
+                    Microbiology Letters, Holanda, v. 218, p. 277-283, 2003.</li>
+                <li>SCHADECK, R.J.G.; BUCHI, D. de F.; GODOY, L.M.F.; OLIVEIRA, C.C. de; GABARDO, J.; LOPES, L.
+                    Phagocytosis, endosomal/lysosomal system and other cellular aspects during macrophage activation
+                    by canova medication. Micron, Inglatera, v. In pre, p. 1-11, 2006.</li>
+                <li>SCHNITZLER, M.C.; MANGRICH, A.S.; ARDISSON, J.D.; MACEDO, W.A.A.; ZARBIN, A.J.G. 2006.
+                    Incorporation, oxidation and pyrolysis of ferrocene into porous silica glasses: a route to
+                    different silica/carbon and silica/iron oxide nanocomposites. Inorganic Chemistry, v. 45, p.
+                    10642-10650.</li>
+                <li>SCHWARZ, E. A. &amp; FONTELLA-PEREIRA, J. 2006. Contribuição ao estudo taxonômico das espécies
+                    de Oxypetalum R.Br. (Asclepiadoideae – Apocynaceae) do estado do Rio Grande do Sul, Brasil.
+                    Resumo. Congresso Nacional de Botânica, 57 e Encontro Estadual de Botânicos, 13. 6-10/11/2006.
+                    Trabalho em andamento.</li>
+                <li>Schwarz, E. A. &amp; Furlan, A. 2002. Coléteres foliares de Oxypetalum R.Br. (Asclepiadoideae,
+                    Apocynaceae_ – Aspectos ultraestruturais e anatômicos úteis à taxonomia das espécies do Paraná
+                    (Brasil). Acta Biol. Par.,Curitiba, 31(1, 2, 3, 4): 79-97. 2002.</li>
+                <li>SCHWARZ, E. A. &amp; FURLAN, A. 2002. Coléteres foliares de Oxypetalum R.Br. (Asclepiadoideae,
+                    Apocynaceae) – Aspectos ultraestruturais e anatômicos úteis à taxonomia das espécies do estado
+                    do Paraná, Brasil. Resumo. Congresso Nacional de Botânica, 53 e Reunião Nordestina de Botânica,
+                    25. 21-26/7/2002. Recife, PE.</li>
+                <li>SCHWARZ, E. A. &amp; FURLAN, A. 2003. Aspectos da morfologia do polínio em espécies paranaenses
+                    de Oxypetalum R.Br. (Apocynaceae, Asclepiadaceae). Resumo. Congresso Nacional de Botânica, 54 e
+                    Reunião Amazônica de Botânica, 3. 13-18/7/2003. Belém, PA. Trabalho a ser submetido.</li>
+                <li>SCHWARZ, E. A. &amp; RODRIGUES, W. A. 2006. Os gêneros Araujia, Gonolobus, Marsdenia, Matelea,
+                    Orthosia e Schistogyne (Asclepiadoideae – Apocynaceae) no estado do Paraná, Brasil. Estudos
+                    preliminares. Resumo. Congreso Latinoamericano de Botánica, 9. 18-25/6/2006. Trabalhos em
+                    finalização.</li>
+                <li>SCHWARZ, E. A.; FONTELLA-PEREIRA, J. &amp; GOES, M. B. 2007. Primeiro registro de Oxypetalum
+                    aurantiacum Malme ex Chodat &amp; Hassl. (Apocynaceae, Asclepiadoideae) para o Brasil. Submetido
+                    à Revista de Biologia Neotropical.</li>
+                <li>SILVEIRA, R. B.; CHAIM, O. M.; MANGILI, O. C.; GREMSKI, W.; DIETRICH, C. P.; NADER, H. B.;
+                    VEIGA, S. S. Hyaluronidases in <i>Loxosceles intermedia</i> (Browm spider) venom are
+                    endo-β-N-acetylhexosaminidases hydrolases. Toxicon, vol. Xx, p. xxx-xxx, 2006.</li>
+                <li>SILVEIRA, R. B.; PIGOZZO, R. B.; CHAIM, O. M.; APPEL, M. H.; DREYFUSS, J. L.; TOMA, L.; MANGILI,
+                    O. C.; GREMSKI, W.; DIETRICH, C. P.; NADER, H. B.; VEIGA, S. S. Molecular cloning and functional
+                    characterization of two isoforms of dermonecrotic toxin from <i>Loxosceles intermedia</i> (Brow
+                    spider) venom gland. Biochimie, vol. 88, p. 1241-1253, 2006.</li>
+                <li>SILVEIRA, R. B.; PIGOZZO, R. B.; CHAIM, O. M.; APPEL, M. H.; SILVA, D. T.; DREYFUSS, J. L.;
+                    TOMA, L.; DIETHICH, C. P.; NADER, H. B.; VEIGA, S. S.; GREMSKI, W. Two novel dermonecrotic
+                    toxins LiRecDT4 and LiRecDT5 from Brown spider (<i>Loxosceles intermedia</i>) venom: From
+                    cloning to functional characterization. Biochimie, vol. xx, p. 1-12, 2007.</li>
+                <li>SOUZA, F .G. F.; OLIVEIRA, S. M. ; ABUD, A. P. R. ; DONATTI, L. ; LUVIZON, A C. ; OLIVEIRA, C.
+                    C. ZANATA, S. M.; BUCHI, D. F. Lymphocyte’s response against melanoma cells after stimulation
+                    with macrophages previous treated with a homeopathic medicament. In: 9no. Congreso
+                    Interamericano de Microscopia Electrónica, 2007, Cusco, Peru. 2007.</li>
+                <li>TANAN, C. L.; VENTURA, D. F.; SOUZA, J. M.; CROTZNER, S. R.; MELA, M.; GOUVEIA JUNIOR, A.;
+                    OLIVEIRA RIBEIRO, C. A. Effects of mercury intoxication on the response of horizontal cells of
+                    the retina of thraira fish (<i>Hoplias malabaricus</i>). Brazilian Journal of Medical and
+                    Biological Research, vol. 39, p. 987-995, 2006.</li>
+                <li>WYPYCH, F.; MIKOWSKI, A.; SOARES, P.; GARDOLINSKI, J.E.F. da C.; LEPIENSKI, C. M. 2007.
+                    Mechanical properties of kaolinite macro-crystals. Philosophical Magazine, v. 87, p. 4445-4459.
+                </li>
+                <li>WYPYCH, F.; MIKOWSKI, A.; SOARES, P.; GARDOLINSKI, J.E.F. da C.; LEPIENSKI, C. M. 2007.
+                    Mechanical properties of kaolinite macro-crystals. Philosophical Magazine, v. 87, p. 4445-4459.
+                </li>
+                <li>WYPYCH, F.; NAKAGAKI, S. 2007. Nanofibrous and nanotubular supports for the immobilization of
+                    metalloporphyrins as oxidation catalysts. Journal of Colloid and Interface Science, v. 315, p.
+                    142-157.</li>
+                <li>WYPYCH, F.; SATYANARAYANA, K.G,; GUIMARÃES, J. L. 2007. Studies on lignocellulosic fibers of
+                    BrazilL. Part I – Source, Production, Morphology, Properties and applications. Composites. Part
+                    A, Applied Science and Manufacturing, v. 38, p. 1694-1709.</li>
+                <li>Wypych, F; Adad, LB; Mattoso, N; Marangon, AAS; Schreiner, WH. 2005. Synthesis and
+                    characterization of disordered layered silica obtained by selective leaching of octahedral
+                    sheets from chrysotile and phlogopite structures. Journal Of Colloid And Interface Science, 283
+                    (1): 107-112.</li>
+                <li>ZARBIN, A.J.G.; OLIVEIRA, M.M.; SCHNITZLER, M.C.; CASTRO, E.G.; COUTO, G.G.; MENEZES, W.G.;
+                    TIBONI, A.; NOSSOL, E.; ALMEIDA FILHO, C. 2005. Nanochemistry: synthesis, characterization and
+                    applications of materials in nanometric size. Metals Materials and Processes, Índia, v. 17, n.
+                    3-4, p. 249-260.</li>
+                <li>ZARPELLON, J.; Jurca, H.F.; Klein, J.J.; Schreiner, W.H.; Mattoso N. and Mosca D.H.
+                    Electrodeposition of Fe thin films on Si(111) surfaces in the presence of sodium saccharin.
+                    Electrochimica Acta, In Press, Available online 1 September 2007,</li>
+                <li>ZARPELLON, J.; Jurca, H.F.; Mattoso, N.; Klein, J.J.; Schreiner, W.H.; Ardisson, J.D.; Macedo
+                    W.A.A. and Mosca. D.H. Morphology, structure, and magnetism of FeCo thin films electrodeposited
+                    on hydrogen-terminated Si(111) surfaces.<i> </i>Journal of Colloid and Interface Science, In
+                    Press, Available online 27 September 2007.</li>
+                <li>CHAIM, O. M.; SADE, Y. B.; SILVEIRA, R. B.; TOMA. L.; KALAPOTHAKIS, E.; CHÁVEZ-OLÓRTEGUI, C.;
+                    MANGILI, O. C.; GREMSKI, W.; DIETRICH, C. P. von; NADER, H. B.; VEIGA, S. S. Brown spider
+                    dermonecrotic toxin directly induces nephrotoxicity. <b>Toxicology and Applied Pharmacology</b>,
+                    vol. 211, p. 64-77, 2006.</li>
+                <li>SILVEIRA, R. B.; PIGOZZO, R. B.; CHAIM, O. M.; APPEL, M. H.; DREYFUSS, J. L.; TOMA, L.; MANGILI,
+                    O. C.; GREMSKI, W.; DIETRICH, C. P.; NADER, H. B.; VEIGA, S. S. Molecular cloning and functional
+                    characterization of two isoforms of dermonecrotic toxin from <i>Loxosceles intermedia</i> (Brow
+                    spider) venom gland. <b>Biochimie</b>, vol. 88, p. 1241-1253, 2006.</li>
+                <li>OLIVEIRA RIBEIRO, C. A.; FILIPAK NETO, F.; MELA, M.; SILVA, P. H.; RANDI, M. A. F.; RABITTO, I.
+                    S.; ALVES COSTA, J. R. M.; PELLETIER, É. Hematological findings in neotropical fish <i>Hoplias
+                        malabaricus</i> exposed to subchronic and dietary doses of methylmercury, inorganic lead,
+                    and tributyltin chloride. <b>Environmental Research</b>, vol. 101, p. 74-80, 2006.</li>
+                <li>GARGIONI, R.; FILIPAK NETO, F.; BUCHI, D. F.; RANDI, M. A. F.; FRANCO, C. R. C.; PALUDO, K. S.;
+                    PELLETIER, É.; FERRARO, M. V. M.; CESTARI, M. M.; BUSSOLARO, D.; OLIVEIRA RIBEIRO, C. A. Cell
+                    death and DNA damage in peritoneal macrophages of mice (<i>Mus musculus</i>) exposed to
+                    inorganic lead. <b>Cell Biology International</b>, vol. 30, p. 615-623, 2006.</li>
+                <li>ALVES COSTA, J. R. M.; MELA, M.; ASSIS, H. C. S.; PELLETIER, É.; RANDI, M. A. F.; OLIVEIRA
+                    RIBEIRO, C. A. Enzymatic inhibition and morphological changes in <i>Hoplias malabaricus</i> from
+                    dietary exposure to lead(II) or methylmercury. <b>Ecotoxicology and Environmental Safety</b>,
+                    vol. xx, p. xxx-xxx, 2006.</li>
+                <li>TANAN, C. L.; VENTURA, D. F.; SOUZA, J. M.; CROTZNER, S. R.; MELA, M.; GOUVEIA JUNIOR, A.;
+                    OLIVEIRA RIBEIRO, C. A. Effects of mercury intoxication on the response of horizontal cells of
+                    the retina of thraira fish (<i>Hoplias malabaricus</i>). <b>Brazilian Journal of Medical and
+                        Biological Research</b>, vol. 39, p. 987-995, 2006.</li>
+                <li>BONCI, D. M. O.; LIMA, S. M. A; CROTZNER, S. R.; OLIVEIRA RIBEIRO, C. A.; HAMASSAKI, D. E.;
+                    VENTURA, D. F. Losses of immunoreactive parvalbumin amacrine and immunoreactive αprotein kinase
+                    C bipolar cells caused by methylmercury chloride intoxication in the retina of the tropical fish
+                    <i>Hoplias malabaricus</i>. <b>Brazilian Journal of Medical and Biological Research</b>, vol.
+                    39, p. 405-410, 2006.</li>
+                <li>BELLO, C. A.; HERMOGENES, A. L. N.; MAGALHÃES, A.; VEIGA, S. S.; GREMSKI, L. H.; RICHARDSON, M.;
+                    SANCHEZ, E. F. Isolation and biochemical characterization of a fibrinolytic proteinase from
+                    <i>Bothrops leucurus</i> (white-tailed jararaca) snake venom. <b>Biochimie</b>, vol. 88, p.
+                    189-200, 2006.</li>
+                <li>SILVEIRA, R. B.; CHAIM, O. M.; MANGILI, O. C.; GREMSKI, W.; DIETRICH, C. P.; NADER, H. B.;
+                    VEIGA, S. S. Hyaluronidases in <i>Loxosceles intermedia</i> (Browm spider) venom are
+                    endo-β-N-acetylhexosaminidases hydrolases.<b>Toxicon</b>, vol. Xx, p. xxx-xxx, 2006.</li>
+                <li>PALUDO, K. S.; GREMSKI, L. H.; VEIGA, S. S.; CHAIM, O. M.; GREMSKI, W.; BUCHI, D. F.; NADER, H.
+                    B.; DIETRICH, C. P.; FRANCO, C. R. C. The effect Brown spider venom on endothelial cell
+                    morphology and adhesive structures. <b>Toxicon</b>, vol, 47, p. 844-853, 2006.</li>
+                <li>FILIPAK NETO, F.; ZANATA, S. M.; RANDI, M. A. F.; PELLETIER, É.; OLIVEIRA RIBEIRO, C. A.
+                    Hepaticytes primary culture from the Neotropical fish, trahira <i>Hoplias malabaruricus</i>
+                    (Bloch). <b>Journal of Fish Biology</b>, vol. 69, p. 1524-1532, 2006.</li>
+                <li>SILVEIRA, R. B.; PIGOZZO, R. B.; CHAIM, O. M.; APPEL, M. H.; SILVA, D. T.; DREYFUSS, J. L.;
+                    TOMA, L.; DIETHICH, C. P.; NADER, H. B.; VEIGA, S. S.; GREMSKI, W. Two novel dermonecrotic
+                    toxins LiRecDT4 and LiRecDT5 from Brown spider (<i>Loxosceles intermedia</i>) venom: From
+                    cloning to functional characterization. <b>Biochimie</b>, vol. xx, p. 1-12, 2007.</li>
+                <li>FILIPAK NETO, F.; ZANATA, S. M.; SILVA de ASSIS, H. C.; BUSSOLARO, D.; FERRARO, M. V. M.; RANDI,
+                    M. A. F.; ALVES COSTA, J. R. M.; CESTARI, M. M.; ROCHE, H.; OLIVEIRA RIBEIRO, C. A. Use of
+                    hepatocytes from<i>Hoplias malabaricus</i> to characterize the toxicity of a complex mixture of
+                    lipophilic halogenated compounds. <b>Toxicology in Vitro</b>, vol. xxx, p. xxx-xxx, 2007.</li>
+                <li>OLIVEIRA RIBEIRO, C. A.; VOLLAIRE, Y.; COULET, E.; ROCHE, H. Bioaccumulation of polychlorinated
+                    biphenyls in the eel (<i>Anguilla arguilla</i>) at the Camargue Nature Reserve – France.
+                    <b>Environmental Pollution</b>, vol. 153, p. 424-431, 2008.</li>
+                <li>MIRANDA, A. L.; ROCHE, H.; RANDI, M. A. F.; MENEZES, M. L.; OLIVEIRA RIBEIRO, C. A.
+                    Bioaccumulation of chlorinated pesticides and PCBs in the tropical freshwater fish <i>Hoplias
+                        malabaricus</i>: Histopathological, physiological, and immunological findings.
+                    <b>Environment International</b>, vol. 34, p. 939-949, 2008.</li>
+                <li>OLIVEIRA RIBEIRO, C. A.; NATHALIE, M. D.; GONZALEZ, P.; YANNICK, D.; JEAN-PAUL, B.; BOUDOU, A.;
+                    MASSABUAU, J. C. Effects of dietary methylmercury on zebrafish skeletal muscle fibres.
+                    <b>Environmental Toxicology and Pharmacology</b>, vol. 25, p. 304-309, 2008.</li>
+                <li>BARROSO, E. M. A.; COSTA, L. S.; MEDEIROS, V. P.; CORDEIRO, S. L.; COSTA, M. S. S. P.; FRANCO,
+                    C. R. C.; NADER, H. B.; LEITE, E. L.; ROCHA, H. A. O. A non-anticoagulant heterofucan has
+                    antithrombotic activity <i>in vivo</i>.<b>Planta Med</b>, vol. 74, p. 712-718, 2008.</li>
+                <li>BUSSOLARO, D.; FILIPAK NETO, F.; GARGIONI, R.; FERNANDES, L. C.; RANDI, M. A. F.; PELLETIER, É.;
+                    OLIVEIRA RIBEIRO, C. A. The immune response of peritoneal macrophages due to exposure to
+                    inorganic lead in the house mouse <i>Mus musculus</i>. <b>Toxicology in Vitro</b>, vol. 22, p.
+                    254-260, 2008.</li>
+                <li>Ariani Correa Barbosa. EFEITOS DA CARPROPAMIDA E SACAROSE SOBRE A MELANIZAÇÃO E MOBILIZAÇÃO DE
+                    LIPÍDEOS EM Colletotrichum acutatum. 2005. 54 f. Trabalho de Conclusão de Curso. (Graduação em
+                    Ciências Biológicas) – Universidade Federal do Paraná.</li>
+                <li>Leticia Graf. Biologia celular, e interações micelinas e cultivo de Lepista sordida. 2004. 78 f.
+                    Trabalho de Conclusão de Curso. (Graduação em Ciências Biológicas) – Universidade Federal do
+                    Paraná.</li>
+                <li>Jocieli Maschio. Avaliação química de HPAs em bile de Astyanax sp. e estudo dos efeitos tóxicos
+                    agudos da fração solúvel do petróleo em Salvelinus alpinusatravés de bioensaios.. 2006. 0 f.
+                    Trabalho de Conclusão de Curso. (Graduação em Ciências Biológicas) – Universidade Federal do
+                    Paraná.</li>
+                <li>Patrícia Pinho de França. Uso de Biomarcadores na Avaliação do Impacto do Acidente do Navio
+                    Vicuña/2004 na Baia de Parnaguá – PR: Análises Preliminares.. 2005. 62 f. Trabalho de Conclusão
+                    de Curso. (Graduação em Ciências Biológicas) – Universidade Federal do Paraná.</li>
+                <li>Sibelle Jakobi. Efeito Multiplo do TBT e WSF (fração soluvel do petroleo) em Perna perna. 2004.
+                    Trabalho de Conclusão de Curso. (Graduação em Ciências Biológicas) – Universidade Federal do
+                    Paraná.</li>
+                <li>Francisco Filipack Neto. Isolamento não enzimático e cultivo primário de hepatócitos de traíra –
+                    Hoplias malabaricus (Bloch, 1794). 2003. Trabalho de Conclusão de Curso. (Graduação em Ciências
+                    Biológicas) – Universidade Federal do Paraná.</li>
+                <li>Patrícia Rassolin. Proposta de um Modelo de Manejo de Resíduos Sólidos no Litoral Paranaense:
+                    Estudo de Caso Consórdio Intermunicipal Aterro Sanitário. 2002. 63 f. Trabalho de Conclusão de
+                    Curso. (Graduação em Ciências Biológicas) – Universidade Federal do Paraná.</li>
+                <li>Elenita Soares. Adequação Jurídica de Resultados e Termos Científicos Provenientes de Estudos na
+                    Área de Toxicologia Ambiental: Estudo de Caso da Contaminação por Chumbo no Vale do Ribeira
+                    SP/PR . 2002. 55 f. Trabalho de Conclusão de Curso. (Graduação em Ciências Biológicas) –
+                    Universidade Federal do Paraná.</li>
+                <li>Faviola M Akaishi. Estudo do Efeito Tóxico do TBT (Tributilestanho) e do BaP (Benzopireno) em
+                    Rim de Salvelinus alpinus. 2000. Trabalho de Conclusão de Curso. (Graduação em Ciências
+                    Biológicas) – Universidade Federal do Paraná, Conselho Nacional de Desenvolvimento Científico e
+                    Tecnológico.</li>
+                <li>Ariel Ferreira do Amaral Neto. Resistência do Peixe Mimagoniates microleps ao Chumbo Inorgânico
+                    Dissolvido em Água. 1999. Trabalho de Conclusão de Curso. (Graduação em Ciências Biológicas) –
+                    Universidade Federal do Paraná.</li>
+                <li>Fabiola X. Valdez Domingos. Efeito do TBT e BaP em Fígado de Salvelinus alpinus. 1999. Trabalho
+                    de Conclusão de Curso. (Graduação em Ciências Biológicas) – Universidade Federal do Paraná,
+                    Conselho Nacional de Desenvolvimento Científico e Tecnológico.</li>
+            </ul>
+        </section>
+        <!--Link de direcionamento da barra de acessibilidade para rodapé-->
+        <a name="footer" id="footer"></a>
+    </main>
+    <footer>
+        <!--Rodapé de Links da UFPR-->
+        <section class="rodape__links">
+            <!--Primeiro Bloco de Links-->
+            <div class="rodape__links__divisao--servicos">
+                <!--Título da Sessão-->
+                <h5 class="rodape__links__divisao__titulo" id="links-servicos">Serviços</h5>
+                <!--Lista de Links-->
+                <ul class="rodape__links__divisao__lista">
+                    <!--Link do Agendamento do Anfiteatro 10-->
+                    <li><a href="http://www.bio.ufpr.br/portal/agendamento-anfiteatro-10/" target="_blank">Anfiteatro
+                            10</a></li>
+                    <!--Link do Multiconferência-->
+                    <li><a href="http://www.bio.ufpr.br/portal/mconf/" target="_blank">Mconf</a></li>
+                    <!--Link dos Concursos-->
+                    <li><a href="http://www.bio.ufpr.br/portal/concursos/" target="_blank">Concursos</a></li>
+                    <!--Link da Biblioteca Setorial da Biológicas-->
+                    <li><a href="http://www.portal.ufpr.br/bib_bl.html" target="_blank">Biblioteca do Setor</a></li>
+                    <!--Link do Centro de Tecnologias Avançadas em Fluorescência-->
+                    <li><a href="http://www.bio.ufpr.br/portal/ctaf/" target="_blank">CTAF</a></li>
+                    <!--Link da Lista de Ramais da Biológicas-->
+                    <li><a href="http://www.bio.ufpr.br/portal/lista-de-ramais/" target="_blank">Lista de Ramais</a>
+                    </li>
+                </ul>
+            </div>
+            <!--Segundo Bloco de Links-->
+            <div class="rodape__links__divisao--apoio">
+                <!--Título da Sessão-->
+                <h5 class="rodape__links__divisao__titulo" id="links-apoio">Serviços de Apoio</h5>
+                <!--Lista de Links-->
+                <ul class="rodape__links__divisao__lista">
+                    <!--Link da Administração Predial da Biológicas-->
+                    <li><a href="http://www.bio.ufpr.br/portal/admpredial/" target="_blank">Administração
+                            Predial</a></li>
+                    <!--Link do Almoxarifado e Patrimônio da Biológicas-->
+                    <li><a href="http://www.bio.ufpr.br/portal/almopatri/" target="_blank">Almoxarifado e
+                            Patrimônio</a></li>
+                    <!--Link do Departamento de Informática da Biológicas-->
+                    <li><a href="http://www.bio.ufpr.br/portal/infobio/" target="_blank">Informática</a></li>
+                    <!--Link do Departamento de Orçamento e Finanças Biológicas-->
+                    <li><a href="http://www.bio.ufpr.br/portal/orcamento-e-financas/" target="_blank">Orçamento e
+                            Finanças</a></li>
+                </ul>
+            </div>
+            <!--Terceiro Bloco de Links-->
+            <div class="rodape__links__divisao--comissoes">
+                <!--Título da Sessão-->
+                <h5 class="rodape__links__divisao__titulo" id="links-comissoes">Comissões e Comitês</h5>
+                <!--Lista de Links-->
+                <ul class="rodape__links__divisao__lista">
+                    <!--Link da Comissão de Ética no Uso de Animais-->
+                    <li><a href="http://www.bio.ufpr.br/portal/ceua/" target="_blank">Comissão de Ética no Uso de
+                            Animais</a></li>
+                    <!--Link da Comissão de Biossegurança da Biológicas-->
+                    <li><a href="http://www.bio.ufpr.br/portal/comissao-interna-de-bioseguranca/"
+                            target="_blank">Comissão Interna de Biossegurança</a></li>
+                    <!--Link do Comitê de Pesquisa da Biológicas-->
+                    <li><a href="http://www.bio.ufpr.br/portal/comite-setorial-de-pesquisa/" target="_blank">Comitê
+                            Setorial de Pesquisa</a></li>
+                </ul>
+            </div>
+            <!--Quarto Bloco de Links-->
+            <div class="rodape__links__divisao--orgaos">
+                <!--Título da Sessão-->
+                <h5 class="rodape__links__divisao__titulo" id="links-suplementares">Órgãos Suplementares</h5>
+                <!--Lista de Links-->
+                <ul class="rodape__links__divisao__lista">
+                    <!--Link da ASPEC-->
+                    <li><a target="_blank" href="http://www.bio.ufpr.br/portal/aspec/">ASPEC</a></li>
+                    <!--Link do Biotério-->
+                    <li><a target="_blank" href="http://www.bio.ufpr.br/portal/bioterio/">Biotério</a></li>
+                    <!--Link do Centro de Educação Física e Desportos-->
+                    <li><a target="_blank" href="http://www.bio.ufpr.br/portal/ced/">CED</a></li>
+                    <!--Link do Museu de Ciências Naturais-->
+                    <li><a target="_blank" href="http://www.bio.ufpr.br/portal/mcn/">Museu de Ciências Naturais</a>
+                    </li>
+                </ul>
+            </div>
+            <!--Quinto Bloco de Links-->
+            <div class="rodape__links__divisao--sitios">
+                <!--Título da Sessão-->
+                <h5 class="rodape__links__divisao__titulo" id="links-interesses">Sítios de Interesse</h5>
+                <!--Lista de Links-->
+                <ul class="rodape__links__divisao__lista">
+                    <!--Link do Ministério da Educação-->
+                    <li><a href="http://www.mec.gov.br/" target="_blank">Ministério da Educação</a></li>
+                    <!--Link do Ministério da Ciência, Tecnologia e Inovações-->
+                    <li><a href="https://www.gov.br/mcti/" target="_blank">Ministério da Ciência, Tecnologia e
+                            Inovações</a></li>
+                    <!--Link do Portal da Transparência-->
+                    <li><a href="http://transparencia.gov.br/" target="_blank">Portal da Transparência</a></li>
+                    <!--Link da CAPES-->
+                    <li><a href="http://www.capes.gov.br/" target="_blank">CAPES</a></li>
+                    <!--Link do CNPq-->
+                    <li><a href="http://www.cnpq.br/" target="_blank">CNPq</a></li>
+                    <!--Link da Fundação Araucária-->
+                    <li><a href="http://www.fappr.pr.gov.br/" target="_blank">Fundação Araucária</a></li>
+                    <!--Link da Fundação da UFPR-->
+                    <li><a href="http://www.funpar.ufpr.br/" target="_blank">FUNPAR</a></li>
+                </ul>
+            </div>
+            <!--Sexto Bloco de Links-->
+            <div class="rodape__links__divisao--reitorias">
+                <!--Título da Sessão-->
+                <h5 class="rodape__links__divisao__titulo" id="links-reitorias">Pró-Reitorias da UFPR</h5>
+                <!--Lista de Links-->
+                <ul class="rodape__links__divisao__lista">
+                    <!--Link da Pró-Reitoria de Administração da UFPR-->
+                    <li><a href="http://www.pra.ufpr.br/portal/" target="_blank">Pró-Reitoria de Administração</a>
+                    </li>
+                    <!--Link da Pró-Reitoria de Assuntos Estudantis-->
+                    <li><a href="http://www.prae.ufpr.br/prae/" target="_blank">Pró-Reitoria de Assuntos
+                            Estudantis</a></li>
+                    <!--Link da Pró-Reitoria de Extensão e Cultura-->
+                    <li><a href="http://www.proec.ufpr.br/" target="_blank">Pró-Reitoria de Extensão e Cultura</a>
+                    </li>
+                    <!--Link da Pró-Reitoria de Gestão de Pessoas-->
+                    <li><a href="http://www.progepe.ufpr.br/progepe/" target="_blank">Pró-Reitoria de Gestão de
+                            Pessoas</a></li>
+                    <!--Link da Pró-Reitoria de Graduação e Educação Profissional-->
+                    <li><a href="http://www.prograd.ufpr.br/portal/" target="_blank">Pró-Reitoria de Graduação e
+                            Educação Profissional</a></li>
+                    <!--Link da Pró-Reitoria de Pesquisa e Pós-Graduação-->
+                    <li><a href="http://www.prppg.ufpr.br/" target="_blank">Pró-Reitoria de Pesquisa e
+                            Pós-Graduação</a></li>
+                    <!--Link da Pró-Reitoria de Planejamento, Orçamento e Finanças-->
+                    <li><a href="http://www.proplan.ufpr.br/portal/" target="_blank">Pró-Reitoria de Planejamento,
+                            Orçamento e Finanças</a></li>
+                </ul>
+            </div>
+            <!--Sétimo Bloco de Links-->
+            <div class="rodape__links__divisao--ufpr">
+                <!--Título da Sessão-->
+                <h5 class="rodape__links__divisao__titulo" id="links-sitios-ufpr">Sítios da UFPR</h5>
+                <!--Lista de Links-->
+                <ul class="rodape__links__divisao__lista">
+                    <!--Link da Secretaria dos Órgãos Colegiados-->
+                    <li><a href="http://www.ufpr.br/soc" target="_blank">Secretaria dos Órgãos Colegiados</a></li>
+                    <!--Link do Sítio das Bibliotecas-->
+                    <li><a href="http://www.portal.ufpr.br/" target="_blank">Bibliotecas – SIBI</a></li>
+                    <!--Link da Comissão de Ética da UFPR-->
+                    <li><a href="http://www.eticapublica.ufpr.br/" target="_blank">Comissão de Ética</a></li>
+                    <!--Link do Hospital de Clínicas-->
+                    <li><a href="http://www.hc.ufpr.br/" target="_blank">Hospital de Clínicas</a></li>
+                    <!--Link da Editora da UFPR-->
+                    <li><a href="http://www.editora.ufpr.br/" target="_blank">Editora da UFPR</a></li>
+                    <!--Link do Sítio do Núcleo de Concursos-->
+                    <li><a href="http://www.nc.ufpr.br/" target="_blank">Vestibular / Núcleo de Concursos</a></li>
+                </ul>
+            </div>
+            <!--Oitavo Bloco de Links-->
+            <div class="rodape__links__divisao--setores">
+                <!--Título da Sessão-->
+                <h5 class="rodape__links__divisao__titulo" id="links-setores">Setores da UFPR</h5>
+                <!--Lista de Links-->
+                <ul class="rodape__links__divisao__lista">
+                    <!--Link do Setor de Artes, Comunicação e Design da UFPR-->
+                    <li><a href="http://www.sacod.ufpr.br" target="_blank">Setor de Artes, Comunicação e Design</a>
+                    </li>
+                    <!--Link do Setor de Ciências Agrárias da UFPR-->
+                    <li><a href="http://www.agrarias.ufpr.br" target="_blank">Setor de Ciências Agrárias</a></li>
+                    <!--Link do Setor de Ciências Biológicas da UFPR-->
+                    <li><a href="http://www.bio.ufpr.br" target="_blank">Setor de Ciências Biológicas</a></li>
+                    <!--Link do Setor de Ciêcnias da Saúde da UFPR-->
+                    <li><a href="http://www.saude.ufpr.br" target="_blank">Setor de Ciêcnias da Saúde</a></li>
+                    <!--Link do Setor de Ciências da Terra da UFPR-->
+                    <li><a href="http://www.terra.ufpr.br" target="_blank">Setor de Ciências da Terra</a></li>
+                    <!--Link do Setor de Ciêcnias Exatas da UFPR-->
+                    <li><a href="http://www.exatas.ufpr.br" target="_blank">Setor de Ciêcnias Exatas</a></li>
+                    <!--Link do Setor de Ciências Humanas da UFPR-->
+                    <li><a href="http://www.humanas.ufpr.br" target="_blank">Setor de Ciências Humanas</a></li>
+                    <!--Link do Setor de Ciências Jurídicas da UFPR-->
+                    <li><a href="http://www.juridicas.ufpr.br" target="_blank">Setor de Ciências Jurídicas</a></li>
+                    <!--Link do Setor de Ciências Sociais Aplicadas da UFPR-->
+                    <li><a href="http://www.sociais.ufpr.br" target="_blank">Setor de Ciências Sociais Aplicadas</a>
+                    </li>
+                    <!--Link do Setor de Educação da UFPR-->
+                    <li><a href="http://www.educacao.ufpr.br" target="_blank">Setor de Educação</a></li>
+                    <!--Link do Setor de Educação Profissional e Tecnológica da UFPR-->
+                    <li><a href="http://www.sept.ufpr.br" target="_blank">Setor de Educação Profissional e
+                            Tecnológica</a></li>
+                    <!--Link do Setor de Tecnologia da UFPR-->
+                    <li><a href="http://www.tecnologia.ufpr.br" target="_blank">Setor de Tecnologia</a></li>
+                    <!--Link do Setor Litoral da UFPR-->
+                    <li><a href="http://www.litoral.ufpr.br" target="_blank">Setor Litoral</a></li>
+                    <!--Link do Setor Palotina da UFPR-->
+                    <li><a href="http://www.campuspalotina.ufpr.br" target="_blank">Setor Palotina</a></li>
+                    <!--Link do Campus de Jandaia do Sul da UFPR-->
+                    <li><a target="_blank" href="http://www.jandaiadosul.ufpr.br">Campus de Jandaia do Sul</a></li>
+                </ul>
+            </div>
+        </section>
+        <!--Rodapé Social da UFPR-->
+        <section class="rodape__social">
+            <!--Ícones das Redes Sociais da UFPR-->
+            <div class="rodape__social__icones">
+                <!--Título da Divisão-->
+                <h3>Redes Sociais</h3>
+                <div id="icones-redes-sociais" class="rodape__social__icones__redes">
+                    <!--Ícone e Link da UFPR no Facebook-->
+                    <a href="https://www.facebook.com/UFPRoficial" target="_blank">
+                        <div class="icones-redes-sociais-facebook" title="UFPR no Facebook" alt="UFPR no Facebook">
+                        </div>
+                    </a>
+                    <!--Ícone e Link da UFPR no Twitter-->
+                    <a href="https://twitter.com/ufpr" target="_blank">
+                        <div class="icones-redes-sociais-twitter" title="UFPR no Twitter" alt="UFPR no Twitter">
+                        </div>
+                    </a>
+                    <!--Ícone e Link da UFPR no Flickr-->
+                    <a href="https://www.flickr.com/ufpr" target="_blank">
+                        <div class="icones-redes-sociais-flickr" title="UFPR no Flickr" alt="UFPR no Flickr"></div>
+                    </a>
+                    <!--Ícone e Link RSS UFPR-->
+                    <a href="https://www.ufpr.br/portalufpr/lista-de-feeds-da-ufpr" target="_blank">
+                        <div class="icones-redes-sociais-RSS" title="RSS UFPR" alt="RSS UFPR"></div>
+                    </a>
+                    <!--Ícone e Link da UFPR no Youtube-->
+                    <a href="https://www.youtube.com/user/TVUFPR" target="_blank">
+                        <div class="icones-redes-sociais-youtube" title="UFPR no Youtube" alt="UFPR no Youtube">
+                        </div>
+                    </a>
+                    <!--Ícone e Link da UFPR no Instagram-->
+                    <a href="https://www.instagram.com/ufpr_oficial" target="_blank">
+                        <div class="icones-redes-sociais-instagram" title="UFPR no Instagram" alt="UFPR no Instagram">
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!--Característica do Departamento-->
+            <div class="rodape__social__descricao">
+                <p>Universidade Federal do Paraná</p>
+                <p>Setor de Ciências Biológicas</p>
+                <p>Centro de Microscopia Eletrônica</p>
+                <p>Avenida Coronel Francisco H. dos Santos, 100</p>
+                <p>Caixa Postal: 19031 - Fone: (41) 3361-1799</p>
+                <p>Centro Politécnico - Jardim das Américas</p>
+                <p>CEP: 81531-980 - Curitiba (PR), Brasil</p>
+                <img src="http://www.bio.ufpr.br/portal/wp-content/themes/wpufpr_zurb6_biologia/images/logo_ufpr_branca.png"
+                    alt="Logo da UFPR" title="Logo da UFPR">
+            </div>
+            <!--Copyright-->
+            <div class="rodape__social__copyright">
+                <p>©<?php echo date("Y"); ?> - Universidade Federal do Paraná - Setor de Ciências Biológicas -
+                    Centro
+                    de Microscopia Eletrônica
+                </p>
+                <p>Desenvolvido por Luis Gustavo de Matos dos Santos e hospedado pela AGTIC - Agência de Tecnologia
+                    da Informação e Comunicação da UFPR</p>
+            </div>
+        </section>
+        <!--Incorporação do Rodapé da Barra Brasil-->
+        <div id="footer-brasil"></div>
+    </footer>
+    <!--Código JavaScript dos Elementos da Barra Brasil-->
+    <script type="text/javascript" defer="defer" src="http://barra.brasil.gov.br/barra.js"></script>
+    <!--Funções de Estilos da Página-->
+    <script type="text/javascript" src="assets/js/estilo.js"></script>
+</body>
+
+</html>
