@@ -639,6 +639,7 @@ form {
                     "cidade bairro"
                     "rua numero"
                     "complemento telefone";
+                grid-template-columns: 1fr 1fr;
                 padding: 1rem;
 
                 &__titulo {

@@ -792,6 +792,7 @@ form button:hover {
   grid-area: instituicao;
   grid-gap: 1rem;
   grid-template-areas: "titulo titulo" "razao cnpj" "cep uf" "cidade bairro" "rua numero" "complemento telefone";
+  grid-template-columns: 1fr 1fr;
   padding: 1rem;
 }
 .formulario--cadastro-externos .formulario__instituicao__titulo {
