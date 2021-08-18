@@ -1,0 +1,429 @@
+header {
+    display: grid;
+    grid-area: header;
+    grid-template-areas:
+        "barra-brasil"
+        "barra-acessibilidade"
+        "cabecalho"
+        "menu-cme";
+    grid-template-columns: minmax(3rem, 75rem);
+    grid-template-rows: 32px 1fr 7fr auto;
+    height: auto;
+    margin: 0 auto;
+}
+
+/******Barra Brasil******/
+#barra-brasil {
+    grid-area: barra-brasil;
+}
+
+/******Barra de Acessibilidade******/
+.acessibilidade {
+    @include align-items(center);
+    background-color: #FFFFFF;
+    display: grid;
+    font-size: 0.8em;
+    grid-area: barra-acessibilidade;
+    grid-column-gap: 1%;
+    grid-template-areas:
+        "atalhos links traducao";
+    grid-template-columns: 6fr 6fr 1fr;
+    grid-template-rows: auto;
+    padding: 0 0.5rem;
+
+    @media only screen and (max-width: 960px) {
+        grid-template-areas:
+            "atalhos"
+            "links"
+            "traducao";
+        grid-template-columns: auto;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+
+    @media only screen and (max-width: 495px) {
+        grid-template-areas:
+            "links"
+            "traducao";
+        grid-template-columns: auto;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    @include all-icones-traducao-sprites;
+
+    .icones-traducao-france,
+    .icones-traducao-spain,
+    .icones-traducao-united-states-of-america {
+        height: 16px;
+        width: 16px;
+    }
+
+    /******Links de Atalhos******/
+    &__atalhos {
+        @include display-flex;
+        grid-area: atalhos;
+        @include justify-content(start);
+
+        @media only screen and (max-width: 960px) {
+            @include justify-content(center);
+        }
+
+        @media only screen and (max-width: 495px) {
+            display: none;
+        }
+
+        & li {
+            margin: 0.3rem;
+        }
+    }
+
+    /******Links de Acessibilidade******/
+    &__links {
+        @include display-flex;
+        grid-area: links;
+        @include justify-content(center);
+        text-transform: uppercase;
+        text-decoration: underline dotted;
+
+        & li {
+            margin: 0.3rem;
+        }
+    }
+
+    /******Bandeiras de tradução******/
+    &__traducao {
+        @include display-flex;
+        grid-area: traducao;
+        @include justify-content(end);
+
+        @media only screen and (max-width: 960px) {
+            @include justify-content(center);
+        }
+
+        & li {
+            margin: 0.3rem;
+        }
+    }
+
+    span {
+        background-color: black;
+        color: #FFFFFF;
+        margin-left: 0.25em;
+        @include opacity(0.7);
+        padding: 0 0.3em;
+
+        @media only screen and (max-width: 495px) {
+            display: none;
+        }
+    }
+
+}
+
+/******Cabeçalho******/
+.cabecalho {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: grid;
+    grid-area: cabecalho;
+    grid-template-areas:
+        "logo menu-ufpr"
+        "barra-titulo barra-titulo";
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 2fr 1fr;
+
+    @media only screen and (max-width: 960px) {
+        grid-template-areas:
+            "menu-ufpr"
+            "logo"
+            "barra-titulo";
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto;
+    }
+
+    /******Logo CME******/
+    &__logo {
+        background-color: rgba(#FFFFFF, 0.8);
+        @include border-radius(10px);
+        grid-area: logo;
+        height: 6rem;
+        justify-self: start;
+        margin: 1rem;
+        padding: 1rem;
+
+        @media only screen and (max-width: 960px) {
+            justify-self: center;
+        }
+
+    }
+
+    /******Menu UFPR******/
+    &__menu--ufpr {
+        grid-area: menu-ufpr;
+        justify-self: end;
+        margin: 1rem;
+
+        @media only screen and (max-width: 960px) {
+            justify-self: center;
+        }
+
+        ul {
+            @include display-flex;
+
+            @media only screen and (max-width: 495px) {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            li {
+                @media only screen and (max-width: 495px) {
+                    margin: 0.31rem;
+                }
+
+                a {
+                    background: $cor-padrao;
+                    margin: 0 1px 0 0;
+                    padding: 4px;
+
+                    &:hover {
+                        background: rgba($cor-padrao, 0.8);
+                        color: $cor-padrao-auxiliar;
+                    }
+                }
+            }
+        }
+    }
+
+    /******Faixa com título e pesquisa******/
+    &__titulo {
+        align-items: center;
+        background: rgba($cor-branca, 0.8);
+        display: grid;
+        height: auto;
+        grid-area: barra-titulo;
+        grid-template-areas:
+            "titulo pesquisa";  
+        grid-template-columns: 1fr 280px;
+        grid-template-rows: auto;
+        margin: 1rem 0;
+
+        @media only screen and (max-width: 960px) {
+            grid-template-areas:
+                "titulo"
+                "pesquisa";
+            grid-template-columns: auto;
+            grid-template-rows: 1fr 1fr;
+        }
+
+        /******Título do Site******/
+        h1 {
+            color: $cor-branca;
+            font-size: 3.4vw;
+            grid-area: titulo;
+            margin-left: 1rem;
+            @include text-shadow(rgba($cor-preta, 0.3) 1px 1px 0, rgba($cor-preta, 0.3) 2px 2px 0, rgba($cor-preta, 0.3) 3px 3px 0);
+
+            @media only screen and (max-width: 960px) {
+                font-size: 7vw;
+                margin-left: 0;
+                justify-self: center;
+            }
+
+            @media only screen and (max-width: 495px) {
+                font-size: 10vw;
+                text-align: center;
+            }
+
+        }
+
+    }
+}
+
+/******Menu Principal******/
+.menu {
+    background-color: $cor-padrao;
+    display: grid;
+    grid-area: menu-cme;
+    max-width: 75rem;
+    padding: 0 1rem;
+    place-items: center;
+    top: 0;
+
+    @media only screen and (max-width: 960px) {
+        padding: 0;
+        place-items: end center;
+        width: 100%;
+    }
+
+    >ul {
+        display: grid;
+        grid-auto-flow: column;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        @media only screen and (max-width: 960px) {
+            display: none;
+            grid-auto-flow: row;
+            width: 100%;
+        }
+
+        >li {
+            margin: 0 1rem;
+            padding: 0;
+
+            @media only screen and (max-width: 960px) {
+                border-bottom: 1px solid $cor-padrao-auxiliar;
+                margin: 0;
+                padding: 0;
+                text-align: center;
+                width: 100%;
+            }
+
+            a {
+                color: $cor-preta;
+                @include inline-block;
+                text-decoration: none;
+                text-align: center;
+                font-size: 1.125rem;
+
+                &:focus {
+                    outline: none;
+                }
+            }
+
+            >a {
+                border-top: 3px solid transparent;
+                padding: 0.58rem 0.5rem;
+                transition: $transition;
+
+                @media only screen and (max-width: 960px) {
+                    border-top: 0;
+                }
+
+                &:hover,
+                &:focus {
+                    border-top-color: $cor-padrao-auxiliar;
+                    color: $cor-padrao-auxiliar;
+                }
+            }
+        }
+    }
+
+    .dropdown {
+        position: relative;
+
+        .dropdown-title {
+            @include align-items(center);
+            @include display-flex(inline-flex);
+
+            &:after {
+                content: "";
+                border: 0.35rem solid transparent;
+                border-top-color: rgba($cor-branca, 0.8);
+                margin-left: 0.50em;
+                transform: translateY(50%);
+            }
+        }
+
+        .dropdown-menu {
+            background-color: $cor-branca;
+            @include border-radius(4px);
+            @include box-shadow(rgba($cor-preta, 0.25) 0 0.15em 0.25em);
+            left: 50%;
+            min-width: 30ch;
+            padding: 0.5em 0;
+            @include opacity(0.3);
+            position: absolute;
+            top: calc(100% - 0.25rem);
+            transform: rotateX(-90deg) translateX(-50%);
+            transform-origin: top center;
+            transition: $transition;
+            visibility: hidden;
+
+            a {
+                color: $cor-padrao;
+                display: block;
+                @include opacity(0);
+                padding: 0.5em;
+                transition: $transition;
+
+                &:hover {
+                    background-color: rgba($cor-padrao-auxiliar, 0.15);
+                }
+
+                &:focus {
+                    background-color: rgba($cor-padrao-auxiliar, 0.25);
+                    outline: none;
+                }
+            }
+        }
+
+        &:after {
+            border: 0.5rem solid transparent;
+            border-bottom-color: $cor-branca;
+            content: "";
+            left: 50%;
+            @include opacity(0);
+            position: absolute;
+            top: calc(100% - 1.25rem);
+            transform: translateX(-50%);
+            transition: $transition;
+            will-change: opacity;
+
+            @media only screen and (max-width: 960px) {
+                top: 34px;
+            }
+        }
+
+        &:hover,
+        &:focus-within {
+            .dropdown-title {
+                border-top-color: $cor-padrao-auxiliar;
+            }
+
+            .dropdown-menu {
+                @include opacity(1);
+                transform: rotateX(0) translateX(-50%);
+                visibility: visible;
+
+                @media only screen and (max-width: 960px) {
+                    margin-bottom: 20px;
+                    position: relative;
+                    top: 10px;
+                }
+
+                a {
+                    @include opacity(1);
+                }
+            }
+
+            &:after {
+                @include opacity(1);
+            }
+        }
+    }
+
+    .menu-toggle {
+        background-color: $cor-padrao;
+        display: none;
+        color: $cor-branca;
+        cursor: pointer;
+        float: right;
+        font-size: 24px;
+        line-height: 50px;
+
+        i {
+            margin-left: 20px;
+        }
+
+        @media only screen and (max-width: 960px) {
+            display: block;
+            width: 100%;
+
+        }
+    }
+
+    .on {
+        display: grid !important;
+    }
+}

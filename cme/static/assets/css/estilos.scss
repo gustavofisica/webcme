@@ -1,0 +1,27 @@
+//Compass
+@import "compass/css3";
+@import "compass/utilities";
+@import "compass/reset-legacy";
+
+// Sprites dos ícones de tradução
+$icones-traducao-spacing: 2px;
+@import "icones-traducao/*.png";
+
+// Sprites dos ícones de redes sociais UFPR
+$icones-redes-sociais-spacing: 2px;
+@import "icones-redes-sociais/*.png";
+
+//Mixins e Variáveis do Sass
+@import 'helpers/variaveis';
+@import 'helpers/mixins';
+
+//Estilos da Página
+@import 'layout/footer';
+@import 'layout/formularios';
+@import 'layout/header';
+@import 'layout/imagens';
+@import 'layout/main';
+@import 'layout/padrao';
+@import 'layout/slides';
+@import 'layout/tabelas';
+@import 'layout/textos';

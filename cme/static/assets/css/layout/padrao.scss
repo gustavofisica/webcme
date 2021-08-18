@@ -1,0 +1,120 @@
+body {
+	background: lightgray;
+	display: grid;
+	grid-template-areas:
+		"header"
+		"main"
+		"footer";
+	grid-template-columns: auto;
+	grid-template-rows: auto auto auto;
+}
+
+a {
+	color: black;
+	cursor: pointer;
+	text-decoration: none;
+
+	&:hover {
+		color: #4B4B4B;
+	}
+
+}
+
+figure{
+	margin: 0;
+}
+
+/******Estilo de Acessibilidade do Alto Contraste******/
+.contraste {
+
+	background-color: black;
+
+	nav,
+	div,
+	li,
+	ol,
+	header,
+	footer,
+	section,
+	main,
+	aside,
+	article {
+		background: black;
+		color: white !important;
+	}
+
+	h1,
+	h2,
+	h4,
+	h5,
+	h6,
+	p,
+	label,
+	strong,
+	em,
+	cite,
+	q,
+	i,
+	b,
+	u,
+	span {
+		color: white !important;
+	}
+
+	a {
+		color: yellow !important;
+	}
+
+	button,
+	input[type=button],
+	input[type=reset],
+	input[type=submit] {
+		background: black;
+		color: yellow !important;
+		border: none !important;
+	}
+
+	input[type=text],
+	input[type=password],
+	input[type=url],
+	input[type=search],
+	input[type=email],
+	input[type=tel],
+	input[type=date],
+	input[type=month],
+	input[type=week],
+	input[type=datetime],
+	input[type=datetime-local],
+	textarea,
+	input[type=number] {
+		background: black !important;
+		border: 1px solid white !important;
+		color: white !important;
+	}
+
+	#icones-redes-sociais,
+	#icones-traducao,
+	#grafico,
+	img {
+		filter: grayscale(100%);
+	}
+
+	#barra-pesquisa-botao {
+		filter: invert(100%);
+	}
+
+	.cabecalho__menu--ufpr ul li a {
+		background-color: black !important;
+	}
+
+	.cabecalho {
+		background-image: none !important;
+	}
+
+	th,
+	td, tr {
+		background-color: black !important;
+		border-top: solid 1px $cor-branca;
+	}
+
+}

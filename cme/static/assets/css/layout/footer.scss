@@ -1,0 +1,272 @@
+footer {
+	display: grid;
+	grid-area: footer;
+	grid-template-areas:
+		"links-ufpr"
+		"rodape";
+	grid-template-columns: minmax(3rem, 75rem); 
+	grid-template-rows: 1fr 1fr;
+	margin: 0 auto;
+}
+
+
+.rodape {
+
+	/******Rodapé de Links UFPR******/
+	&__links {
+		background: url("/assets/img/rodape_ufpr.png");
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		display: grid;
+		grid-area: links-ufpr;
+		grid-gap: 1rem;
+		grid-template-areas:
+			"apoio servicos ufpr setores"
+			"comissoes sitios reitorias setores"
+			"orgaos sitios reitorias setores";
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-template-rows: auto auto auto;
+		padding: 1rem;
+
+		@media only screen and (max-width: 960px) {
+			grid-template-areas:
+				"apoio servicos"
+				"reitorias orgaos"
+				"comissoes sitios"
+				"ufpr setores";
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: auto auto auto auto;
+		}
+
+		@media only screen and (max-width: 495px) {
+			grid-template-areas:
+				"apoio"
+				"servicos"
+				"reitorias"
+				"orgaos"
+				"comissoes"
+				"sitios"
+				"ufpr"
+				"setores";
+			grid-template-columns: auto;
+			grid-template-rows: auto auto auto auto auto auto auto auto;
+		}
+
+
+		&__divisao {
+
+			&--servicos {
+				grid-area: servicos;
+			}
+
+			&--apoio {
+				grid-area: apoio;
+			}
+
+			&--comissoes {
+				grid-area: comissoes;
+			}
+
+			&--orgaos {
+				grid-area: orgaos;
+			}
+
+			&--sitios {
+				grid-area: sitios;
+			}
+
+			&--reitorias {
+				grid-area: reitorias;
+			}
+
+			&--ufpr {
+				grid-area: ufpr;
+			}
+
+			&--setores {
+				grid-area: setores;
+			}
+
+			&__titulo {
+				text-align: start;
+
+				@media only screen and (max-width: 960px) {
+					text-align: center;
+
+					&:hover {
+						cursor: pointer;
+					}
+
+					&:after {
+						content: "";
+						@include inline-block;
+						vertical-align: middle;
+						margin-left: 10px;
+						width: 0;
+						height: 0;
+						border-left: 5px solid transparent;
+						border-right: 5px solid transparent;
+						border-top: 5px solid $cor-preta;
+					}
+				}
+
+			}
+
+			&__lista {
+
+				@media only screen and (max-width: 960px) {
+					display: none;
+				}
+
+				li {
+					margin: 10px 0 0 5px;
+
+					&:before {
+						content: "";
+						@include inline-block;
+						vertical-align: middle;
+						margin-right: 10px;
+						width: 0;
+						height: 0;
+						border-top: 4px solid transparent;
+						border-bottom: 4px solid transparent;
+						border-left: 4px solid black;
+					}
+				}
+			}
+
+		}
+
+	}
+
+	/******Rodapé de Redes Sociais e Descrição do Departamento******/
+	&__social {
+		@include background-image(linear-gradient($cor-padrao, #0042b1 90%));
+		display: grid;
+		grid-area: rodape;
+		grid-template-areas:
+			"icones descricao"
+			"copyright copyright";
+		grid-template-columns: 3fr 7fr;
+		grid-template-rows: 3fr 1fr;
+		padding: 1rem;
+
+		@media only screen and (max-width: 960px) {
+			grid-template-areas:
+				"descricao"
+				"icones"
+				"copyright";
+			grid-template-columns: auto;
+			grid-template-rows: auto auto auto;
+		}
+
+		&__icones {
+			display: grid;
+			grid-area: icones;
+			grid-template-areas:
+				"titulo"
+				"icones";
+			grid-template-columns: auto;
+			grid-template-rows: 1fr 7fr;
+			justify-items: center;
+
+			@media only screen and (max-width: 960px) {
+				align-items: center;
+				grid-gap: 1rem;
+				grid-template-rows: auto auto;
+				margin: 1rem 0 1rem 0;
+			}
+
+			h3 {
+				align-self: start;
+				color: $cor-branca;
+				font-size: 1.5em;
+				font-weight: bold;
+				grid-area: titulo;
+			}
+
+			&__redes {
+				display: grid;
+				grid-area: icones;
+				grid-auto-flow: column;
+				grid-gap: 0.66rem;
+
+				@include all-icones-redes-sociais-sprites;
+
+				.icones-redes-sociais-facebook,
+				.icones-redes-sociais-twitter,
+				.icones-redes-sociais-flickr,
+				.icones-redes-sociais-RSS,
+				.icones-redes-sociais-youtube,
+				.icones-redes-sociais-instagram {
+					width: 48px;
+					height: 48px;
+					filter: drop-shadow(5px 5px 5px #000000);
+					-moz-filter: drop-shadow(5px 5px 5px #000000);
+					-webkit-filter: drop-shadow(5px 5px 5px #000000);
+				}
+			}
+
+
+		}
+
+		&__descricao {
+			grid-area: descricao;
+			text-align: right;
+
+			@media only screen and (max-width: 960px) {
+				text-align: center;
+			}
+
+			p {
+				color: $cor-branca;
+				margin-bottom: 5px;
+				text-align: right;
+
+				@media only screen and (max-width: 960px) {
+					text-align: center;
+				}
+
+				&:first-child {
+					font-weight: bold;
+					font-size: 1.5em;
+				}
+
+				&:nth-child(2) {
+					font-weight: bold;
+					font-size: 1.4em;
+				}
+
+				&:nth-child(3) {
+					font-weight: bold;
+					font-size: 1.2em;
+					margin-bottom: 20px;
+				}
+			}
+
+			img {
+				max-width: 170px;
+				margin-top: 20px;
+			}
+		}
+
+		&__copyright {
+			align-self: end;
+			grid-area: copyright;
+			text-align: center;
+
+			p {
+				color: $cor-branca;
+				text-align: center;
+			}
+		}
+	}
+}
+
+/******Estilo da Barra Brasil******/
+#footer-brasil {
+	background: none repeat scroll 0% 0% #0042b1;
+	padding: 1em 0px;
+	max-width: 100%;
+}
