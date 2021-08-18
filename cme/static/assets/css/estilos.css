@@ -52,12 +52,12 @@ a img {
 }
 
 .icones-traducao-sprite, .acessibilidade .icones-traducao-france, .acessibilidade .icones-traducao-spain, .acessibilidade .icones-traducao-united-states-of-america {
-  background-image: url('/assets/img/icones-traducao-s1cbaf960c3.png');
+  background-image: url('/static/assets/img/icones-traducao-s1cbaf960c3.png');
   background-repeat: no-repeat;
 }
 
 .icones-redes-sociais-sprite, .rodape__social__icones__redes .icones-redes-sociais-RSS, .rodape__social__icones__redes .icones-redes-sociais-facebook, .rodape__social__icones__redes .icones-redes-sociais-flickr, .rodape__social__icones__redes .icones-redes-sociais-instagram, .rodape__social__icones__redes .icones-redes-sociais-twitter, .rodape__social__icones__redes .icones-redes-sociais-youtube {
-  background-image: url('/assets/img/icones-redes-sociais-s2fe976924e.png');
+  background-image: url('/static/assets/img/icones-redes-sociais-s2fe976924e.png');
   background-repeat: no-repeat;
 }
 
@@ -103,7 +103,7 @@ footer {
   /******Rodapé de Redes Sociais e Descrição do Departamento******/
 }
 .rodape__links {
-  background: url("/assets/img/rodape_ufpr.png");
+  background: url("/static/assets/img/rodape_ufpr.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

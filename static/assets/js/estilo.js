@@ -2,13 +2,13 @@
 var backgroundImage = document.querySelector('.cabecalho');
 
 var images = [
-    'assets/img/header/MEV_Espiculas_Bio.jpg',
-    'assets/img/header/MET_NanoTubo_Fis.jpg',
-    'assets/img/header/MEV_Inseto_Bio.jpg',
-    'assets/img/header/MEV_Inseto_Pan_Bio.jpg',
-    'assets/img/header/MEV_Planta_Bio.jpg',
-    'assets/img/header/MEV_Planta_Pan_Bio.jpg',
-    'assets/img/header/MEV_Planta_Transv_Bio.jpg'
+    'static/assets/img/header/MEV_Espiculas_Bio.jpg',
+    'static/assets/img/header/MET_NanoTubo_Fis.jpg',
+    'static/assets/img/header/MEV_Inseto_Bio.jpg',
+    'static/assets/img/header/MEV_Inseto_Pan_Bio.jpg',
+    'static/assets/img/header/MEV_Planta_Bio.jpg',
+    'static/assets/img/header/MEV_Planta_Pan_Bio.jpg',
+    'static/assets/img/header/MEV_Planta_Transv_Bio.jpg'
 ];
 
 var bg = images[Math.floor(Math.random() * images.length)];
