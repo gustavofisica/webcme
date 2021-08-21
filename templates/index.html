@@ -71,57 +71,43 @@
         <section class="conteudo__destaques">
             <!--Título da Sessão de Destaques-->
             <h2>Destaques</h2>
-            <!--Início da Estrutura de Notícia-->
-            <article>
-                <!--Título do Destaque-->
-                <h3>Título do Destaque</h3>
-                <!--Texto da Notícia-->
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                    labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                    laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                    voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
-                </p>
-                <img style="height: 100px;" src="{% static 'assets/img/logo.svg' %}"
-                    alt="Logo do Centro de Microscopia Eletrônica da Universidade Federal do Paraná.">
-            </article>
+            {% if destaque %}
+                <!--Início da Estrutura de Notícia-->
+                <article>
+                    <!--Título do Destaque-->
+                    <h3>{{ destaque.titulo }}</h3>
+                    <!--Texto da Notícia-->
+                    {{ destaque.texto|safe }} 
+                </article>            
+            {% endif %}            
         </section>
+
         <!--Sessão de Notícias-->
         <section class="conteudo__noticias">
             <!--Título da Sessão-->
             <h2>Notícias</h2>
-            <!--Estrutura de Notícia-->
-            <article>
-                <!--Título da Notícia-->
-                <h3>Título da Notícia</h3>
-                <!--Data da Notícia-->
-                <h4>Data</h4>
-                <!--Texto da Notícia-->
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                    labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                    laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                    voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <a id="leia-mais" href="noticias.html">leia mais</a>
-                </p>
-            </article>
-            <!--Estrutura de Notícia-->
-            <article>
-                <!--Título da Notícia-->
-                <h3>Título da Notícia</h3>
-                <!--Data da Notícia-->
-                <h4>Data</h4>
-                <!--Texto da Notícia-->
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                    labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                    laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                    voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <a id="leia-mais" href="noticias.html">leia mais</a>
-                </p>
-            </article>
+            {% if noticias %}
+                {% for noticia in noticias %}
+                    <!--Estrutura de Notícia-->
+                    <article class="conteudo__noticias__noticia">
+                        <!--Título da Notícia-->
+                        <h3>{{noticia.titulo}}</h3>
+                        <!--Data da Notícia-->
+                        <h4>{{noticia.edicao|date:"SHORT_DATE_FORMAT"}}</h4>
+                        <!--Texto da Notícia-->
+                        <div class="conteudo__noticias__noticia__texto">
+                            {% if noticia.texto|length < 255 %}                     
+                                {{noticia.texto|safe}}                          
+                            {% else %}
+                                <p>{{noticia.texto|striptags|truncatechars:255}} <a id="leia-mais" href={% url 'noticia' noticia.slug %}>leia mais</a></p>                 
+                            {% endif %}                        
+                        </div>
+                    </article>
+                {% endfor %}
+
+            {% endif %}
         </section>
+
         <!--Sessão de Estatísticas-->
         <section class="conteudo__estatistica">
             <!--Configuração Local do Google Charts-->

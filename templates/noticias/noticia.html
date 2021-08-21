@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <main class="conteudo--texto">
+        <section class="conteudo__noticias__contexto">
+            <div class="conteudo__noticias__contexto__artigo">
+                {% if noticia %}
+                        <article>
+                            <!--Título da Notícia-->
+                            <h3>{{ noticia.titulo }}</h3>
+                            <!--Data da Notícia-->
+                            <h4>{{ noticia.edicao|date }}</h4>
+                            <!--Texto da Notícia-->
+                            <div class="conteudo__noticias__contexto__texto">
+                                {{ noticia.texto|safe }}
+                            </div>
+                        </article>                  
+                {% else %}
+                {% endif %}
+            </div>
+            <div class="conteudo__noticias__contexto__categorias">
+                <h3>Categorias</h3>
+                    <p><a href="{% url 'lista_noticias' 'todas' %}">todas</a></p>
+                {% for categoria in categorias %}
+                    <p><a href="{% url 'lista_noticias' categoria %}">{{categoria}}</a></p>
+                {% endfor %}                
+            </div>
+        </section>
+        <!--Link de direcionamento da barra de acessibilidade para rodapé-->
+        <a name="footer" id="footer"></a>
+    </main>
+{% endblock  %}

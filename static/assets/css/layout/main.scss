@@ -109,16 +109,15 @@ main {
 	}
 
 	&__noticias {
+		display: grid;
 		grid-area: noticias;
+		grid-gap: 1rem;
 
-		article {
+		&__noticia {
 			display: grid;
-			grid-template-areas:
+			grid-template:
 				"titulo data"
-				"noticia noticia";
-			grid-template-columns: 1fr 1fr;
-			grid-template-rows: auto auto;
-			margin-top: 1rem;
+				"resumo resumo";
 			padding-right: 1rem;
 
 			@media only screen and (max-width: 960px) {
@@ -126,18 +125,18 @@ main {
 			}
 
 			h3 {
-				grid-area: titulo;
 				justify-self: start;
+				grid-area: titulo;
 			}
 
 			h4 {
 				color: darkgray;
-				grid-area: data;
 				justify-self: end;
+				grid-area: data;
 			}
 
-			p {
-				grid-area: noticia;
+			&__texto {
+				grid-area: resumo;
 			}
 		}
 
@@ -146,30 +145,51 @@ main {
 			grid-template-areas:
 				"artigo categorias"
 				"navegacao categorias";
-			grid-template-columns: auto 1fr;
+			grid-template-columns: auto 150px;
 			grid-template-rows: auto auto;
 
-			article {
-				display: grid;
+			&__artigo {
 				grid-area: artigo;
-				grid-template-areas:
-					"titulo data"
-					"noticia noticia";
-				grid-template-columns: 1fr 1fr;
-				grid-template-rows: auto 1fr;
-				margin-top: 1rem;
-				padding: 0 1rem;
+				margin-bottom: 1rem;
 
-				h3 {
-					grid-area: titulo;
-					justify-self: start;
+				&__lista {
+					display: grid;
+					grid-auto-flow: column;
+					grid-template-rows: auto;
+					padding: 0 20%;
+
+					h3 {
+						justify-self: start;
+					}
+
+					h4 {
+						color: darkgray;
+						justify-self: end;
+					}
 				}
 
-				h4 {
-					color: darkgray;
-					grid-area: data;
-					justify-self: end;
+				article {
+					display: grid;
+					grid-template-areas:
+						"titulo data"
+						"noticia noticia";
+					grid-template-columns: 1fr 1fr;
+					grid-template-rows: auto 1fr;
+					margin-top: 1rem;
+					padding: 0 1rem;
+
+					h3 {
+						grid-area: titulo;
+						justify-self: start;
+					}
+
+					h4 {
+						color: darkgray;
+						grid-area: data;
+						justify-self: end;
+					}
 				}
+
 			}
 
 			&__texto {
@@ -428,7 +448,7 @@ main {
 			grid-area: titulo;
 		}
 
-		h3{
+		h3 {
 			grid-area: subtitulo;
 		}
 

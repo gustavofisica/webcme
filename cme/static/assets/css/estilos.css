@@ -1541,53 +1541,68 @@ main {
   }
 }
 .conteudo__noticias {
-  grid-area: noticias;
-}
-.conteudo__noticias article {
   display: grid;
-  grid-template-areas: "titulo data" "noticia noticia";
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto;
-  margin-top: 1rem;
+  grid-area: noticias;
+  grid-gap: 1rem;
+}
+.conteudo__noticias__noticia {
+  display: grid;
+  grid-template: "titulo data" "resumo resumo";
   padding-right: 1rem;
 }
 @media only screen and (max-width: 960px) {
-  .conteudo__noticias article {
+  .conteudo__noticias__noticia {
     padding-left: 1rem;
   }
 }
-.conteudo__noticias article h3 {
-  grid-area: titulo;
+.conteudo__noticias__noticia h3 {
   justify-self: start;
+  grid-area: titulo;
 }
-.conteudo__noticias article h4 {
+.conteudo__noticias__noticia h4 {
   color: darkgray;
-  grid-area: data;
   justify-self: end;
+  grid-area: data;
 }
-.conteudo__noticias article p {
-  grid-area: noticia;
+.conteudo__noticias__noticia__texto {
+  grid-area: resumo;
 }
 .conteudo__noticias__contexto {
   display: grid;
   grid-template-areas: "artigo categorias" "navegacao categorias";
-  grid-template-columns: auto 1fr;
+  grid-template-columns: auto 150px;
   grid-template-rows: auto auto;
 }
-.conteudo__noticias__contexto article {
-  display: grid;
+.conteudo__noticias__contexto__artigo {
   grid-area: artigo;
+  margin-bottom: 1rem;
+}
+.conteudo__noticias__contexto__artigo__lista {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: auto;
+  padding: 0 20%;
+}
+.conteudo__noticias__contexto__artigo__lista h3 {
+  justify-self: start;
+}
+.conteudo__noticias__contexto__artigo__lista h4 {
+  color: darkgray;
+  justify-self: end;
+}
+.conteudo__noticias__contexto__artigo article {
+  display: grid;
   grid-template-areas: "titulo data" "noticia noticia";
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto 1fr;
   margin-top: 1rem;
   padding: 0 1rem;
 }
-.conteudo__noticias__contexto article h3 {
+.conteudo__noticias__contexto__artigo article h3 {
   grid-area: titulo;
   justify-self: start;
 }
-.conteudo__noticias__contexto article h4 {
+.conteudo__noticias__contexto__artigo article h4 {
   color: darkgray;
   grid-area: data;
   justify-self: end;
