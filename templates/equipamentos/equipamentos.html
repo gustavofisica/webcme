@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <main class="conteudo--imagens">
+        <h2>Equipamentos</h2>
+        {% if equipamentos %}
+            {% for equipamento in equipamentos %}
+                <section class="conteudo__equipamento">
+                    <h3 class="conteudo__equipamento__titulo">{{equipamento.nome_do_equipamento}}</h3>
+                    <img class="conteudo__equipamento__foto imagem__equipamento"
+                        src="assets/img/equipamentos/SEM JEOL JSM 6360-LV/MEV-Jeol-1024x684.jpg"
+                        alt="Microscópio Eletrônico de Varredura JEOL JSM 6360-LV">
+                    <p class="conteudo__equipamento__descricao">
+                        {{equipamento.descricao}}
+                    </p>
+                    <div class="conteudo__equipamento__galeria equipamento__galeria">
+                        <figure class="conteudo__equipamento__galeria__foto">
+                            <img class="imagem__galeria" src="assets/img/equipamentos/SEM JEOL JSM 6360-LV/MEV-1-Tumb.jpg"
+                                alt="1Imagem de teste de desgaste em nanotubos de Ti"
+                                data-original="assets/img/equipamentos/SEM JEOL JSM 6360-LV/MEV-1-1024x768.jpg">
+                        </figure>
+                        <figure class="conteudo__equipamento__modal">
+                            <i class="fa fa-window-close" aria-hidden="true"></i>
+                            <img class="conteudo__equipamento__modal__imagem imagem__modal" src="" alt="">
+                            <figcaption class="conteudo__equipamento__modal__descricao"></figcaption>
+                        </figure>
+                    </div>
+                </section>
+            {% endfor %}
+        {% endif %}
+            
+        <!--Link de direcionamento da barra de acessibilidade para rodapé-->
+        <a name="footer" id="footer"></a>
+    </main>
+{% endblock  %}

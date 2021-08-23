@@ -5,7 +5,7 @@ from configuracoes.models import Configuracoes
 
 # Create your views here.
 def noticia(request, slug):
-    """Mostra a noticia, a paginação e os filtro de categoria"""
+    """Renderiza uma única notícia"""
     noticia = get_object_or_404(Noticia, slug=slug)
     categorias = Noticia.ESCOLHAS_CATEGORIA 
     lista_categorias = lista_de_categorias(categorias)
@@ -18,7 +18,7 @@ def noticia(request, slug):
     return render(request, 'noticias/noticia.html', dados)
 
 def lista_noticias(request, categoria):
-    """Mostra lista de notícias por categoria"""
+    """Mostra uma lista de notícias classificada por categoria"""
     if categoria == 'todas':
         noticias = Noticia.objects.order_by('-edicao').all()
     else:        
