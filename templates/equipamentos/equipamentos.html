@@ -8,18 +8,24 @@
             {% for equipamento in equipamentos %}
                 <section class="conteudo__equipamento">
                     <h3 class="conteudo__equipamento__titulo">{{equipamento.nome_do_equipamento}}</h3>
-                    <img class="conteudo__equipamento__foto imagem__equipamento"
-                        src="assets/img/equipamentos/SEM JEOL JSM 6360-LV/MEV-Jeol-1024x684.jpg"
-                        alt="Microscópio Eletrônico de Varredura JEOL JSM 6360-LV">
+                    {% for imagem in equipamento.imagens.all  %}
+                            {% if imagem.foto_de_perfil %}
+                                <img class="conteudo__equipamento__foto imagem__equipamento" src="{{ imagem.imagem.url }}" alt="{{ imagem.descricao_da_imagem }}">                            
+                            {% endif %}                                                   
+                        {% endfor %}
                     <p class="conteudo__equipamento__descricao">
                         {{equipamento.descricao}}
                     </p>
                     <div class="conteudo__equipamento__galeria equipamento__galeria">
-                        <figure class="conteudo__equipamento__galeria__foto">
-                            <img class="imagem__galeria" src="assets/img/equipamentos/SEM JEOL JSM 6360-LV/MEV-1-Tumb.jpg"
-                                alt="1Imagem de teste de desgaste em nanotubos de Ti"
-                                data-original="assets/img/equipamentos/SEM JEOL JSM 6360-LV/MEV-1-1024x768.jpg">
-                        </figure>
+                        {% for imagem in equipamento.imagens.all  %}
+                            {% if not imagem.foto_de_perfil %}
+                                <figure class="conteudo__equipamento__galeria__foto">
+                                    <img class="imagem__galeria" src="{{ imagem.miniatura.url }}"
+                                        alt="{{ imagem.descricao_da_imagem }}"
+                                        data-original="{{ imagem.imagem.url }}">
+                                </figure>                             
+                            {% endif %}                                                   
+                        {% endfor %}                        
                         <figure class="conteudo__equipamento__modal">
                             <i class="fa fa-window-close" aria-hidden="true"></i>
                             <img class="conteudo__equipamento__modal__imagem imagem__modal" src="" alt="">

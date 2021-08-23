@@ -1,9 +1,13 @@
 from django.contrib import admin
 from django.contrib.admin.sites import site
-from .models import Equipamento
+from .models import Equipamento, GeleriaEquipamento
 
 # Register your models here.
-class EquipamentoAdmin(admin.ModelAdmin):
-    list_display = ('nome_do_equipamento',)
+class ImagemInline(admin.TabularInline):
+    model = GeleriaEquipamento
 
-admin.site.register(Equipamento, EquipamentoAdmin)
+@admin.register(Equipamento)
+class EquipamentoAdmin(admin.ModelAdmin):
+    inlines = [
+        ImagemInline
+    ]

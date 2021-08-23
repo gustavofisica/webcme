@@ -133,6 +133,14 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'cme/static')
 ]
 
+# Media files
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+MEDIA_URL = '/media/'
+
+THUMB_SIZE = (250, 250)
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
