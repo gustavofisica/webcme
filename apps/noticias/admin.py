@@ -4,7 +4,7 @@ from .models import Noticia
 # Register your models here.
 class NoticiaAdmin(admin.ModelAdmin):
     """Parâmetros de administração de notícias"""
-    list_display = ('titulo', 'slug', 'autor', 'criacao','destaque', 'status')
+    list_display = ('titulo', 'slug', 'criacao','destaque', 'status')
     prepopulated_fields = {
         'slug': ('titulo',)
     }

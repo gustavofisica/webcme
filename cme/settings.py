@@ -31,16 +31,19 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'equipamentos',
-    'index',
-    'noticias',
-    'configuracoes',
+    # Apps do Django
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # Meus Apss
+    'equipamentos',
+    'index',
+    'noticias',
+    'configuracoes',
+    'usuarios.apps.UsuariosConfig',
 ]
 
 MIDDLEWARE = [
@@ -140,6 +143,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 THUMB_SIZE = (250, 250)
+
+# Configurações de Usuários
+AUTH_USER_MODEL = 'usuarios.Usuario'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
