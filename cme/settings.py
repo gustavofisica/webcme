@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'noticias',
     'configuracoes',
     'usuarios.apps.UsuariosConfig',
+    # App de terceiros
+    'django_cleanup.apps.CleanupConfig',
 ]
 
 MIDDLEWARE = [
