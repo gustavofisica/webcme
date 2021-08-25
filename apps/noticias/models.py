@@ -1,11 +1,12 @@
 from django.db import models
+from usuarios.models import Usuario
 
 # Create your models here.
 class Noticia(models.Model):
     """Entidade de Notícias do Banco de Dados"""
     titulo = models.CharField(max_length=255)
     slug = models.SlugField(max_length=255, unique=True)
-    
+    autor = models.ForeignKey(Usuario, on_delete=models.SET_NULL, null=True)
     texto = models.TextField()
     criacao = models.DateTimeField(auto_now_add=True)
     edicao = models.DateTimeField(auto_now=True)
