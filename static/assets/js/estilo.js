@@ -247,7 +247,7 @@ function addDepartamento() {
         let label = document.createElement("label");
         label.classList.add('formulario__departamentos__departamento__label');
         label.setAttribute("for", departamento);
-        label.innerText = departamento;
+        label.innerText = departamento.toUpperCase();
         div.appendChild(input);
         div.appendChild(label);
         controle.insertAdjacentElement('beforebegin', div);
@@ -265,9 +265,9 @@ function atualizaDepartamentos() {
 
         for (let i = 0; i < departamentos.length; i++) {
             const departamento = departamentos[i];
-            let valoreDepartamento = departamento.value
+            let valoreDepartamento = departamento.value;
             let optionDiscientes = document.createElement("option");
-            optionDiscientes.text = valoreDepartamento;
+            optionDiscientes.text = valoreDepartamento.toUpperCase();
             optionDiscientes.setAttribute("value", valoreDepartamento);
             select.options.add(optionDiscientes);
         }

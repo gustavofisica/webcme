@@ -9,7 +9,9 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-import os, sys
+from django.contrib.messages import constants as messages
+import os
+import sys
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -148,6 +150,11 @@ THUMB_SIZE = (250, 250)
 
 # Configurações de Usuários
 AUTH_USER_MODEL = 'usuarios.Usuario'
+
+# Mensagens para formulários
+MESSAGE_TAGS = {
+    messages.ERROR: 'sugestao',
+}
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
