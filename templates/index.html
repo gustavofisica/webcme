@@ -9,7 +9,7 @@
             <div class="conteudo__atalhos__botao--sistema">
                 <!--Imagem do Primeiro Botão de Atalho-->
                 <!--Link para Modal de Login do Sistema-->
-                <a href="sistema_gerenciamento.html"><img class="conteudo__atalhos__botao__imagem imagem__atalho"
+                <a href="{% url 'sistema_gerenciamento' %}"><img class="conteudo__atalhos__botao__imagem imagem__atalho"
                         id="Icone-Sistema-CME" src="{% static 'assets/img/Icone-Sistema-CME.svg' %}" alt="Formulários"></a>
                 <!--Título do Primeiro Botão de Atalho-->
                 <h2>Sistema de Gerenciamento</h2>
@@ -78,7 +78,15 @@
                     <h3>{{ destaque.titulo }}</h3>
                     <!--Texto da Notícia-->
                     {{ destaque.texto|safe }} 
-                </article>            
+                </article>
+            {% else %}
+                <!--Início da Estrutura de Notícia-->
+                <article>
+                    <!--Título do Destaque-->
+                    <h3></h3>
+                    <!--Texto da Notícia-->
+                    <p>Opa! Sem notícias no momento.</p> 
+                </article>
             {% endif %}            
         </section>
 
@@ -104,7 +112,18 @@
                         </div>
                     </article>
                 {% endfor %}
-
+            {% else %}
+                <!--Estrutura de Notícia-->
+                <article class="conteudo__noticias__noticia">
+                    <!--Título da Notícia-->
+                    <h3></h3>
+                    <!--Data da Notícia-->
+                    <h4></h4>
+                    <!--Texto da Notícia-->
+                    <div class="conteudo__noticias__noticia__texto">
+                        <p>Opa! Sem notícias no momento.</p>                      
+                    </div>
+                </article>
             {% endif %}
         </section>
 
@@ -310,7 +329,5 @@
                 <p>Caixa Postal 19031 – CEP 81530-000</p>
             </div>
         </section>
-        <!--Link de direcionamento da barra de acessibilidade para rodapé-->
-        <a name="footer" id="footer"></a>
     </main>
 {% endblock  %}

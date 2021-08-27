@@ -16,3 +16,9 @@ def index(request):
     }
     
     return render(request, 'index.html', dados)
+
+def sistema_gerenciamento(request):
+    return render(request, 'sistema_gerenciamento.html')
+
+def normas(request):
+    return render(request, 'normas.html')
