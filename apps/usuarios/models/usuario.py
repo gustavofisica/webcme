@@ -1,15 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
-from django.core.validators import URLValidator
-from django.conf import settings
-
-from django.db.models.signals import post_save
-from django.dispatch import receiver
-
-from PIL import Image
 import uuid
+from django.core.validators import URLValidator
+from PIL import Image
 
-# Create your models here.
 def nomear_pasta(instancia, arquivo):
     """Retorna a string de uma pasta para a galeria de imagens do usuário"""
     return f'{instancia.caminho_armazenamento}/{arquivo}'
@@ -30,17 +24,3 @@ class Usuario(AbstractUser):
                 output_size = (150, 150)
                 img.thumbnail(output_size)
                 img.save(self.foto_de_perfil.path)
-
-class Docente(models.Model):
-    usuario = models.OneToOneField(settings.AUTH_USER_MODEL, primary_key=True, on_delete=models.CASCADE)
-    departamento = models.CharField(max_length=255)
-    conselheiro = models.BooleanField(default=False)
-
-@receiver(post_save, sender=Usuario)
-def create_user_profile(sender, instance, created, **kwargs):
-    if created:
-        Docente.objects.create(user=instance)
-
-@receiver(post_save, sender=Usuario)
-def save_user_profile(sender, instance, **kwargs):
-    instance.docente.save()
