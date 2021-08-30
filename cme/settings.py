@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Meus Apss
     'equipamentos',
-    'index',
+    'site_cme',
     'noticias',
     'configuracoes',
     'usuarios.apps.UsuariosConfig',
