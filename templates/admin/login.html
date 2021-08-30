@@ -7,6 +7,7 @@
         <h3>Login</h3>
         <section>
             <form class="formulario--login" action="" method="POST">
+                {% csrf_token %}
                 <label class="formulario__email" for="email"><b>E-mail</b></label>
                 <input class="formulario__email__input" type="email" name="email" id="email" required placeholder="Digite seu e-mail de login">
                 <i class="fa fa-envelope formulario__email__icone"></i>
@@ -20,6 +21,11 @@
 
                 <button class="formulario__botao" type="submit">Acessar sua conta</button>
                 <a href="{% url 'cadastro' %}">Registrar novo usuário</a>
+                {% if messages %}
+                    {% for message in messages %}
+                        <span id="{{message.tags}}"><i class="fa fa-times-circle" aria-hidden="true"></i> {{message}}</span>
+                    {% endfor %}                    
+                {% endif %} 
             </form>
             <p style="text-align: center;">Se você esqueceu sua senha, entre em contato com a equpe do CME pelo telefone (41) 3361-3075 ou (41) 3361-3493</p>
         </section>
