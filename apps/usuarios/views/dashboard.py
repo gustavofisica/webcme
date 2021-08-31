@@ -2,6 +2,7 @@ from apps import usuarios
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import auth, messages
 from django.contrib.auth.decorators import login_required
+from django.urls import reverse
 from usuarios.models import Usuario
 from usuarios.forms import UsuarioFormularioModificacao
 
@@ -23,7 +24,7 @@ def login(request):
             usuario = auth.authenticate(request, username=nome, password=senha)
             if usuario is not None:
                 auth.login(request, usuario)
-                return redirect('dashboard')
+                return redirect(reverse('dashboard', args=[usuario.id]))
 
     return render(request, 'admin/login.html')
 
@@ -36,9 +37,8 @@ def logout(request):
 
 
 @login_required
-def dashboard(request):
-    usuario_id = request.user.id
-    usuario = get_object_or_404(Usuario, pk=usuario_id)
+def dashboard(request, id):
+    usuario = get_object_or_404(Usuario, pk=id)
     dados = {
         'usuario': usuario
     }
@@ -46,9 +46,8 @@ def dashboard(request):
 
 
 @login_required
-def perfil(request):
-    usuario_id = request.user.id
-    usuario = get_object_or_404(Usuario, pk=usuario_id)
+def perfil(request, id):
+    usuario = get_object_or_404(Usuario, pk=id)
     if request.method == 'POST':
         form = UsuarioFormularioModificacao(data=request.POST, instance=usuario)
         if form.is_valid():

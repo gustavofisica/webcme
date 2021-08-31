@@ -19,6 +19,5 @@ class UsuarioFormularioModificacao(UserChangeForm):
 
     class Meta(UserChangeForm.Meta):
         model = Usuario
-        fields = ('foto_de_perfil', 'username',
-                  'email', 'first_name', 'last_name', 'curriculo_lattes', )
-        
+        fields = ('foto_de_perfil', 'email', 'first_name',
+                  'last_name', 'curriculo_lattes', 'password',)
