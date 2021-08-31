@@ -1,7 +1,9 @@
-import re
-from django.shortcuts import render, redirect
+from apps import usuarios
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import auth, messages
+from django.contrib.auth.decorators import login_required
 from usuarios.models import Usuario
+from usuarios.forms import UsuarioFormularioModificacao
 
 
 def login(request):
@@ -33,12 +35,32 @@ def logout(request):
     return redirect('login')
 
 
+@login_required
 def dashboard(request):
-    if request.user.is_authenticated:
-        usuario = request.user.id
-        return render(request, 'admin/dashboard/index.html')
+    usuario_id = request.user.id
+    usuario = get_object_or_404(Usuario, pk=usuario_id)
+    dados = {
+        'usuario': usuario
+    }
+    return render(request, 'admin/dashboard/index.html', dados)
+
+
+@login_required
+def perfil(request):
+    usuario_id = request.user.id
+    usuario = get_object_or_404(Usuario, pk=usuario_id)
+    if request.method == 'POST':
+        form = UsuarioFormularioModificacao(data=request.POST, instance=usuario)
+        if form.is_valid():
+            form.save()
+            return redirect('perfil')
     else:
-        return redirect('login')
+        form = UsuarioFormularioModificacao(instance=usuario)
+    dados = {
+        'form': form,
+        'usuario': usuario
+    }
+    return render(request, 'admin/dashboard/perfil.html', dados)
 
 
 def campo_vazio(campo):

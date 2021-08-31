@@ -33,6 +33,16 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # App de terceiros
+    'django_cleanup.apps.CleanupConfig',
+    'tempus_dominus',
+    'widget_tweaks',
+    # Meus Apss
+    'equipamentos',
+    'site_cme',
+    'noticias',
+    'configuracoes',
+    'usuarios',
     # Apps do Django
     'django.contrib.admin',
     'django.contrib.auth',
@@ -40,14 +50,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # Meus Apss
-    'equipamentos',
-    'site_cme',
-    'noticias',
-    'configuracoes',
-    'usuarios.apps.UsuariosConfig',
-    # App de terceiros
-    'django_cleanup.apps.CleanupConfig',
 ]
 
 MIDDLEWARE = [
@@ -151,6 +153,11 @@ THUMB_SIZE = (250, 250)
 # Configurações de Usuários
 AUTH_USER_MODEL = 'usuarios.Usuario'
 
+# Autentificação de login
+LOGIN_URL = "/sistema_de_gerenciamento/login/"
+LOGOUT_URL = "/sistema_de_gerenciamento/logout/"
+LOGIN_REDIRECT_URL = "/sistema_de_gerenciamento/dashboard/"
+
 # Mensagens para formulários
 MESSAGE_TAGS = {
     messages.ERROR: 'sugestao',
@@ -164,3 +171,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Caminho da raiz de apps
 PROJECT_ROOT = os.path.dirname(__file__)
 sys.path.insert(0, os.path.join(PROJECT_ROOT, '../apps'))
+
+TEMPUS_DOMINUS_LOCALIZE = True

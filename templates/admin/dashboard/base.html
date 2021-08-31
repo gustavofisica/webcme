@@ -6,7 +6,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sistema de Gerenciamento | CME</title>
-
+  <!--Inclusão do ícone do CME na aba do Browser-->
+  <link rel="shortcut icon" href="{% static 'assets/img/Icone-Sistema-CME.svg' %}">
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -23,17 +24,63 @@
   <link rel="stylesheet" href="{% static 'dashboard/plugins/jqvmap/jqvmap.min.css' %}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{% static 'dashboard/dist/css/adminlte.min.css' %}">
-  <!--Inclusão do ícone do CME na aba do Browser-->
-  <link rel="shortcut icon" href="{% static 'assets/img/Icone-Sistema-CME.svg' %}">
   <!-- overlayScrollbars -->
   <link rel="stylesheet" href="{% static 'dashboard/plugins/overlayScrollbars/css/OverlayScrollbars.min.css' %}">
   <!-- Daterange picker -->
   <link rel="stylesheet" href="{% static 'dashboard/plugins/daterangepicker/daterangepicker.css' %}">
   <!-- summernote -->
   <link rel="stylesheet" href="{% static 'dashboard/plugins/summernote/summernote-bs4.min.css' %}">
+
+  <style type="text/css">
+    /* Chart.js */
+    @keyframes chartjs-render-animation {
+      from {
+        opacity: .99
+      }
+
+      to {
+        opacity: 1
+      }
+    }
+
+    .chartjs-render-monitor {
+      animation: chartjs-render-animation 1ms
+    }
+
+    .chartjs-size-monitor,
+    .chartjs-size-monitor-expand,
+    .chartjs-size-monitor-shrink {
+      position: absolute;
+      direction: ltr;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      overflow: hidden;
+      pointer-events: none;
+      visibility: hidden;
+      z-index: -1
+    }
+
+    .chartjs-size-monitor-expand>div {
+      position: absolute;
+      width: 1000000px;
+      height: 1000000px;
+      left: 0;
+      top: 0
+    }
+
+    .chartjs-size-monitor-shrink>div {
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      left: 0;
+      top: 0
+    }
+  </style>
 </head>
 
-<body class="hold-transition sidebar-mini">
+<body class="hold-transition sidebar-mini layout-fixed">
   <div class="wrapper">
 
     {% include 'admin/dashboard/partials/preloader.html' %}
@@ -56,15 +103,7 @@
   </div>
   <!-- /.content-wrapper -->
 
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-    <div class="p-3">
-      <h5>Title</h5>
-      <p>Sidebar content</p>
-    </div>
-  </aside>
-  <!-- /.control-sidebar -->
+  {% include 'admin/dashboard/partials/menu_lateral_direito.html' %}
 
   <!-- Main Footer -->
   <footer class="main-footer">
@@ -84,6 +123,12 @@
 
   <!-- jQuery -->
   <script src="{% static 'dashboard/plugins/jquery/jquery.min.js' %}"></script>
+  <!-- jQuery UI 1.11.4 -->
+  <script src="{% static 'dashboard/plugins/jquery-ui/jquery-ui.min.js' %}"></script>
+  <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+  <script>
+    $.widget.bridge('uibutton', $.ui.button)
+  </script>
   <!-- Bootstrap 4 -->
   <script src="{% static 'dashboard/plugins/bootstrap/js/bootstrap.bundle.min.js' %} "></script>
   <!-- ChartJS -->

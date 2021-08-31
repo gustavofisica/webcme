@@ -6,7 +6,7 @@
         <h2>Sistema de Gerenciamento</h2>
         <h3>Login</h3>
         <section>
-            <form class="formulario--login" action="" method="POST">
+            <form class="formulario--login" action="{% url 'login' %}" method="POST">
                 {% csrf_token %}
                 <label class="formulario__email" for="email"><b>E-mail</b></label>
                 <input class="formulario__email__input" type="email" name="email" id="email" required placeholder="Digite seu e-mail de login">
