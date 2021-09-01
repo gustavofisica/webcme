@@ -7,14 +7,14 @@
         <h2>Sistema de Gerenciamento</h2>
         <h3>Cadastro de Docente</h3>
         <section>
-            <form class="formulario--cadastro-docente" action="" method="POST">
+            <form class="formulario--cadastro-docente" action="{% url 'cadastro_docente' %}" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
                 <div class="formulario__foto">
                     <div class="formulario__foto__upload">
                         <label class="formulario__foto__upload__label" for="imagem_uploads">Escolha sua imagem de perfil
                             no formato PNG, JPG ou JPEG </label>
                         <input class="formulario__foto__upload__input" type="file" id="imagem_uploads"
-                            name="imagem_uploads" accept=".jpg, .jpeg, .png">
+                            name="imagem_uploads" accept="image/*">
                     </div>
                     <div class="formulario__foto__preview">
                         <img class="formulario__foto__preview__foto imagem__perfil"
@@ -59,21 +59,21 @@
 
                     <label class="formulario__instituicao__setor__label" for="setor"><b>Setor Principal</b></label>
                     <select class="formulario__instituicao__setor__select" name="setor" id="setor">
-                        <option value="">Setor de Artes, Comunicação e Design</option>
-                        <option value="">Setor de Ciências Agrárias</option>
-                        <option value="">Setor de Ciências Biológicas</option>
-                        <option value="">Setor de Ciêcnias da Saúde</option>
-                        <option value="">Setor de Ciências da Terra</option>
-                        <option value="">Setor de Ciêcnias Exatas</option>
-                        <option value="">Setor de Ciências Humanas</option>
-                        <option value="">Setor de Ciências Jurídicas</option>
-                        <option value="">Setor de Ciências Sociais Aplicadas</option>
-                        <option value="">Setor de Educação</option>
-                        <option value="">Setor de Educação Profissional e Tecnológica</option>
-                        <option value="">Setor de Tecnologia</option>
-                        <option value="">Setor Litoral</option>
-                        <option value="">Setor Palotina</option>
-                        <option value="">Campus de Jandaia do Sul</option>
+                        <option value="Setor de Artes, Comunicação e Design">Setor de Artes, Comunicação e Design</option>
+                        <option value="Setor de Ciências Agrárias">Setor de Ciências Agrárias</option>
+                        <option value="Setor de Ciências Biológicas">Setor de Ciências Biológicas</option>
+                        <option value="Setor de Ciêcnias da Saúde">Setor de Ciêcnias da Saúde</option>
+                        <option value="Setor de Ciências da Terra">Setor de Ciências da Terra</option>
+                        <option value="Setor de Ciêcnias Exatas">Setor de Ciêcnias Exatas</option>
+                        <option value="Setor de Ciências Humanas">Setor de Ciências Humanas</option>
+                        <option value="Setor de Ciências Jurídicas">Setor de Ciências Jurídicas</option>
+                        <option value="Setor de Ciências Sociais Aplicadas">Setor de Ciências Sociais Aplicadas</option>
+                        <option value="Setor de Educação">Setor de Educação</option>
+                        <option value="Setor de Educação Profissional e Tecnológica">Setor de Educação Profissional e Tecnológica</option>
+                        <option value="Setor de Tecnologia">Setor de Tecnologia</option>
+                        <option value="Setor Litoral">Setor Litoral</option>
+                        <option value="Setor Palotina">Setor Palotina</option>
+                        <option value="Campus de Jandaia do Sul">Campus de Jandaia do Sul</option>
                     </select>
                 </fieldset>
                 <fieldset class="formulario__departamentos">
@@ -213,8 +213,7 @@
                 </div>
                 <span id="sugestao"></span>
                 <fieldset class="formulario__aceitacao">
-                    <input class="formulario__aceitacao__input" type="checkbox" name="aceite-nomas" id="aceite-nomas"
-                        value="aceite-nomas">
+                    <input class="formulario__aceitacao__input" type="checkbox" name="aceite-nomas" id="aceite-nomas">
                     <label class="formulario__aceitacao__label" for="aceite-nomas">Declaro que conheço e concordo com
                         as <a href="normas.html" target="_blank" rel="noopener noreferrer">normas</a> de uso do Sistema
                         de

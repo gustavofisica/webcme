@@ -13,12 +13,26 @@
         </li>
         <li class="nav-item">
             <a href="pages/widgets.html" class="nav-link">
-                <i class="nav-icon fas fa-th"></i>
+                <i class="nav-icon fas fa-chalkboard-teacher"></i>
                 <p>
-                    Widgets
-                    <span class="right badge badge-danger">New</span>
+                    Docentes
+                    <i class="fas fa-angle-left right"></i>
                 </p>
             </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="pages/layout/top-nav.html" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Novo Docente</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Lista de Docentes</p>
+                    </a>
+                </li>
+            </ul>
         </li>
         <li class="nav-item">
             <a href="#" class="nav-link">
@@ -30,7 +44,7 @@
             </a>
             <ul class="nav nav-treeview">
                 <li class="nav-item">
-                    <a href="pages/layout/top-nav.html" class="nav-link">
+                    <a href="{% url 'cria_equipamento' usuario.id %}" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
                         <p>Novo Equipamento</p>
                     </a>

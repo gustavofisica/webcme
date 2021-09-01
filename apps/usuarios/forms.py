@@ -1,10 +1,5 @@
-from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
-from django.db.models import fields
-from django.forms import widgets
-
-
-from .models import Usuario, Docente
+from .models import Usuario
 
 
 class UsuarioFormularioCriacao(UserCreationForm):

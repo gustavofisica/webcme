@@ -12,8 +12,13 @@
     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
         {% if user.is_authenticated %}
-            <img src="{{usuario.foto_de_perfil.url}}" class="rounded elevation-2"
-                alt="Foto de perfil do usuário">
+            {% if usuario.foto_de_perfil %}
+                  <img class="profile-user-img img-fluid rounded" src="{{usuario.foto_de_perfil.url}}"
+                  alt="User profile picture">
+                {% else %}
+                  <img class="profile-user-img img-fluid rounded" src="{% static 'assets/img/fotos-perfil/Perfil_Desconhecido.jpg' %}"
+                  alt="User profile picture">
+                {% endif %} 
         {% endif %}
         </div>
         <div class="info">

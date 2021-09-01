@@ -160,7 +160,8 @@ LOGIN_REDIRECT_URL = "/sistema_de_gerenciamento/dashboard/"
 
 # Mensagens para formulários
 MESSAGE_TAGS = {
-    messages.ERROR: 'sugestao',
+    messages.SUCCESS: 'success',
+    messages.ERROR: 'danger',
 }
 
 # Default primary key field type

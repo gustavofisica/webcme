@@ -11,9 +11,15 @@ class UsuarioAdmin(AuthUserAdmin.UserAdmin):
     add_form = UsuarioFormularioCriacao
     model = Usuario
     fieldsets = AuthUserAdmin.UserAdmin.fieldsets + (
-        ("Informações Pessoais", {"fields": (
-            "foto_de_perfil", "curriculo_lattes",
+        ("Outras Informações", {"fields": (
+            "foto_de_perfil", "curriculo_lattes", "celular",
+        )}),
+        ("Informações Institucionais", {"fields": (
+            "eh_conselheiro", "eh_docente", "eh_discente", "eh_tecnico", "eh_chefe", "eh_sub_chefe", "operacao",
         )}),
     )
 
+@admin.register(Docente)
+class DocenteAdmin(admin.ModelAdmin):
+    list_display = ('usuario',)
 admin.site.unregister(models.Group)

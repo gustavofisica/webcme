@@ -48,8 +48,13 @@
                 <!-- User image -->
                 <li class="user-header bg-primary">
                 {% if user.is_authenticated %}
-                    <img src="{{usuario.foto_de_perfil.url}}" class="rounded elevation-2"
-                        alt="Foto de perfil do usuário">
+                    {% if usuario.foto_de_perfil %}
+                  <img class="profile-user-img img-fluid rounded" src="{{usuario.foto_de_perfil.url}}"
+                  alt="User profile picture">
+                {% else %}
+                  <img class="profile-user-img img-fluid rounded" src="{% static 'assets/img/fotos-perfil/Perfil_Desconhecido.jpg' %}"
+                  alt="User profile picture">
+                {% endif %} 
 
                     <p>
                         {{usuario.first_name}} {{usuario.last_name}}
