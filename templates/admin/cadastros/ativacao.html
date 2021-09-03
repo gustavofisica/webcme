@@ -1,0 +1,8 @@
+{% autoescape off %}
+
+Olá {{usuario.get_full_name}}
+
+Por favor, acesse o link para confirmar seu e-mail.
+
+http://{{dominio}}{% url 'ativar_usuario' usuario_id64=usuario_id token=token %}
+{% endautoescape %}
