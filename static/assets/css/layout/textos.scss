@@ -1,18 +1,18 @@
-h2{
+h2 {
     font-size: 1.6em;
     font-weight: bold;
     margin-bottom: 1rem;
     text-align: center;
 }
 
-h3{
+h3 {
     font-size: 1.3em;
     font-weight: bold;
     margin-bottom: 0.8rem;
     text-align: center;
 }
 
-h4{
+h4 {
     font-size: 1.2em;
     font-weight: bold;
     margin-bottom: 0.8rem;
@@ -20,40 +20,71 @@ h4{
 }
 
 h5 {
-	font-size: 1.2rem;
-	font-weight: bold;
-	margin-bottom: 5px;
-	border-bottom: black solid 1px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    border-bottom: black solid 1px;
 }
 
 
-p{
+p {
     font-size: 1.1em;
     line-height: 1.3em;
     text-align: justify;
 
-    a{
+    a {
         color: $cor-secundaria;
     }
 }
 
-strong{
+strong {
     font-weight: bold;
 }
 
-#leia-mais{
+#leia-mais {
     color: $cor-secundaria-auxiliar;
     text-decoration: underline;
 }
 
-.fa-plus{
-    color:$cor-secundaria-auxiliar;
+.fa-plus {
+    color: $cor-secundaria-auxiliar;
     cursor: pointer;
     margin: 0.5rem;
 }
 
-.fa-minus{
-    color:red;
+.fa-minus {
+    color: red;
     cursor: pointer;
     margin: 0.5rem;
+}
+
+#danger {
+    align-self: center;
+    font-size: 1em;
+    
+}
+
+.mensagem{
+    &__danger{
+        border: solid red 2px;
+        background-color: coral;
+    }
+    &__success{
+        border: solid green 2px;
+        background-color:mediumseagreen;
+    }
+}
+
+.mensagens{
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    text-align: center;
+    color: $cor-branca;
+    padding: 1rem 0;
+    margin: 1rem 0;
+    border-radius: 4px;
+    i{
+        font-size: 1em;
+    }
 }

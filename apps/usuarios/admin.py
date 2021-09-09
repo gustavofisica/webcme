@@ -1,9 +1,9 @@
 from django.contrib import admin
 from django.contrib.auth import admin as AuthUserAdmin, models
-from django.http import request
 
 from .forms import UsuarioFormularioCriacao, UsuarioFormularioModificacao
-from .models import Usuario, Docente
+from .models import Usuario, Docente, Discente
+
 
 @admin.register(Usuario)
 class UsuarioAdmin(AuthUserAdmin.UserAdmin):
@@ -18,8 +18,20 @@ class UsuarioAdmin(AuthUserAdmin.UserAdmin):
             "eh_conselheiro", "eh_docente", "eh_discente", "eh_tecnico", "eh_chefe", "eh_sub_chefe", "operacao",
         )}),
     )
+    list_display = ('email', 'first_name', 'last_name',
+                    'is_staff', 'is_active',)
+    list_editable = ('is_active',)
+    search_fields = ('first_name', 'email',)
+
 
 @admin.register(Docente)
 class DocenteAdmin(admin.ModelAdmin):
     list_display = ('usuario',)
+
+
+@admin.register(Discente)
+class DiscenteAdmin(admin.ModelAdmin):
+    list_display = ('usuario',)
+
+
 admin.site.unregister(models.Group)

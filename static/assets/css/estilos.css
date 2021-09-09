@@ -458,7 +458,7 @@ form button:hover {
   align-items: center;
   border: solid 1px #6FB7BF;
   display: grid;
-  grid-template-areas: "nome" "input-nome" "botao";
+  grid-template-areas: "mensagens" "nome" "input-nome" "botao";
   grid-template-columns: auto;
   grid-template-rows: auto auto auto;
   margin: 1rem auto;
@@ -477,12 +477,15 @@ form button:hover {
 }
 .formulario--cadastro input {
   padding-left: 3.5rem;
-  width: calc(100% - 3.5rem);
+  width: calc(100% - 4.05rem);
 }
 .formulario--cadastro i {
   font-size: 2em;
   padding-left: 0.5rem;
   width: fit-content;
+}
+.formulario--cadastro .mensagens {
+  grid-area: mensagens;
 }
 .formulario--cadastro .formulario__nome {
   grid-area: nome;
@@ -495,13 +498,13 @@ form button:hover {
 }
 .formulario--cadastro-docente {
   display: grid;
-  grid-template-areas: "foto foto" "nome sobrenome" "ramal celular" "email lattes" "instituicao departamentos" "discentes discentes" "senha senha-confirmacao" "sugestao sugestao" "aceites botao";
+  grid-template-areas: "foto foto" "nome sobrenome" "ramal celular" "lattes lattes" "instituicao departamentos" "discentes discentes" "login login" "senha senha-confirmacao" "sugestao sugestao" "aceites botao";
   grid-template-columns: 1fr 1fr;
   grid-gap: 1rem;
 }
 @media only screen and (max-width: 960px) {
   .formulario--cadastro-docente {
-    grid-template-areas: "foto" "nome" "sobrenome" "ramal" "celular" "email" "lattes" "instituicao" "departamentos" "discentes" "senha" "senha-confirmacao" "sugestao" "aceites" "botao";
+    grid-template-areas: "foto" "nome" "sobrenome" "ramal" "celular" "lattes" "instituicao" "departamentos" "discentes" "login" "sugestao" "aceites" "botao";
     grid-template-columns: auto;
   }
 }
@@ -616,19 +619,42 @@ form button:hover {
 .formulario--cadastro-docente .formulario__discentes__controle {
   text-align: right;
 }
-.formulario--cadastro-docente .formulario__senha {
+.formulario--cadastro-docente .formulario__login {
+  grid-area: login;
+  grid-gap: 1rem;
+  display: grid;
+  grid-template-areas: "login-titulo login-titulo" "email email-confirmacao" "senha senha-confirmacao";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+}
+@media only screen and (max-width: 960px) {
+  .formulario--cadastro-docente .formulario__login {
+    grid-template-areas: "login-titulo" "email" "email-confirmacao" "senha" "senha-confirmacao";
+    grid-template-columns: auto;
+  }
+}
+.formulario--cadastro-docente .formulario__login__titulo {
+  grid-area: login-titulo;
+}
+.formulario--cadastro-docente .formulario__login__email {
+  grid-area: email;
+}
+.formulario--cadastro-docente .formulario__login__email__confirmacao {
+  grid-area: email-confirmacao;
+}
+.formulario--cadastro-docente .formulario__login__senha {
   display: grid;
   grid-template-areas: "label" "input";
   grid-area: senha;
 }
-.formulario--cadastro-docente .formulario__senha label {
+.formulario--cadastro-docente .formulario__login__senha label {
   grid-area: label;
 }
-.formulario--cadastro-docente .formulario__senha input {
+.formulario--cadastro-docente .formulario__login__senha input {
   align-self: center;
   grid-area: input;
 }
-.formulario--cadastro-docente .formulario__senha i {
+.formulario--cadastro-docente .formulario__login__senha i {
   align-self: center;
   cursor: pointer;
   font-size: 1.5em;
@@ -636,19 +662,19 @@ form button:hover {
   justify-self: end;
   margin-right: 0.5rem;
 }
-.formulario--cadastro-docente .formulario__senha__confirmacao {
+.formulario--cadastro-docente .formulario__login__senha__confirmacao {
   display: grid;
   grid-template-areas: "label" "input";
   grid-area: senha-confirmacao;
 }
-.formulario--cadastro-docente .formulario__senha__confirmacao label {
+.formulario--cadastro-docente .formulario__login__senha__confirmacao label {
   grid-area: label;
 }
-.formulario--cadastro-docente .formulario__senha__confirmacao input {
+.formulario--cadastro-docente .formulario__login__senha__confirmacao input {
   align-self: center;
   grid-area: input;
 }
-.formulario--cadastro-docente .formulario__senha__confirmacao i {
+.formulario--cadastro-docente .formulario__login__senha__confirmacao i {
   align-self: center;
   cursor: pointer;
   font-size: 1.5em;
@@ -2499,4 +2525,32 @@ strong {
   color: red;
   cursor: pointer;
   margin: 0.5rem;
+}
+
+#danger {
+  align-self: center;
+  font-size: 1em;
+}
+
+.mensagem__danger {
+  border: solid red 2px;
+  background-color: coral;
+}
+.mensagem__success {
+  border: solid green 2px;
+  background-color: mediumseagreen;
+}
+
+.mensagens {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  text-align: center;
+  color: #FFFFFF;
+  padding: 1rem 0;
+  margin: 1rem 0;
+  border-radius: 4px;
+}
+.mensagens i {
+  font-size: 1em;
 }

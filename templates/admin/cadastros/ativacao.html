@@ -1,8 +1,27 @@
+{% load static %}
 {% autoescape off %}
 
-Olá {{usuario.get_full_name}}
+Saudações, {{usuario.get_full_name}}.
 
-Por favor, acesse o link para confirmar seu e-mail.
+Você acaba de realizar o cadastro no Sistema de Gerenciamento do CME.
+É através dele que poderá fazer solicitações de serviços, acompanhar os dados gerados, verificar suas estatísticas e outras funcinalidades que auxiliarão sua rotina no CME. 
+
+Nosso sistema está enviando esse e-mail automáticamente. Portanto, se precisar de algum auxílio evite responder por aqui, abaixo encontrará nossos outros contatos.
+
+Mas antes, explicamos que para ter acesso à plataforma, você deve acessar o link que segue para ativar seu cadastro.
 
 http://{{dominio}}{% url 'ativar_usuario' usuario_id64=usuario_id token=token %}
+
+{% if usuario.eh_discente %}
+Se você for aluno, pode ser que tenha sido cadastrado pelo seu orientador. Nesse caso, sua senha de acesso ao sistema é a mesma que ele usou. Pedimos a gentileza de trocá-la assim que for possível e acessar o seu perfil para corrigir suas informações.
+{% endif %}
+
+Seja muito bem vindo ao nosso Sistema,
+Atenciosamente,
+Centro de Microscopia Eletrônica
+
+<img style="width: 250px;" src="{% static 'assets/img/logo.svg' %}" alt="Logotipo do Centro de Microscopia Eletrônica">
+
+Telefones: (41) 3361-3075 ou (41) 3361-3493
+E-mail: cme@ufpr.br
 {% endautoescape %}

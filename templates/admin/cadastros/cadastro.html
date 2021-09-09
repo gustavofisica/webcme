@@ -1,31 +1,53 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-    <main class="conteudo--formularios">
-        <img class="conteudo__sistema__logo imagem__atalho" id="Icone-Sistema-CME" src="{% static 'assets/img/Icone-Sistema-CME.svg' %}" alt="Formulários">
-        <h2>Sistema de Gerenciamento</h2>
-        <h3>Cadastro</h3>
-        <section>            
-            <p><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Nosso sistema faz consulta no <a
-                    href="https://www.prppg.ufpr.br/siga/" target="_blank" rel="noopener noreferrer">SIGA</a> para
-                verificar seus possíveis vínculos com a <a href="https://www.ufpr.br/portalufpr/" target="_blank"
-                    rel="noopener noreferrer">UFPR</a>. Isso é determinante para estabelecer descontos de cobranças dos
-                serviços prestados pelo CME, descriminados na <a href="servicos_precos.html">Tabela de Serviços e
-                    Preços</a>.</p>
-            <p><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Caso você não tenha esse vínculo, <a href="{% url 'cadastro_externos' %}">clique aqui</a> para realizar cadastro de usuários externos.</p>
-            <form class="formulario--cadastro" action="{% url 'cadastro' %}" method="POST">
+<main class="conteudo--formularios">
+    <img class="conteudo__sistema__logo imagem__atalho" id="Icone-Sistema-CME"
+        src="{% static 'assets/img/Icone-Sistema-CME.svg' %}" alt="Formulários">
+    <h2>Sistema de Gerenciamento</h2>
+    <h3>Cadastro</h3>
+    <section>
+        <p><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Nosso sistema faz consulta no <a
+                href="https://www.prppg.ufpr.br/siga/" target="_blank" rel="noopener noreferrer">SIGA</a> para
+            verificar seus possíveis vínculos com a <a href="https://www.ufpr.br/portalufpr/" target="_blank"
+                rel="noopener noreferrer">UFPR</a>. Isso é determinante para estabelecer descontos de cobranças dos
+            serviços prestados pelo CME, descriminados na <a href="servicos_precos.html">Tabela de Serviços e
+                Preços</a>.</p>
+        <p><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Caso você não tenha esse vínculo, <a
+                href="{% url 'cadastro_externos' %}">clique aqui</a> para realizar cadastro de usuários externos.</p>
+        <form class="formulario--cadastro" action="{% url 'cadastro' %}" method="POST">
             {% csrf_token %}
-                <label class="formulario__nome" for="nome"><b>Nome Completo</b></label>
-                <input class="formulario__nome__input" type="text" name="nome" id="nome" required
-                    placeholder="Digite seu nome completo">
-                <i class="fa fa-user formulario__nome__icone"></i>
-                {% if messages %}
+            {% if form.errors %}
+                <div class="mensagens_container">
+                    {% for field in form %}
+                        {% for error in field.errors %}
+                            <div class="mensagem__danger mensagens">
+                                <span id="danger"><i class="fa fa-info-circle" aria-hidden="true"></i> {{error}}</span>
+                            </div>
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+            {% endif %}
+            {% if messages %}
+                <div class="mensagens_container">
                     {% for message in messages %}
-                        <span id="{{message.tags}}"><i class="fa fa-times-circle" aria-hidden="true"></i> {{message}}</span>
-                    {% endfor %}                    
-                {% endif %}                
-                <button class="formulario__botao" type="submit">Próximo passo</button>
-            </form>
-        </section>
-    </main>
+                        <div class="mensagem__{{message.tags}} mensagens">
+                            <span id="{{message.tags}}"><i class="fa fa-info-circle" aria-hidden="true"></i> {{message}}</span>
+                        </div>
+                    {% endfor %}
+                    <div class="mensagem__danger mensagens">
+                        <span id="danger"><i class="fa fa-info-circle" aria-hidden="true"></i> <a
+                                href="{% url 'cadastro_docente' consultado_no_SIGA=0 %}">Clique aqui</a> para realizar o
+                            cadastro de docente sem consulta no SIGA</span>
+                    </div>
+                </div>
+            {% endif %}
+            <label class="formulario__nome" for="nome"><b>Nome Completo</b></label>
+            <input class="formulario__nome__input" type="text" name="nome" id="nome" required
+                placeholder="Digite seu nome completo">
+            <i class="fa fa-user formulario__nome__icone"></i>
+            <button class="formulario__botao" type="submit">Próximo passo</button>
+        </form>
+    </section>
+</main>
 {% endblock %}

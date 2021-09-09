@@ -11,3 +11,6 @@ class Docente(models.Model):
         regex=r'[0-9]{4}', message='O ramal de estar no formato de : 0000')
     ramal = models.CharField(
         validators=[ramal_regex], max_length=4, null=True, blank=True)
+
+    def __str__(self):
+        return self.usuario.get_full_name()

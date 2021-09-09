@@ -22,24 +22,23 @@ def login(request):
             nome = Usuario.objects.filter(email=email).values_list(
                 'username', flat=True).get()
             usuario = auth.authenticate(request, username=nome, password=senha)
-            print(usuario)
             if usuario is not None:
                 auth.login(request, usuario)
-                return redirect(reverse('dashboard', args=[usuario.id]))
+                return redirect(reverse('dashboard', args=[usuario.username]))
 
     return render(request, 'admin/login.html')
 
 
 def logout(request):
     auth.logout(request)
-    messages.error(
+    messages.success(
         request, 'Logout realizado com sucesso')
     return redirect('login')
 
 
 @login_required
-def dashboard(request, id):
-    usuario = get_object_or_404(Usuario, pk=id)
+def dashboard(request, username):
+    usuario = get_object_or_404(Usuario, username=username)
     dados = {
         'usuario': usuario
     }
@@ -47,14 +46,16 @@ def dashboard(request, id):
 
 
 @login_required
-def perfil(request, id):
-    usuario = get_object_or_404(Usuario, pk=id)
+def perfil(request, username):
+    usuario = get_object_or_404(Usuario, username=username)
     if request.method == 'POST':
         form = UsuarioFormularioModificacao(
             data=request.POST, instance=usuario)
         if form.is_valid():
+            print(request.FILES)
+            form = UsuarioFormularioModificacao(request.POST, request.FILES, instance=usuario)
             form.save()
-            return redirect(reverse('perfil', args=[usuario.id]))
+            return redirect(reverse('perfil', args=[usuario.username]))
     else:
         form = UsuarioFormularioModificacao(instance=usuario)
         form_password = PasswordChangeForm(request.user)
@@ -66,8 +67,8 @@ def perfil(request, id):
     return render(request, 'admin/dashboard/perfil.html', dados)
 
 @login_required
-def alterar_senha(request, id):
-    usuario = get_object_or_404(Usuario, pk=id)
+def alterar_senha(request, username):
+    usuario = get_object_or_404(Usuario, username=username)
     if request.method == 'POST':
         form_password = PasswordChangeForm(request.user, request.POST)
         if form_password.is_valid():
@@ -77,7 +78,7 @@ def alterar_senha(request, id):
                 return redirect('logout')
         else:
             messages.error(request, 'Não foi possível alterar sua senha')
-            return redirect(reverse('perfil', args=[usuario.id]))
+            return redirect(reverse('perfil', args=[usuario.username]))
 
 
 def campo_vazio(campo):

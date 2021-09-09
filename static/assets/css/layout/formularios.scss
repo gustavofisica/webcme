@@ -90,53 +90,53 @@ form {
             width: fit-content;
         }
 
-        a{
+        a {
             color: $cor-secundaria;
             text-decoration: underline;
         }
 
-        .formulario{
+        .formulario {
             &__nome {
                 grid-area: nome;
-        
+
                 &__input {
                     grid-area: input-nome;
                 }
-        
+
                 &__icone {
                     grid-area: input-nome;
                 }
             }
-        
+
             &__email {
                 grid-area: email;
-        
+
                 &__input {
                     grid-area: input-email;
                 }
-        
+
                 &__icone {
                     grid-area: input-email;
                 }
             }
-        
+
             &__senha {
                 grid-area: senha;
-        
+
                 &__input {
                     grid-area: input-senha;
                 }
-        
+
                 &__icone {
                     grid-area: input-senha;
 
-                    &__revela{
+                    &__revela {
                         grid-area: input-senha;
                         justify-self: end;
                     }
                 }
             }
-        
+
             &__botao {
                 grid-area: botao;
             }
@@ -148,6 +148,7 @@ form {
         border: solid 1px $cor-padrao-auxiliar;
         display: grid;
         grid-template-areas:
+            "mensagens"
             "nome"
             "input-nome"
             "botao";
@@ -167,7 +168,7 @@ form {
 
         input {
             padding-left: 3.5rem;
-            width: calc(100% - 3.5rem);
+            width: calc(100% - 4.05rem);
         }
 
         i {
@@ -176,14 +177,18 @@ form {
             width: fit-content;
         }
 
-        .formulario{
+        .mensagens {
+            grid-area: mensagens;
+        }
+
+        .formulario {
             &__nome {
                 grid-area: nome;
-        
+
                 &__input {
                     grid-area: input-nome;
                 }
-        
+
                 &__icone {
                     grid-area: input-nome;
                 }
@@ -197,9 +202,10 @@ form {
             "foto foto"
             "nome sobrenome"
             "ramal celular"
-            "email lattes"
+            "lattes lattes"
             "instituicao departamentos"
             "discentes discentes"
+            "login login"
             "senha senha-confirmacao"
             "sugestao sugestao"
             "aceites botao";
@@ -213,13 +219,11 @@ form {
                 "sobrenome"
                 "ramal"
                 "celular"
-                "email"
                 "lattes"
                 "instituicao"
                 "departamentos"
                 "discentes"
-                "senha"
-                "senha-confirmacao"
+                "login"
                 "sugestao"
                 "aceites"
                 "botao";
@@ -373,37 +377,45 @@ form {
                 }
             }
 
-            &__senha {
+            &__login {
+                grid-area: login;
+                grid-gap: 1rem;
                 display: grid;
                 grid-template-areas:
-                    "label"
-                    "input";
-                grid-area: senha;
+                    "login-titulo login-titulo"
+                    "email email-confirmacao"
+                    "senha senha-confirmacao";
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: auto auto;
 
-                label {
-                    grid-area: label;
+                @media only screen and (max-width: 960px) {
+                    grid-template-areas:
+                        "login-titulo"
+                        "email"
+                        "email-confirmacao"
+                        "senha"
+                        "senha-confirmacao";
+                    grid-template-columns: auto;
                 }
 
-                input {
-                    align-self: center;
-                    grid-area: input;
+                &__titulo {
+                    grid-area: login-titulo;
                 }
 
-                i {
-                    align-self: center;
-                    cursor: pointer;
-                    font-size: 1.5em;
-                    grid-area: input;
-                    justify-self: end;
-                    margin-right: 0.5rem;
+                &__email {
+                    grid-area: email;
+
+                    &__confirmacao {
+                        grid-area: email-confirmacao;
+                    }
                 }
 
-                &__confirmacao {
+                &__senha {
                     display: grid;
                     grid-template-areas:
                         "label"
                         "input";
-                    grid-area: senha-confirmacao;
+                    grid-area: senha;
 
                     label {
                         grid-area: label;
@@ -423,6 +435,32 @@ form {
                         margin-right: 0.5rem;
                     }
 
+                    &__confirmacao {
+                        display: grid;
+                        grid-template-areas:
+                            "label"
+                            "input";
+                        grid-area: senha-confirmacao;
+
+                        label {
+                            grid-area: label;
+                        }
+
+                        input {
+                            align-self: center;
+                            grid-area: input;
+                        }
+
+                        i {
+                            align-self: center;
+                            cursor: pointer;
+                            font-size: 1.5em;
+                            grid-area: input;
+                            justify-self: end;
+                            margin-right: 0.5rem;
+                        }
+
+                    }
                 }
             }
 

@@ -13,7 +13,7 @@
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="{% url 'dashboard' usuario.id %}">Home</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'dashboard' usuario.username %}">Home</a></li>
             <li class="breadcrumb-item active">Perfil do Usuário</li>
           </ol>
         </div>
@@ -332,7 +332,7 @@
                 <!-- /.tab-pane -->
 
                 <div class="tab-pane" id="settings">
-                  <form class="form-horizontal" action="{% url 'perfil' usuario.id %}" method="POST">
+                  <form class="form-horizontal" action="{% url 'perfil' usuario.username %}" method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
                     {% for field in form %}
                     <div class="form-group row">
@@ -366,7 +366,7 @@
                         </button>
                       </div>
                       <div class="modal-body">
-                        <form action="{% url 'alterar_senha' usuario.id %}" method="POST">
+                        <form action="{% url 'alterar_senha' usuario.username %}" method="POST">
                           {% csrf_token %}
                           {% for field in form_password %}
                             <div class="form-group">
