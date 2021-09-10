@@ -40,6 +40,11 @@
                                 href="{% url 'cadastro_docente' consultado_no_SIGA=0 %}">Clique aqui</a> para realizar o
                             cadastro de docente sem consulta no SIGA</span>
                     </div>
+                    <div class="mensagem__danger mensagens">
+                        <span id="danger"><i class="fa fa-info-circle" aria-hidden="true"></i> <a
+                                href="{% url 'cadastro_discente' consultado_no_SIGA=0 %}">Clique aqui</a> para realizar o
+                            cadastro de discente sem consulta no SIGA</span>
+                    </div>
                 </div>
             {% endif %}
             <label class="formulario__nome" for="nome"><b>Nome Completo</b></label>

@@ -7,154 +7,317 @@
         <h2>Sistema de Gerenciamento</h2>
         <h3>Cadastro de Discente</h3>
         <section>
-            <form class="formulario--cadastro-discente" action="" method="POST">
-            {% csrf_token %}
-                <div class="formulario__foto">
-                    <div class="formulario__foto__upload">
-                        <label class="formulario__foto__upload__label" for="imagem_uploads">Escolha sua imagem de perfil
-                            no formato PNG, JPG ou JPEG </label>
-                        <input class="formulario__foto__upload__input" type="file" id="imagem_uploads"
-                            name="imagem_uploads" accept=".jpg, .jpeg, .png">
-                    </div>
-                    <div class="formulario__foto__preview">
-                        <img class="formulario__foto__preview__foto imagem__perfil"
-                            src="{% static 'assets/img/fotos-perfil/Perfil_Desconhecido.jpg' %}" alt="Imagem do Pesquisador">
-                    </div>
-                </div>
-                <fieldset class="formulario__nome">
-                    <label class="formulario__nome__label" for="nome"><b>Nome</b></label>
-                    <input class="formulario__nome__input" type="text" name="nome" id="nome" required
-                        placeholder="Digite seu nome" value="{{dados.nome_do_aluno}}">
-                </fieldset>
-                <fieldset class="formulario__sobrenome">
-                    <label class="formulario__sobrenome__label" for="sobrenome"><b>Sobrenome</b></label>
-                    <input class="formulario__sobrenome__input" type="text" name="sobrenome" id="sobrenome" required
-                        placeholder="Digite seu sobrenome" value="">
-                </fieldset>
-                <fieldset class="formulario__email">
-                    <label class="formulario__email__label" for="email"><b>E-mail</b></label>
-                    <input class="formulario__email__input" type="email" name="email" id="email" required
-                        placeholder="Digite seu email" value="">
-                </fieldset>
-                <fieldset class="formulario__celular">
-                    <label class="formulario__celular__label" for="celular"><b>Celular</b></label>
-                    <input class="formulario__celular__input" type="tel" name="celular" id="celular" required
-                        placeholder="Informe um celular no formato (xx) xxxxx-xxxx"
-                        pattern="\([0-9]{2}\) [0-9]{4,5}-[0-9]{4}" value="">
-                </fieldset>
-                <fieldset class="formulario__orientador">
-                    <h3>Orientador</h3>
-                    <div class="formulario__orientador__descricao" id="discente_1">
-                        <div class="formulario__orientador__descricao__nome">
-                            <label class="formulario__orientador__descricao__nome__label"
-                                for="orientador"><b>Nome do Orientador</b></label>
-                            <input class="formulario__orientador__descricao__nome__input" type="text" name="orientador"
-                                id="orientador" required value="{{dados.orientador}}">
+            {% if dados %}
+                <form class="formulario--cadastro-discente" action="{% url 'cadastro_discente' consultado_no_SIGA=1 %}" method="POST"
+                enctype="multipart/form-data">
+                {% csrf_token %}
+                    <div class="formulario__foto">
+                        <div class="formulario__foto__upload">
+                            <label class="formulario__foto__upload__label" for="imagem_uploads">Escolha sua imagem de perfil
+                                no formato PNG, JPG ou JPEG </label>
+                            <input class="formulario__foto__upload__input" type="file" id="imagem_uploads"
+                                name="imagem_uploads" accept=".jpg, .jpeg, .png">
                         </div>
-                        <div class="formulario__orientador__descricao__email">
-                            <label class="formulario__orientador__descricao__email__label"
-                                for="email_docente"><b>E-mail do Orientador</b>
-                            </label>
-                            <input class="formulario__orientador__descricao__email__input" type="email"
-                                name="email_docente" id="email_docente" placeholder="Digite o email do docente"
-                                required="">
+                        <div class="formulario__foto__preview">
+                            <img class="formulario__foto__preview__foto imagem__perfil"
+                                src="{% static 'assets/img/fotos-perfil/Perfil_Desconhecido.jpg' %}" alt="Imagem do Pesquisador">
                         </div>
-                </fieldset>
-                <fieldset class="formulario__setor">
-                    <label class="formulario__setor__label" for="setor_discente_1"><b>Setor</b>
-                    </label>
-                    <select class="formulario__setor__select" name="setor_discente_1" id="setor_discente_1">
-                        <option value="Setor de Artes, Comunicação e Design">Setor de Artes, Comunicação e
-                            Design</option>
-                        <option value="Setor de Ciências Agrárias">Setor de Ciências Agrárias</option>
-                        <option value="Setor de Ciências Biológicas">Setor de Ciências Biológicas</option>
-                        <option value="Setor de Ciêcnias da Saúde">Setor de Ciêcnias da Saúde</option>
-                        <option value="Setor de Ciências da Terra">Setor de Ciências da Terra</option>
-                        <option value="Setor de Ciêcnias Exatas">Setor de Ciêcnias Exatas</option>
-                        <option value="Setor de Ciências Humanas">Setor de Ciências Humanas</option>
-                        <option value="Setor de Ciências Jurídicas">Setor de Ciências Jurídicas</option>
-                        <option value="Setor de Ciências Sociais Aplicadas">Setor de Ciências Sociais Aplicadas
-                        </option>
-                        <option value="Setor de Educação">Setor de Educação</option>
-                        <option value="Setor de Educação Profissional e Tecnológica">Setor de Educação
-                            Profissional e Tecnológica</option>
-                        <option value="Setor de Tecnologia">Setor de Tecnologia</option>
-                        <option value="Setor Litoral">Setor Litoral</option>
-                        <option value="Setor Palotina">Setor Palotina</option>
-                        <option value="Campus de Jandaia do Sul">Campus de Jandaia do Sul</option>
-                    </select>
-                </fieldset>
-                <fieldset class="formulario__departamento">
-                    <label class="formulario__departamento__label" for="departamento"><b>Departamento</b></label>
-                    <input class="formulario__departamento__input" type="text" name="departamento" id="departamento"
-                        required placeholder="Digite seu departamento" value="{{dados.programas.0}}">
-                </fieldset>
-                <fieldset class="formulario__vinculo">
-                    <label class="formulario__vinculo__label" for="vinculo_discente_1"><b>Vínculo</b>
-                    </label>
-                    <select class="formulario__vinculo__select" name="vinculo_discente_1" id="vinculo_discente_1">
-                        {% if dados.niveis.0 ==  'Iniciação Científica' %}
-                            <option value="Iniciação Científica" selected>Iniciação Científica</option>
-                        {% else %}
-                            <option value="Iniciação Científica" >Iniciação Científica</option>
-                        {% endif %}
-                        {% if dados.niveis.0 ==  'Mestrado' %}
-                            <option value="Mestrado" selected>Mestrado</option>
-                        {% else %}
-                            <option value="Mestrado" >Mestrado</option>
-                        {% endif %}
-                        {% if dados.niveis.0 ==  'Mestrado' %}
-                            <option value="Mestrado" selected>Mestrado</option>
-                        {% else %}
-                            <option value="Mestrado" >Mestrado</option>
-                        {% endif %}
-                        {% if dados.niveis.0 ==  'Doutorado' %}
-                            <option value="Doutorado" selected>Doutorado</option>
-                        {% else %}
-                            <option value="Doutorado" >Doutorado</option>
-                        {% endif %}
-                        {% if dados.niveis.0 ==  'Pós-Doutorado' %}
-                            <option value="Pós-Doutorado" selected>Pós-Doutorado</option>
-                        {% else %}
-                            <option value="Pós-Doutorado" >Pós-Doutorado</option>
-                        {% endif %}
-                    </select>
-                </fieldset>
-                <fieldset class="formulario__inicio">
-                    <label class="formulario__inicio__label" for="inicio_discente_1"><b>Início
-                            do Vínculo</b>
-                    </label>
-                    <input class="formulario__inicio__input" type="date" name="inicio_discente_1" id="inicio_discente_1"
-                        value="{{dados.inicio}}">
-                </fieldset>
-                <div class="formulario__senha">
-                    <label class="formulario__senha__label" for="senha"><b>Senha</b></label>
-                    <input class="formulario__senha__input" type="password" name="senha" id="senha" required
-                        placeholder="Digite uma senha" value="">
-                    <i class="fa fa-eye" aria-hidden="true" id="icone-senha"
-                        onclick="revelarCodigo('senha', 'icone-senha');"></i>
-                </div>
-                <div class="formulario__senha__confirmacao">
-                    <label class="formulario__senha__confirmacao__label" for="confirma-senha"><b>Confirmação de
-                            Senha</b></label>
-                    <input class="formulario__senha__confirmacao__input" type="password" name="confirma-senha"
-                        id="confirma-senha" required placeholder="Confirme sua senha" value="">
-                    <i class="fa fa-eye" aria-hidden="true" id="icone-confirma-senha"
-                        onclick="revelarCodigo('confirma-senha', 'icone-confirma-senha');"></i>
-                </div>
-                <span id="sugestao"></span>
-                <fieldset class="formulario__aceitacao">
-                    <input class="formulario__aceitacao__input" type="checkbox" name="aceite-nomas" id="aceite-nomas"
-                        value="aceite-nomas">
-                    <label class="formulario__aceitacao__label" for="aceite-nomas">Declaro que conheço e concordo com
-                        as <a href="normas.html" target="_blank" rel="noopener noreferrer">normas</a> de uso do Sistema
-                        de
-                        Gerenciamento do CME</label>
-                </fieldset>
-                <fieldset class="formulario__botao">
-                    <button class="formulario__botao" type="submit">Cadastrar</button>
-                </fieldset>
-            </form>
+                    </div>
+                    <fieldset class="formulario__nome">
+                        <label class="formulario__nome__label" for="nome"><b>Nome</b></label>
+                        <input class="formulario__nome__input" type="text" name="nome" id="nome" required
+                            placeholder="Digite seu nome" value="{{dados.nome_do_aluno}}">
+                    </fieldset>
+                    <fieldset class="formulario__sobrenome">
+                        <label class="formulario__sobrenome__label" for="sobrenome"><b>Sobrenome</b></label>
+                        <input class="formulario__sobrenome__input" type="text" name="sobrenome" id="sobrenome" required
+                            placeholder="Digite seu sobrenome" value="">
+                    </fieldset>
+                    <fieldset class="formulario__celular">
+                        <label class="formulario__celular__label" for="celular"><b>Celular</b></label>
+                        <input class="formulario__celular__input" type="tel" name="celular" id="celular" required
+                            placeholder="Informe um celular no formato (xx) xxxxx-xxxx"
+                            pattern="\([0-9]{2}\) [0-9]{4,5}-[0-9]{4}" value="">
+                    </fieldset>
+                    <fieldset class="formulario__lattes">
+                        <label class="formulario__lattes__label" for="lattes"><b>Currículo Lattes</b></label>
+                        <input class="formulario__lattes__input" type="url" name="lattes" id="lattes"
+                            placeholder="Insira a URL do seu currículo lattes" value="">
+                    </fieldset>
+                    <fieldset class="formulario__orientador">
+                        <h3>Orientador</h3>
+                        <div class="formulario__orientador__descricao" id="discente_1">
+                            <div class="formulario__orientador__descricao__nome">
+                                <label class="formulario__orientador__descricao__nome__label"
+                                    for="orientador"><b>Nome do Orientador</b></label>
+                                <input class="formulario__orientador__descricao__nome__input" type="text" name="orientador"
+                                    id="orientador" required value="{{dados.orientador}}">
+                            </div>
+                            <div class="formulario__orientador__descricao__email">
+                                <label class="formulario__orientador__descricao__email__label"
+                                    for="email_docente"><b>E-mail do Orientador</b>
+                                </label>
+                                <input class="formulario__orientador__descricao__email__input" type="email"
+                                    name="email_docente" id="email_docente" placeholder="Digite o email do docente"
+                                    required="">
+                            </div>
+                    </fieldset>
+                    <fieldset class="formulario__setor">
+                        <label class="formulario__setor__label" for="setor_discente"><b>Setor</b>
+                        </label>
+                        <select class="formulario__setor__select" name="setor_discente" id="setor_discente">
+                            <option value="Setor de Artes, Comunicação e Design">Setor de Artes, Comunicação e
+                                Design</option>
+                            <option value="Setor de Ciências Agrárias">Setor de Ciências Agrárias</option>
+                            <option value="Setor de Ciências Biológicas">Setor de Ciências Biológicas</option>
+                            <option value="Setor de Ciêcnias da Saúde">Setor de Ciêcnias da Saúde</option>
+                            <option value="Setor de Ciências da Terra">Setor de Ciências da Terra</option>
+                            <option value="Setor de Ciêcnias Exatas">Setor de Ciêcnias Exatas</option>
+                            <option value="Setor de Ciências Humanas">Setor de Ciências Humanas</option>
+                            <option value="Setor de Ciências Jurídicas">Setor de Ciências Jurídicas</option>
+                            <option value="Setor de Ciências Sociais Aplicadas">Setor de Ciências Sociais Aplicadas
+                            </option>
+                            <option value="Setor de Educação">Setor de Educação</option>
+                            <option value="Setor de Educação Profissional e Tecnológica">Setor de Educação
+                                Profissional e Tecnológica</option>
+                            <option value="Setor de Tecnologia">Setor de Tecnologia</option>
+                            <option value="Setor Litoral">Setor Litoral</option>
+                            <option value="Setor Palotina">Setor Palotina</option>
+                            <option value="Campus de Jandaia do Sul">Campus de Jandaia do Sul</option>
+                        </select>
+                    </fieldset>
+                    <fieldset class="formulario__departamento">
+                        <label class="formulario__departamento__label" for="departamento"><b>Departamento</b></label>
+                        <input class="formulario__departamento__input" type="text" name="departamento" id="departamento"
+                            required placeholder="Digite seu departamento" value="{{dados.programas.0}}">
+                    </fieldset>
+                    <fieldset class="formulario__vinculo">
+                        <label class="formulario__vinculo__label" for="vinculo"><b>Vínculo</b>
+                        </label>
+                        <select class="formulario__vinculo__select" name="vinculo" id="vinculo">
+                            {% if dados.niveis.0 ==  'Iniciação Científica' %}
+                                <option value="Iniciação Científica" selected>Iniciação Científica</option>
+                            {% else %}
+                                <option value="Iniciação Científica" >Iniciação Científica</option>
+                            {% endif %}
+                            {% if dados.niveis.0 ==  'Mestrado' %}
+                                <option value="Mestrado" selected>Mestrado</option>
+                            {% else %}
+                                <option value="Mestrado" >Mestrado</option>
+                            {% endif %}
+                            {% if dados.niveis.0 ==  'Doutorado' %}
+                                <option value="Doutorado" selected>Doutorado</option>
+                            {% else %}
+                                <option value="Doutorado" >Doutorado</option>
+                            {% endif %}
+                            {% if dados.niveis.0 ==  'Pós-Doutorado' %}
+                                <option value="Pós-Doutorado" selected>Pós-Doutorado</option>
+                            {% else %}
+                                <option value="Pós-Doutorado" >Pós-Doutorado</option>
+                            {% endif %}
+                        </select>
+                    </fieldset>
+                    <fieldset class="formulario__inicio">
+                        <label class="formulario__inicio__label" for="inicio_discente"><b>Início
+                                do Vínculo</b>
+                        </label>
+                        <input class="formulario__inicio__input" type="date" name="inicio_discente" id="inicio_discente"
+                            value="{{dados.inicio}}">
+                    </fieldset>
+                    <div class="formulario__login">
+                        <h3 class="formulario__login__titulo">Informações de Login</h3>
+                        <fieldset class="formulario__login__email">
+                            <label class="formulario__login__email__label" for="email"><b>E-mail</b></label>
+                            <input class="formulario__login__email__input" type="email" name="email1" id="email" required
+                                placeholder="Digite seu email" value="">
+                        </fieldset>
+                        <fieldset class="formulario__login__email__confirmacao">
+                            <label class="formulario__login__email__confirmacao__label" for="confirma-email"><b>Confirmação de E-mail</b></label>
+                            <input class="formulario__login__email__confirmacao__input" type="email" name="email2" id="confirma-email" required
+                                placeholder="Digite seu email" value="">
+                        </fieldset>
+                        <div class="formulario__login__senha">
+                            <label class="formulario__login__senha__label" for="senha"><b>Senha</b></label>
+                            <input class="formulario__login__senha__input" type="password" name="password1" id="senha" required
+                                placeholder="Digite uma senha" value="">
+                            <i class="fa fa-eye" aria-hidden="true" id="icone-senha"
+                                onclick="revelarCodigo('senha', 'icone-senha');"></i>
+                        </div>
+                        <div class="formulario__login__senha__confirmacao">
+                            <label class="formulario__login__senha__confirmacao__label" for="confirma-senha"><b>Confirmação de
+                                    Senha</b></label>
+                            <input class="formulario__login__senha__confirmacao__input" type="password" name="password2"
+                                id="confirma-senha" required placeholder="Confirme sua senha" value="">
+                            <i class="fa fa-eye" aria-hidden="true" id="icone-confirma-senha"
+                                onclick="revelarCodigo('confirma-senha', 'icone-confirma-senha');"></i>
+                        </div>
+                    </div>
+                    <div class="formulario__avisos" id='formulario-avisos'>
+                        <p><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Sua senha deve ter 8 digitos ou mais, conter caracteres especiais, números, letras minúsculas e maiúculas.</p>
+                        <p><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Revise as informações antes de cadastrar.</p>
+                        <span id="sugestao"></span>
+                    </div>
+                    <fieldset class="formulario__aceitacao">
+                        <input class="formulario__aceitacao__input" type="checkbox" name="aceite-nomas" id="aceite-nomas"
+                            value="aceite-nomas">
+                        <label class="formulario__aceitacao__label" for="aceite-nomas">Declaro que conheço e concordo com
+                            as <a href="normas.html" target="_blank" rel="noopener noreferrer">normas</a> de uso do Sistema
+                            de
+                            Gerenciamento do CME</label>
+                    </fieldset>
+                    <fieldset class="formulario__botao">
+                        <button class="formulario__botao" id="botao-enviar" type="submit">Cadastrar</button>
+                    </fieldset>
+                    <input type="hidden" name="username" value="">
+                </form>
+            {% else %}
+                <form class="formulario--cadastro-discente" action="{% url 'cadastro_discente' consultado_no_SIGA=1 %}" method="POST"
+                enctype="multipart/form-data">
+                {% csrf_token %}
+                    <div class="formulario__foto">
+                        <div class="formulario__foto__upload">
+                            <label class="formulario__foto__upload__label" for="imagem_uploads">Escolha sua imagem de perfil
+                                no formato PNG, JPG ou JPEG </label>
+                            <input class="formulario__foto__upload__input" type="file" id="imagem_uploads"
+                                name="imagem_uploads" accept=".jpg, .jpeg, .png">
+                        </div>
+                        <div class="formulario__foto__preview">
+                            <img class="formulario__foto__preview__foto imagem__perfil"
+                                src="{% static 'assets/img/fotos-perfil/Perfil_Desconhecido.jpg' %}" alt="Imagem do Pesquisador">
+                        </div>
+                    </div>
+                    <fieldset class="formulario__nome">
+                        <label class="formulario__nome__label" for="nome"><b>Nome</b></label>
+                        <input class="formulario__nome__input" type="text" name="nome" id="nome" required
+                            placeholder="Digite seu nome" value="">
+                    </fieldset>
+                    <fieldset class="formulario__sobrenome">
+                        <label class="formulario__sobrenome__label" for="sobrenome"><b>Sobrenome</b></label>
+                        <input class="formulario__sobrenome__input" type="text" name="sobrenome" id="sobrenome" required
+                            placeholder="Digite seu sobrenome" value="">
+                    </fieldset>
+                    <fieldset class="formulario__celular">
+                        <label class="formulario__celular__label" for="celular"><b>Celular</b></label>
+                        <input class="formulario__celular__input" type="tel" name="celular" id="celular" required
+                            placeholder="Informe um celular no formato (xx) xxxxx-xxxx"
+                            pattern="\([0-9]{2}\) [0-9]{4,5}-[0-9]{4}" value="">
+                    </fieldset>
+                    <fieldset class="formulario__lattes">
+                        <label class="formulario__lattes__label" for="lattes"><b>Currículo Lattes</b></label>
+                        <input class="formulario__lattes__input" type="url" name="lattes" id="lattes"
+                            placeholder="Insira a URL do seu currículo lattes" value="">
+                    </fieldset>
+                    <fieldset class="formulario__orientador">
+                        <h3>Orientador</h3>
+                        <div class="formulario__orientador__descricao" id="discente_1">
+                            <div class="formulario__orientador__descricao__nome">
+                                <label class="formulario__orientador__descricao__nome__label"
+                                    for="orientador"><b>Nome do Orientador</b></label>
+                                <input class="formulario__orientador__descricao__nome__input" type="text" name="orientador"
+                                    id="orientador" required value="">
+                            </div>
+                            <div class="formulario__orientador__descricao__email">
+                                <label class="formulario__orientador__descricao__email__label"
+                                    for="email_docente"><b>E-mail do Orientador</b>
+                                </label>
+                                <input class="formulario__orientador__descricao__email__input" type="email"
+                                    name="email_docente" id="email_docente" placeholder="Digite o email do docente"
+                                    required="">
+                            </div>
+                    </fieldset>
+                    <fieldset class="formulario__setor">
+                        <label class="formulario__setor__label" for="setor_discente"><b>Setor</b>
+                        </label>
+                        <select class="formulario__setor__select" name="setor_discente" id="setor_discente">
+                            <option value="Setor de Artes, Comunicação e Design">Setor de Artes, Comunicação e
+                                Design</option>
+                            <option value="Setor de Ciências Agrárias">Setor de Ciências Agrárias</option>
+                            <option value="Setor de Ciências Biológicas">Setor de Ciências Biológicas</option>
+                            <option value="Setor de Ciêcnias da Saúde">Setor de Ciêcnias da Saúde</option>
+                            <option value="Setor de Ciências da Terra">Setor de Ciências da Terra</option>
+                            <option value="Setor de Ciêcnias Exatas">Setor de Ciêcnias Exatas</option>
+                            <option value="Setor de Ciências Humanas">Setor de Ciências Humanas</option>
+                            <option value="Setor de Ciências Jurídicas">Setor de Ciências Jurídicas</option>
+                            <option value="Setor de Ciências Sociais Aplicadas">Setor de Ciências Sociais Aplicadas
+                            </option>
+                            <option value="Setor de Educação">Setor de Educação</option>
+                            <option value="Setor de Educação Profissional e Tecnológica">Setor de Educação
+                                Profissional e Tecnológica</option>
+                            <option value="Setor de Tecnologia">Setor de Tecnologia</option>
+                            <option value="Setor Litoral">Setor Litoral</option>
+                            <option value="Setor Palotina">Setor Palotina</option>
+                            <option value="Campus de Jandaia do Sul">Campus de Jandaia do Sul</option>
+                        </select>
+                    </fieldset>
+                    <fieldset class="formulario__departamento">
+                        <label class="formulario__departamento__label" for="departamento"><b>Departamento</b></label>
+                        <input class="formulario__departamento__input" type="text" name="departamento" id="departamento"
+                            required placeholder="Digite seu departamento" value="">
+                    </fieldset>
+                    <fieldset class="formulario__vinculo">
+                        <label class="formulario__vinculo__label" for="vinculo"><b>Vínculo</b>
+                        </label>
+                        <select class="formulario__vinculo__select" name="vinculo" id="vinculo">
+                                <option value="Iniciação Científica" >Iniciação Científica</option>
+                                <option value="Mestrado" >Mestrado</option>
+                                <option value="Doutorado" >Doutorado</option>
+                                <option value="Pós-Doutorado" >Pós-Doutorado</option>
+                        </select>
+                    </fieldset>
+                    <fieldset class="formulario__inicio">
+                        <label class="formulario__inicio__label" for="inicio_discente"><b>Início
+                                do Vínculo</b>
+                        </label>
+                        <input class="formulario__inicio__input" type="date" name="inicio_discente" id="inicio_discente"
+                            value="">
+                    </fieldset>
+                    <div class="formulario__login">
+                        <h3 class="formulario__login__titulo">Informações de Login</h3>
+                        <fieldset class="formulario__login__email">
+                            <label class="formulario__login__email__label" for="email"><b>E-mail</b></label>
+                            <input class="formulario__login__email__input" type="email" name="email1" id="email" required
+                                placeholder="Digite seu email" value="">
+                        </fieldset>
+                        <fieldset class="formulario__login__email__confirmacao">
+                            <label class="formulario__login__email__confirmacao__label" for="confirma-email"><b>Confirmação de E-mail</b></label>
+                            <input class="formulario__login__email__confirmacao__input" type="email" name="email2" id="confirma-email" required
+                                placeholder="Digite seu email" value="">
+                        </fieldset>
+                        <div class="formulario__login__senha">
+                            <label class="formulario__login__senha__label" for="senha"><b>Senha</b></label>
+                            <input class="formulario__login__senha__input" type="password" name="password1" id="senha" required
+                                placeholder="Digite uma senha" value="">
+                            <i class="fa fa-eye" aria-hidden="true" id="icone-senha"
+                                onclick="revelarCodigo('senha', 'icone-senha');"></i>
+                        </div>
+                        <div class="formulario__login__senha__confirmacao">
+                            <label class="formulario__login__senha__confirmacao__label" for="confirma-senha"><b>Confirmação de
+                                    Senha</b></label>
+                            <input class="formulario__login__senha__confirmacao__input" type="password" name="password2"
+                                id="confirma-senha" required placeholder="Confirme sua senha" value="">
+                            <i class="fa fa-eye" aria-hidden="true" id="icone-confirma-senha"
+                                onclick="revelarCodigo('confirma-senha', 'icone-confirma-senha');"></i>
+                        </div>
+                    </div>
+                    <div class="formulario__avisos" id='formulario-avisos'>
+                        <p><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Sua senha deve ter 8 digitos ou mais, conter caracteres especiais, números, letras minúsculas e maiúculas.</p>
+                        <p><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Revise as informações antes de cadastrar.</p>
+                        <span id="sugestao"></span>
+                    </div>
+                    <fieldset class="formulario__aceitacao">
+                        <input class="formulario__aceitacao__input" type="checkbox" name="aceite-nomas" id="aceite-nomas"
+                            value="aceite-nomas">
+                        <label class="formulario__aceitacao__label" for="aceite-nomas">Declaro que conheço e concordo com
+                            as <a href="normas.html" target="_blank" rel="noopener noreferrer">normas</a> de uso do Sistema
+                            de
+                            Gerenciamento do CME</label>
+                    </fieldset>
+                    <fieldset class="formulario__botao">
+                        <button class="formulario__botao" id="botao-enviar" type="submit">Cadastrar</button>
+                    </fieldset>
+                    <input type="hidden" name="username" value="">
+                </form>
+            {% endif %}
         </section>
         <!--Link de direcionamento da barra de acessibilidade para rodapé-->
         <a name="footer" id="footer"></a>

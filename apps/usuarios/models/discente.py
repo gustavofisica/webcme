@@ -10,7 +10,7 @@ class Discente(models.Model):
     vinculo = models.CharField(max_length=25, blank=True, null=True)
     inicio_vinculo = models.DateField()
     setor = models.CharField(max_length=250, blank=True, null=True)
-    departamento = models.CharField(max_length=25, blank=True, null=True)
+    departamento = models.CharField(max_length=250, blank=True, null=True)
     periodo_de_permanencia = models.DateField(null=True)
 
     def __str__(self):

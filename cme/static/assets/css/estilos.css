@@ -500,7 +500,7 @@ form button:hover {
 }
 .formulario--cadastro-docente {
   display: grid;
-  grid-template-areas: "foto foto" "nome sobrenome" "ramal celular" "lattes lattes" "instituicao departamentos" "discentes discentes" "login login" "senha senha-confirmacao" "avisos avisos" "aceites botao";
+  grid-template-areas: "foto foto" "nome sobrenome" "ramal celular" "lattes lattes" "instituicao departamentos" "discentes discentes" "login login" "avisos avisos" "aceites botao";
   grid-template-columns: 1fr 1fr;
   grid-gap: 1rem;
 }
@@ -709,13 +709,13 @@ form button:hover {
 }
 .formulario--cadastro-discente {
   display: grid;
-  grid-template-areas: "foto foto" "nome sobrenome" "email celular" "orientador orientador" "setor departamento" "vinculo inicio" "senha senha-confirmacao" "sugestao sugestao" "aceites botao";
+  grid-template-areas: "foto foto" "nome sobrenome" "lattes celular" "orientador orientador" "setor departamento" "vinculo inicio" "login login" "avisos avisos" "aceites botao";
   grid-template-columns: 1fr 1fr;
   grid-gap: 1rem;
 }
 @media only screen and (max-width: 960px) {
   .formulario--cadastro-discente {
-    grid-template-areas: "foto" "nome" "sobrenome" "email" "celular" "orientador" "orientador" "setor" "departamento" "vinculo" "inicio" "senha" "senha-confirmacao" "sugestao" "aceites" "botao";
+    grid-template-areas: "foto" "nome" "sobrenome" "lattes" "celular" "orientador" "orientador" "setor" "departamento" "vinculo" "inicio" "login" "avisos" "aceites" "botao";
     grid-template-columns: auto;
   }
 }
@@ -754,11 +754,11 @@ form button:hover {
 .formulario--cadastro-discente .formulario__sobrenome {
   grid-area: sobrenome;
 }
-.formulario--cadastro-discente .formulario__email {
-  grid-area: email;
-}
 .formulario--cadastro-discente .formulario__celular {
   grid-area: celular;
+}
+.formulario--cadastro-discente .formulario__lattes {
+  grid-area: lattes;
 }
 .formulario--cadastro-discente .formulario__orientador {
   grid-area: orientador;
@@ -790,6 +790,72 @@ form button:hover {
 }
 .formulario--cadastro-discente .formulario__inicio {
   grid-area: inicio;
+}
+.formulario--cadastro-discente .formulario__login {
+  grid-area: login;
+  grid-gap: 1rem;
+  display: grid;
+  grid-template-areas: "login-titulo login-titulo" "email email-confirmacao" "senha senha-confirmacao";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+}
+@media only screen and (max-width: 960px) {
+  .formulario--cadastro-discente .formulario__login {
+    grid-template-areas: "login-titulo" "email" "email-confirmacao" "senha" "senha-confirmacao";
+    grid-template-columns: auto;
+  }
+}
+.formulario--cadastro-discente .formulario__login__titulo {
+  grid-area: login-titulo;
+}
+.formulario--cadastro-discente .formulario__login__email {
+  grid-area: email;
+}
+.formulario--cadastro-discente .formulario__login__email__confirmacao {
+  grid-area: email-confirmacao;
+}
+.formulario--cadastro-discente .formulario__login__senha {
+  display: grid;
+  grid-template-areas: "label" "input";
+  grid-area: senha;
+}
+.formulario--cadastro-discente .formulario__login__senha label {
+  grid-area: label;
+}
+.formulario--cadastro-discente .formulario__login__senha input {
+  align-self: center;
+  grid-area: input;
+}
+.formulario--cadastro-discente .formulario__login__senha i {
+  align-self: center;
+  cursor: pointer;
+  font-size: 1.5em;
+  grid-area: input;
+  justify-self: end;
+  margin-right: 0.5rem;
+}
+.formulario--cadastro-discente .formulario__login__senha__confirmacao {
+  display: grid;
+  grid-template-areas: "label" "input";
+  grid-area: senha-confirmacao;
+}
+.formulario--cadastro-discente .formulario__login__senha__confirmacao label {
+  grid-area: label;
+}
+.formulario--cadastro-discente .formulario__login__senha__confirmacao input {
+  align-self: center;
+  grid-area: input;
+}
+.formulario--cadastro-discente .formulario__login__senha__confirmacao i {
+  align-self: center;
+  cursor: pointer;
+  font-size: 1.5em;
+  grid-area: input;
+  justify-self: end;
+  margin-right: 0.5rem;
+}
+.formulario--cadastro-discente .formulario__avisos {
+  grid-area: avisos;
 }
 .formulario--cadastro-externos {
   display: grid;

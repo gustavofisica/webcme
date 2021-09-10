@@ -17,6 +17,7 @@ import threading
 
 
 class EmailThread(threading.Thread):
+    """Controle de Thread dos emails enviados"""
 
     def __init__(self, email):
 
@@ -103,7 +104,8 @@ def cadastro_docente(request, consultado_no_SIGA):
 
             if formulario_usuario.is_valid():
 
-                usuario_docente = cadastrar_usuario(request)
+                usuario_docente = cadastrar_usuario(
+                    request, eh_docente=True, eh_discente=False)
 
                 if isinstance(usuario_docente, Usuario):
 
@@ -126,6 +128,7 @@ def cadastro_docente(request, consultado_no_SIGA):
                             enviar_email_de_ativacao(request, usuario_discente)
 
                     else:
+
                         messages.success(
                             request, 'Docente cadastrado com sucesso. Porém, você não foi especificado no SIGA. Entre em contato com a equipe do CME para ativar o seu cadastro')
 
@@ -140,18 +143,106 @@ def cadastro_docente(request, consultado_no_SIGA):
         return render(request, 'admin/cadastros/cadastro_docente.html')
 
 
+def cadastro_discente(request, consultado_no_SIGA):
+    """Realiza cadastro de discente."""
+
+    consultado_no_SIGA = bool(consultado_no_SIGA)
+
+    if request.method == 'POST':
+
+        aceite_de_normas = request.POST.get('aceite-nomas', "")
+
+        if not aceite_de_normas:
+
+            messages.error(request, 'Você deve aceitar as normas')
+
+            return redirect('cadastro')
+
+        else:
+
+            if not Usuario.objects.filter(email=request.POST['email_docente']).exists():
+                messages.error(
+                    request, 'O docente orientador não consta no banco de dados, por favor solicite que o mesmo faça o cadastramento antes de realizar o seu.')
+                return redirect('cadastro')
+
+            else:
+
+                formulario_usuario = UsuarioFormularioCriacao(request.POST)
+
+                vinculo = request.POST['vinculo']
+
+                inicio_vinculo = request.POST['inicio_discente']
+
+                setor = request.POST['setor_discente']
+
+                departamento = request.POST['departamento']
+
+                periodo_de_permanencia = calcular_periodo_de_permanencia(
+                    vinculo, inicio_vinculo)
+
+                docente = Docente.objects.filter(
+                    usuario__email=request.POST['email_docente']).get()
+
+                if not conferir_departamento_de_docente_e_discente(docente, departamento):
+
+                    messages.error(
+                        request, 'O seu departamento não consta no registro do seu Orientador')
+
+                    return redirect('cadastro')
+
+                if formulario_usuario.is_valid():
+
+                    usuario_discente = cadastrar_usuario(
+                        request, eh_docente=False, eh_discente=True)
+
+                    if isinstance(usuario_discente, Usuario):
+
+                        discente = Discente.objects.create(
+                            usuario=usuario_discente,
+                            docente=docente,
+                            vinculo=vinculo,
+                            inicio_vinculo=inicio_vinculo,
+                            setor=setor,
+                            departamento=departamento,
+                            periodo_de_permanencia=periodo_de_permanencia
+                        )
+
+                        discente.save()
+
+                        if consultado_no_SIGA:
+
+                            messages.success(
+                                request, 'Discente cadastrado com sucesso. Por favor, verifique seu e-mail para ativação')
+
+                            enviar_email_de_ativacao(request, usuario_discente)
+
+                        else:
+
+                            messages.success(
+                                request, 'Discente cadastrado com sucesso. Porém, você não foi especificado no SIGA. Entre em contato com a equipe do CME para ativar o seu cadastro')
+
+                        return redirect('login')
+                else:
+
+                    return render(request, 'admin/cadastros/cadastro.html', {'form': formulario_usuario})
+    else:
+
+        return render(request, 'admin/cadastros/cadastro_discente.html')
+
+
 def cadastro_externos(request):
+    """Realiza cadastro de usuários externos"""
 
     return render(request, 'admin/cadastros/cadastro_externos.html')
 
 # Funções Auxiliares
 
 
-def cadastrar_usuario(request):
-    """Realiza o cadastro de usuário e retorna suas informações"""
+def cadastrar_usuario(request, eh_docente, eh_discente):
+    """Salva as informações de usuário no banco de dados e retorna o objeto Usuario."""
 
     # Informações passadas no formulário
-    username = uuid.uuid4()
+    username = str(uuid.uuid4())
 
     if 'imagem_uploads' in request.FILES:
 
@@ -182,8 +273,8 @@ def cadastrar_usuario(request):
         is_staff=False,
         is_active=False,
         eh_conselheiro=False,
-        eh_docente=True,
-        eh_discente=False,
+        eh_docente=eh_docente,
+        eh_discente=eh_discente,
         eh_tecnico=False,
         eh_chefe=False,
         eh_sub_chefe=False,
@@ -198,7 +289,11 @@ def cadastrar_usuario(request):
 
 
 def cadastrar_lista_de_discentes(request, docente):
+    """Realiza o cadastro de uma lista de discentes passados no formulário de cadastro do docente, com a mesma senha do docente. 
+    Retorna uma lista de discentes cadastrados, se eles já não constarem no banco de dados."""
+
     lista_de_discentes = []
+
     for campo in request.POST:
 
         if 'discente' in campo:
@@ -254,14 +349,8 @@ def cadastrar_lista_de_discentes(request, docente):
 
                     lista_de_discentes.append(usuario_discente)
 
-                    ano = timedelta(days=365)
-
-                    if vinculo == 'Iniciação Científica':
-                        periodo_de_permanencia = datetime.strptime(inicio_vinculo, "%Y-%m-%d") + timedelta(days=365)
-                    elif vinculo == 'Mestrado' or vinculo == 'Pós-Doutorado':
-                        periodo_de_permanencia = datetime.strptime(inicio_vinculo, "%Y-%m-%d") + timedelta(days=(365 * 2))
-                    elif vinculo == 'Doutorado':
-                        periodo_de_permanencia = datetime.strptime(inicio_vinculo, "%Y-%m-%d") + timedelta(days=(365 * 4))
+                    periodo_de_permanencia = calcular_periodo_de_permanencia(
+                        vinculo, inicio_vinculo)
 
                     discente = Discente.objects.create(
                         usuario=usuario_discente,
@@ -278,7 +367,44 @@ def cadastrar_lista_de_discentes(request, docente):
     return lista_de_discentes
 
 
+def calcular_periodo_de_permanencia(vinculo, inicio_vinculo):
+    """Calcula o tempo de parmanência do discente de acordo com o seu vínculo."""
+
+    if vinculo == 'Iniciação Científica':
+
+        periodo_de_permanencia = datetime.strptime(
+            inicio_vinculo, "%Y-%m-%d") + timedelta(days=365)
+
+    elif vinculo == 'Mestrado' or vinculo == 'Pós-Doutorado':
+
+        periodo_de_permanencia = datetime.strptime(
+            inicio_vinculo, "%Y-%m-%d") + timedelta(days=(365 * 2))
+
+    elif vinculo == 'Doutorado':
+
+        periodo_de_permanencia = datetime.strptime(
+            inicio_vinculo, "%Y-%m-%d") + timedelta(days=(365 * 4))
+
+    return periodo_de_permanencia
+
+
+def conferir_departamento_de_docente_e_discente(docente, departamento_discente):
+    """Relaciona os departamentos do docente com o departamento que o discente registrou. 
+    Retorna verdadeiro se o departamento do discente consta no registro de departamentos do docente."""
+
+    match = False
+
+    for departamento in docente.instituicional['departamentos']:
+
+        if departamento.upper().strip() == departamento_discente.upper().strip():
+
+            match = True
+
+    return match
+
+
 def enviar_email_de_ativacao(request, usuario):
+    """Envia um e-mail para ativação de cadastro do usuário."""
 
     site_corrente = get_current_site(request)
 
@@ -302,6 +428,7 @@ def enviar_email_de_ativacao(request, usuario):
 
 
 def ativar_usuario(request, usuario_id64, token):
+    """Ativa o usuário através do link enviado por e-mail."""
 
     try:
 
