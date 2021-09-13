@@ -470,7 +470,7 @@ def enviar_email_de_ativacao(request, usuario):
 
     assunto_do_email = 'Ativar sua conta no CME'
 
-    corpo_do_email = render_to_string('admin/cadastros/ativacao.html', {
+    corpo_do_email = render_to_string('emails/ativacao.html', {
         'usuario': usuario,
         'dominio': site_corrente,
         'usuario_id': urlsafe_base64_encode(force_bytes(usuario.pk)),

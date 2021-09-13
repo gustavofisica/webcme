@@ -1,0 +1,20 @@
+{% load static %}
+{% autoescape off %}
+
+E-mail enviado por: {{remetente}}.
+
+Seu e-mail é {{email}}
+
+Corpo da menssagem:
+{{mensagem}}
+
+
+E-mail enviado automaticamente,
+Atenciosamente,
+Centro de Microscopia Eletrônica
+
+<img style="width: 250px;" src="{% static 'assets/img/logo.svg' %}" alt="Logotipo do Centro de Microscopia Eletrônica">
+
+Telefones: (41) 3361-3075 ou (41) 3361-3493
+E-mail: cme@ufpr.br
+{% endautoescape %}

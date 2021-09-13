@@ -24,6 +24,10 @@ form {
 
     textarea {
         height: 200px;
+        font-size: medium;
+        padding: 1rem 0.5rem;
+        width: calc(100% - 1rem);
+        font-family: sans-serif;
     }
 
     button {
