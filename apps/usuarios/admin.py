@@ -1,3 +1,5 @@
+from django.contrib.auth.models import Group
+from django.contrib.auth.admin import GroupAdmin
 from django.contrib import admin
 from django.contrib.auth import admin as AuthUserAdmin, models
 
@@ -33,9 +35,25 @@ class DocenteAdmin(admin.ModelAdmin):
 class DiscenteAdmin(admin.ModelAdmin):
     list_display = ('usuario',)
 
+
 @admin.register(Externo)
 class ExternoAdmin(admin.ModelAdmin):
     list_display = ('usuario',)
 
 
-admin.site.unregister(models.Group)
+class UserInLine(admin.TabularInline):
+    model = Group.user_set.through
+    extra = 0
+
+
+admin.site.unregister(Group)
+
+
+class UserInLine(admin.TabularInline):
+    model = Group.user_set.through
+    extra = 0
+
+
+@admin.register(Group)
+class GenericGroup(GroupAdmin):
+    inlines = [UserInLine]
