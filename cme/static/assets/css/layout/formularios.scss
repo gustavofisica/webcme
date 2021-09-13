@@ -195,6 +195,10 @@ form {
                     grid-area: input-nome;
                 }
             }
+
+            &__botao {
+                grid-area: botao;
+            }
         }
     }
 
@@ -492,6 +496,10 @@ form {
 
             &__botao {
                 grid-area: botao;
+
+                &:disabled{
+                    background-color: lightcoral;
+                }
             }
         }
     }
@@ -719,6 +727,34 @@ form {
                 
             }
 
+            &__aceitacao {
+                align-items: center;
+                display: grid;
+                grid-area: aceites;
+                grid-auto-flow: column;
+                grid-gap: 1rem;
+                grid-template-columns: auto 1fr;
+                grid-template-rows: auto;
+
+                &__input {
+                    height: 1.5rem;
+                    margin: 0.5rem;
+                    width: 1.5rem;
+                }
+
+                a {
+                    color: $cor-secundaria-auxiliar;
+                }
+            }
+
+            &__botao {
+                grid-area: botao;
+
+                &:disabled{
+                    background-color: lightcoral;
+                }
+            }
+
         }
     }
 
@@ -730,9 +766,9 @@ form {
             "titulo-responsavel titulo-responsavel"
             "foto foto"
             "nome sobrenome"
-            "email celular"
-            "senha senha-confirmacao"
-            "sugestao sugestao"
+            "lattes celular"
+            "login login"
+            "avisos avisos"
             "aceites botao";
         grid-template-columns: 1fr 1fr;
         grid-gap: 1rem;
@@ -858,6 +894,10 @@ form {
 
             }
 
+            &__lattes {
+                grid-area: lattes;
+            }
+
             &__reponsavel {
                 &__nome {
                     grid-area: nome;
@@ -867,101 +907,136 @@ form {
                     grid-area: sobrenome;
                 }
 
-                &__email {
-                    grid-area: email;
-                }
-
                 &__celular {
                     grid-area: celular;
                 }
             }
 
-
-        }
-
-    }
-
-    &__senha {
-        display: grid;
-        grid-template-areas:
-            "label"
-            "input";
-        grid-area: senha;
-
-        label {
-            grid-area: label;
-        }
-
-        input {
-            align-self: center;
-            grid-area: input;
-        }
-
-        i {
-            align-self: center;
-            cursor: pointer;
-            font-size: 1.5em;
-            grid-area: input;
-            justify-self: end;
-            margin-right: 0.5rem;
-        }
-
-        &__confirmacao {
-            display: grid;
-            grid-template-areas:
-                "label"
-                "input";
-            grid-area: senha-confirmacao;
-
-            label {
-                grid-area: label;
+            &__login {
+                grid-area: login;
+                grid-gap: 1rem;
+                display: grid;
+                grid-template-areas:
+                    "login-titulo login-titulo"
+                    "email email-confirmacao"
+                    "senha senha-confirmacao";
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: auto auto;
+        
+                @media only screen and (max-width: 960px) {
+                    grid-template-areas:
+                        "login-titulo"
+                        "email"
+                        "email-confirmacao"
+                        "senha"
+                        "senha-confirmacao";
+                    grid-template-columns: auto;
+                }
+        
+                &__titulo {
+                    grid-area: login-titulo;
+                }
+        
+                &__email {
+                    grid-area: email;
+        
+                    &__confirmacao {
+                        grid-area: email-confirmacao;
+                    }
+                }
+        
+                &__senha {
+                    display: grid;
+                    grid-template-areas:
+                        "label"
+                        "input";
+                    grid-area: senha;
+        
+                    label {
+                        grid-area: label;
+                    }
+        
+                    input {
+                        align-self: center;
+                        grid-area: input;
+                    }
+        
+                    i {
+                        align-self: center;
+                        cursor: pointer;
+                        font-size: 1.5em;
+                        grid-area: input;
+                        justify-self: end;
+                        margin-right: 0.5rem;
+                    }
+        
+                    &__confirmacao {
+                        display: grid;
+                        grid-template-areas:
+                            "label"
+                            "input";
+                        grid-area: senha-confirmacao;
+        
+                        label {
+                            grid-area: label;
+                        }
+        
+                        input {
+                            align-self: center;
+                            grid-area: input;
+                        }
+        
+                        i {
+                            align-self: center;
+                            cursor: pointer;
+                            font-size: 1.5em;
+                            grid-area: input;
+                            justify-self: end;
+                            margin-right: 0.5rem;
+                        }
+        
+                    }
+                }
+            }
+        
+            &__avisos {
+                grid-area: avisos;
+                
             }
 
-            input {
-                align-self: center;
-                grid-area: input;
+            &__aceitacao {
+                align-items: center;
+                display: grid;
+                grid-area: aceites;
+                grid-auto-flow: column;
+                grid-gap: 1rem;
+                grid-template-columns: auto 1fr;
+                grid-template-rows: auto;
+
+                &__input {
+                    height: 1.5rem;
+                    margin: 0.5rem;
+                    width: 1.5rem;
+                }
+
+                a {
+                    color: $cor-secundaria-auxiliar;
+                }
             }
 
-            i {
-                align-self: center;
-                cursor: pointer;
-                font-size: 1.5em;
-                grid-area: input;
-                justify-self: end;
-                margin-right: 0.5rem;
+            &__botao {
+                grid-area: botao;
+
+                &:disabled{
+                    background-color: lightcoral;
+                }
             }
 
-        }
-    }
 
-    #sugestao {
-        grid-area: sugestao;
-        justify-self: end;
-    }
-
-    &__aceitacao {
-        align-items: center;
-        display: grid;
-        grid-area: aceites;
-        grid-auto-flow: column;
-        grid-gap: 1rem;
-        grid-template-columns: auto 1fr;
-        grid-template-rows: auto;
-
-        &__input {
-            height: 1.5rem;
-            margin: 0.5rem;
-            width: 1.5rem;
         }
 
-        a {
-            color: $cor-secundaria-auxiliar;
-        }
     }
 
-    &__botao {
-        grid-area: botao;
-    }
 
 }
 
@@ -1001,14 +1076,5 @@ form {
 
     label {
         display: none;
-    }
-}
-
-#sugestao {
-    color: red;
-    font-size: 1em;
-
-    i {
-        font-size: 1em;
     }
 }

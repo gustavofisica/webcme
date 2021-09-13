@@ -261,7 +261,7 @@ function atualizaDepartamentos() {
 
     for (let i = 0; i < departamentoDiscentes.length; i++) {
         const select = departamentoDiscentes[i];
-        select.innerHTML = "";
+        select.textContent = "";
 
         for (let i = 0; i < departamentos.length; i++) {
             const departamento = departamentos[i];
@@ -450,17 +450,19 @@ let botao_enviar = document.getElementById('botao-enviar');
 
 function validaSenha() {
     var regex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
-    if (senhaCME.value != senhaConfirmacaoCME.value || 
-            senhaCME.value.length < 8 || 
-            senhaCME.value.match(regex)
-        ){
+    if (senhaCME.value != senhaConfirmacaoCME.value ||
+        senhaCME.value.length < 8 ||
+        senhaCME.value.match(regex)
+    ) {
         senhaCME.style.borderColor = "red";
         senhaConfirmacaoCME.style.borderColor = "red";
-        botao_enviar.disabled = true;    
+        botao_enviar.disabled = true;
+        botao_enviar.textContent = "Existem erros nos dados"
     } else {
         senhaCME.style.borderColor = "green";
         senhaConfirmacaoCME.style.borderColor = "green";
         botao_enviar.disabled = false;
+        botao_enviar.textContent = "Cadastrar"
     }
 
 }
@@ -470,3 +472,68 @@ if (senhaCME != null && senhaConfirmacaoCME != null) {
     senhaCME.onchange = validaSenha;
     senhaConfirmacaoCME.onkeyup = validaSenha;
 }
+
+function limpa_formulário_cep() {
+    //Limpa valores do formulário de cep.
+    document.getElementById('rua').value = ("");
+    document.getElementById('bairro').value = ("");
+    document.getElementById('cidade').value = ("");
+    document.getElementById('uf').value = ("");
+}
+
+function meu_callback(conteudo) {
+    if (!("erro" in conteudo)) {
+        //Atualiza os campos com os valores.
+        document.getElementById('rua').value = (conteudo.logradouro);
+        document.getElementById('bairro').value = (conteudo.bairro);
+        document.getElementById('cidade').value = (conteudo.localidade);
+        document.getElementById('uf').value = (conteudo.uf);
+    } //end if.
+    else {
+        //CEP não Encontrado.
+        limpa_formulário_cep();
+        alert("CEP não encontrado.");
+    }
+}
+
+function pesquisacep(valor) {
+
+    //Nova variável "cep" somente com dígitos.
+    var cep = valor.replace(/\D/g, '');
+
+    //Verifica se campo cep possui valor informado.
+    if (cep != "") {
+
+        //Expressão regular para validar o CEP.
+        var validacep = /^[0-9]{8}$/;
+
+        //Valida o formato do CEP.
+        if (validacep.test(cep)) {
+
+            //Preenche os campos com "..." enquanto consulta webservice.
+            document.getElementById('rua').value = "...";
+            document.getElementById('bairro').value = "...";
+            document.getElementById('cidade').value = "...";
+            document.getElementById('uf').value = "...";
+
+            //Cria um elemento javascript.
+            var script = document.createElement('script');
+
+            //Sincroniza com o callback.
+            script.src = 'https://viacep.com.br/ws/' + cep + '/json/?callback=meu_callback';
+
+            //Insere script no documento e carrega o conteúdo.
+            document.body.appendChild(script);
+
+        } //end if.
+        else {
+            //cep é inválido.
+            limpa_formulário_cep();
+            alert("Formato de CEP inválido.");
+        }
+    } //end if.
+    else {
+        //cep sem valor, limpa formulário.
+        limpa_formulário_cep();
+    }
+};

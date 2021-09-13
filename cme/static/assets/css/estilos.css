@@ -498,6 +498,9 @@ form button:hover {
 .formulario--cadastro .formulario__nome__icone {
   grid-area: input-nome;
 }
+.formulario--cadastro .formulario__botao {
+  grid-area: botao;
+}
 .formulario--cadastro-docente {
   display: grid;
   grid-template-areas: "foto foto" "nome sobrenome" "ramal celular" "lattes lattes" "instituicao departamentos" "discentes discentes" "login login" "avisos avisos" "aceites botao";
@@ -707,6 +710,9 @@ form button:hover {
 .formulario--cadastro-docente .formulario__botao {
   grid-area: botao;
 }
+.formulario--cadastro-docente .formulario__botao:disabled {
+  background-color: lightcoral;
+}
 .formulario--cadastro-discente {
   display: grid;
   grid-template-areas: "foto foto" "nome sobrenome" "lattes celular" "orientador orientador" "setor departamento" "vinculo inicio" "login login" "avisos avisos" "aceites botao";
@@ -857,9 +863,32 @@ form button:hover {
 .formulario--cadastro-discente .formulario__avisos {
   grid-area: avisos;
 }
+.formulario--cadastro-discente .formulario__aceitacao {
+  align-items: center;
+  display: grid;
+  grid-area: aceites;
+  grid-auto-flow: column;
+  grid-gap: 1rem;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto;
+}
+.formulario--cadastro-discente .formulario__aceitacao__input {
+  height: 1.5rem;
+  margin: 0.5rem;
+  width: 1.5rem;
+}
+.formulario--cadastro-discente .formulario__aceitacao a {
+  color: #8EA638;
+}
+.formulario--cadastro-discente .formulario__botao {
+  grid-area: botao;
+}
+.formulario--cadastro-discente .formulario__botao:disabled {
+  background-color: lightcoral;
+}
 .formulario--cadastro-externos {
   display: grid;
-  grid-template-areas: "tipo tipo" "instituicao instituicao" "titulo-responsavel titulo-responsavel" "foto foto" "nome sobrenome" "email celular" "senha senha-confirmacao" "sugestao sugestao" "aceites botao";
+  grid-template-areas: "tipo tipo" "instituicao instituicao" "titulo-responsavel titulo-responsavel" "foto foto" "nome sobrenome" "lattes celular" "login login" "avisos avisos" "aceites botao";
   grid-template-columns: 1fr 1fr;
   grid-gap: 1rem;
 }
@@ -953,31 +982,54 @@ form button:hover {
     justify-self: center;
   }
 }
+.formulario--cadastro-externos .formulario__lattes {
+  grid-area: lattes;
+}
 .formulario--cadastro-externos .formulario__reponsavel__nome {
   grid-area: nome;
 }
 .formulario--cadastro-externos .formulario__reponsavel__sobrenome {
   grid-area: sobrenome;
 }
-.formulario--cadastro-externos .formulario__reponsavel__email {
-  grid-area: email;
-}
 .formulario--cadastro-externos .formulario__reponsavel__celular {
   grid-area: celular;
 }
-.formulario__senha {
+.formulario--cadastro-externos .formulario__login {
+  grid-area: login;
+  grid-gap: 1rem;
+  display: grid;
+  grid-template-areas: "login-titulo login-titulo" "email email-confirmacao" "senha senha-confirmacao";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+}
+@media only screen and (max-width: 960px) {
+  .formulario--cadastro-externos .formulario__login {
+    grid-template-areas: "login-titulo" "email" "email-confirmacao" "senha" "senha-confirmacao";
+    grid-template-columns: auto;
+  }
+}
+.formulario--cadastro-externos .formulario__login__titulo {
+  grid-area: login-titulo;
+}
+.formulario--cadastro-externos .formulario__login__email {
+  grid-area: email;
+}
+.formulario--cadastro-externos .formulario__login__email__confirmacao {
+  grid-area: email-confirmacao;
+}
+.formulario--cadastro-externos .formulario__login__senha {
   display: grid;
   grid-template-areas: "label" "input";
   grid-area: senha;
 }
-.formulario__senha label {
+.formulario--cadastro-externos .formulario__login__senha label {
   grid-area: label;
 }
-.formulario__senha input {
+.formulario--cadastro-externos .formulario__login__senha input {
   align-self: center;
   grid-area: input;
 }
-.formulario__senha i {
+.formulario--cadastro-externos .formulario__login__senha i {
   align-self: center;
   cursor: pointer;
   font-size: 1.5em;
@@ -985,19 +1037,19 @@ form button:hover {
   justify-self: end;
   margin-right: 0.5rem;
 }
-.formulario__senha__confirmacao {
+.formulario--cadastro-externos .formulario__login__senha__confirmacao {
   display: grid;
   grid-template-areas: "label" "input";
   grid-area: senha-confirmacao;
 }
-.formulario__senha__confirmacao label {
+.formulario--cadastro-externos .formulario__login__senha__confirmacao label {
   grid-area: label;
 }
-.formulario__senha__confirmacao input {
+.formulario--cadastro-externos .formulario__login__senha__confirmacao input {
   align-self: center;
   grid-area: input;
 }
-.formulario__senha__confirmacao i {
+.formulario--cadastro-externos .formulario__login__senha__confirmacao i {
   align-self: center;
   cursor: pointer;
   font-size: 1.5em;
@@ -1005,11 +1057,10 @@ form button:hover {
   justify-self: end;
   margin-right: 0.5rem;
 }
-.formulario #sugestao {
-  grid-area: sugestao;
-  justify-self: end;
+.formulario--cadastro-externos .formulario__avisos {
+  grid-area: avisos;
 }
-.formulario__aceitacao {
+.formulario--cadastro-externos .formulario__aceitacao {
   align-items: center;
   display: grid;
   grid-area: aceites;
@@ -1018,16 +1069,19 @@ form button:hover {
   grid-template-columns: auto 1fr;
   grid-template-rows: auto;
 }
-.formulario__aceitacao__input {
+.formulario--cadastro-externos .formulario__aceitacao__input {
   height: 1.5rem;
   margin: 0.5rem;
   width: 1.5rem;
 }
-.formulario__aceitacao a {
+.formulario--cadastro-externos .formulario__aceitacao a {
   color: #8EA638;
 }
-.formulario__botao {
+.formulario--cadastro-externos .formulario__botao {
   grid-area: botao;
+}
+.formulario--cadastro-externos .formulario__botao:disabled {
+  background-color: lightcoral;
 }
 
 #searchform {
@@ -1064,14 +1118,6 @@ form button:hover {
 }
 #searchform label {
   display: none;
-}
-
-#sugestao {
-  color: red;
-  font-size: 1em;
-}
-#sugestao i {
-  font-size: 1em;
 }
 
 header {

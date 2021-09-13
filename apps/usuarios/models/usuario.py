@@ -15,8 +15,8 @@ class Usuario(AbstractUser):
     foto_de_perfil = models.ImageField(upload_to=nomear_pasta, blank=True)
     caminho_armazenamento = models.UUIDField(
         default=uuid.uuid4(), editable=False)
-    curriculo_lattes = models.URLField(
-        blank=True, validators=[URLValidator(schemes='http://lattes.cnpq.br/')])
+    curriculo_lattes = models.URLField(blank=True, validators=[
+                                       URLValidator(schemes='http://lattes.cnpq.br/')])
     celular_regex = RegexValidator(
         regex=r'\([0-9]{2}\) [0-9]{4,5}-[0-9]{4}', message='O telefone de estar no formato de : (xx) xxxxx-xxxx')
     celular = models.CharField(
@@ -27,6 +27,7 @@ class Usuario(AbstractUser):
     eh_tecnico = models.BooleanField(default=False)
     eh_chefe = models.BooleanField(default=False)
     eh_sub_chefe = models.BooleanField(default=False)
+    eh_externo = models.BooleanField(default=False)
     operacao = models.JSONField(default=dict, null=True, blank=True)
 
     def save(self, *args, **kwargs):
@@ -39,3 +40,6 @@ class Usuario(AbstractUser):
                 output_size = (150, 150)
                 img.thumbnail(output_size)
                 img.save(self.foto_de_perfil.path)
+    
+    def __str__(self):
+        return self.get_full_name()

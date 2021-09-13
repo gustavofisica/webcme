@@ -261,7 +261,7 @@ function atualizaDepartamentos() {
 
     for (let i = 0; i < departamentoDiscentes.length; i++) {
         const select = departamentoDiscentes[i];
-        select.innerHTML = "";
+        select.textContent = "";
 
         for (let i = 0; i < departamentos.length; i++) {
             const departamento = departamentos[i];
@@ -446,22 +446,32 @@ if (foto != null) {
 
 let senhaCME = document.getElementById('senha');
 let senhaConfirmacaoCME = document.getElementById('confirma-senha');
-let sugestao = document.getElementById('sugestao');
+let botao_enviar = document.getElementById('botao-enviar');
 
 function validaSenha() {
-    if (senhaCME.value != senhaConfirmacaoCME.value) {
-        sugestao.innerHTML = '<i class="fa fa-times-circle" aria-hidden="true"> As senhas não correspondem</i>';
+    var regex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+    if (senhaCME.value != senhaConfirmacaoCME.value ||
+        senhaCME.value.length < 8 ||
+        senhaCME.value.match(regex)
+    ) {
+        senhaCME.style.borderColor = "red";
+        senhaConfirmacaoCME.style.borderColor = "red";
+        botao_enviar.disabled = true;
+        botao_enviar.textContent = "Existem erros nos dados"
     } else {
-        sugestao.innerHTML = '';
+        senhaCME.style.borderColor = "green";
+        senhaConfirmacaoCME.style.borderColor = "green";
+        botao_enviar.disabled = false;
+        botao_enviar.textContent = "Cadastrar"
     }
+
 }
 
 if (senhaCME != null && senhaConfirmacaoCME != null) {
+    botao_enviar.disabled = true;
     senhaCME.onchange = validaSenha;
     senhaConfirmacaoCME.onkeyup = validaSenha;
 }
-
-
 
 function limpa_formulário_cep() {
     //Limpa valores do formulário de cep.

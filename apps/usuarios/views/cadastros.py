@@ -9,7 +9,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.template.loader import render_to_string
 from django.contrib import messages
 from usuarios.forms import UsuarioFormularioCriacao
-from usuarios.models import Usuario, Docente, Discente
+from usuarios.models import Usuario, Docente, Discente, Externo
 from usuarios.utils import gerar_token
 from usuarios.validation import *
 import uuid
@@ -105,7 +105,7 @@ def cadastro_docente(request, consultado_no_SIGA):
             if formulario_usuario.is_valid():
 
                 usuario_docente = cadastrar_usuario(
-                    request, eh_docente=True, eh_discente=False)
+                    request, eh_docente=True, eh_discente=False, eh_externo=False)
 
                 if isinstance(usuario_docente, Usuario):
 
@@ -193,7 +193,7 @@ def cadastro_discente(request, consultado_no_SIGA):
                 if formulario_usuario.is_valid():
 
                     usuario_discente = cadastrar_usuario(
-                        request, eh_docente=False, eh_discente=True)
+                        request, eh_docente=False, eh_discente=True, eh_externo=False)
 
                     if isinstance(usuario_discente, Usuario):
 
@@ -233,12 +233,73 @@ def cadastro_discente(request, consultado_no_SIGA):
 def cadastro_externos(request):
     """Realiza cadastro de usuários externos"""
 
+    if request.method == 'POST':
+
+        aceite_de_normas = request.POST.get('aceite-nomas', "")
+
+        if not aceite_de_normas:
+
+            messages.error(request, 'Você deve aceitar as normas')
+
+            return redirect('cadastro')
+
+        else:
+
+            formulario_usuario = UsuarioFormularioCriacao(request.POST)
+
+            tipo_de_instituicao = request.POST['tipo-instituicao']
+            razao_social = request.POST['razao']
+            cnpj = request.POST['cnpj']
+            cep = request.POST['cep']
+            rua = request.POST['rua']
+            bairro = request.POST['bairro']
+            cidade = request.POST['cidade']
+            numero = request.POST['numero']
+            complemento = request.POST['complemento']
+            uf = request.POST['uf']
+            telefone_instituicao = request.POST['telefone']
+
+            if formulario_usuario.is_valid():
+
+                usuario_externo = cadastrar_usuario(
+                    request, eh_docente=False, eh_discente=False, eh_externo=True)
+
+                if isinstance(usuario_externo, Usuario):
+
+                    externo = Externo.objects.create(
+                        usuario=usuario_externo,
+                        tipo_de_instituicao=tipo_de_instituicao,
+                        razao_social=razao_social,
+                        cnpj=cnpj,
+                        cep=cep,
+                        rua=rua,
+                        bairro=bairro,
+                        cidade=cidade,
+                        numero=numero,
+                        complemento=complemento,
+                        uf=uf,
+                        telefone_instituicao=telefone_instituicao
+                    )
+
+                    externo.save()
+
+                    messages.success(
+                                request, 'Usuário cadastrado com sucesso. Por favor, verifique seu e-mail para ativação')
+
+                    enviar_email_de_ativacao(request, usuario_externo)
+
+                    return redirect('login')
+
+            else:
+
+                return render(request, 'admin/cadastros/cadastro.html', {'form': formulario_usuario})
+
     return render(request, 'admin/cadastros/cadastro_externos.html')
 
 # Funções Auxiliares
 
 
-def cadastrar_usuario(request, eh_docente, eh_discente):
+def cadastrar_usuario(request, eh_docente, eh_discente, eh_externo):
     """Salva as informações de usuário no banco de dados e retorna o objeto Usuario."""
 
     # Informações passadas no formulário
@@ -255,11 +316,9 @@ def cadastrar_usuario(request, eh_docente, eh_discente):
     first_name = request.POST['nome']
     last_name = request.POST['sobrenome']
     celular = request.POST['celular']
-    email1 = request.POST['email1']
-    email2 = request.POST['email2']
+    email = request.POST['email1']
     curriculo_lattes = request.POST['lattes']
-    password1 = request.POST['password1']
-    password2 = request.POST['password2']
+    password = request.POST['password1']
 
     usuario = Usuario.objects.create_user(
         username=username,
@@ -267,7 +326,7 @@ def cadastrar_usuario(request, eh_docente, eh_discente):
         caminho_armazenamento=username,
         first_name=first_name,
         last_name=last_name,
-        email=email1,
+        email=email,
         curriculo_lattes=curriculo_lattes,
         celular=celular,
         is_staff=False,
@@ -278,10 +337,11 @@ def cadastrar_usuario(request, eh_docente, eh_discente):
         eh_tecnico=False,
         eh_chefe=False,
         eh_sub_chefe=False,
+        eh_externo=eh_externo,
         operacao={}
     )
 
-    usuario.set_password(password1)
+    usuario.set_password(password)
 
     usuario.save()
 
