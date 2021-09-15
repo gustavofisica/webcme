@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     'django_cleanup.apps.CleanupConfig',
     'tempus_dominus',
     'widget_tweaks',
-    'django_summernote',
     # Meus Apss
     'equipamentos',
     'site_cme',
@@ -191,30 +190,3 @@ EMAIL_HOST_USER = env('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS = env('EMAIL_USE_TLS')
 EMAIL_FROM_USER = env('EMAIL_FROM_USER')
-
-# Configuração do Summernote
-SUMMERNOTE_THEME = 'bs4'
-X_FRAME_OPTIONS = 'SAMEORIGIN'
-
-SUMMERNOTE_CONFIG = {
-    # Using SummernoteWidget - iframe mode, default
-    'iframe': True,
-
-    # Or, you can set it to `False` to use SummernoteInplaceWidget by default - no iframe mode
-    # In this case, you have to load Bootstrap/jQuery sources and dependencies manually.
-    # Use this when you're already using Bootstrap/jQuery based themes.
-    'iframe': False,
-
-    # You can put custom Summernote settings
-    'summernote': {
-        # As an example, using Summernote Air-mode
-        'airMode': False,
-
-        # Change editor size
-        'width': '100%',
-        'height': '480',
-
-        'lang': 'pt-br',
-
-    },
-}
