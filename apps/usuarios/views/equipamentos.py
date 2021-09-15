@@ -7,8 +7,8 @@ from django.urls import reverse
 
 
 @login_required
-def cria_equipamento(request, id):
-    usuario = get_object_or_404(Usuario, pk=id)
+def cria_equipamento(request, username):
+    usuario = get_object_or_404(Usuario, username=username)
     equipamento = Equipamento
     galeria_equipamento = FormularioGeleriaEquipamento
     if request.method == 'POST':

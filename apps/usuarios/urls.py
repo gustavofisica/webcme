@@ -15,5 +15,5 @@ urlpatterns = [
     path('<str:username>/dashboard/', views.dashboard, name='dashboard'),
     path('<str:username>/dashboard/perfil/', views.perfil, name='perfil'),
     path('<str:username>/dashboard/alterar_senha/', views.alterar_senha, name='alterar_senha'),
-    path('<str:username>dashboard/equipamento/', views.cria_equipamento, name='cria_equipamento'),
+    path('<str:username>/dashboard/equipamento/', views.cria_equipamento, name='cria_equipamento'),
 ]
