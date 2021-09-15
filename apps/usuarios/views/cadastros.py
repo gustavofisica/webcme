@@ -2,7 +2,6 @@ from .functions import gerar_dados_do_usuario
 from datetime import timedelta, datetime
 from django.conf import settings
 from django.contrib.sites.shortcuts import get_current_site
-from django.contrib.auth.models import Group
 from django.core.mail import EmailMessage
 from django.utils.encoding import force_bytes, force_str, force_text, DjangoUnicodeDecodeError
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
@@ -113,10 +112,6 @@ def cadastro_docente(request, consultado_no_SIGA):
                     docente = Docente.objects.create(
                         usuario=usuario_docente, instituicional=instituicional, ramal=ramal)
 
-                    grupo_de_docentes = Group.objects.get(name='Docentes')
-
-                    grupo_de_docentes.user_set.add(usuario_docente)
-
                     docente.save()
 
                     lista_de_discentes = cadastrar_lista_de_discentes(
@@ -212,11 +207,6 @@ def cadastro_discente(request, consultado_no_SIGA):
                             periodo_de_permanencia=periodo_de_permanencia
                         )
 
-                        grupo_de_discentes = Group.objects.get(
-                            name='Discentes')
-
-                        grupo_de_discentes.user_set.add(usuario_discente)
-
                         discente.save()
 
                         if consultado_no_SIGA:
@@ -291,14 +281,10 @@ def cadastro_externos(request):
                         telefone_instituicao=telefone_instituicao
                     )
 
-                    grupo_de_externos = Group.objects.get(name='Externos')
-
-                    grupo_de_externos.user_set.add(usuario_externo)
-
                     externo.save()
 
                     messages.success(
-                        request, 'Usuário cadastrado com sucesso. Por favor, verifique seu e-mail para ativação')
+                                request, 'Usuário cadastrado com sucesso. Por favor, verifique seu e-mail para ativação')
 
                     enviar_email_de_ativacao(request, usuario_externo)
 
@@ -435,10 +421,6 @@ def cadastrar_lista_de_discentes(request, docente):
                         departamento=departamento,
                         periodo_de_permanencia=periodo_de_permanencia
                     )
-
-                    grupo_de_discentes = Group.objects.get(name='Discentes')
-
-                    grupo_de_discentes.user_set.add(usuario_discente)
 
                     discente.save()
 
