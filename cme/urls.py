@@ -22,6 +22,7 @@ urlpatterns = [
     path('', include('site_cme.urls')),
     path('equipamentos/', include('equipamentos.urls')),
     path('noticias/', include('noticias.urls')),
+    path('summernote/', include('django_summernote.urls')),
     path('sistema_de_gerenciamento/', include('usuarios.urls')),
     path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

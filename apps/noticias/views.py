@@ -2,6 +2,9 @@ from django.shortcuts import get_object_or_404, render
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import Noticia
 from configuracoes.models import Configuracoes
+from django.contrib.auth.decorators import login_required
+from usuarios.models import Usuario
+from noticias.forms import FormularioNoticia
 
 # Create your views here.
 def noticia(request, slug):
@@ -49,3 +52,14 @@ def lista_de_categorias(categorias):
 
     return lista_categorias
 
+@login_required
+def nova_noticia(request, username):
+    usuario = get_object_or_404(Usuario, username=username) 
+
+    formulario = FormularioNoticia()   
+
+    dados = {
+        'usuario': usuario,
+        'form': formulario,
+    }
+    return render(request, 'admin/dashboard/noticias/nova_noticia.html', dados)
